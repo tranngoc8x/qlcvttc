@@ -4,7 +4,7 @@ class UsersController extends AppController {
 	var $name = 'Users';
 	function login(){
 		if($this->Auth->user()){
-           $this->redirect($this->Auth->redirect());
+          //  $this->Auth->redirect();
 		}
 		Configure::write('debug',0);
 		$this->layout = 'login';
@@ -17,6 +17,8 @@ class UsersController extends AppController {
                 }
                 echo  "{success: true}";
             }else{
+            	//echo $this->Auth->password('123');
+            	//echo $this->data['User']['password'];
                 echo "{ success: false, errors: { reason: 'Đăng nhập không thành công. Xin vui lòng thử lại.' }}";
             }
         }
@@ -50,8 +52,6 @@ class UsersController extends AppController {
 				$this->Session->setFlash(__('The user could not be saved. Please, try again.', true));
 			}
 		}
-		$groups = $this->User->Group->find('list');
-		$this->set(compact('groups'));
 	}
 
 	function edit($id = null) {
@@ -70,9 +70,6 @@ class UsersController extends AppController {
 		if (empty($this->data)) {
 			$this->data = $this->User->read(null, $id);
 		}
-		$groups = $this->User->Group->find('list');
-		//$s_id = $this->User->Positions->find('list');
-		$this->set(compact('groups'));
 	}
 
 	function delete($id = null) {

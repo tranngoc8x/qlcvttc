@@ -10,7 +10,7 @@ class GroupsController extends AppController {
 
 	function view($id = null) {
 		if (!$id) {
-			$this->Session->setFlash('Không có phòng ban này !','default',array('class'=>'notice'));
+			$this->Session->setFlash(__('Invalid group', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->set('group', $this->Group->read(null, $id));
@@ -20,10 +20,10 @@ class GroupsController extends AppController {
 		if (!empty($this->data)) {
 			$this->Group->create();
 			if ($this->Group->save($this->data)) {
-				$this->Session->setFlash('Lưu thành công !','default',array('class'=>'success'));
+				$this->Session->setFlash(__('The group has been saved', true));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash('Thông tin chưa được lưu. Hãy thử lại !','default',array('class'=>'error'));
+				$this->Session->setFlash(__('The group could not be saved. Please, try again.', true));
 			}
 		}
 	}
