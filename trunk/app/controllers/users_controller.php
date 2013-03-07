@@ -53,7 +53,8 @@ class UsersController extends AppController {
 			}
 		}
 		$groups = $this->User->Group->find('list');
-		$this->set(compact('groups'));
+		$positions  = $this->User->Position->find('list');
+		$this->set(compact('groups','positions'));
 	}
 
 	function edit($id = null) {
@@ -72,6 +73,9 @@ class UsersController extends AppController {
 		if (empty($this->data)) {
 			$this->data = $this->User->read(null, $id);
 		}
+		$groups = $this->User->Group->find('list');
+		$positions  = $this->User->Position->find('list');
+		$this->set(compact('groups','positions'));
 	}
 
 	function delete($id = null) {
