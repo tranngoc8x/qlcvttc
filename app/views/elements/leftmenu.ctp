@@ -49,10 +49,10 @@
 <div id="congviec">
  	<ul class="menu_left">
 		<li>
-			<?php echo $this->Html->link(__('Danh sách công việc của tôi', true), array('plugin'=>false,'controller'=>'offices','action' => 'index')); ?>
+			<?php echo $this->Html->link(__('Danh sách công việc của tôi', true), array('plugin'=>false,'controller'=>'tasks','action' => 'index')); ?>
 		</li>
 		<li>
-		<?php echo $this->Html->link(__('Thêm mới phòng ban', true), array('plugin'=>false,'controller'=>'offices','action' => 'add')); ?>
+		<?php echo $this->Html->link(__('Thêm mới phòng ban', true), array('plugin'=>false,'controller'=>'tasks','action' => 'add')); ?>
 		</li>
 		<li>
 		<?php echo $this->Html->link(__('Chức vụ', true), array('plugin'=>false,'controller'=>'positions','action' => 'add')); ?>
