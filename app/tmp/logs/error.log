@@ -1,0 +1,180 @@
+2013-01-24 18:13:33 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\cakephp\app\views\posts\index.ctp, line 11]
+2013-03-05 09:19:41 Warning: Warning (512): Method FormHelper::postLink does not exist in [F:\xampp\htdocs\QLCV_TTC\cake\libs\view\helper.php, line 154]
+2013-03-05 09:34:44 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'User.fullname' in 'field list'</span> in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\datasources\dbo_source.php, line 684]
+2013-03-05 09:45:52 Warning: Warning (2): Missing argument 1 for AuthComponent::password(), called in F:\xampp\htdocs\QLCV_TTC\app\controllers\users_controller.php on line 19 and defined in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\auth.php, line 944]
+2013-03-05 09:46:58 Warning: Warning (2): Missing argument 1 for AuthComponent::password(), called in F:\xampp\htdocs\QLCV_TTC\app\controllers\users_controller.php on line 19 and defined in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\auth.php, line 944]
+2013-03-05 09:47:34 Warning: Warning (2): Missing argument 1 for AuthComponent::password(), called in F:\xampp\htdocs\QLCV_TTC\app\controllers\users_controller.php on line 19 and defined in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\auth.php, line 944]
+2013-03-05 09:50:44 Warning: Warning (2): Missing argument 1 for AuthComponent::password(), called in F:\xampp\htdocs\QLCV_TTC\app\controllers\users_controller.php on line 19 and defined in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\auth.php, line 944]
+2013-03-05 09:52:04 Warning: Warning (2): Missing argument 1 for AuthComponent::password(), called in F:\xampp\htdocs\QLCV_TTC\app\controllers\users_controller.php on line 19 and defined in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\auth.php, line 944]
+2013-03-05 09:55:22 Warning: Warning (2): Missing argument 1 for AuthComponent::password(), called in F:\xampp\htdocs\QLCV_TTC\app\controllers\users_controller.php on line 20 and defined in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\auth.php, line 944]
+2013-03-05 12:52:37 Warning: Warning (2): Missing argument 1 for AuthComponent::password(), called in F:\xampp\htdocs\QLCV_TTC\app\controllers\users_controller.php on line 20 and defined in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\auth.php, line 944]
+2013-03-05 12:52:59 Warning: Warning (2): Missing argument 1 for AuthComponent::password(), called in F:\xampp\htdocs\QLCV_TTC\app\controllers\users_controller.php on line 20 and defined in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\auth.php, line 944]
+2013-03-05 12:53:13 Warning: Warning (2): Missing argument 1 for AuthComponent::password(), called in F:\xampp\htdocs\QLCV_TTC\app\controllers\users_controller.php on line 20 and defined in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\auth.php, line 944]
+2013-03-06 05:02:55 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-03-06 05:02:55 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-03-06 05:02:55 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-03-06 05:02:56 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-03-06 05:02:56 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-03-06 05:02:56 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-03-06 05:02:56 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-03-06 05:02:56 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-03-06 05:02:56 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-03-06 05:02:56 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-03-06 05:03:10 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-03-06 05:03:10 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-03-06 05:03:10 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-03-06 05:03:10 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-03-06 05:03:10 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-03-06 05:03:10 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-03-06 05:03:11 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-03-06 05:03:11 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-03-06 05:03:11 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-03-06 05:03:11 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-03-06 10:06:41 Warning: Warning (512): Method FormHelper::postLink does not exist in [F:\xampp\htdocs\QLCV_TTC\cake\libs\view\helper.php, line 154]
+2013-03-06 10:07:40 Warning: Warning (512): Method FormHelper::postLink does not exist in [F:\xampp\htdocs\QLCV_TTC\cake\libs\view\helper.php, line 154]
+2013-03-06 10:09:08 Warning: Warning (512): Method FormHelper::postLink does not exist in [F:\xampp\htdocs\QLCV_TTC\cake\libs\view\helper.php, line 154]
+2013-03-06 10:10:53 Warning: Warning (512): Method FormHelper::postLink does not exist in [F:\xampp\htdocs\QLCV_TTC\cake\libs\view\helper.php, line 154]
+2013-03-06 10:11:25 Warning: Warning (512): Method FormHelper::postLink does not exist in [F:\xampp\htdocs\QLCV_TTC\cake\libs\view\helper.php, line 154]
+2013-03-06 10:12:41 Warning: Warning (512): Method FormHelper::postLink does not exist in [F:\xampp\htdocs\QLCV_TTC\cake\libs\view\helper.php, line 154]
+2013-03-06 10:13:48 Warning: Warning (512): Method FormHelper::postLink does not exist in [F:\xampp\htdocs\QLCV_TTC\cake\libs\view\helper.php, line 154]
+2013-03-06 10:17:09 Warning: Warning (512): Method FormHelper::postLink does not exist in [F:\xampp\htdocs\QLCV_TTC\cake\libs\view\helper.php, line 154]
+2013-03-06 10:17:35 Warning: Warning (512): Method FormHelper::postLink does not exist in [F:\xampp\htdocs\QLCV_TTC\cake\libs\view\helper.php, line 154]
+2013-03-06 10:18:18 Warning: Warning (512): Method FormHelper::link does not exist in [F:\xampp\htdocs\QLCV_TTC\cake\libs\view\helper.php, line 154]
+2013-03-06 10:44:50 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(users_id,ipadr,time,) values('2'::1','2013-03-06 10:44:50')' at line 1</span> in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\datasources\dbo_source.php, line 684]
+2013-03-06 12:46:32 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-03-06 12:46:33 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-03-06 12:46:33 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-03-06 12:46:33 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-03-06 12:46:33 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-03-06 12:46:34 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-03-07 02:21:02 Warning: Warning (4096): Object of class UsersController could not be converted to string in [F:\xampp\htdocs\QLCV_TTC\app\controllers\users_controller.php, line 6]

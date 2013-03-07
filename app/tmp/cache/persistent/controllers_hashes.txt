@@ -1,0 +1,1 @@
+a:6:{s:6:"Groups";s:32:"042c6362a46fd022bb456151f485358b";s:5:"Pages";s:32:"d307136d9f58f8f650866fa74e04ecaa";s:5:"Posts";s:32:"86b0a1df9ed4006df612bac32474a017";s:5:"Users";s:32:"c14f4e897fd1ba09eccbccf46d27de97";s:8:"Acl/Acos";s:32:"4f180fc4c6c3887fc82a7519b23a8df5";s:8:"Acl/Aros";s:32:"07b51cd106b72171750f061de145c348";}
