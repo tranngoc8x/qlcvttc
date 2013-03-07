@@ -9,11 +9,10 @@
 			<th><?php echo $this->Paginator->sort('Chú thích','note'); ?></th>			
 			<th class="actions"><?php echo __('Actions'); ?></th>
 		</tr>
-	</thead>
-	<tbody>
+	
 	<?php
 	foreach ($pos as $pos): ?>
-	<tr>
+	<tr  class='tbody'>
 		<td class="center"><input type="checkbox" value="<?php echo h($pos['Position']['id']); ?>" name="checkid" class="checkbox"/></td>
 		<td><?php echo $pos['Position']['name']; ?>&nbsp;</td>
 		<td><?php echo $pos['Group']['name']; ?>&nbsp;</td>		
@@ -25,8 +24,9 @@
 				</td>
 	</tr>
 <?php endforeach; ?>
-</tbody>
+
 </table>
+</form>
  <script type="text/javascript">
 	var title= "Bảng chức vụ";
 </script>
