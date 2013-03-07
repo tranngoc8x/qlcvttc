@@ -1,0 +1,323 @@
+#north{
+	background: transparent url('../img/admin/banner.png') left top repeat;
+	display: block;
+	height: 50px;
+}
+#north p{
+	font-weight: bold;
+	text-transform: uppercase;
+        display: block;
+	color: #005FDB;
+	font:normal 16pt Arial;
+	font-family:  Helvetica, sans-serif; 
+	font-weight: bold;
+        line-height: 50px;
+        text-align: center;
+        width: 60%;
+        float:right;
+        height: 50px;
+	/*text stroke*/ 
+	-webkit-text-stroke: 2px rgba(255, 255, 255, .2);
+}
+#userinfor{
+    float: right;
+    position: relative;
+    top: 30px;
+    text-align: right;
+    padding-right: 10px;
+    display: block;
+  
+}
+.text_tite,.link_title{
+	font-size: 12px;
+	font-family: Arial,Sans-Serif;
+	font-weight: bold;
+	text-decoration: none;
+	color: #212122;
+}
+.link,a{
+	color: #333333;
+	text-decoration: none;
+	font-size: 12px;
+	font-family: Arial,Sans-Serif;
+}
+.link:hover,a:hover{
+	color:#3B5205;
+	text-decoration: underline;
+}
+.sort-table{
+	border: 1px solid #C4FFD8;
+	border-right: 0;
+	border-bottom: 0;
+	width: 100%;
+}
+.sort-table tr.thead{
+	background: #fff url('../img/admin/header-table.png') left top repeat;
+}
+.sort-table th{
+	font-weight: bold;
+	height: 45px;
+	text-align: center;
+	background: #fff url('../img/admin/header-table.png') left top repeat;
+	border-right: 1px solid #C4FFD8;
+	 
+}
+.sort-table th,.sort-table th a{
+	text-decoration: none;
+	color: #3399FF;
+	font-size: 13px;
+	text-transform: uppercase;
+	font-family: Arial,Verdana,Sans-Serif;
+
+}
+.sort-table .tbody td{
+	color: #444444;
+	padding: 3px;
+	height: 30px;
+	font-size: 13px;
+	font-family: Arial,Sans-Serif;
+	line-height: 30px;
+	border-right: 1px solid #C4FFD8;
+	border-bottom: 1px solid #C4FFD8;
+}
+.sort-table  tr.tbody:hover{
+	background: #FFFFDD;
+}
+.sort-table .tbody td a{
+	color: #0073EA;
+	text-decoration: none;
+}
+.sort-table .tbody td:last-child {
+	text-align: center;
+}
+.left{
+	text-align: left;
+}
+.center{
+	text-align: center;
+}
+.right{
+	text-align: right;;
+}
+.hascolor{
+	background: #F6FFFA;
+}
+.paging{
+	display: block;
+	float: right;
+	margin-top: 15px;
+	width: 100%;
+	clear: both;
+	text-align: right;
+}
+.paging p{
+	display: block;
+	margin-top: 5px;
+	color: #333333;
+	font-size: 12px;
+	font-family: Arial,Sans-Serif;
+}
+.paging .disabled{
+	display: none;
+}
+.paging a{
+	text-decoration: none;
+	color: #57A000;
+	display: block;
+		padding: 2px 8px;
+}
+.paging span{
+	border: 1px solid #459300;
+	border-radius: 4px;
+	margin: 0 1px;
+	text-align: right;
+	display: inline-table;
+	font-family: Arial,Sans-Serif;
+	font-size: 12px;
+}
+.paging .current{
+	background: #76B700;
+	font-weight: bold;
+	color: #fff;
+		padding: 2px 8px;
+}
+.paging .next,.paging .prev{
+	 font-size: 11px;
+}
+.paging .delitems{
+	float: left;
+	color: #FF0000;
+}
+.menu_left{
+	margin-left: 5px;
+}
+.menu_left li{
+	display: block;
+	padding: 3px 0;
+	
+	
+}
+.menu_left li a{
+	padding-left: 18px;
+
+	background: transparent url(../img/admin/li-menu.png) left center no-repeat;
+}
+.menu_left li a:hover{
+	text-decoration: none;
+	background: transparent url(../img/admin/li-menu-hover.png) left center no-repeat;
+}
+#flashMessage{
+	clear: both;
+	display: block;
+	width: 95%;
+	color: #4c4c4c;
+	position: relative;
+	border-radius: 4px;
+	padding:10px 2% 10px 3%;
+	font-family: Arial,Sans-Serif;
+	font-size: 12px;
+	margin: 10px 0;
+}
+#flashMessage a{
+
+	float: right;
+	clear: both;
+	position: absolute;
+	top: 5px;right: 5px;
+}
+.success{
+	border: 1px solid #9ADF8F;
+	background:#D5FFCE url(../img/test-pass-icon.png) 5px center no-repeat;
+}
+.error:first-child{
+	font-family: Arial,Sans-Serif;
+	font-size: 12px;
+	color: #444;
+	background:#FFCECE url(../img/test-fail-icon.png) 5px center no-repeat;
+}
+.error:first-letter{
+	text-transform: uppercase;
+}
+.error-message{
+	display: block;
+	padding:5px 2% 5px 3%;
+	margin: 10px 0 15px;
+	background:#FFCECE url(../img/test-fail-icon.png) 5px center no-repeat;
+}
+.addForm{
+	width: 100%;
+	margin: 0px auto;
+}
+div.input{
+	display: block;
+	clear: both;
+	margin: 15px 0;
+}
+.input label{
+	font-weight: bold;
+	display: block;
+	font-size: 12px;
+	font-family: arial,Sans-Serif;
+}
+.input label span{
+	color:#FF0000;
+	margin-left: 5px;
+}
+.checkbox label{
+	display: inline;
+}
+form input[type='text'],form input[type='password']{
+	width:375px;
+	display:block;
+	border: 1px solid #999;
+	height: 25px;
+	-webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+form textarea{
+	width:375px;
+	display:block;
+	border: 1px solid #999;
+	height: 100px;
+	-webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+form select{
+	padding: 2px;
+	border: 1px solid #999;
+	border-radius: 2px;
+}
+form input[type='checkbox']{
+	margin-right:5px;
+}
+input[type='submit'],input[type='reset']{
+	background: #2DAEBF;
+	display: inline-block;
+	color: white !important;
+	font-size: 13px;
+	font-weight: bold;
+	line-height: 1;
+	text-decoration: none;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	position: relative;
+	cursor: pointer;
+	overflow: visible;
+	width: auto;
+	border: 0;
+	padding: 8px 19px 9px;
+	margin: 5px;
+}
+input[type='reset']{
+
+}
+.ul-news ul li{
+	margin-left: 20px;
+	list-style: circle;
+	padding: 5px 0;
+	line-height: 1.4;
+}
+.ul-news{
+	border: 1px solid #ccc;
+	margin: 1px;
+}
+.news-title-h{
+	background: transparent url(img/site/bg-title-sidebar.png) top left repeat-x;
+	height: 34px;
+	display:block;
+	line-height: 34px;
+	font-size: 14px;
+	color:#085AB2;
+	font-weight: bold;
+	border-bottom: 1px solid #aaa;
+}
+.news-title-h a,.news-title-h span{
+	padding-left: 5px;
+	color:#085AB2;
+}
+#quicklink td{
+	padding: 25px 0;
+	width: 50%;
+	border-bottom: 1px dotted #ccc;
+	border-right: 1px dotted #ccc;
+}
+#quicklink td img{
+	width: 48px;
+	height: 48px;
+}
+.chucnang{
+	display: table;
+	clear: both;
+}
+form[name="frmList"]{
+	clear: both;
+	display: block;
+}
+.link_title_red{
+    color: #FF0000;
+    font-weight: bold;
+    font-size: 12px;
+    font-family: Arial,sans-serif;
+}
