@@ -16,9 +16,9 @@ class User extends AppModel {
 		),
 		'username' => array(
 			'notempty' => array(
-				'rule' => array('notempty'),
-				'message' => 'Your custom message here',
-				//'allowEmpty' => false,
+				'rule' => array('notempty','unique'),
+				'message' => array('Tài khoản không được để trống','Tài khoản đã tồn tại'),
+				'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
@@ -27,7 +27,7 @@ class User extends AppModel {
 		'password' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Mật khẩu không được để trống',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -37,7 +37,7 @@ class User extends AppModel {
 		'positions_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
+				'message' => 'Bạn chưa chọn chức vụ',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -47,7 +47,7 @@ class User extends AppModel {
 		'groups_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
+				'message' => 'Bạn chưa chọn phòng ban',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -58,21 +58,24 @@ class User extends AppModel {
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
 	var $belongsTo = array(
-		'Positions' => array(
-			'className' => 'Positions',
-			'foreignKey' => 'positions_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
+		
 		'Group' => array(
 			'className' => 'Group',
 			'foreignKey' => 'groups_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
+		),
+		'Position' => array(
+			'className' => 'Position',
+			'foreignKey' => 'positions_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
 		)
 	);
+
+
 	function parentNode() {
 		if (!$this->id && empty($this->data)) {
 			return null;
