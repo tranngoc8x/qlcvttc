@@ -55,14 +55,14 @@ class PositionsController extends AppController {
 
 	function delete($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid id for position', true));
+			$this->Session->setFlash(__('Không có chức vụ này', true));
 			$this->redirect(array('action'=>'index'));
 		}
 		if ($this->Position->delete($id)) {
-			$this->Session->setFlash(__('Position deleted', true));
+			$this->Session->setFlash(__('Đã xóa', true));
 			$this->redirect(array('action'=>'index'));
 		}
-		$this->Session->setFlash(__('Position was not deleted', true));
+		$this->Session->setFlash(__('Chưa xóa được', true));
 		$this->redirect(array('action' => 'index'));
 	}
 }
