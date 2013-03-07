@@ -20,10 +20,10 @@ class GroupsController extends AppController {
 		if (!empty($this->data)) {
 			$this->Group->create();
 			if ($this->Group->save($this->data)) {
-				$this->Session->setFlash(__('The group has been saved', true));
+				$this->Session->setFlash(__('The group has been saved', true),'default',array('class'=>'success'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The group could not be saved. Please, try again.', true));
+				$this->Session->setFlash(__('The group could not be saved. Please, try again.', true),'default',array('class'=>'error'));
 			}
 		}
 	}
