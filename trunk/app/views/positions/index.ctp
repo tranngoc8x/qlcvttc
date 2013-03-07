@@ -12,7 +12,11 @@
 	
 	<?php
 	foreach ($pos as $pos): ?>
+<<<<<<< .mine
+	<tr class='tbody'>
+=======
 	<tr  class='tbody'>
+>>>>>>> .r11
 		<td class="center"><input type="checkbox" value="<?php echo h($pos['Position']['id']); ?>" name="checkid" class="checkbox"/></td>
 		<td><?php echo $pos['Position']['name']; ?>&nbsp;</td>
 		<td><?php echo $pos['Group']['name']; ?>&nbsp;</td>		
@@ -28,5 +32,5 @@
 </table>
 </form>
  <script type="text/javascript">
-	var title= "Bảng chức vụ";
+	var title= "Chức vụ";
 </script>
