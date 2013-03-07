@@ -29,7 +29,7 @@ class PositionsController extends AppController {
 		}
 		$groups = $this->Position->Group->find('list');
 		$this->set(compact('groups'));
-		debug($groups);
+		 
 	}
 
 	function edit($id = null) {
