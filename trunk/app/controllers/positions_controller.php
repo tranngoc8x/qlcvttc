@@ -18,18 +18,36 @@ class PositionsController extends AppController {
 	}
 
 	function add() {
-		if (!empty($this->data)) {
+		$groups = $this->Position->Group->find('list');
+		$this->set(compact('groups'));	
+		$data = array();
+		if (!empty($this->data)) {		
 			$this->Position->create();
 			if ($this->Position->save($this->data)) {
 				$this->Session->setFlash(__('Đã thêm chức vụ!', true));
-				$this->redirect(array('action' => 'index'));
+				$id = $this->Position->getInsertID();
+				//
 			} else {
 				$this->Session->setFlash(__('Chưa thêm được. Hãy thử lại.', true));
 			}
+			
+			$arr = $this->data['Position']['groups_id'];
+			
+			for($i=0;$i<count($arr);$i++){
+				$this->Position->PositionsGroup->create();
+				$data['PositionsGroup']['groups_id'] = $arr[$i];
+				$data['PositionsGroup']['positions_id'] = $id;
+				$this->Position->PositionsGroup->save($data);
+			}
 		}
+<<<<<<< .mine
+		
+		$this->redirect(array('action' => 'index'));
+=======
 		$groups = $this->Position->Group->find('list');
 		$this->set(compact('groups'));
 		 
+>>>>>>> .r17
 	}
 
 	function edit($id = null) {
