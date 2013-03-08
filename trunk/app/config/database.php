@@ -83,4 +83,15 @@ class DATABASE_CONFIG {
 		'prefix' => '',//tiền tố của các bảng trong csdl kết nối
 		//'encoding' => 'utf8',//định dạng kiểu lưu trữ trong csdl
 	);
+
+	var $test = array(
+		'driver' => 'mysql',
+		'persistent' => false,
+		'host' => 'localhost',
+		'login' => 'user',
+		'password' => 'password',
+		'database' => 'test_database_name',
+		'prefix' => '',
+		//'encoding' => 'utf8',
+	);
 }
