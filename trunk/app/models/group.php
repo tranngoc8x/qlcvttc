@@ -42,7 +42,20 @@ class Group extends AppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		)
+		
 	);
+	var $hasAndBelongsToMany = array(
+		'Position'=>array(
+			'className'=>'Position',
+			'joinTable'=> 'positions_groups',
+			'foreignKey' => 'groups_id',
+			'associationForeignKey'  => 'positions_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		)
+	);
+		
 
 	function parentNode() {
 		return null;
