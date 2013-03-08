@@ -13,23 +13,16 @@ class Position extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'groups_id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
+		
 	);
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
-	var $belongsTo = array(
+	var $hasAndBelongsToMany = array(
 		'Group' => array(
 			'className' => 'Group',
-			'foreignKey' => 'groups_id',
+			'joinTable'=> 'positions_groups',
+			'foreignKey' => 'positions_id',
+			'associationForeignKey'  => 'groups_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
