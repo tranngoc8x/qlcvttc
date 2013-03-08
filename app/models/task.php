@@ -14,4 +14,13 @@ class Task extends AppModel {
 			),
 		),
 	);
+	var $belongsTo = array(	
+		'User' => array(
+			'className' => 'User',
+			'foreignKey' => 'users_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		)
+	);
 }

@@ -23,3 +23,18 @@ class AppController extends Controller {
 		$this->set(compact('los','ssid'));
 	}
 }
+function stt($stt = null){
+
+    switch($stt){
+        case 1: echo "Khởi tạo"; break;
+        case 2: echo "Chuyển nhân viên"; break;
+        case 3: echo "Trình ban quản lý"; break;
+        case 4: echo "Trình PGĐ kế hoach"; break;
+        case 5: echo "Trình PGĐ tài chính"; break;
+        case 6: echo "Chuyển kế toán"; break;
+        case 7: echo "Trình giám đốc"; break;
+        case 8: echo "Trả kế toán"; break;
+        case 9: echo "Trả ban quản lý"; break;
+        case 10: echo "Trả nhân sự"; break;
+    }
+}

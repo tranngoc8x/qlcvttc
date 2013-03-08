@@ -74,7 +74,21 @@ class User extends AppModel {
 			'order' => ''
 		)
 	);
-
+	var $hasMany = array(
+		'Task' => array(
+			'className' => 'Task',
+			'foreignKey' => 'users_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		)
+		);
 
 	function parentNode() {
 		if (!$this->id && empty($this->data)) {

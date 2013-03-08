@@ -1,24 +1,29 @@
-<div class="tasks view">
-<h2><?php  __('Task');?></h2>
-	<dl><?php $i = 0; $class = ' class="altrow"';?>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $task['Task']['id']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Name'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $task['Task']['name']; ?>
-			&nbsp;
-		</dd>
-	</dl>
-</div>
-<div class="actions">
-	<h3><?php __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('Edit Task', true), array('action' => 'edit', $task['Task']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('Delete Task', true), array('action' => 'delete', $task['Task']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $task['Task']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Tasks', true), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Task', true), array('action' => 'add')); ?> </li>
-	</ul>
-</div>
+<table class='tblcontent' border=1 width=100% cellspacing=0 cellpadding=0>
+	<tr>
+		<td><?=$this->Html->link("Giao việc",array('action'=>'change',$task['Task']['id']));?></td>
+		<td>Hủy</td>
+	</tr>
+	<tr>
+		<td>Chi tiết công việc</td>
+	</tr>
+	<tr>
+		<td><span class='text_tite'>Tên công việc:</span>&nbsp;&nbsp;&nbsp;<?php echo $task['Task']['name']; ?></td>
+	</tr>	
+	<tr>
+		<td><span class="text_tite">Nội dung công việc</span>&nbsp;&nbsp;&nbsp;<?php echo $task['Task']['name']; ?></td>
+	</tr>
+	<tr>
+		<td>
+			<span class="text_tite">Ngày bắt đầu :</span>&nbsp;&nbsp;&nbsp;<?php echo date('d/m/Y',strtotime($task['Task']['start'])); ?><br>
+			<span class="text_tite">Ngày kết thúc :</span>&nbsp;&nbsp;<?php echo date('d/m/Y',strtotime($task['Task']['end'])); ?>
+		</td>
+	</tr>
+</table>
+
+
+
+
+
+<script type="text/javascript">
+	var title = "Quản lý công việc";
+</script>

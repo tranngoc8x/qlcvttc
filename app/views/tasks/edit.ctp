@@ -1,19 +1,13 @@
 <div class="tasks form">
-<?php echo $this->Form->create('Task');?>
-	<fieldset>
-		<legend><?php __('Edit Task'); ?></legend>
-	<?php
-		echo $this->Form->input('id');
-		echo $this->Form->input('name');
-	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit', true));?>
-</div>
-<div class="actions">
-	<h3><?php __('Actions'); ?></h3>
-	<ul>
-
-		<li><?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $this->Form->value('Task.id')), null, sprintf(__('Are you sure you want to delete # %s?', true), $this->Form->value('Task.id'))); ?></li>
-		<li><?php echo $this->Html->link(__('List Tasks', true), array('action' => 'index'));?></li>
-	</ul>
-</div>
+<?php
+	echo $this->Form->create('Task');
+	echo $this->Form->hidden('id');
+	echo $this->Form->input('name',array('label'=>'Tên công việc'));
+	echo $this->Form->input('content',array('label'=>'Nội dung công việc'));
+	echo $this->Form->input('start',array('label'=>'Ngày bắt đầu','type'=>'text','readonly'=>1,'class'=>'input-short datepicker'));
+	echo $this->Form->input('end',array('label'=>'Ngày kết thúc','type'=>'text','readonly'=>1,'class'=>'input-short datepicker'));
+	echo $this->Form->end(__('Lưu lại', true));
+?>
+<script type="text/javascript">
+	var title = "Quản lý công việc";
+</script>
