@@ -26,6 +26,8 @@
     text-align: right;
     padding-right: 10px;
     display: block;
+    font-size: 12px;
+    font-family: Arial;
   
 }
 .text_tite,.link_title{
@@ -320,4 +322,22 @@ form[name="frmList"]{
     font-weight: bold;
     font-size: 12px;
     font-family: Arial,sans-serif;
+}
+form input.input-short{
+	width: 150px;
+}
+form input.datepicker{
+	display: inline-block;
+}
+.input img.ui-datepicker-trigger{
+	top: 9px;
+	left: 2px;
+	position: relative;
+}
+.tblcontent{
+	font-size: 12px;
+	font-family: Arial;
+}
+.tblcontent td{
+	padding: 5px;
 }

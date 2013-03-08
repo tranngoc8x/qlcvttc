@@ -19,27 +19,39 @@ class TasksController extends AppController {
 	function add() {
 		if (!empty($this->data)) {
 			$this->Task->create();
+			$this->data['Task']['start'] = date('Y-d-m h:i:s',strtotime($this->data['Task']['start'])) ;
+			$this->data['Task']['end'] = date('Y-d-m h:i:s',strtotime($this->data['Task']['end'])) ;
+			$this->data['Task']['status']  = 1;
+			$uid = $this->Auth->user();
+			$this->data['Task']['users_id'] = $uid['User']['id'];
+			
 			if ($this->Task->save($this->data)) {
-				$this->Session->setFlash(__('The task has been saved', true));
+				$this->Session->setFlash(__('The task has been saved', true),'default',array('class'=>'success'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The task could not be saved. Please, try again.', true));
+				$this->Session->setFlash(__('The task could not be saved. Please, try again.', true),'default',array('class'=>'error'));
 			}
 		}
 	}
 
 	function edit($id = null) {
 		if (!$id && empty($this->data)) {
-			$this->Session->setFlash(__('Invalid task', true));
+			$this->Session->setFlash(__('Invalid task', true),'default',array('class'=>'notice'));
 			$this->redirect(array('action' => 'index'));
 		}
 		if (!empty($this->data)) {
-			if ($this->Task->save($this->data)) {
-				$this->Session->setFlash(__('The task has been saved', true));
-				$this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('The task could not be saved. Please, try again.', true));
-			}
+			//debug($this->data);
+			$this->data['Task']['start'] = date('Y-d-m h:i:s',strtotime($this->data['Task']['start'])) ;
+			$this->data['Task']['end'] = date('Y-d-m h:i:s',strtotime($this->data['Task']['end'])) ;
+			//$this->data['Task']['status']  = 1;
+			//$uid = $this->Auth->user();
+			//$this->data['Task']['users_id'] = $uid['User']['id'];
+			 if ($this->Task->save($this->data)) {
+			 	$this->Session->setFlash(__('The task has been saved', true),'default',array('class'=>'success'));
+			 	$this->redirect(array('action' => 'index'));
+			 } else {
+			 	$this->Session->setFlash(__('The task could not be saved. Please, try again.', true),'default',array('class'=>'error'));
+			 }
 		}
 		if (empty($this->data)) {
 			$this->data = $this->Task->read(null, $id);
