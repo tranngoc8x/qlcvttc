@@ -2,20 +2,20 @@
 	<tr class='tbody'>
 		<td><?=$this->Form->button("Giao việc",array('class'=>'btnlink','id'=>'dialog-link'));?></td>
 	</tr>
-	<tr class='tbody'>
-		<td>Chi tiết công việc</td>
+	<tr class='tbody' colspan=4>
+		<td class='title'>Chi tiết công việc</td>
 	</tr>
-	<tr class='tbody'>
-		<td><span class='text_tite'>Tên công việc:</span>&nbsp;&nbsp;&nbsp;<?php echo $task['Task']['name']; ?></td>
+	<tr class='tbody' colspan=4>
+		<td class='tDtite'><span >Tên công việc:</span>&nbsp;&nbsp;&nbsp;<?php echo $task['Task']['name']; ?></td>
 	</tr>	
-	<tr class='tbody'>
-		<td><span class="text_tite">Nội dung công việc</span>&nbsp;&nbsp;&nbsp;<?php echo $task['Task']['name']; ?></td>
+	<tr class='tbody' colspan=4>
+		<td class='tDtite'><span class=" ">Nội dung công việc</span>&nbsp;&nbsp;&nbsp;<?php echo $task['Task']['name']; ?></td>
 	</tr>
 	<tr class='tbody'>
-		<td>
-			<span class="text_tite">Ngày bắt đầu :</span>&nbsp;&nbsp;&nbsp;<?php echo date('d/m/Y',strtotime($task['Task']['start'])); ?><br>
-			<span class="text_tite">Ngày kết thúc :</span>&nbsp;&nbsp;<?php echo date('d/m/Y',strtotime($task['Task']['end'])); ?>
-		</td>
+		<td class='tDtite'><span class=" ">Ngày bắt đầu :</span></td>
+		<td><?php echo date('d/m/Y',strtotime($task['Task']['start'])); ?></td>
+		<td class='tDtite'><span class=" ">Ngày kết thúc :</span></td>
+		<td><?php echo date('d/m/Y',strtotime($task['Task']['end'])); ?></td>
 	</tr>
 </table>
 
