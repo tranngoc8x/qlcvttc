@@ -28,20 +28,7 @@ class Group extends AppModel {
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
-		),
-		'Position' => array(
-			'className' => 'Position',
-			'foreignKey' => 'groups_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		)
+		)	
 		
 	);
 	var $hasAndBelongsToMany = array(

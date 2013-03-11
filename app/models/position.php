@@ -23,6 +23,7 @@ class Position extends AppModel {
 			'joinTable'=> 'positions_groups',
 			'foreignKey' => 'positions_id',
 			'associationForeignKey'  => 'groups_id',
+			//'unique' => true,
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
