@@ -232,3 +232,9 @@
 )
 " in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
 2013-03-07 05:14:00 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at F:\xampp\htdocs\QLCV_TTC\cake\libs\debugger.php:686) in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 742]
+2013-03-08 03:44:42 Warning: Warning (512): Method HtmlHelper::button does not exist in [F:\xampp\htdocs\QLCV_TTC\cake\libs\view\helper.php, line 154]
+2013-03-08 04:12:38 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 26]
+2013-03-08 09:53:34 Warning: Warning (512): Method HtmlHelper::img does not exist in [F:\xampp\htdocs\QLCV_TTC\cake\libs\view\helper.php, line 154]
+2013-03-08 10:05:43 Warning: Warning (512): Method HtmlHelper::span does not exist in [F:\xampp\htdocs\QLCV_TTC\cake\libs\view\helper.php, line 154]
+2013-03-08 10:09:01 Warning: Warning (512): Method HtmlHelper::span does not exist in [F:\xampp\htdocs\QLCV_TTC\cake\libs\view\helper.php, line 154]
+2013-03-08 11:47:18 Warning: Warning (2): Missing argument 3 for TasksController::change() in [F:\xampp\htdocs\QLCV_TTC\app\controllers\tasks_controller.php, line 113]
