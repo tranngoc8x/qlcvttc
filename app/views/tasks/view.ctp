@@ -1,24 +1,85 @@
-<table class='tblcontent' border=0 width=100% cellspacing=0 cellpadding=0>
+<table class='tblcontent chitietcv' border=0 width=100% cellspacing=0 cellpadding=0>
+	<tr class=' '>
+		<td colspan=4><?=$this->Form->button("Giao việc",array('class'=>'btnlink','id'=>'dialog-link'));?></td>
+	</tr>
 	<tr class='tbody'>
-		<td><?=$this->Form->button("Giao việc",array('class'=>'btnlink','id'=>'dialog-link'));?></td>
+		<td class=' ui-widget-header title' colspan=4>Chi tiết công việc</td>
 	</tr>
-	<tr class='tbody' colspan=4>
-		<td class='title'>Chi tiết công việc</td>
-	</tr>
-	<tr class='tbody' colspan=4>
-		<td class='tDtite'><span >Tên công việc:</span>&nbsp;&nbsp;&nbsp;<?php echo $task['Task']['name']; ?></td>
+	<tr class='tbody'>
+		<td class='tDtite'><span class='text_tite'>Tên công việc:</span></td>
+		<td colspan=3><?php echo $task['Task']['name']; ?></td>
 	</tr>	
-	<tr class='tbody' colspan=4>
-		<td class='tDtite'><span class=" ">Nội dung công việc</span>&nbsp;&nbsp;&nbsp;<?php echo $task['Task']['name']; ?></td>
+	<tr class='tbody'>
+		<td class='tDtite'><span class="text_tite">Nội dung công việc: </span></td>
+		<td colspan=3><?php echo $task['Task']['name']; ?></td>
 	</tr>
 	<tr class='tbody'>
 		<td class='tDtite'><span class=" ">Ngày bắt đầu :</span></td>
-		<td><?php echo date('d/m/Y',strtotime($task['Task']['start'])); ?></td>
+		<td width=150><?php echo date('d/m/Y',strtotime($task['Task']['start'])); ?></td>
 		<td class='tDtite'><span class=" ">Ngày kết thúc :</span></td>
 		<td><?php echo date('d/m/Y',strtotime($task['Task']['end'])); ?></td>
 	</tr>
+	<tr class='tbody'>
+		<td class='tDtite'><span class=" ">Người giao việc :</span></td>
+		<td width=150><?php echo  $task['User']['name']; ?></td>
+		<td class='tDtite'><span class=" ">Nhân viên được giao :</span></td>
+		<td>
+			<?php foreach ($task['Usertask'] as $v) {
+			 	
+				  if($v['status'] == 2){
+				  		$u = $this->requestAction('tasks/getNV/'.$v['users_id']);
+				  		echo $u['User']['name'];
+				  }
+			}
+			?> 
+		</td>
+	</tr>
+	<tr class='tbody'>
+		<td class='tDtite'><span class=" ">Loại công việc :</span></td>
+		<td><?php echo $task['Type']['name']; ?></td>
+		<td class='tDtite'><span class=" ">Lĩnh vực :</span></td>
+		<td><?php echo $task['Linhvuc']['name']; ?></td>
+	</tr>
+	<tr class='tbody'>
+		
+		<td class='tDtite'><span class=" ">Trạng thái :</span></td>
+		<td><?php echo stt($task['Task']['status']); ?></td>
+		<td class='tDtite'><span class=" "> </span></td>
+		<td width=> </td>
+	</tr>
+	<tr class='tbody'>
+		<td class='tDtite' colspan=4><span class=" ">Nội dung công việc</span></td>
+	</tr>
+	<tr class='tbody'>
+		<td colspan=4><span class=" "><?php echo $task['Task']['content'];?></span></td>
+	</tr>
+	<tr class='tbody'>
+		<td class=' ui-widget-header title' colspan=4>Văn bản liên quan</td>
+	</tr>
+	<tr class='tbody'>
+		<td colspan=4>
+			<table width=100% cellspacing=0 cellpadding=0>
+				<tr class='tbody'>
+					<td class="tDtite">Văn bản gốc</td>
+					<td></td>
+				</tr>
+				<tr class='tbody'>
+					<td class="tDtite">Văn bản dự thảo</td>
+					<td></td>
+				</tr>
+				<tr class='tbody'>
+					<td class="tDtite">Văn bản liên quan khác</td>
+					<td></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr class='tbody'>
+		<td class=' ui-widget-header title' colspan=4>Nhân sự tham gia xử lý</td>
+	</tr>
 </table>
-
+<?php 
+	//	debug($task);?>
 <style>
 	#dialog img.as{ display: inline-table; vertical-align: top;}
 	.parent{cursor:pointer;}
