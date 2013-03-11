@@ -2,6 +2,7 @@
 class PositionsController extends AppController {
 
 	var $name = 'Positions';
+	//var $use = array('PositionsGroup','Group');
 	
 	function index() {
 		//$this->Position->recursive = 0;
@@ -39,36 +40,60 @@ class PositionsController extends AppController {
 				$data['PositionsGroup']['positions_id'] = $id;
 				$this->Position->PositionsGroup->save($data);
 			}
+			$this->redirect(array('action' => 'index'));
 		}
-<<<<<<< .mine
-		
-		$this->redirect(array('action' => 'index'));
-=======
-		$groups = $this->Position->Group->find('list');
-		$this->set(compact('groups'));
-		 
->>>>>>> .r17
+		//$this->redirect(array('action' => 'index'));
 	}
 
 	function edit($id = null) {
+		$pos_group=$this->PositionsGroup->find('all',array('conditions'=>array('positions_id'=>$id)));
+		
+	    /*
+		$this->Group->unbindModel(
+			array('hasMany'=>array('User'),'hasAndBelongsToMany'=>array('Position'))
+		);*/
+		$groups = $this->Group->find('list');
+		$this->set(compact('groups','pos_group'));	
+		//debug($pos_group);
 		if (!$id && empty($this->data)) {
 			$this->Session->setFlash(__('Không có chức vụ này', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		if (!empty($this->data)) {
+			$this->Position->create();
+			$this->Position->id=$id;
 			if ($this->Position->save($this->data)) {
-				$this->Session->setFlash(__('Đã sửa', true));
-				$this->redirect(array('action' => 'index'));
+				$this->Session->setFlash(__('Đã sửa!', true));
+				
 			} else {
-				$this->Session->setFlash(__('Chưa sửa được.Hãy thử lại.', true));
+				$this->Session->setFlash(__('Chưa sửa được. Hãy thử lại.', true));
+			}			
+			
+			$ar = array();
+			if(!empty($pos_group)){
+				foreach($pos_group as $k) $ar[] = $k['PositionsGroup']['id']; 
+				foreach($ar as $item){
+					  $this->PositionsGroup->delete($item);
+				 }
+			}				 	
+			$arr = $this->data['Position']['groups_id'];			
+			for($i=0;$i<count($arr);$i++){
+				$this->Position->PositionsGroup->create();
+				$data['PositionsGroup']['groups_id'] = $arr[$i];
+				$data['PositionsGroup']['positions_id'] = $id;
+				$this->Position->PositionsGroup->save($data);
+				/*
+				có 2 cách giải quyết:1-chuyển group và position thành 2 bảng k liên quan
+				***2- xóa bảng positions_group trước khi thêm
+				*/
 			}
+			$this->redirect(array('action' => 'index'));
 		}
 		if (empty($this->data)) {
 			$this->data = $this->Position->read(null, $id);
 		}
 		//debug($this->data);
-		$groups = $this->Position->Group->find('list');
-		$this->set(compact('groups'));
+		
 	}
 
 	function delete($id = null) {
@@ -83,4 +108,19 @@ class PositionsController extends AppController {
 		$this->Session->setFlash(__('Chưa xóa được', true));
 		$this->redirect(array('action' => 'index'));
 	}
+	
+	function mutildelete($str = null){
+
+        if($str){
+            $arrid=explode(',',$str);
+        }else{
+    		$this->Session->setFlash(__('Đã xóa.', true));
+    		$this->redirect(array('action' => 'index'));
+        }
+         foreach($arrid as $item){
+    		  $this->User->delete($item);
+         }
+		$this->Session->setFlash(__('Đã xóa.', true));
+		$this->redirect(array('action' => 'index'));
+    }
 }
