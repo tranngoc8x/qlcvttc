@@ -19,8 +19,8 @@ class TasksController extends AppController {
 	function add() {
 		if (!empty($this->data)) {
 			$this->Task->create();
-			$this->data['Task']['start'] = date('Y-d-m h:i:s',strtotime($this->data['Task']['start'])) ;
-			$this->data['Task']['end'] = date('Y-d-m h:i:s',strtotime($this->data['Task']['end'])) ;
+			$this->data['Task']['start'] = date('Y-m-d h:i:s',strtotime($this->data['Task']['start'])) ;
+			$this->data['Task']['end'] = date('Y-m-d h:i:s',strtotime($this->data['Task']['end'])) ;
 			$this->data['Task']['status']  = 1;
 			$uid = $this->Auth->user();
 			$this->data['Task']['users_id'] = $uid['User']['id'];
@@ -41,8 +41,8 @@ class TasksController extends AppController {
 		}
 		if (!empty($this->data)) {
 			//debug($this->data);
-			$this->data['Task']['start'] = date('Y-d-m h:i:s',strtotime($this->data['Task']['start'])) ;
-			$this->data['Task']['end'] = date('Y-d-m h:i:s',strtotime($this->data['Task']['end'])) ;
+			$this->data['Task']['start'] = date('Y-m-d h:i:s',strtotime($this->data['Task']['start'])) ;
+			$this->data['Task']['end'] = date('Y-m-d h:i:s',strtotime($this->data['Task']['end'])) ;
 			//$this->data['Task']['status']  = 1;
 			//$uid = $this->Auth->user();
 			//$this->data['Task']['users_id'] = $uid['User']['id'];
@@ -69,5 +69,64 @@ class TasksController extends AppController {
 		}
 		$this->Session->setFlash(__('Task was not deleted', true));
 		$this->redirect(array('action' => 'index'));
+	}
+
+
+	function listns($id=null){
+		$this->layout = 'ajax';
+		$this->loadModel("User");
+		$listussers = $this->User->find('all',array(
+				'fields'=>array('User.id','User.name','Position.name'),
+				'conditions'=>array('User.groups_id'=>$id)
+			));
+		if (!empty($this->params['requested'])) {
+		      return $listussers;
+		}else {
+		  $this->set(compact('listussers'));
+		}
+	}
+
+	function listPB($id=null){
+		$this->layout = 'ajax';
+		$this->loadModel("Group");
+		$this->Group->recursive = 0;
+		$groups = $this->Group->find('all',array('fields'=>array('Group.id','Group.name')));
+		if (!empty($this->params['requested'])) {
+		      return $groups;
+		}else {
+		  $this->set(compact('groups'));
+		}
+		//debug($groups);
+	}
+	function listPBgv($id=null){
+		$this->layout = 'ajax';
+		$this->loadModel("Group");
+		$this->Group->recursive = 0;
+		$groups = $this->Group->find('all',array('fields'=>array('Group.id','Group.name'),'conditions'=>array('id <>'=>1)));
+		if (!empty($this->params['requested'])) {
+		      return $groups;
+		}else {
+		  $this->set(compact('groups'));
+		}
+		//debug($groups);
+	}
+	function change($cv,$st,$str){
+		$this->autoRender = false;
+		if(empty($cv) or !is_numeric($cv) or empty($str)) return 1;
+		else{
+			$this->loadModel("Usertask");
+			$ar = explode(',', $str);
+			foreach($ar as $r):
+				if(!is_numeric($r)) return 1;
+				$this->Usertask->create();
+				$data['Usertask']['users_id'] = $r;
+				$data['Usertask']['tasks_id'] = $cv;
+				$data['Usertask']['status'] = $st;
+				$this->Usertask->save($data);
+			endforeach;
+			$this->Task->id = $cv;
+			$this->Task->saveField('status',$st);
+			return 2;
+		}
 	}
 }
