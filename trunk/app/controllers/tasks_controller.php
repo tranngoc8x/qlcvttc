@@ -13,6 +13,7 @@ class TasksController extends AppController {
 			$this->Session->setFlash(__('Invalid task', true));
 			$this->redirect(array('action' => 'index'));
 		}
+		//$this->set('nv',$this->Task->Usertask->find('all',array('Usertask.tasks_id'=>$id)));
 		$this->set('task', $this->Task->read(null, $id));
 	}
 
@@ -75,6 +76,7 @@ class TasksController extends AppController {
 	function listns($id=null){
 		$this->layout = 'ajax';
 		$this->loadModel("User");
+		$this->User->recursive = 0;
 		$listussers = $this->User->find('all',array(
 				'fields'=>array('User.id','User.name','Position.name'),
 				'conditions'=>array('User.groups_id'=>$id)
@@ -102,7 +104,7 @@ class TasksController extends AppController {
 		$this->layout = 'ajax';
 		$this->loadModel("Group");
 		$this->Group->recursive = 0;
-		$groups = $this->Group->find('all',array('fields'=>array('Group.id','Group.name'),'conditions'=>array('id <>'=>1)));
+		$groups = $this->Group->find('all',array('fields'=>array('Group.id','Group.name'),'conditions'=>array('Group.id <>'=>1)));
 		if (!empty($this->params['requested'])) {
 		      return $groups;
 		}else {
@@ -127,6 +129,20 @@ class TasksController extends AppController {
 			$this->Task->id = $cv;
 			$this->Task->saveField('status',$st);
 			return 2;
+		}
+	}
+	function getNV($id){
+		$this->autoRender = false;
+		if(empty($id) || $id== null) return "Không rõ";
+		else{
+			$this->loadModel("User");
+			$this->User->recursive = -1;
+			$u=$this->User->find('first',array(
+										'fields'=>array('name'),
+										'conditions'=>array('User.id'=>$id)
+								));
+			if (!empty($this->params['requested'])) return $u;
+			else  $this->set(compact('u'));
 		}
 	}
 }

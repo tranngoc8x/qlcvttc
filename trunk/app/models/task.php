@@ -21,6 +21,48 @@ class Task extends AppModel {
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
+		),
+		'Type' => array(
+			'className' => 'Type',
+			'foreignKey' => 'types_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'Linhvuc' => array(
+			'className' => 'Linhvuc',
+			'foreignKey' => 'linhvucs_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		)
+	);
+	var $hasMany = array(
+		'Usertask' => array(
+			'className' => 'Usertask',
+			'foreignKey' => 'tasks_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
+		'Tfile' => array(
+			'className' => 'Tfile',
+			'foreignKey' => 'tasks_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
 		)
 	);
 }

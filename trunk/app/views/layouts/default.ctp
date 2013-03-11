@@ -12,7 +12,7 @@
 	?>
 	<style>
 	body{
-		font-size: 65%;
+		font-size: 100%;
 	 
 	}
 	.demoHeaders {
