@@ -54,7 +54,7 @@
 		<td colspan=4><span class=" "><?php echo $task['Task']['content'];?></span></td>
 	</tr>
 	<tr class='tbody'>
-		<td class=' ui-widget-header title' colspan=4>Văn bản liên quan</td>
+		<td class=' ui-widget-header title' colspan=4>Văn bản</td>
 	</tr>
 	<tr class='tbody'>
 		<td colspan=4>
@@ -64,18 +64,22 @@
 					<td>
 						<?php if(count($task['Tfile'])>0){ 
 							foreach($task['Tfile'] as $fis):
-									
+								echo '- '.$this->Html->link($fis['name'],array('controller'=>'tasks','action'=>'download',base64_encode($fis['id']))).'<br>';
 							endforeach;
 						}?>
 
 					</td>
 				</tr>
 				<tr class='tbody'>
-					<td class="tDtite">Văn bản dự thảo</td>
+					<td class="tDtite">Văn bản dự thảo
+						<li class="ui-state-default ui-corner-all addvbdt" id="vbdt" title=".ui-icon-circle-plus"><span class="ui-icon ui-icon-circle-plus"></span></li>
+					</td>
 					<td></td>
 				</tr>
 				<tr class='tbody'>
-					<td class="tDtite">Văn bản liên quan khác</td>
+					<td class="tDtite">Văn bản liên quan
+						<li class="ui-state-default ui-corner-all addvbdt" id='vblq' title=".ui-icon-circle-plus"><span class="ui-icon ui-icon-circle-plus"></span></li>
+					</td>
 					<td></td>
 				</tr>
 			</table>
@@ -120,7 +124,12 @@
 		<?php endforeach;?>
 	<?php $this->Form->end();?>
 </div>
-
+<div id="dialog_vbdt" title="Thêm văn bản dự thảo">
+áddas
+</div>
+<div id="dialog-vblq" title="Thêm văn bản liên quan">
+áddas
+</div>
 <script type="text/javascript">
 	var title = "Quản lý công việc";
 	$( "#dialog-link" ).click(function( event ) {
@@ -183,5 +192,95 @@
 			for(g=1;g<=u;g++){
 				$('img.last'+g+':last').attr('src', '../../img/elbow-end.gif' );	
 			}
+	});
+</script>
+
+<script>
+//văn bản dự thảo
+	$( "#vbdt" ).click(function( event ) {
+			$( "#dialog_vbdt" ).dialog( "open" );
+			event.preventDefault();
+	});
+	$( "#dialog_vbdt" ).dialog({
+		autoOpen: false,
+		width: 400,
+		buttons: [
+			{
+				text: "Giao việc",
+				click: function() {
+					var $rthis = $(this);
+					var $obj = $('.child input[type=checkbox]');
+					if($obj.filter(':checked').length <=0) return alert("Bạn chưa chọn nhân viên");
+					if(confirm("Bạn có chắc muốn giao việc cho nhân viên vừa chọn ?")){
+					 	var str = "";
+						for(d=0;d<$obj.length;d++){
+							if($obj[d].checked == true) str+=$obj[d].value+',';
+						}
+						str = str.substr(0,str.length-1);
+						$.get("<?php echo $this->webroot;?>tasks/change/"+<?=$task['Task']['id'];?>+"/"+base64_encode(2)+"/"+str, function(data){
+						   if(data == 2) {
+						   
+						   window.location.reload();
+						   alert('Đã giao việc thành công !');
+						   $rthis.dialog("close");
+						}
+						   else alert("Có lỗi xảy ra. Hãy thử lại!");
+						 });
+					}
+				}
+			},
+			{
+				text: "Đóng lại",
+				click: function() {
+					$( this ).dialog( "close");
+				}
+			}
+		]
+
+	});
+</script>
+
+<script>
+//văn bản lienquan
+	$( "#vblq" ).click(function( event ) {
+			$( "#dialog-vblq" ).dialog( "open" );
+			event.preventDefault();
+	});
+	$( "#dialog-vblq" ).dialog({
+		autoOpen: false,
+		width: 400,
+		buttons: [
+			{
+				text: "Giao việc",
+				click: function() {
+					var $rthis = $(this);
+					var $obj = $('.child input[type=checkbox]');
+					if($obj.filter(':checked').length <=0) return alert("Bạn chưa chọn nhân viên");
+					if(confirm("Bạn có chắc muốn giao việc cho nhân viên vừa chọn ?")){
+					 	var str = "";
+						for(d=0;d<$obj.length;d++){
+							if($obj[d].checked == true) str+=$obj[d].value+',';
+						}
+						str = str.substr(0,str.length-1);
+						$.get("<?php echo $this->webroot;?>tasks/change/"+<?=$task['Task']['id'];?>+"/"+base64_encode(2)+"/"+str, function(data){
+						   if(data == 2) {
+						   
+						   window.location.reload();
+						   alert('Đã giao việc thành công !');
+						   $rthis.dialog("close");
+						}
+						   else alert("Có lỗi xảy ra. Hãy thử lại!");
+						 });
+					}
+				}
+			},
+			{
+				text: "Đóng lại",
+				click: function() {
+					$( this ).dialog( "close");
+				}
+			}
+		]
+
 	});
 </script>

@@ -378,3 +378,10 @@ form input.datepicker{
 	border-top: 1px dotted #ccc;
 	border-left: 1px dotted #ccc;
 	}
+	.addvbdt{
+		list-style: none;
+		width: 16px;
+		display: inline-table;
+		float: right;
+		cursor: pointer;
+	}
