@@ -62,9 +62,11 @@
 				<tr class='tbody'>
 					<td class="tDtite">Văn bản gốc</td>
 					<td>
-						<?php if(count($task['Tfile'])>0){ 
+						<?php if(isset($task['Tfile']) && count($task['Tfile'])>0){ 
 							foreach($task['Tfile'] as $fis):
-								echo '- '.$this->Html->link($fis['name'],array('controller'=>'tasks','action'=>'download',base64_encode($fis['id']))).'<br>';
+								if($fis['type']==1){
+									echo '- '.$this->Html->link($fis['name'],array('controller'=>'tasks','action'=>'download',base64_encode($fis['id']))).'<br>';
+								}
 							endforeach;
 						}?>
 
@@ -74,13 +76,29 @@
 					<td class="tDtite">Văn bản dự thảo
 						<li class="ui-state-default ui-corner-all addvbdt" id="vbdt" title=".ui-icon-circle-plus"><span class="ui-icon ui-icon-circle-plus"></span></li>
 					</td>
-					<td></td>
+					<td>
+						<?php if(isset($task['Tfile']) && count($task['Tfile'])>0){ 
+							foreach($task['Tfile'] as $fis):
+								if($fis['type']==2){
+									echo '- '.$this->Html->link($fis['name'],array('controller'=>'tasks','action'=>'download',base64_encode($fis['id']))).'<br>';
+								}
+							endforeach;
+						}?>
+					</td>
 				</tr>
 				<tr class='tbody'>
 					<td class="tDtite">Văn bản liên quan
 						<li class="ui-state-default ui-corner-all addvbdt" id='vblq' title=".ui-icon-circle-plus"><span class="ui-icon ui-icon-circle-plus"></span></li>
 					</td>
-					<td></td>
+					<td>
+						<?php if(isset($task['Tfile']) && count($task['Tfile'])>0){ 
+							foreach($task['Tfile'] as $fis):
+								if($fis['type']==3){
+									echo '- '.$this->Html->link($fis['name'],array('controller'=>'tasks','action'=>'download',base64_encode($fis['id']))).'<br>';
+								}
+							endforeach;
+						}?>
+					</td>
 				</tr>
 			</table>
 		</td>
@@ -100,7 +118,7 @@
 <div id="dialog" title="Giao việc cho nhân viên">
 	<?php $groups =  $this->requestAction("tasks/listPBgv");?>
 
-	<?php echo $this->Form->create('Task',array('action'=>'dochange'));?>
+	<form method="post" action="dochange">
 		<?php $i=0; foreach($groups as $group):$i++;?>
 		<div class='block'>
 		<div id="parent<?=$i;?>" onclick="show(<?=$i;?>)" class="parent">
@@ -122,13 +140,21 @@
 		</div>
 		</div>
 		<?php endforeach;?>
-	<?php $this->Form->end();?>
+</form>
 </div>
 <div id="dialog_vbdt" title="Thêm văn bản dự thảo">
-áddas
+<form method="post" enctype="multipart/form-data">
+	<input type="file" name="fileid" id="fileid" multiple />
+</form>
+<div id='response' style='font-size: 12px;'></div>
+
 </div>
 <div id="dialog-vblq" title="Thêm văn bản liên quan">
-áddas
+ <form method="post" enctype="multipart/form-data">
+	<input type="file" name="filek" id="filek" multiple />
+</form>
+<div id='response1' style='font-size: 12px;'></div>
+
 </div>
 <script type="text/javascript">
 	var title = "Quản lý công việc";
@@ -174,6 +200,9 @@
 
 	});
 	
+			
+</script>
+<script type='text/javascript'>
 	function show(id){
 		var x = $('#child'+id).css('display');
 		if(x !='none'){
@@ -184,9 +213,7 @@
 			$('#img'+id).attr('src', '../../img/sub.png' );
 		}
 	}
-		
-</script>
-<script type='text/javascript'>
+
 	$(document).ready(function () {
  		 var u = $('.parent').size();
 			for(g=1;g<=u;g++){
@@ -206,26 +233,27 @@
 		width: 400,
 		buttons: [
 			{
-				text: "Giao việc",
+				text: "Upload",
 				click: function() {
-					var $rthis = $(this);
-					var $obj = $('.child input[type=checkbox]');
-					if($obj.filter(':checked').length <=0) return alert("Bạn chưa chọn nhân viên");
-					if(confirm("Bạn có chắc muốn giao việc cho nhân viên vừa chọn ?")){
-					 	var str = "";
-						for(d=0;d<$obj.length;d++){
-							if($obj[d].checked == true) str+=$obj[d].value+',';
+					if(confirm("Bạn có chắc muốn upload các file vừa chọn không ?")){
+						document.getElementById("response").innerHTML = "Đang upload file. Hãy chờ...";
+						var fileInput = document.getElementById('fileid');
+						var formData = new FormData();
+						for(i=0;i<fileInput.files.length;i++){
+							formData.append('fileid[]', fileInput.files[i]);	
 						}
-						str = str.substr(0,str.length-1);
-						$.get("<?php echo $this->webroot;?>tasks/change/"+<?=$task['Task']['id'];?>+"/"+base64_encode(2)+"/"+str, function(data){
-						   if(data == 2) {
-						   
-						   window.location.reload();
-						   alert('Đã giao việc thành công !');
-						   $rthis.dialog("close");
-						}
-						   else alert("Có lỗi xảy ra. Hãy thử lại!");
-						 });
+						$.ajax({
+							url: "<?=$this->webroot;?>tasks/addfile/<?=base64_encode($task['Task']['id']);?>/<?=base64_encode(2);?>",
+							type: "POST",
+							data: formData,
+							processData: false,
+							contentType: false,
+							success: function (res) {
+								document.getElementById("response").innerHTML = "Đã upload xong!";
+								if(res==1) alert('Có lỗi xảy ra trong quá trình upload. Hãy kiểm tra lại');
+								else{alert("Upload thành công!");window.location.reload();$( this ).dialog( "close");}
+							}
+						});
 					}
 				}
 			},
@@ -236,7 +264,6 @@
 				}
 			}
 		]
-
 	});
 </script>
 
@@ -251,26 +278,27 @@
 		width: 400,
 		buttons: [
 			{
-				text: "Giao việc",
+				text: "Upload",
 				click: function() {
-					var $rthis = $(this);
-					var $obj = $('.child input[type=checkbox]');
-					if($obj.filter(':checked').length <=0) return alert("Bạn chưa chọn nhân viên");
-					if(confirm("Bạn có chắc muốn giao việc cho nhân viên vừa chọn ?")){
-					 	var str = "";
-						for(d=0;d<$obj.length;d++){
-							if($obj[d].checked == true) str+=$obj[d].value+',';
+					if(confirm("Bạn có chắc muốn upload các file vừa chọn không ?")){
+						document.getElementById("response").innerHTML = "Đang upload file. Hãy chờ...";
+						var fileInput = document.getElementById('filek');
+						var formData = new FormData();
+						for(i=0;i<fileInput.files.length;i++){
+							formData.append('fileid[]', fileInput.files[i]);	
 						}
-						str = str.substr(0,str.length-1);
-						$.get("<?php echo $this->webroot;?>tasks/change/"+<?=$task['Task']['id'];?>+"/"+base64_encode(2)+"/"+str, function(data){
-						   if(data == 2) {
-						   
-						   window.location.reload();
-						   alert('Đã giao việc thành công !');
-						   $rthis.dialog("close");
-						}
-						   else alert("Có lỗi xảy ra. Hãy thử lại!");
-						 });
+						$.ajax({
+							url: "<?=$this->webroot;?>tasks/addfile/<?=base64_encode($task['Task']['id']);?>/<?=base64_encode(3);?>",
+							type: "POST",
+							data: formData,
+							processData: false,
+							contentType: false,
+							success: function (res) {
+								document.getElementById("response1").innerHTML = "Đã upload xong!";
+								if(res==1) alert('Có lỗi xảy ra trong quá trình upload. Hãy kiểm tra lại');
+								else{alert("Upload thành công!");window.location.reload();$( this ).dialog( "close");}
+							}
+						});
 					}
 				}
 			},
@@ -281,6 +309,5 @@
 				}
 			}
 		]
-
 	});
 </script>
