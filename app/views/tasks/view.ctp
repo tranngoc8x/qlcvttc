@@ -61,7 +61,14 @@
 			<table width=100% cellspacing=0 cellpadding=0>
 				<tr class='tbody'>
 					<td class="tDtite">Văn bản gốc</td>
-					<td></td>
+					<td>
+						<?php if(count($task['Tfile'])>0){ 
+							foreach($task['Tfile'] as $fis):
+									
+							endforeach;
+						}?>
+
+					</td>
 				</tr>
 				<tr class='tbody'>
 					<td class="tDtite">Văn bản dự thảo</td>
