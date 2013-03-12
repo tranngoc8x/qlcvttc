@@ -2,6 +2,16 @@
 class TasksController extends AppController {
 
 	var $name = 'Tasks';
+	var $components = array('Uploader.Uploader');
+
+	function beforeFilter(){
+		parent:: beforeFilter();
+        $this->Uploader->uploadDir = 'files/documents/'; //thu muc chua file upload
+        $this->Uploader->enableUpload = true;
+        $this->Uploader->maxFileSize = '10M'; // quy dinh dung luong duoc upload len toi da la 2 Megabytes
+        $this->Uploader->maxNameLength = 25;//do dai cua ten file
+        $this->Uploader->tempDir = TMP;
+    }
 
 	function index() {
 		$this->Task->recursive = 0;
@@ -149,9 +159,12 @@ class TasksController extends AppController {
 	function download($id){
 		$did = base64_decode($id);
 		$this->loadModel('Tfile');
-		$fil = $this->Tfile->find('list',array('conditions'=>array('Tfile.id'=>$did)));
-		if(isset($fil['name']) && $fil['name'] !=''){
-			$fl = "webroot/files/document/".$fid['name'];
+		$this->Tfile->recursive = -1;
+		$fil = $this->Tfile->find('first',array('conditions'=>array('Tfile.id'=>$did)));
+		//debug($fil);
+		//exit();
+		if(isset($fil['Tfile']['name']) && $fil['Tfile']['name'] !=''){
+			$fl = "webroot/files/documents/".$fil['Tfile']['folder']."/".$fil['Tfile']['name'];
 			header('Content-Description: File Transfer');
 	        header('Content-Disposition: attachment; filename='.basename($fl));
 	        header('Content-Transfer-Encoding: binary');
@@ -167,7 +180,30 @@ class TasksController extends AppController {
 	    }
         exit;
 	}
-	function addfile($type=1){
-		
+	function addfile($id,$type){
+
+		$did = base64_decode($id);
+		$tp = base64_decode($type);
+		$this->autoRender = false;
+	 	$files = $_FILES['fileid'];
+	 	$this->loadModel('Tfile');
+ 		$dir = "files/documents/".date('m-Y');
+ 		if(!is_dir($dir)) mkdir($dir,0777);
+ 		$fre = date('dmyhis_');
+ 		$err=0;
+	 	foreach ($files['name'] as $key => $value) {
+	 		$data = array();
+	 		move_uploaded_file( $_FILES["fileid"]["tmp_name"][$key],$dir.'/'.$fre.$_FILES['fileid']['name'][$key]);
+	 		$data['Tfile']['name'] = $fre.$value;
+	 		$data['Tfile']['type'] = $tp;
+			$data['Tfile']['tasks_id'] = $did;
+			$data['Tfile']['folder'] = date('m-Y');
+	 		$this->Tfile->create();
+	 		$this->Tfile->save($data);
+	 		$data = array();
+	 		if($files['error'][$key] !=0 || $files['error'][$key] !='0') $err ++;
+	 	}
+	 	if($err>0) return 1;
+	 	else return 2;
 	}
 }
