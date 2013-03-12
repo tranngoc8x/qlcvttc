@@ -145,4 +145,21 @@ class TasksController extends AppController {
 			else  $this->set(compact('u'));
 		}
 	}
+	function download($id){
+		$did = base64_encode($id);
+		$this->loadModel('Tfile');
+		$fil = 
+		$fl = "webroot/files/document/exmaple.xlsx";
+		header('Content-Description: File Transfer');
+        header('Content-Disposition: attachment; filename='.basename($fl));
+        header('Content-Transfer-Encoding: binary');
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+        header('Pragma: public');
+        header('Content-Length: ' . filesize($fl));
+        ob_clean();
+        flush();
+        readfile($fl);
+        exit;
+	}
 }
