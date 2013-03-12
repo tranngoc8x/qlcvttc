@@ -118,12 +118,13 @@ class TasksController extends AppController {
 		else{
 			$this->loadModel("Usertask");
 			$ar = explode(',', $str);
+			$s = base64_decode($st);
 			foreach($ar as $r):
 				if(!is_numeric($r)) return 1;
 				$this->Usertask->create();
 				$data['Usertask']['users_id'] = $r;
 				$data['Usertask']['tasks_id'] = $cv;
-				$data['Usertask']['status'] = $st;
+				$data['Usertask']['status'] = $s;
 				$this->Usertask->save($data);
 			endforeach;
 			$this->Task->id = $cv;
@@ -146,20 +147,27 @@ class TasksController extends AppController {
 		}
 	}
 	function download($id){
-		$did = base64_encode($id);
+		$did = base64_decode($id);
 		$this->loadModel('Tfile');
-		$fil = 
-		$fl = "webroot/files/document/exmaple.xlsx";
-		header('Content-Description: File Transfer');
-        header('Content-Disposition: attachment; filename='.basename($fl));
-        header('Content-Transfer-Encoding: binary');
-        header('Expires: 0');
-        header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
-        header('Pragma: public');
-        header('Content-Length: ' . filesize($fl));
-        ob_clean();
-        flush();
-        readfile($fl);
+		$fil = $this->Tfile->find('list',array('conditions'=>array('Tfile.id'=>$did)));
+		if(isset($fil['name']) && $fil['name'] !=''){
+			$fl = "webroot/files/document/".$fid['name'];
+			header('Content-Description: File Transfer');
+	        header('Content-Disposition: attachment; filename='.basename($fl));
+	        header('Content-Transfer-Encoding: binary');
+	        header('Expires: 0');
+	        header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+	        header('Pragma: public');
+	        header('Content-Length: ' . filesize($fl));
+	        ob_clean();
+	        flush();
+	        readfile($fl);
+	    }else{
+	    	echo "File không tồn tại !";
+	    }
         exit;
+	}
+	function addfile($type=1){
+		
 	}
 }
