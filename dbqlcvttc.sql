@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 11, 2013 at 02:59 AM
+-- Generation Time: Mar 13, 2013 at 11:01 AM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -120,7 +120,7 @@ CREATE TABLE IF NOT EXISTS `aros` (
   `lft` int(10) DEFAULT NULL,
   `rght` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
 
 --
 -- Dumping data for table `aros`
@@ -137,7 +137,8 @@ INSERT INTO `aros` (`id`, `parent_id`, `model`, `foreign_key`, `alias`, `lft`, `
 (12, NULL, 'Group', 4, 'Ban quáº£n lÃ½', 17, 20),
 (13, NULL, 'Group', 5, 'PhÃ²ng nhÃ¢n sá»±', 21, 22),
 (14, 12, 'User', 9, '', 18, 19),
-(15, 2, 'User', 10, '', 8, 9);
+(15, 2, 'User', 10, '', 8, 9),
+(16, NULL, 'User', 11, '', 23, 24);
 
 -- --------------------------------------------------------
 
@@ -182,19 +183,21 @@ CREATE TABLE IF NOT EXISTS `groups` (
   `name` varchar(100) NOT NULL,
   `note` mediumtext,
   `order` int(2) DEFAULT NULL,
+  `magroup` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `groups`
 --
 
-INSERT INTO `groups` (`id`, `name`, `note`, `order`) VALUES
-(1, 'GiÃ¡m Ä‘á»‘c', 'PhÃ²ng giÃ¡m Ä‘á»‘c', 1),
-(2, 'PhÃ²ng káº¿ hoáº¡ch', 'PhÃ²ng káº¿ hoáº¡ch', 2),
-(3, 'PhÃ²ng tÃ i chÃ­nh', 'PhÃ²ng tÃ i chÃ­nh', 2),
-(4, 'Ban quáº£n lÃ½', 'Ban quáº£n lÃ½', 3),
-(5, 'PhÃ²ng nhÃ¢n sá»±', 'PhÃ²ng nhÃ¢n sá»±', 4);
+INSERT INTO `groups` (`id`, `name`, `note`, `order`, `magroup`) VALUES
+(1, 'GiÃ¡m Ä‘á»‘c', 'PhÃ²ng giÃ¡m Ä‘á»‘c', 1, 'GD'),
+(2, 'PhÃ²ng káº¿ hoáº¡ch', 'PhÃ²ng káº¿ hoáº¡ch', 2, 'PGD'),
+(3, 'PhÃ²ng tÃ i chÃ­nh', 'PhÃ²ng tÃ i chÃ­nh', 2, 'PGD'),
+(4, 'Ban quáº£n lÃ½', 'Ban quáº£n lÃ½', 3, 'BQL'),
+(5, 'PhÃ²ng nhÃ¢n sá»±', 'PhÃ²ng nhÃ¢n sá»±', 4, 'NS'),
+(6, 'Káº¿ toÃ¡n', 'Káº¿ toÃ¡n', 3, 'KT');
 
 -- --------------------------------------------------------
 
@@ -231,17 +234,19 @@ CREATE TABLE IF NOT EXISTS `logs` (
   `ipadr` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `time` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `logs`
 --
 
 INSERT INTO `logs` (`id`, `users_id`, `ipadr`, `time`) VALUES
-(1, 1, '::1', '2013-03-11 02:37:56'),
+(1, 1, '::1', '2013-03-13 11:00:32'),
 (3, 8, '::1', '2013-03-07 04:19:43'),
 (4, 9, '::1', '2013-03-07 05:27:12'),
-(5, 10, '::1', '2013-03-08 04:46:30');
+(5, 10, '::1', '2013-03-08 04:46:30'),
+(6, 11, '::1', '2013-03-13 05:15:47'),
+(7, 12, '::1', '2013-03-13 05:15:55');
 
 -- --------------------------------------------------------
 
@@ -326,8 +331,35 @@ CREATE TABLE IF NOT EXISTS `tasks` (
 
 INSERT INTO `tasks` (`id`, `name`, `content`, `start`, `end`, `users_id`, `status`, `taskid`, `types_id`, `linhvucs_id`) VALUES
 (1, 'BÃ¡o cÃ¡o tuáº§n', 'BÃ¡o cÃ¡o tuáº§n', '2013-07-03 12:00:00', '2013-08-03 12:00:00', 1, 2, 'QLCV/TTC-1', 1, 1),
-(2, 'BÃ¡o cÃ¡o Ä‘áº§u nÄƒm', 'BÃ¡o cÃ¡o cÃ´ng viá»‡c nÄƒm trÆ°á»›c vÃ  triá»ƒn khai káº¿ hoáº¡c nÄƒm má»›i', '2013-03-08 12:00:00', '2013-03-08 12:00:00', 1, 2, 'QLCV/TTC-2', 2, 2),
+(2, 'BÃ¡o cÃ¡o Ä‘áº§u nÄƒm', 'BÃ¡o cÃ¡o cÃ´ng viá»‡c nÄƒm trÆ°á»›c vÃ  triá»ƒn khai káº¿ hoáº¡c nÄƒm má»›i', '2013-03-08 12:00:00', '2013-03-08 12:00:00', 1, 10, 'QLCV/TTC-2', 2, 2),
 (3, 'BÃ¡o cÃ¡o Ä‘áº§u nÄƒm', 'BÃ¡o cÃ¡o cÃ´ng viá»‡c nÄƒm trÆ°á»›c vÃ  triá»ƒn khai káº¿ hoáº¡c nÄƒm má»›i', '2013-03-08 12:00:00', '2013-03-11 12:00:00', 1, 1, 'QLCV-TTC-3', 2, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tfiles`
+--
+
+DROP TABLE IF EXISTS `tfiles`;
+CREATE TABLE IF NOT EXISTS `tfiles` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `type` int(2) NOT NULL DEFAULT '1',
+  `tasks_id` int(11) NOT NULL,
+  `folder` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=68 ;
+
+--
+-- Dumping data for table `tfiles`
+--
+
+INSERT INTO `tfiles` (`id`, `name`, `type`, `tasks_id`, `folder`) VALUES
+(63, '120313093546_bulb24.png', 2, 2, '03-2013'),
+(64, '120313094331_bulb24.png', 2, 2, '03-2013'),
+(65, '120313094343_alert_medium.gif', 2, 2, '03-2013'),
+(66, '120313094610_success_medium.gif', 2, 2, '03-2013'),
+(67, '120313094703_important16.png', 3, 2, '03-2013');
 
 -- --------------------------------------------------------
 
@@ -366,7 +398,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `positions_id` int(11) NOT NULL,
   `groups_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `users`
@@ -374,11 +406,12 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `name`, `username`, `password`, `positions_id`, `groups_id`) VALUES
 (1, 'Tran Ngoc', 'admin', '6bf41c4a3399425edd18693b8b33f16bcce2f0fc', 1, 1),
-(2, 'Ngá»c Tháº¯ng', 'tranngoc8x', '', 2, 2),
-(3, 'Thu Trang', 'nttrang', '', 3, 3),
-(4, 'NhÃ¢n sá»± 1', 'nsu1', '', 5, 5),
-(9, 'Quáº£n lÃ½', 'qly1', '', 4, 4),
-(10, 'Tháº¯ng Tráº§n', 'thangtn', '', 2, 2);
+(2, 'Ngá»c Tháº¯ng', 'tranngoc8x', '6bf41c4a3399425edd18693b8b33f16bcce2f0fc', 2, 2),
+(3, 'Thu Trang', 'nttrang', '6bf41c4a3399425edd18693b8b33f16bcce2f0fc', 3, 3),
+(4, 'NhÃ¢n sá»± 1', 'nsu1', '6bf41c4a3399425edd18693b8b33f16bcce2f0fc', 5, 5),
+(9, 'Quáº£n lÃ½', 'qly1', '6bf41c4a3399425edd18693b8b33f16bcce2f0fc', 4, 4),
+(10, 'Tháº¯ng Tráº§n', 'thangtn', '6bf41c4a3399425edd18693b8b33f16bcce2f0fc', 2, 2),
+(11, 'Káº¿ toÃ¡n', 'ketoan', '6bf41c4a3399425edd18693b8b33f16bcce2f0fc', 5, 6);
 
 -- --------------------------------------------------------
 
@@ -393,17 +426,23 @@ CREATE TABLE IF NOT EXISTS `usertasks` (
   `tasks_id` int(11) NOT NULL,
   `status` int(2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
 
 --
 -- Dumping data for table `usertasks`
 --
 
 INSERT INTO `usertasks` (`id`, `users_id`, `tasks_id`, `status`) VALUES
-(7, 4, 1, 2),
 (8, 4, 2, 2),
-(9, 4, 2, 2),
-(10, 4, 2, 2);
+(11, 9, 2, 3),
+(12, 2, 2, 4),
+(13, 3, 2, 5),
+(14, 11, 2, 6),
+(15, 1, 2, 7),
+(16, 11, 2, 8),
+(17, 9, 2, 9),
+(18, 4, 2, 10),
+(19, 4, 1, 2);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
