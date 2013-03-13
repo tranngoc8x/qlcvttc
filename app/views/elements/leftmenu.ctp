@@ -12,14 +12,30 @@
 		case "positions": 
 		case "users":
 		case "groups":			$tab1 = 1; break;	
-		
-		
-		case "tasks":		$tab3 = 1; break;
-
- 		
-
+		case "tasks":			$tab3 = 1; break;
+		default: $tab3 = 1;break;
 	}
 ?>
+
+
+<div id="congviec">
+ 	<ul class="menu_left">
+		<li>
+			<?php echo $this->Html->link(__('Công việc chưa xử lý', true), array('plugin'=>false,'controller'=>'tasks','action' => 'index')); ?>
+		</li>
+		<li>
+		<?php echo $this->Html->link(__('Công việc đã chuyển', true), array('plugin'=>false,'controller'=>'tasks','action' => 'index')); ?>
+		</li>
+		<li>
+		<?php echo $this->Html->link(__('Công việc bị trả lại', true), array('plugin'=>false,'controller'=>'tasks','action' => 'index')); ?>
+		</li>
+		
+		<li>
+		<?php echo $this->Html->link(__('Công việc đã hoàn thành', true), array('plugin'=>false,'controller'=>'tasks','action' => 'index')); ?>
+		</li>
+		
+	</ul>
+</div>
 <div id="nhansu">
 	<ul class="menu_left">
 		<li>
@@ -45,24 +61,6 @@
 		</li>
 	</ul>
 </div>
-
-<div id="congviec">
- 	<ul class="menu_left">
-		<li>
-			<?php echo $this->Html->link(__('Danh sách công việc của tôi', true), array('plugin'=>false,'controller'=>'tasks','action' => 'index')); ?>
-		</li>
-		<li>
-		<?php echo $this->Html->link(__('Thêm mới phòng ban', true), array('plugin'=>false,'controller'=>'tasks','action' => 'add')); ?>
-		</li>
-		<li>
-		<?php echo $this->Html->link(__('Chức vụ', true), array('plugin'=>false,'controller'=>'positions','action' => 'add')); ?>
-		</li>
-		<li>
-		<?php echo $this->Html->link(__('Thêm mới chức vụ', true), array('plugin'=>false,'controller'=>'positions','action' => 'add')); ?>
-		</li>
-	</ul>
-</div>
-
 
 <script language="javascript">
 Ext.onReady(function(){
