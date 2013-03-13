@@ -28,7 +28,6 @@
     display: block;
     font-size: 12px;
     font-family: Arial;
-  
 }
 .text_tite,.link_title{
 	font-size: 12px;
@@ -161,6 +160,7 @@
 }
 .menu_left li a{
 	padding-left: 18px;
+	font-size: 13px;
 
 	background: transparent url(../img/admin/li-menu.png) left center no-repeat;
 }

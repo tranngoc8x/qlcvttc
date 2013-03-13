@@ -3,7 +3,7 @@ class TasksController extends AppController {
 
 	var $name = 'Tasks';
 	var $components = array('Uploader.Uploader');
-
+	
 	function beforeFilter(){
 		parent:: beforeFilter();
         $this->Uploader->uploadDir = 'files/documents/'; //thu muc chua file upload
@@ -11,11 +11,13 @@ class TasksController extends AppController {
         $this->Uploader->maxFileSize = '10M'; // quy dinh dung luong duoc upload len toi da la 2 Megabytes
         $this->Uploader->maxNameLength = 25;//do dai cua ten file
         $this->Uploader->tempDir = TMP;
+
     }
 
 	function index() {
+		$uinf = $this->Auth->user();
 		$this->Task->recursive = 0;
-		$this->set('tasks', $this->paginate());
+		$this->set('tasks', $this->paginate(array('Task.users_id'=>$uinf['User']['id'])));
 	}
 
 	function view($id = null) {
