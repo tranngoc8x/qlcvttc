@@ -23,8 +23,8 @@ class AppController extends Controller {
 		$this->set(compact('los','ssid'));
 	}
 }
-function stt($stt = null){
-
+function stt($id = null){
+    $stt = base64_decode($id);
     switch($stt){
         case 1: echo "Khởi tạo"; break;
         case 2: echo "Chuyển nhân viên"; break;
@@ -36,5 +36,20 @@ function stt($stt = null){
         case 8: echo "Trả kế toán"; break;
         case 9: echo "Trả ban quản lý"; break;
         case 10: echo "Trả nhân sự"; break;
+    }
+}
+function work($id=null){
+    $stt = base64_decode($id);
+        switch($stt){
+        case 1: echo "Khởi tạo công việc"; break;
+        case 2: echo "Nhân viên xử lý chính"; break;
+        case 3: echo "Ban quản lý duyệt"; break;
+        case 4: echo "PGĐ kế hoach duyệt"; break;
+        case 5: echo "PGĐ tài chính duyệt"; break;
+        case 6: echo "Kế toán chuyển cho giám đốc"; break;
+        case 7: echo "Giám đốc duyệt"; break;
+        case 8: echo "Kế toán trả cho ban quản lý"; break;
+        case 9: echo "Ban quản lý thông báo nhân viên"; break;
+        case 10: echo "Kết thúc công việc"; break;
     }
 }

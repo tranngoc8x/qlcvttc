@@ -112,9 +112,21 @@ class TasksController extends AppController {
 	}
 	function listPBgv($id=null){
 		$this->layout = 'ajax';
+		switch ($id) {
+			case '1': $ar = array('Group.magroup <>'=>"GD"); break;
+			case '2': $ar = array("NOT"=>array('Group.magroup'=>array("GD","PGD")));break;
+			case '3': $ar = array('Group.magroup '=>"PGD"); break;
+			case '4': $ar = array('Group.magroup '=>"KT"); break;
+			case '5': $ar = array('Group.magroup '=>"GD"); break;
+			case '6': $ar = array('Group.magroup '=>"BQL"); break;
+			case '7': $ar = array('Group.magroup '=>"NS"); break;
+			default:
+				$ar= array();
+				break;
+		}
 		$this->loadModel("Group");
 		$this->Group->recursive = 0;
-		$groups = $this->Group->find('all',array('fields'=>array('Group.id','Group.name'),'conditions'=>array('Group.id <>'=>1)));
+		$groups = $this->Group->find('all',array('fields'=>array('Group.id','Group.name'),'conditions'=>$ar));
 		if (!empty($this->params['requested'])) {
 		      return $groups;
 		}else {
@@ -137,8 +149,9 @@ class TasksController extends AppController {
 				$data['Usertask']['status'] = $s;
 				$this->Usertask->save($data);
 			endforeach;
+			//debug($data);
 			$this->Task->id = $cv;
-			$this->Task->saveField('status',$st);
+			$this->Task->saveField('status',$s);
 			return 2;
 		}
 	}
@@ -161,10 +174,8 @@ class TasksController extends AppController {
 		$this->loadModel('Tfile');
 		$this->Tfile->recursive = -1;
 		$fil = $this->Tfile->find('first',array('conditions'=>array('Tfile.id'=>$did)));
-		//debug($fil);
-		//exit();
 		if(isset($fil['Tfile']['name']) && $fil['Tfile']['name'] !=''){
-			$fl = "webroot/files/documents/".$fil['Tfile']['folder']."/".$fil['Tfile']['name'];
+			$fl = "files/documents/".$fil['Tfile']['folder']."/".$fil['Tfile']['name'];
 			header('Content-Description: File Transfer');
 	        header('Content-Disposition: attachment; filename='.basename($fl));
 	        header('Content-Transfer-Encoding: binary');

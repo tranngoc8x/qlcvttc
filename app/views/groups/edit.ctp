@@ -3,6 +3,7 @@ Quản lý phòng ban
 	echo $this->Form->create("Group");
 	echo $this->Form->hidden('id');
 	echo $this->Form->input('name');
+	echo $this->Form->input('magroup');
 	echo $this->Form->input('note');
 	echo $this->Form->input('order');
 	echo $this->Form->end('Lưu lại');
