@@ -18,13 +18,14 @@
 		<td><?php echo $item['Task']['name']; ?>&nbsp;</td>
 		<td><?php echo $item['User']['name']; ?>&nbsp;</td>
 		<td><?php echo date('d/m/Y',strtotime($item['Task']['start'])); ?>&nbsp;</td>
-		<td><?php echo stt($item['Task']['status']); ?>&nbsp;</td>
+		<td><?php echo stt(base64_encode($item['Task']['status'])); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link($this->Html->image("admin/view-item.png", array("alt" => "Xem","title"=>"Xem bản ghi")), array('action' => 'view', $item['Task']['id']),array('escape'=>false)); ?>
 			<?php if($item['Task']['status'] ==1):?>
 				<?php echo $this->Html->link($this->Html->image("admin/edit-item.png", array("alt" => "Sửa","title"=>"Sửa bản ghi")), array('action' => 'edit', $item['Task']['id']),array('escape'=>false)); ?>
-			<?php endif;?>
+			
 				<?php echo $this->Html->link($this->Html->image("admin/delete-item.png", array("alt" => "Xóa","title"=>"Xóa bản ghi")), array('action' => 'delete', $item['Task']['id']), array('escape'=>false), __('Bạn có chắc muốn xóa mục này',$item['Task']['id'])); ?>
+			<?php endif;?>
 		</td>
 	</tr>
 <?php endforeach; ?>
