@@ -52,9 +52,11 @@ class PositionsController extends AppController {
 		$this->Group->unbindModel(
 			array('hasMany'=>array('User'),'hasAndBelongsToMany'=>array('Position'))
 		);*/
+		
 		$groups = $this->Group->find('list');
 		$this->set(compact('groups','pos_group'));	
 		//debug($pos_group);
+		//debug($groups);
 		if (!$id && empty($this->data)) {
 			$this->Session->setFlash(__('Không có chức vụ này', true));
 			$this->redirect(array('action' => 'index'));
@@ -72,6 +74,7 @@ class PositionsController extends AppController {
 			$ar = array();
 			if(!empty($pos_group)){
 				foreach($pos_group as $k) $ar[] = $k['PositionsGroup']['id']; 
+				
 				foreach($ar as $item){
 					  $this->PositionsGroup->delete($item);
 				 }
