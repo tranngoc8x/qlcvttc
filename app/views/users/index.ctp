@@ -19,6 +19,12 @@
 		<td>
 				<?php echo $this->Html->link($this->Html->image("admin/view-item.png", array("alt" => "Xem","title"=>"Xem bản ghi")), array('action' => 'view', $user['User']['id']),array('escape'=>false)); ?>
 				<?php echo $this->Html->link($this->Html->image("admin/edit-item.png", array("alt" => "Sửa","title"=>"Sửa bản ghi")), array('action' => 'edit', $user['User']['id']),array('escape'=>false)); ?>
+				<?php
+                        if ($ssid['User']['id']==$user['User']['id'])
+							{
+ 						?>
+                         <?php echo $this->Html->link(__('Đổi mật khẩu', true), array('action' => 'changepassword', $user['User']['id'])); }?>
+            				
 				<?php //echo $this->Html->link($this->Html->image("admin/delete-item.png", array("alt" => "Xóa","title"=>"Xóa bản ghi")), array('action' => 'delete', $user['User']['id']), array('escape'=>false), __('Bạn có chắc muốn xóa mục này',$user['User']['id'])); ?>
 				</td>
 	</tr>
