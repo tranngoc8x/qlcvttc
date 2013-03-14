@@ -105,4 +105,34 @@ class UsersController extends AppController {
 		$this->Session->setFlash(__('Đã xóa người dùng', true),'default',array('class'=>'success'));
 		$this->redirect(array('action' => 'index'));
 	}
+	
+	function changepassword($id = null){
+		if (!$id && empty($this->data)) {
+        			$this->Session->setFlash(__('Không tìm thấy người đùng', true));
+        			$this->redirect(array('action' => 'index'));
+        	}
+        if(!empty($this->data)){
+           $oldpass = $this->data['User']['password'];
+           $newpass = $this->data['User']['newpassword'];
+           $confnewpass = $this->data['User']['confirmnewpassword'];
+           $UserInfo = $this->Auth->user();
+           $pas = $this->User->find('first',array('conditions'=>array('User.id'=>$UserInfo['User']['id'])));
+           if($this->Auth->password($oldpass)!=trim($pas['User']['password'])){
+			  $this->Session->setFlash(__('Mật khẩu cũ không đúng!', true));
+              //$this->redirect(array('action' => 'index'));          	
+           }
+		   else {
+				if($newpass!=$confnewpass){
+					$this->Session->setFlash(__('Chưa sửa được. Mật khẩu mới và nhập lại mật khẩu mới không khớp. Hãy nhập lại!', true));
+					//$this->redirect(array('action' => 'index'));
+					}
+		   
+				else  {
+					$this->User->query("update users set password='".$this->Auth->password($newpass)."' where id='".$UserInfo['User']['id']."'");
+					$this->Session->setFlash(__('Mật khẩu được thay đổi', true));
+					$this->redirect(array('controller' => 'users','action' => 'index'));
+			   }
+			   }
+        }
+    }
 }
