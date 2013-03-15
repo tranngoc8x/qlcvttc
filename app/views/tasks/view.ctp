@@ -6,24 +6,26 @@
 <table class='tblcontent chitietcv' border=0 width=100% cellspacing=0 cellpadding=0>
 	<tr class=' '>
 		<td colspan=4>
+
 			<?php  $ws = $task['Task']['status'];?>
-			<?php if($ws==1){?>
+			<?php //echo $gr;?>
+			<?php if($ws==1 && $gr == "BQL"){?>
 			<?=$this->Form->button("Giao việc",array('class'=>'btnlink','id'=>'dialog-link'));?>
-			<?php }elseif($ws==2){?>
+			<?php }elseif($ws==2 && $gr == "NS"){?>
 			<?=$this->Form->button("Trình ban quản lý",array('class'=>'btnlink','id'=>'dialog-link'));?>
-			<?php }elseif($ws==3){?>
+			<?php }elseif($ws==3 && $gr == "BQL"){?>
 			<?=$this->Form->button("Trình PGD điều hành",array('class'=>'btnlink','id'=>'dialog-link'));?>
-			<?php }elseif($ws==4){?>
+			<?php }elseif($ws==4 && $gr == "PGD"){?>
 			<?=$this->Form->button("Chuyển PGD tài chính",array('class'=>'btnlink','id'=>'dialog-link'));?>
-			<?php }elseif($ws==5){?>
+			<?php }elseif($ws==5 && $gr == "PGD"){?>
 			<?=$this->Form->button("Chuyển kế toán",array('class'=>'btnlink','id'=>'dialog-link'));?>
-			<?php }elseif($ws==6){?>
+			<?php }elseif($ws==6 && $gr == "KT"){?>
 			<?=$this->Form->button("Trình giám đốc",array('class'=>'btnlink','id'=>'dialog-link'));?>
-			<?php }elseif($ws==7){?>
+			<?php }elseif($ws==7 && $gr == "GD"){?>
 			<?=$this->Form->button("Gửi trả kế toán",array('class'=>'btnlink','id'=>'dialog-link'));?>
-			<?php }elseif($ws==8){?>
+			<?php }elseif($ws==8 && $gr == "KT"){?>
 			<?=$this->Form->button("Gửi trả ban quản lý",array('class'=>'btnlink','id'=>'dialog-link'));?>
-			<?php }elseif($ws==9){?>
+			<?php }elseif($ws==9 && $gr == "BQL"){?>
 			<?=$this->Form->button("Gửi trả kết quả cho nhân sự",array('class'=>'btnlink','id'=>'dialog-link'));?>
 			<?php }?>
 		</td>
@@ -149,10 +151,10 @@
 	}
 	?>
 </table>
-
-
+    
+		
 <!-- dialog -->
-<?php if($ws==1){?>
+<?php if($ws==1 && $gr == "BQL"){?>
 <div id="dialog" title="Giao việc cho nhân viên">
 	<?php $groups =  $this->requestAction("tasks/listPBgv/1");?>
 	<form method="post" action="dochange">
@@ -179,7 +181,7 @@
 		<?php endforeach;?>
 </form>
 </div>
-<?php }elseif($ws==2){?>
+<?php }elseif($ws==2 && $gr == "NS"){?>
 <div id="dialog" title="Trình báo công việc cho ban quản lý">
 	<?php $groups =  $this->requestAction("tasks/listPBgv/2");?>
 	<form method="post" action="dochange">
@@ -207,7 +209,7 @@
 </form>
 </div>
 
-<?php }elseif($ws==3){?>
+<?php }elseif($ws==3 && $gr == "BQL"){?>
 <div id="dialog" title="Trình PGD điều hành">
 	<?php $groups =  $this->requestAction("tasks/listPBgv/3");?>
 	<form method="post" action="dochange">
@@ -233,9 +235,8 @@
 		</div>
 		<?php endforeach;?>
 </form>
-</div>
-
-<?php }elseif($ws==4){?>
+</div>  
+<?php }elseif($ws==4 && $gr == "PGD"){?>
 <div id="dialog" title="Chuyển PGD tài chính">
 	<?php $groups =  $this->requestAction("tasks/listPBgv/3");?>
 	<form method="post" action="dochange">
@@ -263,7 +264,7 @@
 </form>
 </div>
 
-<?php }elseif($ws==5){?>
+<?php }elseif($ws==5 && $gr == "PGD"){?>
 <div id="dialog" title="Chuyển kế toán">
 	<?php $groups =  $this->requestAction("tasks/listPBgv/4");?>
 	<form method="post" action="dochange">
@@ -290,7 +291,7 @@
 		<?php endforeach;?>
 </form>
 </div>
-<?php }elseif($ws==6){?>
+<?php }elseif($ws==6 && $gr == "KT"){?>
 <div id="dialog" title="Trình giám đốc">
 	<?php $groups =  $this->requestAction("tasks/listPBgv/5");?>
 	<form method="post" action="dochange">
@@ -317,7 +318,7 @@
 		<?php endforeach;?>
 </form>
 </div>
-<?php }elseif($ws==7){?>
+<?php }elseif($ws==7 && $gr == "GD"){?>
 <div id="dialog" title="Thông báo cho kế toán">
 	<?php $groups =  $this->requestAction("tasks/listPBgv/4");?>
 	<form method="post" action="dochange">
@@ -344,7 +345,7 @@
 		<?php endforeach;?>
 </form>
 </div>
-<?php }elseif($ws==8){?>
+<?php }elseif($ws==8 && $gr == "KT"){?>
 <div id="dialog" title="Gửi trả ban quản lý">
 	<?php $groups =  $this->requestAction("tasks/listPBgv/6");?>
 	<form method="post" action="dochange">
@@ -371,9 +372,9 @@
 		<?php endforeach;?>
 </form>
 </div>
-<?php }elseif($ws==9){?>
+<?php }elseif($ws==9 && $gr == "BQL"){?>
 <div id="dialog" title="Gửi trả kết quả công việc cho nhân sự">
-	<?php $groups =  $this->requestAction("tasks/listPBgv/7");?>
+	<?php $groups =  $this->requestAction("tasks/listPBgv/1");?>
 	<form method="post" action="dochange">
 		<?php $i=0; foreach($groups as $group):$i++;?>
 		<div class='block'>
@@ -422,7 +423,7 @@
 			$( "#dialog" ).dialog( "open" );
 			event.preventDefault();
 	});
-	<?php if($ws==1){?>
+	<?php if($ws==1 && $gr == "BQL"){?>
 	$( "#dialog" ).dialog({
 		autoOpen: false,
 		width: 400,
@@ -439,7 +440,7 @@
 							if($obj[d].checked == true) str+=$obj[d].value+',';
 						}
 						str = str.substr(0,str.length-1);
-						$.get("<?php echo $this->webroot;?>tasks/change/"+<?=$task['Task']['id'];?>+"/"+"<?=base64_encode(2);?>"+"/"+str, function(data){
+						$.get("<?php echo $this->webroot;?>tasks/change/"+<?=base64_encode($task['Task']['id']);?>+"/"+"<?=base64_encode(2);?>"+"/"+str, function(data){
 						   if(data == 2) {
 						   
 						   window.location.reload();
@@ -460,7 +461,7 @@
 		]
 
 	});
-	<?php }elseif($ws==2){?>
+	<?php }elseif($ws==2 && $gr == "NS"){?>
 	$( "#dialog" ).dialog({
 		autoOpen: false,
 		width: 400,
@@ -477,7 +478,7 @@
 							if($obj[d].checked == true) str+=$obj[d].value+',';
 						}
 						str = str.substr(0,str.length-1);
-						$.get("<?php echo $this->webroot;?>tasks/change/"+<?=$task['Task']['id'];?>+"/"+"<?=base64_encode(3);?>"+"/"+str, function(data){
+						$.get("<?php echo $this->webroot;?>tasks/change/"+<?=base64_encode($task['Task']['id']);?>+"/"+"<?=base64_encode(3);?>"+"/"+str, function(data){
 						   if(data == 2) {
 						   window.location.reload();
 						   alert('Thông báo thành công !');
@@ -497,7 +498,7 @@
 		]
 
 	});
-	<?php }elseif($ws==3){?>
+	<?php }elseif($ws==3 && $gr == "BQL"){?>
 	$( "#dialog" ).dialog({
 		autoOpen: false,
 		width: 400,
@@ -514,7 +515,7 @@
 							if($obj[d].checked == true) str+=$obj[d].value+',';
 						}
 						str = str.substr(0,str.length-1);
-						$.get("<?php echo $this->webroot;?>tasks/change/"+<?=$task['Task']['id'];?>+"/"+"<?=base64_encode(4);?>"+"/"+str, function(data){
+						$.get("<?php echo $this->webroot;?>tasks/change/"+<?=base64_encode($task['Task']['id']);?>+"/"+"<?=base64_encode(4);?>"+"/"+str, function(data){
 						   if(data == 2) {
 						   window.location.reload();
 						   alert('Trình thành công !');
@@ -534,7 +535,7 @@
 		]
 
 	});
-	<?php }elseif($ws==4){?>
+	<?php }elseif($ws==4 && $gr == "PGD"){?>
 	$( "#dialog" ).dialog({
 		autoOpen: false,
 		width: 400,
@@ -551,7 +552,7 @@
 							if($obj[d].checked == true) str+=$obj[d].value+',';
 						}
 						str = str.substr(0,str.length-1);
-						$.get("<?php echo $this->webroot;?>tasks/change/"+<?=$task['Task']['id'];?>+"/"+"<?=base64_encode(5);?>"+"/"+str, function(data){
+						$.get("<?php echo $this->webroot;?>tasks/change/"+<?=base64_encode($task['Task']['id']);?>+"/"+"<?=base64_encode(5);?>"+"/"+str, function(data){
 						   if(data == 2) {
 						   window.location.reload();
 						   alert('Chuyển thành công !');
@@ -571,7 +572,7 @@
 		]
 
 	});
-	<?php }elseif($ws==5){?>
+	<?php }elseif($ws==5 && $gr == "PGD"){?>
 	$( "#dialog" ).dialog({
 		autoOpen: false,
 		width: 400,
@@ -588,7 +589,7 @@
 							if($obj[d].checked == true) str+=$obj[d].value+',';
 						}
 						str = str.substr(0,str.length-1);
-						$.get("<?php echo $this->webroot;?>tasks/change/"+<?=$task['Task']['id'];?>+"/"+"<?=base64_encode(6);?>"+"/"+str, function(data){
+						$.get("<?php echo $this->webroot;?>tasks/change/"+<?=base64_encode($task['Task']['id']);?>+"/"+"<?=base64_encode(6);?>"+"/"+str, function(data){
 						   if(data == 2) {
 						   window.location.reload();
 						   alert('Chuyển thành công !');
@@ -608,7 +609,7 @@
 		]
 
 	});
-	<?php }elseif($ws==6){?>
+	<?php }elseif($ws==6 && $gr == "KT"){?>
 	$( "#dialog" ).dialog({
 		autoOpen: false,
 		width: 400,
@@ -625,7 +626,7 @@
 							if($obj[d].checked == true) str+=$obj[d].value+',';
 						}
 						str = str.substr(0,str.length-1);
-						$.get("<?php echo $this->webroot;?>tasks/change/"+<?=$task['Task']['id'];?>+"/"+"<?=base64_encode(7);?>"+"/"+str, function(data){
+						$.get("<?php echo $this->webroot;?>tasks/change/"+<?=base64_encode($task['Task']['id']);?>+"/"+"<?=base64_encode(7);?>"+"/"+str, function(data){
 						   if(data == 2) {
 						   window.location.reload();
 						   alert('Chuyển thành công !');
@@ -645,7 +646,7 @@
 		]
 
 	});
-	<?php }elseif($ws==7){?>
+	<?php }elseif($ws==7 && $gr == "GD"){?>
 	$( "#dialog" ).dialog({
 		autoOpen: false,
 		width: 400,
@@ -662,7 +663,7 @@
 							if($obj[d].checked == true) str+=$obj[d].value+',';
 						}
 						str = str.substr(0,str.length-1);
-						$.get("<?php echo $this->webroot;?>tasks/change/"+<?=$task['Task']['id'];?>+"/"+"<?=base64_encode(8);?>"+"/"+str, function(data){
+						$.get("<?php echo $this->webroot;?>tasks/change/"+<?=base64_encode($task['Task']['id']);?>+"/"+"<?=base64_encode(8);?>"+"/"+str, function(data){
 						   if(data == 2) {
 						   window.location.reload();
 						   alert('Chuyển thành công !');
@@ -682,7 +683,7 @@
 		]
 
 	});
-	<?php }elseif($ws==8){?>
+	<?php }elseif($ws==8 && $gr == "KT"){?>
 	$( "#dialog" ).dialog({
 		autoOpen: false,
 		width: 400,
@@ -699,7 +700,7 @@
 							if($obj[d].checked == true) str+=$obj[d].value+',';
 						}
 						str = str.substr(0,str.length-1);
-						$.get("<?php echo $this->webroot;?>tasks/change/"+<?=$task['Task']['id'];?>+"/"+"<?=base64_encode(9);?>"+"/"+str, function(data){
+						$.get("<?php echo $this->webroot;?>tasks/change/"+<?=base64_encode($task['Task']['id']);?>+"/"+"<?=base64_encode(9);?>"+"/"+str, function(data){
 						   if(data == 2) {
 						   window.location.reload();
 						   alert('Chuyển thành công !');
@@ -719,7 +720,7 @@
 		]
 
 	});
-	<?php }elseif($ws==9){?>
+	<?php }elseif($ws==9 && $gr == "BQL"){?>
 	$( "#dialog" ).dialog({
 		autoOpen: false,
 		width: 400,
@@ -736,7 +737,7 @@
 							if($obj[d].checked == true) str+=$obj[d].value+',';
 						}
 						str = str.substr(0,str.length-1);
-						$.get("<?php echo $this->webroot;?>tasks/change/"+<?=$task['Task']['id'];?>+"/"+"<?=base64_encode(10);?>"+"/"+str, function(data){
+						$.get("<?php echo $this->webroot;?>tasks/change/"+<?=base64_encode($task['Task']['id']);?>+"/"+"<?=base64_encode(10);?>"+"/"+str, function(data){
 						   if(data == 2) {
 						   window.location.reload();
 						   alert('Chuyển thành công !');
