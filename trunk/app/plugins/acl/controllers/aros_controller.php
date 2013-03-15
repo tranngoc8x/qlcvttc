@@ -14,7 +14,7 @@ class ArosController extends AclAppController
 	var $helpers    = array('Js' => array('Jquery'));
 	
 	var $paginate = array(
-        'limit' => 5,
+        'limit' => 20,
         //'order' => array('display_name' => 'asc')
 		);
 	
@@ -332,7 +332,8 @@ class ArosController extends AclAppController
 	    
 	    $user_display_field = $this->AclManager->set_display_name($user_model_name, Configure :: read('acl.user.display_name'));
 	    
-	    $this->paginate['order'] = array($user_display_field => 'asc');
+	    
+		$this->paginate['order'] = array($user_display_field => 'asc');
 	    $this->set('user_display_field', $user_display_field);
 	    
 	    if(empty($user_id))
