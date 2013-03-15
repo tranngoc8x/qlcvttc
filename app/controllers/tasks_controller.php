@@ -3,7 +3,6 @@ class TasksController extends AppController {
 
 	var $name = 'Tasks';
 	var $components = array('Uploader.Uploader');
-	
 	function beforeFilter(){
 		parent:: beforeFilter();
         $this->Uploader->uploadDir = 'files/documents/'; //thu muc chua file upload
@@ -14,10 +13,35 @@ class TasksController extends AppController {
 
     }
 
-	function index() {
-		$uinf = $this->Auth->user();
-		$this->Task->recursive = 0;
-		$this->set('tasks', $this->paginate(array('Task.users_id'=>$uinf['User']['id'])));
+	function index($id=null) {
+		$this->Task->recursive = -1;
+		$user = $this->viewVars['ssid'];
+		$cond1=array();
+		$this->Usertask->recursive = 1;
+		
+		switch ($id) {
+			case 'cong-viec-chua-xu-ly':
+				$tuid = $this->Task->Usertask->find('list',array('fields'=>array('tasks_id'),'conditions'=>array('Usertask.users_id'=>$user['User']['id'],'Usertask.done'=>1),'group' => 'tasks_id'));
+				$cond= array('or'=>array(array('Task.users_id'=>$user['User']['id'],'Task.status'=>1),'Task.id'=>$tuid));
+				break;
+			case 'cong-viec-da-chuyen':
+				//$tuid = $this->Task->Usertask->find('list',array('joins'=> array(array('table' => 'tasks', 'alias' => 'Task',  'type' => 'right', 'conditions' => array( 'Usertask.tasks_id = Task.id'))),'fields'=>array('tasks_id'),'conditions'=>array('Usertask.users_chuyen'=>$user['User']['id'],'Usertask.done'=>2,'Task.status <>'=>1),'group' => 'tasks_id'));
+				$tuid = $this->Task->Usertask->find('list',array('joins'=> array(array('table' => 'tasks', 'alias' => 'Task',  'type' => 'right', 'conditions' => array( 'Usertask.tasks_id = Task.id'))),'fields'=>array('tasks_id'),'conditions'=>array('or'=>array(array('Usertask.users_chuyen'=>$user['User']['id']),array('Task.status <>'=>1,'Task.users_id'=>$user['User']['id']))),'group' => 'tasks_id'));
+				$cond= array('Task.id'=>$tuid);
+				break;
+			case 'cong-viec-bi-tra-lai':
+				# code...
+				break;
+			case 'cong-viec-da-hoan-thanh':
+				# code...
+				break;
+			default:
+				# code...
+				break;
+		}
+	  
+		$this->paginate = array('conditions'=>$cond);
+		$this->set('tasks', $this->paginate());
 	}
 
 	function view($id = null) {
@@ -140,6 +164,7 @@ class TasksController extends AppController {
 		$this->autoRender = false;
 		if(empty($cv) or !is_numeric($cv) or empty($str)) return 1;
 		else{
+			$user = $this->viewVars['ssid'];
 			$this->loadModel("Usertask");
 			$ar = explode(',', $str);
 			$s = base64_decode($st);
@@ -149,11 +174,22 @@ class TasksController extends AppController {
 				$data['Usertask']['users_id'] = $r;
 				$data['Usertask']['tasks_id'] = $cv;
 				$data['Usertask']['status'] = $s;
+				$data['Usertask']['users_chuyen'] = $user['User']['id'];
+				$data['Usertask']['done'] = 1;
 				$this->Usertask->save($data);
 			endforeach;
 			//debug($data);
 			$this->Task->id = $cv;
 			$this->Task->saveField('status',$s);
+			//cap nhat da lam xong
+			$user = $this->viewVars['ssid'];
+			$this->Usertask->recursive = -1;
+			$ids = $this->Usertask->find('first',array('conditions'=>array('Usertask.users_id'=>$user['User']['id'],'Usertask.tasks_id'=>$cv)));
+			//debug($ids);
+			if(!empty($ids)){
+				$this->Usertask->id = $ids['Usertask']['id'];
+				$this->Usertask->saveField('done','2');
+			}
 			return 2;
 		}
 	}

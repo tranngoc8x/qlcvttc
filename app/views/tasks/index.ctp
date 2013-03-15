@@ -3,7 +3,7 @@
 	<table class="sort-table" cellspacing="0" width="100%"> 
 		<thead> 
 		<tr>
-			<th><input type="checkbox" name="checkall" value="" onClick="docheck(document.frmList.checkall.checked,0);" class="submit"/></th>
+			<th></th>
 			<th><?php echo $this->Paginator->sort('Tên công việc','name');?></th>
 			<th><?php echo $this->Paginator->sort('Người tạo','users_id');?></th>
 			<th><?php echo $this->Paginator->sort('Ngày tạo','start');?></th>
@@ -14,9 +14,10 @@
 	foreach ($tasks as $item):
 	?>
 	<tr class='tbody'>
-		<td><?php echo $item['Task']['id']; ?>&nbsp;</td>
+		<td align=center><?php echo $item['Task']['id']; ?>&nbsp;</td>
 		<td><?php echo $item['Task']['name']; ?>&nbsp;</td>
-		<td><?php echo $item['User']['name']; ?>&nbsp;</td>
+		<td><?php   $u = $this->requestAction('tasks/getNV/'.$item['Task']['users_id']);
+				  		echo $u['User']['name']; ?>&nbsp;</td>
 		<td><?php echo date('d/m/Y',strtotime($item['Task']['start'])); ?>&nbsp;</td>
 		<td><?php echo stt(base64_encode($item['Task']['status'])); ?>&nbsp;</td>
 		<td class="actions">
@@ -30,4 +31,5 @@
 	</tr>
 <?php endforeach; ?>
 	</table>
+	<?php echo $this->element('sql_dump');?>
 	<script>var title = "Quản lý công việc";</script>

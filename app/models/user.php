@@ -101,7 +101,7 @@ class User extends AppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		)
-		);
+	);
 
 	function parentNode() {
 		if (!$this->id && empty($this->data)) {

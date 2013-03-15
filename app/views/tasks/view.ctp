@@ -34,7 +34,7 @@
 	<tr class='tbody'>
 		<td class='tDtite'><span class='text_tite'>Tên công việc:</span></td>
 		<td colspan=3><?php echo $task['Task']['name']; ?></td>
-	</tr>	
+	</tr>
 	<tr class='tbody'>
 		<td class='tDtite'><span class="text_tite">Nội dung công việc: </span></td>
 		<td colspan=3><?php echo $task['Task']['name']; ?></td>
