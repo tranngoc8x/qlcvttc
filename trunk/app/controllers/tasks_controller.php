@@ -30,7 +30,7 @@ class TasksController extends AppController {
 				$cond= array('Task.id'=>$tuid);
 				break;
 			case 'cong-viec-bi-tra-lai':
-				# code...
+				$cond= array( );
 				break;
 			case 'cong-viec-da-hoan-thanh':
 				# code...
@@ -42,6 +42,8 @@ class TasksController extends AppController {
 	  
 		$this->paginate = array('conditions'=>$cond);
 		$this->set('tasks', $this->paginate());
+		
+		
 	}
 
 	function view($id = null) {
@@ -49,8 +51,13 @@ class TasksController extends AppController {
 			$this->Session->setFlash(__('Invalid task', true));
 			$this->redirect(array('action' => 'index'));
 		}
-		//$this->set('nv',$this->Task->Usertask->find('all',array('Usertask.tasks_id'=>$id)));
 		$this->set('task', $this->Task->read(null, $id));
+		$user = $this->viewVars['ssid'];
+		$this->loadModel('Group');
+		$this->Group->recursive = -1;
+		$grs = $this->Group->find('first',array('fields'=>array('magroup'),'conditions'=>array('Group.id'=>$user['User']['groups_id'])));
+		$gr= $grs['Group']['magroup'];
+		$this->set(compact('gr'));
 	}
 
 	function add() {
@@ -139,16 +146,13 @@ class TasksController extends AppController {
 	function listPBgv($id=null){
 		$this->layout = 'ajax';
 		switch ($id) {
-			case '1': $ar = array('Group.magroup <>'=>"GD"); break;
-			case '2': $ar = array("NOT"=>array('Group.magroup'=>array("GD","PGD")));break;
+			case '1': $ar = array('Group.magroup '=>"NS"); break;
+			case '2': $ar = array('Group.magroup '=>"BQL");break;
 			case '3': $ar = array('Group.magroup '=>"PGD"); break;
 			case '4': $ar = array('Group.magroup '=>"KT"); break;
 			case '5': $ar = array('Group.magroup '=>"GD"); break;
 			case '6': $ar = array('Group.magroup '=>"BQL"); break;
-			case '7': $ar = array('Group.magroup '=>"NS"); break;
-			default:
-				$ar= array();
-				break;
+			default:  $ar = array();break;
 		}
 		$this->loadModel("Group");
 		$this->Group->recursive = 0;
@@ -160,7 +164,7 @@ class TasksController extends AppController {
 		}
 		//debug($groups);
 	}
-	function change($cv,$st,$str){
+	function change($cvs,$st,$str){
 		$this->autoRender = false;
 		if(empty($cv) or !is_numeric($cv) or empty($str)) return 1;
 		else{
@@ -168,6 +172,9 @@ class TasksController extends AppController {
 			$this->loadModel("Usertask");
 			$ar = explode(',', $str);
 			$s = base64_decode($st);
+			$cv = base64_decode($cvs);
+			$this->Task->id = $cv;
+			$this->Task->saveField('status',$s);
 			foreach($ar as $r):
 				if(!is_numeric($r)) return 1;
 				$this->Usertask->create();
@@ -179,8 +186,7 @@ class TasksController extends AppController {
 				$this->Usertask->save($data);
 			endforeach;
 			//debug($data);
-			$this->Task->id = $cv;
-			$this->Task->saveField('status',$s);
+			
 			//cap nhat da lam xong
 			$user = $this->viewVars['ssid'];
 			$this->Usertask->recursive = -1;

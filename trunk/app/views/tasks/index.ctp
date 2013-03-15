@@ -31,5 +31,5 @@
 	</tr>
 <?php endforeach; ?>
 	</table>
-	<?php echo $this->element('sql_dump');?>
+	<?php //echo $this->element('sql_dump');?>
 	<script>var title = "Quản lý công việc";</script>

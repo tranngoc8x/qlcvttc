@@ -12,7 +12,7 @@ echo __d('acl', 'Tên', true);
 echo '<br/>';
 echo $this->Form->input($user_display_field, array('label' => false, 'div' => false));
 echo ' ';
-echo $this->Form->end(array('label' =>__d('acl', 'filter', true), 'div' => false));
+echo $this->Form->end(array('label' =>__d('acl', 'Tìm', true), 'div' => false));
 echo '<br/>';
 ?>
 <table border="0" cellpadding="5" cellspacing="2">
@@ -20,7 +20,7 @@ echo '<br/>';
 	<?php
 	$column_count = 1;
 	
-	$headers = array($paginator->sort(__d('acl', 'name', true), $user_display_field));
+	$headers = array($paginator->sort(__d('acl', 'Tên', true), $user_display_field));
 	
 	foreach($roles as $role)
 	{

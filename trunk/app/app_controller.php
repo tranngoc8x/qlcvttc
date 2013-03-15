@@ -29,15 +29,15 @@ function stt($id = null){
     $stt = base64_decode($id);
     switch($stt){
         case 1: echo "Khởi tạo"; break;
-        case 2: echo "Chuyển nhân viên"; break;
-        case 3: echo "Trình ban quản lý"; break;
-        case 4: echo "Trình PGĐ kế hoach"; break;
-        case 5: echo "Trình PGĐ tài chính"; break;
-        case 6: echo "Chuyển kế toán"; break;
-        case 7: echo "Trình giám đốc"; break;
-        case 8: echo "Trả kế toán"; break;
-        case 9: echo "Trả ban quản lý"; break;
-        case 10: echo "Trả nhân sự"; break;
+        case 2: echo "Đã chuyển nhân viên xử lý"; break;
+        case 3: echo "Đang chờ ban quản lý duyệt"; break;
+        case 4: echo "Đang chờ PGĐ kế hoach duyệt"; break;
+        case 5: echo "Đang chờ PGĐ tài chính duyệt"; break;
+        case 6: echo "Đã chuyển kế toán"; break;
+        case 7: echo "Đang chờ giám đốc"; break;
+        case 8: echo "Đã trả lại kế toán"; break;
+        case 9: echo "Đã trả ban quản lý"; break;
+        case 10: echo "Đã trả nhân sự"; break;
     }
 }
 function work($id=null){
