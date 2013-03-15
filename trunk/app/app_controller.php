@@ -15,11 +15,13 @@ class AppController extends Controller {
 	var $uses = array('User');
     function beforeFilter(){		
 		parent::beforeFilter();
-		$idus = 0;
-		if($this->Auth->user()) $idus = $this->Auth->user('id');
-		$los  = $this->User->query("SELECT * FROM logs where users_id = '{$idus}'");
-        $ssid = $this->User->find('first',array('fields'=>array('id','username','name'),'conditions'=>array('User.id'=>$idus)));
-		$this->Auth->allow('login');
+		if($this->Auth->user())
+        {
+            $idus = $this->Auth->user('id');
+            $los  = $this->User->query("SELECT * FROM logs where users_id = '{$idus}'");
+            $ssid = $this->Auth->user();
+        }	
+        $this->Auth->allow('login');
 		$this->set(compact('los','ssid'));
 	}
 }
