@@ -2,17 +2,7 @@
 class TasksController extends AppController {
 
 	var $name = 'Tasks';
-	var $components = array('Uploader.Uploader');
-	function beforeFilter(){
-		parent:: beforeFilter();
-        $this->Uploader->uploadDir = 'files/documents/'; //thu muc chua file upload
-        $this->Uploader->enableUpload = true;
-        $this->Uploader->maxFileSize = '10M'; // quy dinh dung luong duoc upload len toi da la 2 Megabytes
-        $this->Uploader->maxNameLength = 25;//do dai cua ten file
-        $this->Uploader->tempDir = TMP;
-
-    }
-
+ 
 	function index($id=null) {
 		$this->Task->recursive = -1;
 		$user = $this->viewVars['ssid'];
@@ -33,10 +23,10 @@ class TasksController extends AppController {
 				$cond= array( );
 				break;
 			case 'cong-viec-da-hoan-thanh':
-				# code...
+				$cond= array( );
 				break;
 			default:
-				# code...
+				$cond= array( );
 				break;
 		}
 	  
@@ -70,12 +60,33 @@ class TasksController extends AppController {
 			$this->data['Task']['users_id'] = $uid['User']['id'];
 			
 			if ($this->Task->save($this->data)) {
+				$lastid = $this->Task->getLastInsertId();
+				$dir = "files/documents/".date('m-Y');
+		 		if(!is_dir($dir)) mkdir($dir,0777);
+		 		$fre = date('dmyhis_');
+		 		$err=0;
+			 	foreach ($_FILES['files']['name'] as $key => $value) {
+			 		$data = array();
+			 	 	move_uploaded_file( $_FILES["files"]["tmp_name"][$key],$dir.'/'.$fre.$_FILES['files']['name'][$key]);
+			 	 	$data['Tfile']['name'] = $fre.$value;
+			 	 	$data['Tfile']['type'] = 1;
+					$data['Tfile']['tasks_id'] = $lastid;
+					$data['Tfile']['folder'] = date('m-Y');
+			 	 	$this->Task->Tfile->create();
+			 	 	$this->Task->Tfile->save($data);
+			 	 	$data = array();
+			 	 	if($files['error'][$key] !=0 || $files['error'][$key] !='0') $err ++;
+			 	}
+			 	$this->redirect(array('action' => 'index'));
 				$this->Session->setFlash(__('The task has been saved', true),'default',array('class'=>'success'));
-				$this->redirect(array('action' => 'index'));
+				 
 			} else {
 				$this->Session->setFlash(__('The task could not be saved. Please, try again.', true),'default',array('class'=>'error'));
 			}
 		}
+		$types = $this->Task->Type->find('list');
+		$linhvucs = $this->Task->Linhvuc->find('list');
+		$this->set(compact(array('types','linhvucs')));
 	}
 
 	function edit($id = null) {

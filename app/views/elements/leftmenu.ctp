@@ -9,9 +9,9 @@
 
 	switch (strtolower($this->name))
 	{
-		case "positions": 
+		case "positions":
 		case "users":
-		case "groups":			$tab1 = 1; break;	
+		case "groups":			$tab1 = 1; break;
 		case "tasks":			$tab3 = 1; break;
 		default: $tab3 = 1;break;
 	}
@@ -29,11 +29,11 @@
 		<li>
 		<?php echo $this->Html->link(__('Công việc bị trả lại', true), array('plugin'=>false,'controller'=>'tasks','action' => 'index','cong-viec-bi-tra-lai')); ?>
 		</li>
-		
+
 		<li>
 		<?php echo $this->Html->link(__('Công việc đã hoàn thành', true), array('plugin'=>false,'controller'=>'tasks','action' => 'index','cong-viec-da-hoan-thanh')); ?>
 		</li>
-		
+
 	</ul>
 </div>
 <div id="nhansu">
@@ -66,9 +66,9 @@
 Ext.onReady(function(){
 	addAccordion('Quản lý công việc', 'congviec', <?php echo $tab3?>)
 	addAccordion('Quản lý nhân sự', 'nhansu', <?php echo $tab1?>)
-	
-	
-	
+
+
+
 });
 </script>
 
