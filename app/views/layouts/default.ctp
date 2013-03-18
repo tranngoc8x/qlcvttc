@@ -3,7 +3,7 @@
 <head>
 	<title>IFORCE ADMINISTRATOR V2</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<link rel="shortcut icon" href="img/admin/icon.jpg" type="image/x-icon" /> 
+	<link rel="shortcut icon" href="<?=$this->webroot;?>img/admin/icon.jpg" type="image/x-icon" /> 
 	 
  
 	<?php

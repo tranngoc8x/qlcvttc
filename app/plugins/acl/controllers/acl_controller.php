@@ -17,13 +17,8 @@ class AclController extends AclAppController {
 		$this->Auth->allow('*');
 	}
 	
-	
+ 
 	function index()
-	{
-	    $this->redirect('/acl/aros');
-	}
-	
-	function admin_index()
 	{
 	    $this->redirect('/acl/acos');
 	}

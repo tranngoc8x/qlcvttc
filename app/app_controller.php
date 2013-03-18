@@ -1,26 +1,21 @@
 <?php
 class AppController extends Controller {
 	var $helpers = array('Html','Form','Javascript','Session','Time','Link');
-	var $components = array(
-            'Session',
-            'Auth' => array(
-                'loginRedirect' => array('controller' => 'pages', 'action' => 'display'),
-                'logoutRedirect' => array('controller' => 'users', 'action' => 'login'),
-                'loginAction' => array( 'controller' => 'users', 'action' => 'login'),
-                'loginError' => 'Thông tin đăng nhập không đúng',
-                'authError' => 'Truy cập bị từ chối'
-            ),
-            'Acl'
-        );
+	var $components = array('Session','Auth','Acl');
 	var $uses = array('User');
-    function beforeFilter(){		
+    function beforeFilter(){
 		parent::beforeFilter();
+        $this->Auth->loginRedirect = array('controller' => 'pages', 'action' => 'display');
+        $this->Auth->logoutRedirect = array('controller' => 'users', 'action' => 'login');
+        $this->Auth->loginAction = array( 'controller' => 'users', 'action' => 'login');
+        $this->Auth->loginError = 'Thông tin đăng nhập không đúng';
+        $this->Auth->authError = 'Truy cập bị từ chối';
 		if($this->Auth->user())
         {
             $idus = $this->Auth->user('id');
             $los  = $this->User->query("SELECT * FROM logs where users_id = '{$idus}'");
             $ssid = $this->Auth->user();
-        }	
+        }
         $this->Auth->allow('login');
 		$this->set(compact('los','ssid'));
 	}

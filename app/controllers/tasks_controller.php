@@ -2,13 +2,13 @@
 class TasksController extends AppController {
 
 	var $name = 'Tasks';
- 
+	
 	function index($id=null) {
 		$this->Task->recursive = -1;
 		$user = $this->viewVars['ssid'];
 		$cond1=array();
 		$this->Usertask->recursive = 1;
-		
+
 		switch ($id) {
 			case 'cong-viec-chua-xu-ly':
 				$tuid = $this->Task->Usertask->find('list',array('fields'=>array('tasks_id'),'conditions'=>array('Usertask.users_id'=>$user['User']['id'],'Usertask.done'=>1),'group' => 'tasks_id'));
@@ -29,11 +29,15 @@ class TasksController extends AppController {
 				$cond= array( );
 				break;
 		}
-	  
+
 		$this->paginate = array('conditions'=>$cond);
 		$this->set('tasks', $this->paginate());
-		
-		
+		$this->loadModel('Group');
+		$this->Group->recursive = -1;
+		$grs = $this->Group->find('first',array('fields'=>array('magroup'),'conditions'=>array('Group.id'=>$user['User']['groups_id'])));
+		$gr= $grs['Group']['magroup'];
+		$this->set(compact('gr'));
+
 	}
 
 	function view($id = null) {
@@ -58,7 +62,7 @@ class TasksController extends AppController {
 			$this->data['Task']['status']  = 1;
 			$uid = $this->Auth->user();
 			$this->data['Task']['users_id'] = $uid['User']['id'];
-			
+
 			if ($this->Task->save($this->data)) {
 				$lastid = $this->Task->getLastInsertId();
 				$dir = "files/documents/".date('m-Y');
@@ -79,7 +83,7 @@ class TasksController extends AppController {
 			 	}
 			 	$this->redirect(array('action' => 'index'));
 				$this->Session->setFlash(__('The task has been saved', true),'default',array('class'=>'success'));
-				 
+
 			} else {
 				$this->Session->setFlash(__('The task could not be saved. Please, try again.', true),'default',array('class'=>'error'));
 			}
@@ -111,6 +115,9 @@ class TasksController extends AppController {
 		if (empty($this->data)) {
 			$this->data = $this->Task->read(null, $id);
 		}
+		$types = $this->Task->Type->find('list');
+		$linhvucs = $this->Task->Linhvuc->find('list');
+		$this->set(compact(array('types','linhvucs')));
 	}
 
 	function delete($id = null) {
@@ -197,7 +204,7 @@ class TasksController extends AppController {
 				$this->Usertask->save($data);
 			endforeach;
 			//debug($data);
-			
+
 			//cap nhat da lam xong
 			$user = $this->viewVars['ssid'];
 			$this->Usertask->recursive = -1;

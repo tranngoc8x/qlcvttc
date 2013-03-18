@@ -665,7 +665,7 @@ class ArosController extends AclAppController
         $user =& $this->{Configure :: read('acl.aro.user.model')};
 
 	    $user_data = $user->read(null, $user_id);
-
+		 
         $aro_node = $this->Acl->Aro->node($user_data);
         if(!empty($aro_node))
         {
@@ -712,6 +712,7 @@ class ArosController extends AclAppController
 	}
 	function grant_user_permission($user_id)
 	{
+	
 	    $user =& $this->{Configure :: read('acl.aro.user.model')};
         
         $user->id = $user_id;
@@ -761,7 +762,7 @@ class ArosController extends AclAppController
 	    $user =& $this->{Configure :: read('acl.aro.user.model')};
         
         $user->id = $user_id;
-
+		
         $aco_path = $this->_get_passed_aco_path();
         
         /*
