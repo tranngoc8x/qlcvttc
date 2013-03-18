@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 13, 2013 at 11:01 AM
+-- Generation Time: Mar 15, 2013 at 11:20 AM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -36,14 +36,14 @@ CREATE TABLE IF NOT EXISTS `acos` (
   `lft` int(10) DEFAULT NULL,
   `rght` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=103 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=112 ;
 
 --
 -- Dumping data for table `acos`
 --
 
 INSERT INTO `acos` (`id`, `parent_id`, `model`, `foreign_key`, `alias`, `lft`, `rght`) VALUES
-(43, NULL, NULL, NULL, 'controllers', 1, 120),
+(43, NULL, NULL, NULL, 'controllers', 1, 138),
 (44, 43, NULL, NULL, 'Pages', 2, 5),
 (45, 44, NULL, NULL, 'display', 3, 4),
 (46, 43, NULL, NULL, 'Posts', 6, 17),
@@ -52,7 +52,7 @@ INSERT INTO `acos` (`id`, `parent_id`, `model`, `foreign_key`, `alias`, `lft`, `
 (49, 46, NULL, NULL, 'add', 11, 12),
 (50, 46, NULL, NULL, 'edit', 13, 14),
 (51, 46, NULL, NULL, 'delete', 15, 16),
-(52, 43, NULL, NULL, 'Users', 18, 37),
+(52, 43, NULL, NULL, 'Users', 18, 39),
 (53, 52, NULL, NULL, 'login', 19, 20),
 (54, 52, NULL, NULL, 'login2', 21, 22),
 (55, 52, NULL, NULL, 'logout', 23, 24),
@@ -62,47 +62,56 @@ INSERT INTO `acos` (`id`, `parent_id`, `model`, `foreign_key`, `alias`, `lft`, `
 (59, 52, NULL, NULL, 'edit', 31, 32),
 (60, 52, NULL, NULL, 'delete', 33, 34),
 (61, 52, NULL, NULL, 'mdelete', 35, 36),
-(62, 43, NULL, NULL, 'Acl', 38, 83),
-(63, 62, NULL, NULL, 'Acos', 39, 46),
-(64, 63, NULL, NULL, 'index', 40, 41),
-(65, 63, NULL, NULL, 'empty_acos', 42, 43),
-(66, 63, NULL, NULL, 'build_acl', 44, 45),
-(67, 62, NULL, NULL, 'Aros', 47, 82),
-(68, 67, NULL, NULL, 'index', 48, 49),
-(69, 67, NULL, NULL, 'check', 50, 51),
-(70, 67, NULL, NULL, 'users', 52, 53),
-(71, 67, NULL, NULL, 'update_user_role', 54, 55),
-(72, 67, NULL, NULL, 'ajax_role_permissions', 56, 57),
-(73, 67, NULL, NULL, 'role_permissions', 58, 59),
-(74, 67, NULL, NULL, 'user_permissions', 60, 61),
-(75, 67, NULL, NULL, 'empty_permissions', 62, 63),
-(76, 67, NULL, NULL, 'clear_user_specific_permissions', 64, 65),
-(77, 67, NULL, NULL, 'grant_all_controllers', 66, 67),
-(78, 67, NULL, NULL, 'deny_all_controllers', 68, 69),
-(79, 67, NULL, NULL, 'get_role_controller_permission', 70, 71),
-(80, 67, NULL, NULL, 'grant_role_permission', 72, 73),
-(81, 67, NULL, NULL, 'deny_role_permission', 74, 75),
-(82, 67, NULL, NULL, 'get_user_controller_permission', 76, 77),
-(83, 67, NULL, NULL, 'grant_user_permission', 78, 79),
-(84, 67, NULL, NULL, 'deny_user_permission', 80, 81),
-(85, 43, NULL, NULL, 'Groups', 84, 95),
-(86, 85, NULL, NULL, 'index', 85, 86),
-(87, 85, NULL, NULL, 'view', 87, 88),
-(88, 85, NULL, NULL, 'add', 89, 90),
-(89, 85, NULL, NULL, 'edit', 91, 92),
-(90, 85, NULL, NULL, 'delete', 93, 94),
-(91, 43, NULL, NULL, 'Positions', 96, 107),
-(92, 91, NULL, NULL, 'index', 97, 98),
-(93, 91, NULL, NULL, 'view', 99, 100),
-(94, 91, NULL, NULL, 'add', 101, 102),
-(95, 91, NULL, NULL, 'edit', 103, 104),
-(96, 91, NULL, NULL, 'delete', 105, 106),
-(97, 43, NULL, NULL, 'Tasks', 108, 119),
-(98, 97, NULL, NULL, 'index', 109, 110),
-(99, 97, NULL, NULL, 'view', 111, 112),
-(100, 97, NULL, NULL, 'add', 113, 114),
-(101, 97, NULL, NULL, 'edit', 115, 116),
-(102, 97, NULL, NULL, 'delete', 117, 118);
+(62, 43, NULL, NULL, 'Acl', 40, 85),
+(63, 62, NULL, NULL, 'Acos', 41, 48),
+(64, 63, NULL, NULL, 'index', 42, 43),
+(65, 63, NULL, NULL, 'empty_acos', 44, 45),
+(66, 63, NULL, NULL, 'build_acl', 46, 47),
+(67, 62, NULL, NULL, 'Aros', 49, 84),
+(68, 67, NULL, NULL, 'index', 50, 51),
+(69, 67, NULL, NULL, 'check', 52, 53),
+(70, 67, NULL, NULL, 'users', 54, 55),
+(71, 67, NULL, NULL, 'update_user_role', 56, 57),
+(72, 67, NULL, NULL, 'ajax_role_permissions', 58, 59),
+(73, 67, NULL, NULL, 'role_permissions', 60, 61),
+(74, 67, NULL, NULL, 'user_permissions', 62, 63),
+(75, 67, NULL, NULL, 'empty_permissions', 64, 65),
+(76, 67, NULL, NULL, 'clear_user_specific_permissions', 66, 67),
+(77, 67, NULL, NULL, 'grant_all_controllers', 68, 69),
+(78, 67, NULL, NULL, 'deny_all_controllers', 70, 71),
+(79, 67, NULL, NULL, 'get_role_controller_permission', 72, 73),
+(80, 67, NULL, NULL, 'grant_role_permission', 74, 75),
+(81, 67, NULL, NULL, 'deny_role_permission', 76, 77),
+(82, 67, NULL, NULL, 'get_user_controller_permission', 78, 79),
+(83, 67, NULL, NULL, 'grant_user_permission', 80, 81),
+(84, 67, NULL, NULL, 'deny_user_permission', 82, 83),
+(85, 43, NULL, NULL, 'Groups', 86, 97),
+(86, 85, NULL, NULL, 'index', 87, 88),
+(87, 85, NULL, NULL, 'view', 89, 90),
+(88, 85, NULL, NULL, 'add', 91, 92),
+(89, 85, NULL, NULL, 'edit', 93, 94),
+(90, 85, NULL, NULL, 'delete', 95, 96),
+(91, 43, NULL, NULL, 'Positions', 98, 111),
+(92, 91, NULL, NULL, 'index', 99, 100),
+(93, 91, NULL, NULL, 'view', 101, 102),
+(94, 91, NULL, NULL, 'add', 103, 104),
+(95, 91, NULL, NULL, 'edit', 105, 106),
+(96, 91, NULL, NULL, 'delete', 107, 108),
+(97, 43, NULL, NULL, 'Tasks', 112, 137),
+(98, 97, NULL, NULL, 'index', 113, 114),
+(99, 97, NULL, NULL, 'view', 115, 116),
+(100, 97, NULL, NULL, 'add', 117, 118),
+(101, 97, NULL, NULL, 'edit', 119, 120),
+(102, 97, NULL, NULL, 'delete', 121, 122),
+(103, 91, NULL, NULL, 'mutildelete', 109, 110),
+(104, 97, NULL, NULL, 'listns', 123, 124),
+(105, 97, NULL, NULL, 'listPB', 125, 126),
+(106, 97, NULL, NULL, 'listPBgv', 127, 128),
+(107, 97, NULL, NULL, 'change', 129, 130),
+(108, 97, NULL, NULL, 'getNV', 131, 132),
+(109, 97, NULL, NULL, 'download', 133, 134),
+(110, 97, NULL, NULL, 'addfile', 135, 136),
+(111, 52, NULL, NULL, 'changepassword', 37, 38);
 
 -- --------------------------------------------------------
 
@@ -138,7 +147,8 @@ INSERT INTO `aros` (`id`, `parent_id`, `model`, `foreign_key`, `alias`, `lft`, `
 (13, NULL, 'Group', 5, 'PhÃ²ng nhÃ¢n sá»±', 21, 22),
 (14, 12, 'User', 9, '', 18, 19),
 (15, 2, 'User', 10, '', 8, 9),
-(16, NULL, 'User', 11, '', 23, 24);
+(16, NULL, 'User', 11, '', 23, 24),
+(17, NULL, 'Group', 6, 'Káº¿ toÃ¡n', 25, 26);
 
 -- --------------------------------------------------------
 
@@ -156,7 +166,7 @@ CREATE TABLE IF NOT EXISTS `aros_acos` (
   `_update` char(2) NOT NULL DEFAULT '0',
   `_delete` char(2) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=66 ;
 
 --
 -- Dumping data for table `aros_acos`
@@ -169,7 +179,61 @@ INSERT INTO `aros_acos` (`id`, `aro_id`, `aco_id`, `_create`, `_read`, `_update`
 (8, 3, 48, '1', '1', '1', '1'),
 (9, 3, 50, '1', '1', '1', '1'),
 (10, 3, 47, '1', '1', '1', '1'),
-(11, 3, 66, '-1', '-1', '-1', '-1');
+(11, 3, 66, '-1', '-1', '-1', '-1'),
+(12, 1, 107, '1', '1', '1', '1'),
+(13, 1, 109, '1', '1', '1', '1'),
+(14, 1, 108, '1', '1', '1', '1'),
+(15, 1, 98, '1', '1', '1', '1'),
+(16, 1, 105, '1', '1', '1', '1'),
+(17, 1, 106, '1', '1', '1', '1'),
+(18, 1, 104, '1', '1', '1', '1'),
+(19, 1, 99, '1', '1', '1', '1'),
+(20, 17, 99, '1', '1', '1', '1'),
+(21, 17, 104, '1', '1', '1', '1'),
+(22, 17, 105, '1', '1', '1', '1'),
+(23, 17, 106, '1', '1', '1', '1'),
+(24, 17, 98, '1', '1', '1', '1'),
+(25, 17, 108, '1', '1', '1', '1'),
+(26, 17, 109, '1', '1', '1', '1'),
+(27, 17, 107, '1', '1', '1', '1'),
+(28, 2, 107, '1', '1', '1', '1'),
+(29, 5, 107, '1', '1', '1', '1'),
+(30, 13, 107, '1', '1', '1', '1'),
+(31, 12, 107, '1', '1', '1', '1'),
+(32, 12, 102, '1', '1', '1', '1'),
+(33, 12, 109, '1', '1', '1', '1'),
+(34, 2, 109, '1', '1', '1', '1'),
+(35, 13, 109, '1', '1', '1', '1'),
+(36, 5, 109, '1', '1', '1', '1'),
+(37, 12, 101, '1', '1', '1', '1'),
+(38, 12, 108, '1', '1', '1', '1'),
+(39, 12, 105, '1', '1', '1', '1'),
+(40, 12, 98, '1', '1', '1', '1'),
+(41, 12, 104, '1', '1', '1', '1'),
+(42, 12, 106, '1', '1', '1', '1'),
+(43, 12, 99, '1', '1', '1', '1'),
+(44, 2, 99, '1', '1', '1', '1'),
+(45, 13, 99, '1', '1', '1', '1'),
+(46, 5, 99, '1', '1', '1', '1'),
+(47, 13, 104, '1', '1', '1', '1'),
+(48, 5, 104, '1', '1', '1', '1'),
+(49, 2, 106, '1', '1', '1', '1'),
+(50, 2, 104, '1', '1', '1', '1'),
+(51, 2, 105, '1', '1', '1', '1'),
+(52, 2, 98, '1', '1', '1', '1'),
+(53, 2, 108, '1', '1', '1', '1'),
+(54, 13, 98, '1', '1', '1', '1'),
+(55, 13, 108, '1', '1', '1', '1'),
+(56, 13, 105, '1', '1', '1', '1'),
+(57, 13, 106, '1', '1', '1', '1'),
+(58, 5, 105, '1', '1', '1', '1'),
+(59, 5, 106, '1', '1', '1', '1'),
+(60, 5, 98, '1', '1', '1', '1'),
+(61, 5, 108, '1', '1', '1', '1'),
+(62, 17, 110, '1', '1', '1', '1'),
+(63, 12, 100, '1', '1', '1', '1'),
+(64, 12, 110, '1', '1', '1', '1'),
+(65, 13, 110, '1', '1', '1', '1');
 
 -- --------------------------------------------------------
 
@@ -241,9 +305,9 @@ CREATE TABLE IF NOT EXISTS `logs` (
 --
 
 INSERT INTO `logs` (`id`, `users_id`, `ipadr`, `time`) VALUES
-(1, 1, '::1', '2013-03-13 11:00:32'),
-(3, 8, '::1', '2013-03-07 04:19:43'),
-(4, 9, '::1', '2013-03-07 05:27:12'),
+(1, 1, '::1', '2013-03-15 08:38:46'),
+(3, 8, '::1', '2013-03-14 10:40:55'),
+(4, 9, '::1', '2013-03-15 04:37:31'),
 (5, 10, '::1', '2013-03-08 04:46:30'),
 (6, 11, '::1', '2013-03-13 05:15:47'),
 (7, 12, '::1', '2013-03-13 05:15:55');
@@ -322,17 +386,19 @@ CREATE TABLE IF NOT EXISTS `tasks` (
   `taskid` varchar(30) NOT NULL,
   `types_id` int(11) NOT NULL,
   `linhvucs_id` int(11) NOT NULL,
+  `done` int(2) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
 
 --
 -- Dumping data for table `tasks`
 --
 
-INSERT INTO `tasks` (`id`, `name`, `content`, `start`, `end`, `users_id`, `status`, `taskid`, `types_id`, `linhvucs_id`) VALUES
-(1, 'BÃ¡o cÃ¡o tuáº§n', 'BÃ¡o cÃ¡o tuáº§n', '2013-07-03 12:00:00', '2013-08-03 12:00:00', 1, 2, 'QLCV/TTC-1', 1, 1),
-(2, 'BÃ¡o cÃ¡o Ä‘áº§u nÄƒm', 'BÃ¡o cÃ¡o cÃ´ng viá»‡c nÄƒm trÆ°á»›c vÃ  triá»ƒn khai káº¿ hoáº¡c nÄƒm má»›i', '2013-03-08 12:00:00', '2013-03-08 12:00:00', 1, 10, 'QLCV/TTC-2', 2, 2),
-(3, 'BÃ¡o cÃ¡o Ä‘áº§u nÄƒm', 'BÃ¡o cÃ¡o cÃ´ng viá»‡c nÄƒm trÆ°á»›c vÃ  triá»ƒn khai káº¿ hoáº¡c nÄƒm má»›i', '2013-03-08 12:00:00', '2013-03-11 12:00:00', 1, 1, 'QLCV-TTC-3', 2, 2);
+INSERT INTO `tasks` (`id`, `name`, `content`, `start`, `end`, `users_id`, `status`, `taskid`, `types_id`, `linhvucs_id`, `done`) VALUES
+(1, 'BÃ¡o cÃ¡o tuáº§n', 'BÃ¡o cÃ¡o tuáº§n', '2013-07-03 12:00:00', '2013-08-03 12:00:00', 9, 10, 'QLCV/TTC-1', 1, 1, 1),
+(2, 'BÃ¡o cÃ¡o Ä‘áº§u nÄƒm', 'BÃ¡o cÃ¡o cÃ´ng viá»‡c nÄƒm trÆ°á»›c vÃ  triá»ƒn khai káº¿ hoáº¡c nÄƒm má»›i', '2013-03-08 12:00:00', '2013-03-08 12:00:00', 9, 2, 'QLCV/TTC-2', 2, 2, 1),
+(3, 'BÃ¡o cÃ¡o Ä‘áº§u nÄƒm', 'BÃ¡o cÃ¡o cÃ´ng viá»‡c nÄƒm trÆ°á»›c vÃ  triá»ƒn khai káº¿ hoáº¡c nÄƒm má»›i', '2013-03-08 12:00:00', '2013-03-11 12:00:00', 9, 1, 'QLCV-TTC-3', 2, 2, 1),
+(24, 'BÃ¡o cÃ¡o Ä‘áº§u nÄƒm', 'BÃ¡o cÃ¡o Ä‘áº§u nÄƒm', '1970-01-01 01:00:00', '1970-01-01 01:00:00', 1, 1, 'QLCV/TTC-4', 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -348,7 +414,7 @@ CREATE TABLE IF NOT EXISTS `tfiles` (
   `tasks_id` int(11) NOT NULL,
   `folder` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=68 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=74 ;
 
 --
 -- Dumping data for table `tfiles`
@@ -359,7 +425,10 @@ INSERT INTO `tfiles` (`id`, `name`, `type`, `tasks_id`, `folder`) VALUES
 (64, '120313094331_bulb24.png', 2, 2, '03-2013'),
 (65, '120313094343_alert_medium.gif', 2, 2, '03-2013'),
 (66, '120313094610_success_medium.gif', 2, 2, '03-2013'),
-(67, '120313094703_important16.png', 3, 2, '03-2013');
+(67, '120313094703_important16.png', 3, 2, '03-2013'),
+(71, '150313110904_IMG_20130311_115815.jpg', 1, 24, '03-2013'),
+(72, '150313110904_IMG_20130311_115822.jpg', 1, 24, '03-2013'),
+(73, '150313110904_IMG_20130311_115824.jpg', 1, 24, '03-2013');
 
 -- --------------------------------------------------------
 
@@ -398,7 +467,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `positions_id` int(11) NOT NULL,
   `groups_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `users`
@@ -425,24 +494,27 @@ CREATE TABLE IF NOT EXISTS `usertasks` (
   `users_id` int(11) NOT NULL,
   `tasks_id` int(11) NOT NULL,
   `status` int(2) NOT NULL,
+  `done` int(2) NOT NULL DEFAULT '1',
+  `wrong` int(2) NOT NULL,
+  `users_chuyen` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=45 ;
 
 --
 -- Dumping data for table `usertasks`
 --
 
-INSERT INTO `usertasks` (`id`, `users_id`, `tasks_id`, `status`) VALUES
-(8, 4, 2, 2),
-(11, 9, 2, 3),
-(12, 2, 2, 4),
-(13, 3, 2, 5),
-(14, 11, 2, 6),
-(15, 1, 2, 7),
-(16, 11, 2, 8),
-(17, 9, 2, 9),
-(18, 4, 2, 10),
-(19, 4, 1, 2);
+INSERT INTO `usertasks` (`id`, `users_id`, `tasks_id`, `status`, `done`, `wrong`, `users_chuyen`) VALUES
+(33, 4, 1, 2, 2, 0, 9),
+(35, 9, 1, 3, 2, 0, 4),
+(36, 2, 1, 4, 2, 0, 9),
+(37, 3, 1, 5, 2, 0, 2),
+(38, 11, 1, 6, 2, 0, 3),
+(39, 1, 1, 7, 2, 0, 11),
+(40, 11, 1, 8, 1, 0, 1),
+(41, 9, 1, 9, 1, 0, 11),
+(43, 4, 1, 10, 1, 0, 9),
+(44, 4, 2, 2, 1, 0, 9);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

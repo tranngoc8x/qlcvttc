@@ -1,8 +1,7 @@
 <?php
 class Task extends AppModel {
 	var $name = 'Task';
-	var $displayField = 'name';
-	var $actsAs = array('Uploader.FileValidation');
+	var $displayField = 'name'; 
 	var $validate = array(
 		'name' => array(
 			'notempty' => array(

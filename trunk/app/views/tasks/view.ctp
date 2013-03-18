@@ -15,16 +15,22 @@
 			<?=$this->Form->button("Trình ban quản lý",array('class'=>'btnlink','id'=>'dialog-link'));?>
 			<?php }elseif($ws==3 && $gr == "BQL"){?>
 			<?=$this->Form->button("Trình PGD điều hành",array('class'=>'btnlink','id'=>'dialog-link'));?>
+			<?=$this->Form->button("Không duyệt",array('class'=>'btnlink','id'=>'dialog-link'));?>
 			<?php }elseif($ws==4 && $gr == "PGD"){?>
 			<?=$this->Form->button("Chuyển PGD tài chính",array('class'=>'btnlink','id'=>'dialog-link'));?>
+			<?=$this->Form->button("Không duyệt",array('class'=>'btnlink','id'=>'dialog-link'));?>
 			<?php }elseif($ws==5 && $gr == "PGD"){?>
 			<?=$this->Form->button("Chuyển kế toán",array('class'=>'btnlink','id'=>'dialog-link'));?>
+			<?=$this->Form->button("Không duyệt",array('class'=>'btnlink','id'=>'dialog-link'));?>
 			<?php }elseif($ws==6 && $gr == "KT"){?>
 			<?=$this->Form->button("Trình giám đốc",array('class'=>'btnlink','id'=>'dialog-link'));?>
+			<?=$this->Form->button("Không duyệt",array('class'=>'btnlink','id'=>'dialog-link'));?>
 			<?php }elseif($ws==7 && $gr == "GD"){?>
 			<?=$this->Form->button("Gửi trả kế toán",array('class'=>'btnlink','id'=>'dialog-link'));?>
+			<?=$this->Form->button("Không duyệt",array('class'=>'btnlink','id'=>'dialog-link'));?>
 			<?php }elseif($ws==8 && $gr == "KT"){?>
 			<?=$this->Form->button("Gửi trả ban quản lý",array('class'=>'btnlink','id'=>'dialog-link'));?>
+			<?=$this->Form->button("Không duyệt",array('class'=>'btnlink','id'=>'dialog-link'));?>
 			<?php }elseif($ws==9 && $gr == "BQL"){?>
 			<?=$this->Form->button("Gửi trả kết quả cho nhân sự",array('class'=>'btnlink','id'=>'dialog-link'));?>
 			<?php }?>
