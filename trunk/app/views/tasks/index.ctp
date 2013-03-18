@@ -1,4 +1,6 @@
-<?php echo $this->element('chucnang');?>	
+<?php if($gr =="BQL"){?>
+<?php echo $this->element('chucnang');?>
+<?php }?>
 <form name="frmList" method="post" action="#">
 	<table class="sort-table" cellspacing="0" width="100%"> 
 		<thead> 
