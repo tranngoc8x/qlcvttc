@@ -385,3 +385,4 @@ form input.datepicker{
 		float: right;
 		cursor: pointer;
 	}
+	fieldset{border:0;}
