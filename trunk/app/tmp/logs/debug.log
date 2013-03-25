@@ -889,3 +889,5 @@
 2013-03-21 05:06:37 Debug: Notice (8): Undefined variable: stt in [F:\xampp\htdocs\QLCV_TTC\app\controllers\tasks_controller.php, line 305]
 2013-03-21 05:06:37 Debug: Notice (8): Undefined variable: id in [F:\xampp\htdocs\QLCV_TTC\app\controllers\tasks_controller.php, line 202]
 2013-03-21 05:08:12 Debug: Notice (8): Undefined variable: cv in [F:\xampp\htdocs\QLCV_TTC\app\controllers\tasks_controller.php, line 193]
+2013-03-25 05:17:27 Debug: Notice (8): Undefined index: created in [F:\xampp\htdocs\QLCV_TTC\app\views\groups\view.ctp, line 16]
+2013-03-25 05:17:27 Debug: Notice (8): Undefined index: modified in [F:\xampp\htdocs\QLCV_TTC\app\views\groups\view.ctp, line 21]
