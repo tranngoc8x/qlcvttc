@@ -21,19 +21,18 @@
 <div id="congviec">
  	<ul class="menu_left">
 		<li>
-			<?php echo $this->Html->link(__('Công việc chưa xử lý', true), array('plugin'=>false,'controller'=>'tasks','action' => 'index','cong-viec-chua-xu-ly')); ?>
+			<?php echo $this->Html->link(__('Công việc cần xử lý', true), array('plugin'=>false,'controller'=>'tasks','action' => 'doing')); ?>
 		</li>
 		<li>
-		<?php echo $this->Html->link(__('Công việc đã chuyển', true), array('plugin'=>false,'controller'=>'tasks','action' => 'index','cong-viec-da-chuyen')); ?>
+		<?php echo $this->Html->link(__('Công việc đã chuyển', true), array('plugin'=>false,'controller'=>'tasks','action' => 'done')); ?>
 		</li>
 		<li>
-		<?php echo $this->Html->link(__('Công việc bị trả lại', true), array('plugin'=>false,'controller'=>'tasks','action' => 'index','cong-viec-bi-tra-lai')); ?>
+		<?php echo $this->Html->link(__('Công việc bị trả lại', true), array('plugin'=>false,'controller'=>'tasks','action' => 'fail')); ?>
 		</li>
 
 		<li>
-		<?php echo $this->Html->link(__('Công việc đã hoàn thành', true), array('plugin'=>false,'controller'=>'tasks','action' => 'index','cong-viec-da-hoan-thanh')); ?>
+		<?php echo $this->Html->link(__('Công việc đã hoàn thành', true), array('plugin'=>false,'controller'=>'tasks','action' => 'finish')); ?>
 		</li>
-
 	</ul>
 </div>
 <div id="nhansu">

@@ -21,7 +21,7 @@
 		<td><?php   $u = $this->requestAction('tasks/getNV/'.$item['Task']['users_id']);
 				  		echo $u['User']['name']; ?>&nbsp;</td>
 		<td><?php echo date('d/m/Y',strtotime($item['Task']['start'])); ?>&nbsp;</td>
-		<td><?php echo stt(base64_encode($item['Task']['status'])); ?>&nbsp;</td>
+		<td><?php echo stt(base64_encode($item['Task']['status']),$item['Task']['done']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link($this->Html->image("admin/view-item.png", array("alt" => "Xem","title"=>"Xem bản ghi")), array('action' => 'view', $item['Task']['id']),array('escape'=>false)); ?>
 			<?php if($item['Task']['status'] ==1 && $item['Task']['users_id']==$ssid['User']['id']):?>

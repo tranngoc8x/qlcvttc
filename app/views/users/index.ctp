@@ -1,7 +1,7 @@
-<?php echo $this->element('chucnang');?>	
+<?php echo $this->element('chucnang');?>
 <form name="frmList" method="post" action="#">
-	<table class="sort-table" cellspacing="0" width="100%"> 
-		<thead> 
+	<table class="sort-table" cellspacing="0" width="100%">
+		<thead>
 		<tr>
 			<th><input type="checkbox" name="checkall" value="" onClick="docheck(document.frmList.checkall.checked,0);" class="submit"/></th>
 			<th><?php echo $this->Paginator->sort("Tên đăng nhập",'username'); ?></th>
@@ -23,8 +23,8 @@
                         if ($ssid['User']['id']==$user['User']['id'])
 							{
  						?>
-                         <?php echo $this->Html->link(__('Đổi mật khẩu', true), array('action' => 'changepassword', $user['User']['id'])); }?>
-            				
+                         <?php echo $this->Html->link(__('Đổi mật khẩu', true), array('action' => 'changepassword')); }?>
+
 				<?php //echo $this->Html->link($this->Html->image("admin/delete-item.png", array("alt" => "Xóa","title"=>"Xóa bản ghi")), array('action' => 'delete', $user['User']['id']), array('escape'=>false), __('Bạn có chắc muốn xóa mục này',$user['User']['id'])); ?>
 				</td>
 	</tr>
