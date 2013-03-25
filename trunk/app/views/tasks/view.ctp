@@ -11,11 +11,11 @@
 			<?php //echo $gr;?>
 			<?php if($ws==1 && $gr == "BQL"){?>
 			<?=$this->Form->button("Giao việc",array('class'=>'btnlink','id'=>'dialog-link'));?>
-			<?php }elseif($ws==2 && $gr == "NS"){?>
+			<?php }elseif(($ws==2 || $ws==0) && $gr == "NS"){?>
 			<?=$this->Form->button("Trình ban quản lý",array('class'=>'btnlink','id'=>'dialog-link'));?>
 			<?php }elseif($ws==3 && $gr == "BQL"){?>
 			<?=$this->Form->button("Trình PGD điều hành",array('class'=>'btnlink','id'=>'dialog-link'));?>
-			<?=$this->Form->button("Không duyệt",array('class'=>'btnlink','id'=>'dialog-link'));?>
+			<?=$this->Form->button("Không duyệt",array('class'=>'btnlink','id'=>'khongduyet'));?>
 			<?php }elseif($ws==4 && $gr == "PGD"){?>
 			<?=$this->Form->button("Chuyển PGD tài chính",array('class'=>'btnlink','id'=>'dialog-link'));?>
 			<?=$this->Form->button("Không duyệt",array('class'=>'btnlink','id'=>'dialog-link'));?>
@@ -33,6 +33,8 @@
 			<?=$this->Form->button("Không duyệt",array('class'=>'btnlink','id'=>'dialog-link'));?>
 			<?php }elseif($ws==9 && $gr == "BQL"){?>
 			<?=$this->Form->button("Gửi trả kết quả cho nhân sự",array('class'=>'btnlink','id'=>'dialog-link'));?>
+			<?php }elseif($ws==11 && $gr == "BQL" && $task['Task']['done']==1){?>
+			<?=$this->Form->button("Hoàn thành",array('class'=>'btnlink','id'=>'dialog-fn'));?>
 			<?php }?>
 		</td>
 	</tr>
@@ -59,13 +61,13 @@
 		<td class='tDtite'><span class=" ">Nhân viên được giao :</span></td>
 		<td>
 			<?php foreach ($task['Usertask'] as $v) {
-			 	
+
 				  if($v['status'] == 2){
 				  		$u = $this->requestAction('tasks/getNV/'.$v['users_id']);
 				  		echo $u['User']['name'];
 				  }
 			}
-			?> 
+			?>
 		</td>
 	</tr>
 	<tr class='tbody'>
@@ -75,11 +77,11 @@
 		<td><?php echo $task['Linhvuc']['name']; ?></td>
 	</tr>
 	<tr class='tbody'>
-		
+
 		<td class='tDtite'><span class=" ">Trạng thái :</span></td>
-		<td><?php echo stt(base64_encode($task['Task']['status'])); ?></td>
-		<td class='tDtite'><span class=" "> </span></td>
-		<td width=> </td>
+		<td><?php echo stt(base64_encode($task['Task']['status']),$task['Task']['done']); ?></td>
+		<td class='tDtite'><span class="">Yêu cầu cần làm</span></td>
+		<td width><font color="red"><?php echo $task['Usertask'][count($task['Usertask'])-1]['noidung'];?></font></td>
 	</tr>
 	<tr class='tbody'>
 		<td class='tDtite' colspan=4><span class=" ">Nội dung công việc</span></td>
@@ -96,7 +98,7 @@
 				<tr class='tbody'>
 					<td class="tDtite">Văn bản gốc</td>
 					<td>
-						<?php if(isset($task['Tfile']) && count($task['Tfile'])>0){ 
+						<?php if(isset($task['Tfile']) && count($task['Tfile'])>0){
 							foreach($task['Tfile'] as $fis):
 								if($fis['type']==1){
 									echo '- '.$this->Html->link($fis['name'],array('controller'=>'tasks','action'=>'download',base64_encode($fis['id']))).'<br>';
@@ -111,7 +113,7 @@
 						<li class="ui-state-default ui-corner-all addvbdt" id="vbdt" title=".ui-icon-circle-plus"><span class="ui-icon ui-icon-circle-plus"></span></li>
 					</td>
 					<td>
-						<?php if(isset($task['Tfile']) && count($task['Tfile'])>0){ 
+						<?php if(isset($task['Tfile']) && count($task['Tfile'])>0){
 							foreach($task['Tfile'] as $fis):
 								if($fis['type']==2){
 									echo '- '.$this->Html->link($fis['name'],array('controller'=>'tasks','action'=>'download',base64_encode($fis['id']))).'<br>';
@@ -125,7 +127,7 @@
 						<li class="ui-state-default ui-corner-all addvbdt" id='vblq' title=".ui-icon-circle-plus"><span class="ui-icon ui-icon-circle-plus"></span></li>
 					</td>
 					<td>
-						<?php if(isset($task['Tfile']) && count($task['Tfile'])>0){ 
+						<?php if(isset($task['Tfile']) && count($task['Tfile'])>0){
 							foreach($task['Tfile'] as $fis):
 								if($fis['type']==3){
 									echo '- '.$this->Html->link($fis['name'],array('controller'=>'tasks','action'=>'download',base64_encode($fis['id']))).'<br>';
@@ -145,20 +147,20 @@
 		<td colspan=3>Nhân sự khởi tạo công việc</td>
 	</tr>
 	<?php foreach ($task['Usertask'] as $v) {
-			 	
-		if($v['status'] != 1){
+
+		if($v['status'] != 1 && $v['done'] != 1){
 	  		$u = $this->requestAction('tasks/getNV/'.$v['users_id']);?>
 	  		<tr class='tbody'>
 				<td><?php echo $u['User']['name'];?></td>
 				<td colspan=3><?php echo work(base64_encode($v['status']));?></td>
 			</tr>
-	<?php	  		
+	<?php
 		}
 	}
 	?>
 </table>
-    
-		
+
+
 <!-- dialog -->
 <?php if($ws==1 && $gr == "BQL"){?>
 <div id="dialog" title="Giao việc cho nhân viên">
@@ -168,7 +170,7 @@
 		<div class='block'>
 		<div id="parent<?=$i;?>" onclick="show(<?=$i;?>)" class="parent">
 				<?php echo $this->Html->image('add.png',array('id'=>'img'.$i,'class'=>'as'));?>
-				 
+
 				<?php echo $this->Html->tag('span',$group['Group']['name'], array('class' => 'welcome'));?>
 				<?php //echo $group['Group']['name'];?>
 		</div>
@@ -185,9 +187,11 @@
 		</div>
 		</div>
 		<?php endforeach;?>
+		<div class="block"><textarea name="noidungcv" placeholder="Nội dung chuyển" id="noidungcv"></textarea></div>
 </form>
 </div>
-<?php }elseif($ws==2 && $gr == "NS"){?>
+
+<?php }elseif(($ws==2 || $ws==0) && $gr == "NS"){?>
 <div id="dialog" title="Trình báo công việc cho ban quản lý">
 	<?php $groups =  $this->requestAction("tasks/listPBgv/2");?>
 	<form method="post" action="dochange">
@@ -195,7 +199,7 @@
 		<div class='block'>
 		<div id="parent<?=$i;?>" onclick="show(<?=$i;?>)" class="parent">
 				<?php echo $this->Html->image('add.png',array('id'=>'img'.$i,'class'=>'as'));?>
-				 
+
 				<?php echo $this->Html->tag('span',$group['Group']['name'], array('class' => 'welcome'));?>
 				<?php //echo $group['Group']['name'];?>
 		</div>
@@ -212,6 +216,7 @@
 		</div>
 		</div>
 		<?php endforeach;?>
+		<div class="block"><textarea name="noidungcv" placeholder="Nội dung chuyển" id="noidungcv"></textarea></div>
 </form>
 </div>
 
@@ -223,7 +228,7 @@
 		<div class='block'>
 		<div id="parent<?=$i;?>" onclick="show(<?=$i;?>)" class="parent">
 				<?php echo $this->Html->image('add.png',array('id'=>'img'.$i,'class'=>'as'));?>
-				 
+
 				<?php echo $this->Html->tag('span',$group['Group']['name'], array('class' => 'welcome'));?>
 				<?php //echo $group['Group']['name'];?>
 		</div>
@@ -240,8 +245,9 @@
 		</div>
 		</div>
 		<?php endforeach;?>
+		<div class="block"><textarea name="noidungcv" placeholder="Nội dung chuyển" id="noidungcv"></textarea></div>
 </form>
-</div>  
+</div>
 <?php }elseif($ws==4 && $gr == "PGD"){?>
 <div id="dialog" title="Chuyển PGD tài chính">
 	<?php $groups =  $this->requestAction("tasks/listPBgv/3");?>
@@ -250,7 +256,7 @@
 		<div class='block'>
 		<div id="parent<?=$i;?>" onclick="show(<?=$i;?>)" class="parent">
 				<?php echo $this->Html->image('add.png',array('id'=>'img'.$i,'class'=>'as'));?>
-				 
+
 				<?php echo $this->Html->tag('span',$group['Group']['name'], array('class' => 'welcome'));?>
 				<?php //echo $group['Group']['name'];?>
 		</div>
@@ -267,6 +273,7 @@
 		</div>
 		</div>
 		<?php endforeach;?>
+		<div class="block"><textarea name="noidungcv" placeholder="Nội dung chuyển" id="noidungcv"></textarea></div>
 </form>
 </div>
 
@@ -278,7 +285,7 @@
 		<div class='block'>
 		<div id="parent<?=$i;?>" onclick="show(<?=$i;?>)" class="parent">
 				<?php echo $this->Html->image('add.png',array('id'=>'img'.$i,'class'=>'as'));?>
-				 
+
 				<?php echo $this->Html->tag('span',$group['Group']['name'], array('class' => 'welcome'));?>
 				<?php //echo $group['Group']['name'];?>
 		</div>
@@ -295,6 +302,7 @@
 		</div>
 		</div>
 		<?php endforeach;?>
+		<div class="block"><textarea name="noidungcv" placeholder="Nội dung chuyển" id="noidungcv"></textarea></div>
 </form>
 </div>
 <?php }elseif($ws==6 && $gr == "KT"){?>
@@ -305,7 +313,7 @@
 		<div class='block'>
 		<div id="parent<?=$i;?>" onclick="show(<?=$i;?>)" class="parent">
 				<?php echo $this->Html->image('add.png',array('id'=>'img'.$i,'class'=>'as'));?>
-				 
+
 				<?php echo $this->Html->tag('span',$group['Group']['name'], array('class' => 'welcome'));?>
 				<?php //echo $group['Group']['name'];?>
 		</div>
@@ -322,6 +330,7 @@
 		</div>
 		</div>
 		<?php endforeach;?>
+		<div class="block"><textarea name="noidungcv" placeholder="Nội dung chuyển" id="noidungcv"></textarea></div>
 </form>
 </div>
 <?php }elseif($ws==7 && $gr == "GD"){?>
@@ -332,7 +341,7 @@
 		<div class='block'>
 		<div id="parent<?=$i;?>" onclick="show(<?=$i;?>)" class="parent">
 				<?php echo $this->Html->image('add.png',array('id'=>'img'.$i,'class'=>'as'));?>
-				 
+
 				<?php echo $this->Html->tag('span',$group['Group']['name'], array('class' => 'welcome'));?>
 				<?php //echo $group['Group']['name'];?>
 		</div>
@@ -349,6 +358,7 @@
 		</div>
 		</div>
 		<?php endforeach;?>
+		<div class="block"><textarea name="noidungcv" placeholder="Nội dung chuyển" id="noidungcv"></textarea></div>
 </form>
 </div>
 <?php }elseif($ws==8 && $gr == "KT"){?>
@@ -359,7 +369,7 @@
 		<div class='block'>
 		<div id="parent<?=$i;?>" onclick="show(<?=$i;?>)" class="parent">
 				<?php echo $this->Html->image('add.png',array('id'=>'img'.$i,'class'=>'as'));?>
-				 
+
 				<?php echo $this->Html->tag('span',$group['Group']['name'], array('class' => 'welcome'));?>
 				<?php //echo $group['Group']['name'];?>
 		</div>
@@ -376,6 +386,7 @@
 		</div>
 		</div>
 		<?php endforeach;?>
+		<div class="block"><textarea name="noidungcv" placeholder="Nội dung chuyển" id="noidungcv"></textarea></div>
 </form>
 </div>
 <?php }elseif($ws==9 && $gr == "BQL"){?>
@@ -386,7 +397,7 @@
 		<div class='block'>
 		<div id="parent<?=$i;?>" onclick="show(<?=$i;?>)" class="parent">
 				<?php echo $this->Html->image('add.png',array('id'=>'img'.$i,'class'=>'as'));?>
-				 
+
 				<?php echo $this->Html->tag('span',$group['Group']['name'], array('class' => 'welcome'));?>
 				<?php //echo $group['Group']['name'];?>
 		</div>
@@ -403,6 +414,7 @@
 		</div>
 		</div>
 		<?php endforeach;?>
+		<div class="block"><textarea name="noidungcv" placeholder="Nội dung chuyển" id="noidungcv"></textarea></div>
 </form>
 </div>
 <?php }?>
@@ -410,7 +422,7 @@
 
 
 <div id="dialog_vbdt" title="Thêm văn bản dự thảo">
-<form method="post" enctype="multipart/form-data">
+<form method="post" name='fform' enctype="multipart/form-data">
 	<input type="file" name="fileid" id="fileid" multiple />
 </form>
 <div id='response' style='font-size: 12px;'></div>
@@ -421,6 +433,13 @@
 	<input type="file" name="filek" id="filek" multiple />
 </form>
 <div id='response1' style='font-size: 12px;'></div>
+</div>
+<div id="dialog-fail" title="Yêu cầu làm lại công việc">
+	<?php $nsfail = $this->requestAction('tasks/getNVFail/'.$task['Task']['id'].'/'.$ws);?>
+	<form method='post' name='ffail'>
+		<label for="">Lý do làm lại</label>
+		<textarea name="lydo" id="lydoID" cols="30" rows="10"></textarea>
+	</form>
 
 </div>
 <script type="text/javascript">
@@ -439,6 +458,7 @@
 				click: function() {
 					var $rthis = $(this);
 					var $obj = $('.child input[type=checkbox]');
+					var $ndvn = $("$noidungcv").value;
 					if($obj.filter(':checked').length <=0) return alert("Bạn chưa chọn nhân viên");
 					if(confirm("Bạn có chắc muốn giao việc cho nhân viên vừa chọn ?")){
 					 	var str = "";
@@ -446,9 +466,9 @@
 							if($obj[d].checked == true) str+=$obj[d].value+',';
 						}
 						str = str.substr(0,str.length-1);
-						$.get("<?php echo $this->webroot;?>tasks/change/"+<?=base64_encode($task['Task']['id']);?>+"/"+"<?=base64_encode(2);?>"+"/"+str, function(data){
+						$.get("<?php echo $this->webroot;?>tasks/change/<?=base64_encode($task['Task']['id']);?>/"+"<?=base64_encode(2);?>"+"/"+str+"/"+ndvn, function(data){
 						   if(data == 2) {
-						   
+
 						   window.location.reload();
 						   alert('Đã giao việc thành công !');
 						   $rthis.dialog("close");
@@ -467,7 +487,7 @@
 		]
 
 	});
-	<?php }elseif($ws==2 && $gr == "NS"){?>
+	<?php }elseif(($ws==2 || $ws==0) && $gr == "NS"){?>
 	$( "#dialog" ).dialog({
 		autoOpen: false,
 		width: 400,
@@ -484,7 +504,7 @@
 							if($obj[d].checked == true) str+=$obj[d].value+',';
 						}
 						str = str.substr(0,str.length-1);
-						$.get("<?php echo $this->webroot;?>tasks/change/"+<?=base64_encode($task['Task']['id']);?>+"/"+"<?=base64_encode(3);?>"+"/"+str, function(data){
+						$.get("<?php echo $this->webroot;?>tasks/change/<?=base64_encode($task['Task']['id']);?>/"+"<?=base64_encode(3);?>"+"/"+str+"/"+ndvn, function(data){
 						   if(data == 2) {
 						   window.location.reload();
 						   alert('Thông báo thành công !');
@@ -521,7 +541,7 @@
 							if($obj[d].checked == true) str+=$obj[d].value+',';
 						}
 						str = str.substr(0,str.length-1);
-						$.get("<?php echo $this->webroot;?>tasks/change/"+<?=base64_encode($task['Task']['id']);?>+"/"+"<?=base64_encode(4);?>"+"/"+str, function(data){
+						$.get("<?php echo $this->webroot;?>tasks/change/<?=base64_encode($task['Task']['id']);?>/"+"<?=base64_encode(4);?>"+"/"+str+"/"+ndvn, function(data){
 						   if(data == 2) {
 						   window.location.reload();
 						   alert('Trình thành công !');
@@ -558,7 +578,7 @@
 							if($obj[d].checked == true) str+=$obj[d].value+',';
 						}
 						str = str.substr(0,str.length-1);
-						$.get("<?php echo $this->webroot;?>tasks/change/"+<?=base64_encode($task['Task']['id']);?>+"/"+"<?=base64_encode(5);?>"+"/"+str, function(data){
+						$.get("<?php echo $this->webroot;?>tasks/change/<?=base64_encode($task['Task']['id']);?>/"+"<?=base64_encode(5);?>"+"/"+str+"/"+ndvn, function(data){
 						   if(data == 2) {
 						   window.location.reload();
 						   alert('Chuyển thành công !');
@@ -587,6 +607,8 @@
 				text: "Chuyển kế toán",
 				click: function() {
 					var $rthis = $(this);
+					var ndvn = $("#noidungcv").val();
+					//alert(ndvn);
 					var $obj = $('.child input[type=checkbox]');
 					if($obj.filter(':checked').length <=0) return alert("Bạn chưa chọn nhân viên");
 					if(confirm("Bạn có chắc muốn thông báo công việc này ?")){
@@ -595,7 +617,7 @@
 							if($obj[d].checked == true) str+=$obj[d].value+',';
 						}
 						str = str.substr(0,str.length-1);
-						$.get("<?php echo $this->webroot;?>tasks/change/"+<?=base64_encode($task['Task']['id']);?>+"/"+"<?=base64_encode(6);?>"+"/"+str, function(data){
+						$.get("<?php echo $this->webroot;?>tasks/change/<?=base64_encode($task['Task']['id']);?>/"+"<?=base64_encode(6);?>"+"/"+str+"/"+ndvn, function(data){
 						   if(data == 2) {
 						   window.location.reload();
 						   alert('Chuyển thành công !');
@@ -632,7 +654,7 @@
 							if($obj[d].checked == true) str+=$obj[d].value+',';
 						}
 						str = str.substr(0,str.length-1);
-						$.get("<?php echo $this->webroot;?>tasks/change/"+<?=base64_encode($task['Task']['id']);?>+"/"+"<?=base64_encode(7);?>"+"/"+str, function(data){
+						$.get("<?php echo $this->webroot;?>tasks/change/<?=base64_encode($task['Task']['id']);?>/"+"<?=base64_encode(7);?>"+"/"+str+"/"+ndvn, function(data){
 						   if(data == 2) {
 						   window.location.reload();
 						   alert('Chuyển thành công !');
@@ -669,7 +691,7 @@
 							if($obj[d].checked == true) str+=$obj[d].value+',';
 						}
 						str = str.substr(0,str.length-1);
-						$.get("<?php echo $this->webroot;?>tasks/change/"+<?=base64_encode($task['Task']['id']);?>+"/"+"<?=base64_encode(8);?>"+"/"+str, function(data){
+						$.get("<?php echo $this->webroot;?>tasks/change/<?=base64_encode($task['Task']['id']);?>/"+"<?=base64_encode(8);?>"+"/"+str+"/"+ndvn, function(data){
 						   if(data == 2) {
 						   window.location.reload();
 						   alert('Chuyển thành công !');
@@ -706,7 +728,7 @@
 							if($obj[d].checked == true) str+=$obj[d].value+',';
 						}
 						str = str.substr(0,str.length-1);
-						$.get("<?php echo $this->webroot;?>tasks/change/"+<?=base64_encode($task['Task']['id']);?>+"/"+"<?=base64_encode(9);?>"+"/"+str, function(data){
+						$.get("<?php echo $this->webroot;?>tasks/change/<?=base64_encode($task['Task']['id']);?>/"+"<?=base64_encode(9);?>"+"/"+str+"/"+ndvn, function(data){
 						   if(data == 2) {
 						   window.location.reload();
 						   alert('Chuyển thành công !');
@@ -743,7 +765,7 @@
 							if($obj[d].checked == true) str+=$obj[d].value+',';
 						}
 						str = str.substr(0,str.length-1);
-						$.get("<?php echo $this->webroot;?>tasks/change/"+<?=base64_encode($task['Task']['id']);?>+"/"+"<?=base64_encode(10);?>"+"/"+str, function(data){
+						$.get("<?php echo $this->webroot;?>tasks/change/<?=base64_encode($task['Task']['id']);?>/"+"<?=base64_encode(10);?>"+"/"+str+"/"+ndvn, function(data){
 						   if(data == 2) {
 						   window.location.reload();
 						   alert('Chuyển thành công !');
@@ -765,6 +787,7 @@
 	});
 	<?php }?>
 </script>
+
 <script type='text/javascript'>
 	function show(id){
 		var x = $('#child'+id).css('display');
@@ -780,11 +803,11 @@
 	$(document).ready(function () {
  		 var u = $('.parent').size();
 			for(g=1;g<=u;g++){
-				$('img.last'+g+':last').attr('src', '../../img/elbow-end.gif' );	
+				$('img.last'+g+':last').attr('src', '../../img/elbow-end.gif' );
 			}
 	});
 </script>
-
+<?php if($ws<8){?>
 <script>
 //văn bản dự thảo
 	$( "#vbdt" ).click(function( event ) {
@@ -804,7 +827,7 @@
 						document.getElementById("response").innerHTML = "Đang upload file. Hãy chờ...";
 						var formData = new FormData();
 						for(i=0;i<fileInput.files.length;i++){
-							formData.append('fileid[]', fileInput.files[i]);	
+							formData.append('fileid[]', fileInput.files[i]);
 						}
 						$.ajax({
 							url: "<?=$this->webroot;?>tasks/addfile/<?=base64_encode($task['Task']['id']);?>/<?=base64_encode(2);?>",
@@ -831,6 +854,8 @@
 	});
 </script>
 
+
+
 <script>
 //văn bản lienquan
 	$( "#vblq" ).click(function( event ) {
@@ -847,11 +872,11 @@
 					var fileInput = document.getElementById('filek');
 					if(fileInput.value == "") return alert('Bạn chưa chọn file');
 					if(confirm("Bạn có chắc muốn upload các file vừa chọn không ?")){
-						
+
 						document.getElementById("response").innerHTML = "Đang upload file. Hãy chờ...";
 						var formData = new FormData();
 						for(i=0;i<fileInput.files.length;i++){
-							formData.append('fileid[]', fileInput.files[i]);	
+							formData.append('fileid[]', fileInput.files[i]);
 						}
 						$.ajax({
 							url: "<?=$this->webroot;?>tasks/addfile/<?=base64_encode($task['Task']['id']);?>/<?=base64_encode(3);?>",
@@ -876,4 +901,51 @@
 			}
 		]
 	});
+</script>
+<?php }?>
+
+
+
+<script>
+//trả lại nhân viên làm sai
+	$( "#khongduyet" ).click(function( event ) {
+			$( "#dialog-fail" ).dialog( "open" );
+			event.preventDefault();
+	});
+	$( "#dialog-fail" ).dialog({
+		autoOpen: false,
+		width: 400,
+		buttons: [
+			{
+				text: "Đồng ý",
+				click: function() {
+					//var $rthis = $(this);
+					var obj = window.document.ffail.lydo.value;
+					if(confirm("Bạn có chắc muốn trả lại công việc này ?")){
+						$.get("<?php echo $this->webroot;?>tasks/failtask/<?=$nsfail;?>/<?=base64_encode($task['Task']['id']);?>/"+"<?=base64_encode($ws);?>"+"/"+obj, function(data){
+								if(data == 2) {
+								   window.location.reload();
+								   alert('Chuyển thành công !');
+								}else alert("Có lỗi xảy ra. Hãy thử lại!");
+						 });
+					}
+				}
+			},
+			{
+				text: "Đóng lại",
+				click: function() {
+					$( this ).dialog( "close");
+				}
+			}
+		]
+	});
+</script>
+<?php $idlastu = $this->requestAction('tasks/getfnNV/'.$task["Task"]["id"]);?>
+<script>
+	$("#dialog-fn").click(function(){
+	$.get('<?php echo $this->webroot;?>tasks/fntask/<?php echo $task["Task"]["id"]."/".$idlastu["Usertask"]["users_id"];?>',function(data){
+
+	});
+	});
+	
 </script>

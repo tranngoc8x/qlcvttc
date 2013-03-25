@@ -2,44 +2,60 @@
 class TasksController extends AppController {
 
 	var $name = 'Tasks';
-	
-	function index($id=null) {
-		$this->Task->recursive = -1;
-		$user = $this->viewVars['ssid'];
-		$cond1=array();
-		$this->Usertask->recursive = 1;
-
-		switch ($id) {
-			case 'cong-viec-chua-xu-ly':
-				$tuid = $this->Task->Usertask->find('list',array('fields'=>array('tasks_id'),'conditions'=>array('Usertask.users_id'=>$user['User']['id'],'Usertask.done'=>1),'group' => 'tasks_id'));
-				$cond= array('or'=>array(array('Task.users_id'=>$user['User']['id'],'Task.status'=>1),'Task.id'=>$tuid));
-				break;
-			case 'cong-viec-da-chuyen':
-				//$tuid = $this->Task->Usertask->find('list',array('joins'=> array(array('table' => 'tasks', 'alias' => 'Task',  'type' => 'right', 'conditions' => array( 'Usertask.tasks_id = Task.id'))),'fields'=>array('tasks_id'),'conditions'=>array('Usertask.users_chuyen'=>$user['User']['id'],'Usertask.done'=>2,'Task.status <>'=>1),'group' => 'tasks_id'));
-				$tuid = $this->Task->Usertask->find('list',array('joins'=> array(array('table' => 'tasks', 'alias' => 'Task',  'type' => 'right', 'conditions' => array( 'Usertask.tasks_id = Task.id'))),'fields'=>array('tasks_id'),'conditions'=>array('or'=>array(array('Usertask.users_chuyen'=>$user['User']['id']),array('Task.status <>'=>1,'Task.users_id'=>$user['User']['id']))),'group' => 'tasks_id'));
-				$cond= array('Task.id'=>$tuid);
-				break;
-			case 'cong-viec-bi-tra-lai':
-				$cond= array( );
-				break;
-			case 'cong-viec-da-hoan-thanh':
-				$cond= array( );
-				break;
-			default:
-				$cond= array( );
-				break;
-		}
-
-		$this->paginate = array('conditions'=>$cond);
+	function index(){
+		$this->_pref();
 		$this->set('tasks', $this->paginate());
+	}
+	function _pref(){
+		$user = $this->viewVars['ssid'];
 		$this->loadModel('Group');
 		$this->Group->recursive = -1;
 		$grs = $this->Group->find('first',array('fields'=>array('magroup'),'conditions'=>array('Group.id'=>$user['User']['groups_id'])));
 		$gr= $grs['Group']['magroup'];
 		$this->set(compact('gr'));
-
 	}
-
+	function doing() {
+		$this->_pref();//ban trang bát ghi chú
+		$user = $this->viewVars['ssid'];
+		$this->Task->recursive = -1;
+		$this->Usertask->recursive = 1;
+		$cond = array('Task.done'=>1,'or'=>array(array('Usertask.done'=>1,'Usertask.users_id'=>$user['User']['id'],'Usertask.status <>'=>0),array('Task.users_id'=>$user['User']['id'],'Task.status '=>1)));
+		$this->paginate = array('fields'=>array('Task.*,Usertask.done'),'joins'=> array(array('table' => 'usertasks', 'alias' => 'Usertask',  'type' => 'Left', 'conditions' => array( 'Usertask.tasks_id = Task.id'))),'conditions'=>$cond,'group'=>array('Task.id'));
+		$this->set('tasks', $this->paginate());
+		$this->render('/tasks/index');
+	}
+	function done() {
+		$this->_pref();
+		$user = $this->viewVars['ssid'];
+		$this->Task->recursive = -1;
+		$this->Usertask->recursive = 1;
+		//$cond = array('Task.done'=>1,'Usertask.done'=>2,'or'=>array('Usertask.users_chuyen'=>$user['User']['id'],array('Task.status <>'=>1,'Task.users_id'=>$user['User']['id'])));
+		//$cond = array('Task.done'=>1,'or'=>array('Usertask.users_chuyen'=>$user['User']['id'],array('Usertask.done '=>2,'Usertask.users_id'=>$user['User']['id'])));
+		$cond = array('Task.done'=>1,'or'=>array(array('Task.users_id'=>$user['User']['id'],'Task.status >'=>1,'Usertask.users_id <>'=>$user['User']['id'],'Usertask.done'=>1,'Usertask.status >'=>0),array('Usertask.done '=>2,'Usertask.users_id'=>$user['User']['id'])));
+		$this->paginate = array('fields'=>array('Task.*,Usertask.done'),'joins'=> array(array('table' => 'usertasks', 'alias' => 'Usertask',  'type' => 'Left', 'conditions' => array( 'Usertask.tasks_id = Task.id'))),'conditions'=>$cond,'group'=>array('Task.id'));
+		$this->set('tasks', $this->paginate());
+		$this->render('/tasks/index');
+	}
+	function finish() {
+		$this->_pref();
+		$user = $this->viewVars['ssid'];
+		$this->Task->recursive = -1;
+		$this->Usertask->recursive = 1;
+		$cond = array('Task.done'=>2 ,'or'=>array('Usertask.users_chuyen'=>$user['User']['id'],'Task.users_id'=>$user['User']['id'],'Usertask.users_id'=>$user['User']['id']));
+		$this->paginate = array('fields'=>array('Task.*,Usertask.done'),'joins'=> array(array('table' => 'usertasks', 'alias' => 'Usertask',  'type' => 'Left', 'conditions' => array( 'Usertask.tasks_id = Task.id'))),'conditions'=>$cond,'group'=>array('Task.id'));
+		$this->set('tasks', $this->paginate());
+		$this->render('/tasks/index');
+	}
+	function fail(){
+		$this->_pref();
+		$user = $this->viewVars['ssid'];
+		$this->Task->recursive = -1;
+		$this->Usertask->recursive = 1;
+		$cond = array('Usertask.done'=>0,'or'=>array(array('Usertask.users_chuyen'=>$user['User']['id']),array('Task.status <>'=>1,'Task.users_id'=>$user['User']['id'],'Task.done'=>1)));
+		$this->paginate = array('fields'=>array('Task.*,Usertask.done'),'joins'=> array(array('table' => 'usertasks', 'alias' => 'Usertask',  'type' => 'Left', 'conditions' => array( 'Usertask.tasks_id = Task.id'))),'conditions'=>$cond,'group'=>array('Task.id'));
+		$this->set('tasks', $this->paginate());
+		$this->render('/tasks/index');
+	}
 	function view($id = null) {
 		if (!$id) {
 			$this->Session->setFlash(__('Invalid task', true));
@@ -53,7 +69,6 @@ class TasksController extends AppController {
 		$gr= $grs['Group']['magroup'];
 		$this->set(compact('gr'));
 	}
-
 	function add() {
 		if (!empty($this->data)) {
 			$this->Task->create();
@@ -182,13 +197,34 @@ class TasksController extends AppController {
 		}
 		//debug($groups);
 	}
-	function change($cvs,$st,$str){
+	function fntask($id,$u){
 		$this->autoRender = false;
-		if(empty($cv) or !is_numeric($cv) or empty($str)) return 1;
+		$user = $this->viewVars['ssid']['User']['id'];
+		if($u != $user) return "Bạn không có quyền thực hiện thao tác này";
+		else{
+			$this->Task->id = $id;
+			$this->Task->saveField('done',2);
+			$ids = $this->Task->Usertask->find('first',array('conditions'=>array('Usertask.users_id'=>$u,'Usertask.tasks_id'=>$id,'Usertask.status '=>11)));
+			$this->Task->Usertask->id = $ids['Usertask']['id'];
+			$this->Task->Usertask->saveField('done',2);
+		}
+	}
+	function getfnNV($id){
+		$ids = $this->Task->Usertask->find('first',array('conditions'=>array('Usertask.tasks_id'=>$id,'Usertask.status '=>11),'orer id'=>'desc'));
+		if (!empty($this->params['requested'])) {
+		      return $ids;
+		}else {
+		  $this->set(compact('ids'));
+		}
+	}
+	function change($cvs,$st,$str,$nd){
+		$this->autoRender = false;
+		if(empty($cvs) or empty($st) or empty($str)) return 1;
 		else{
 			$user = $this->viewVars['ssid'];
 			$this->loadModel("Usertask");
 			$ar = explode(',', $str);
+
 			$s = base64_decode($st);
 			$cv = base64_decode($cvs);
 			$this->Task->id = $cv;
@@ -201,6 +237,7 @@ class TasksController extends AppController {
 				$data['Usertask']['status'] = $s;
 				$data['Usertask']['users_chuyen'] = $user['User']['id'];
 				$data['Usertask']['done'] = 1;
+				$data['Usertask']['noidung'] = $nd;
 				$this->Usertask->save($data);
 			endforeach;
 			//debug($data);
@@ -208,12 +245,51 @@ class TasksController extends AppController {
 			//cap nhat da lam xong
 			$user = $this->viewVars['ssid'];
 			$this->Usertask->recursive = -1;
-			$ids = $this->Usertask->find('first',array('conditions'=>array('Usertask.users_id'=>$user['User']['id'],'Usertask.tasks_id'=>$cv)));
+			$ids = $this->Usertask->find('first',array('conditions'=>array('Usertask.users_id'=>$user['User']['id'],'Usertask.tasks_id'=>$cv,'Usertask.status <>'=>0)));
 			//debug($ids);
 			if(!empty($ids)){
 				$this->Usertask->id = $ids['Usertask']['id'];
 				$this->Usertask->saveField('done','2');
 			}
+			return 2;
+		}
+	}
+	function failtask($idu,$cvs,$stt,$str){
+		$this->autoRender = false;
+		if(empty($cvs) or empty($stt) or empty($idu)) return 1;
+		else{
+			$user = $this->viewVars['ssid'];
+			$this->loadModel("Failtask");
+			//debug($str);
+			$s = base64_decode($stt);
+			$cv = base64_decode($cvs);
+			$this->Task->id = $cv;
+			$this->Failtask->create();
+			$data['Failtask']['users_id'] = $idu;
+			$data['Failtask']['tasks_id'] = $cv;
+			$data['Failtask']['status'] = $s;
+			$data['Failtask']['lydo'] = $str;
+			$this->Failtask->save($data);
+
+			//debug($data);
+			$this->loadModel("Usertask");
+			$this->Usertask->create();
+			$data['Usertask']['users_id'] = $idu;
+			$data['Usertask']['tasks_id'] = $cv;
+			$data['Usertask']['status'] = 0;//bij trar laij
+			$data['Usertask']['users_chuyen'] = $user['User']['id'];
+			$data['Usertask']['done'] = 1;
+			$this->Usertask->save($data);
+			//cap nhat da lam xong
+			$this->Usertask->recursive = -1;
+			$ids = $this->Usertask->find('first',array('conditions'=>array('Usertask.users_id'=>$user['User']['id'],'Usertask.tasks_id'=>$cv,'Usertask.status <>'=>0)));
+			//debug($ids);
+			if(!empty($ids)){
+				$this->Usertask->id = $ids['Usertask']['id'];
+				$this->Usertask->saveField('done','0');
+			}
+			$this->Task->id = $cv;
+			$this->Task->saveField('status',0);
 			return 2;
 		}
 	}
@@ -230,6 +306,19 @@ class TasksController extends AppController {
 			if (!empty($this->params['requested'])) return $u;
 			else  $this->set(compact('u'));
 		}
+	}
+	function getNVFail($task,$stt){
+		$this->autoRender = false;
+		$id = $this->viewVars['ssid']['User']['id'];
+		$this->loadModel("Usertask");
+		$this->Usertask->recursive = -1;
+		$us=$this->Usertask->find('first',array(
+									'fields'=>array('users_chuyen'),
+									'conditions'=>array('Usertask.users_id'=>$id,'Usertask.tasks_id'=>$task,'Usertask.status'=>$stt)
+							));
+		$u = $us['Usertask']['users_chuyen'];
+		if (!empty($this->params['requested'])) return $u;
+		else  $this->set(compact('u'));
 	}
 	function download($id){
 		$did = base64_decode($id);

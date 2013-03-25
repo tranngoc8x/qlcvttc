@@ -3,7 +3,9 @@ class UsersController extends AppController {
 
 	var $name = 'Users';
 	function login(){
-		if($this->Auth->user()){}
+		if($this->Auth->user()){
+			$this->redirect(array('controller' => 'tasks', 'action' => 'index' ));
+		}
 		Configure::write('debug',0);
 		$this->layout = 'login';
 		if($this->data){
@@ -18,7 +20,9 @@ class UsersController extends AppController {
             }
         }
 	}
-	function logout(){}
+
+	function logout(){$this->redirect($this->Auth->logout());}
+
 	function index() {
 		$this->User->recursive = 0;
 		$this->set('users', $this->paginate());
@@ -69,9 +73,9 @@ class UsersController extends AppController {
 		$positions  = $this->User->Position->find('list');
 		$this->set(compact('groups','positions'));
 	}
-	function changepassword($id = null){
-		if (!$id && empty($this->data)) {
-        			$this->Session->setFlash(__('Không tìm thấy người đùng', true));
+	function changepassword(){
+		if (empty($this->data)) {
+        			$this->Session->setFlash(__('Không tìm thấy người dùng', true));
         			$this->redirect(array('action' => 'index'));
         	}
         if(!empty($this->data)){
@@ -86,12 +90,14 @@ class UsersController extends AppController {
            }
 		   else {
 				if($newpass!=$confnewpass){
-					$this->Session->setFlash(__('Chưa sửa được. Mật khẩu mới và nhập lại mật khẩu mới không khớp. Hãy nhập lại!', true));
+					$this->Session->setFlash(__('Mật khẩu mới và nhập lại mật khẩu mới không khớp. Hãy nhập lại!', true));
 					//$this->redirect(array('action' => 'index'));
 					}
 
 				else{
-					$this->User->query("update users set password='".$this->Auth->password($newpass)."' where id='".$UserInfo['User']['id']."'");
+					//$this->User->query("update users set password='".$this->Auth->password($newpass)."' where id='".$UserInfo['User']['id']."'");
+					$this->User->id = $this->viewVars['ssid']['User']['id'];
+					$this->User->saveField("password",$this->Auth->password($newpass));
 					$this->Session->setFlash(__('Mật khẩu được thay đổi', true));
 					$this->redirect(array('controller' => 'users','action' => 'index'));
 			   }
