@@ -6,7 +6,6 @@
 <table class='tblcontent chitietcv' border=0 width=100% cellspacing=0 cellpadding=0>
 	<tr class=' '>
 		<td colspan=4>
-
 			<?php  $ws = $task['Task']['status'];?>
 			<?php //echo $gr;?>
 			<?php if($ws==1 && $gr == "BQL"){?>

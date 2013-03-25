@@ -43,6 +43,13 @@
 		<li>
 			<?php echo $this->Html->link(__('Thêm mới phòng ban', true), array('plugin'=>false,'controller'=>'groups','action' => 'add')); ?>
 		</li>
+
+		<li>
+		<?php echo $this->Html->link(__('Quản lý chức vụ', true), array('plugin'=>false,'controller'=>'positions','action' => 'index')); ?>
+		</li>
+		<li>
+		<?php echo $this->Html->link(__('Thêm mới chức vụ', true), array('plugin'=>false,'controller'=>'positions','action' => 'add')); ?>
+		</li>
 		<li>
 			<?php echo $this->Html->link(__('Danh sách nhân sự', true), array('plugin'=>false,'controller'=>'users','action' => 'index')); ?>
 		</li>
@@ -50,13 +57,7 @@
 			<?php echo $this->Html->link(__('Thêm mới nhân sự', true), array('plugin'=>false,'controller'=>'users','action' => 'add')); ?>
 		</li>
 		<li>
-		<?php echo $this->Html->link(__('Chức vụ', true), array('plugin'=>false,'controller'=>'positions','action' => 'index')); ?>
-		</li>
-		<li>
-		<?php echo $this->Html->link(__('Thêm mới chức vụ', true), array('plugin'=>false,'controller'=>'positions','action' => 'add')); ?>
-		</li>
-		<li>
-			<?php echo $this->Html->link(__('Quản lý quyền người dùng', true), array('plugin'=>'acl','controller'=>'aros','action' => 'ajax_role_permissions')); ?>
+			<?php echo $this->Html->link(__('Phân quyền người dùng', true), array('plugin'=>'acl','controller'=>'aros','action' => 'ajax_role_permissions')); ?>
 		</li>
 	</ul>
 </div>
