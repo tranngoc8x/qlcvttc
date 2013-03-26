@@ -84,18 +84,20 @@ class TasksController extends AppController {
 		 		if(!is_dir($dir)) mkdir($dir,0777);
 		 		$fre = date('dmyhis_');
 		 		$err=0;
-			 	foreach ($_FILES['files']['name'] as $key => $value) {
-			 		$data = array();
-			 	 	move_uploaded_file( $_FILES["files"]["tmp_name"][$key],$dir.'/'.$fre.$_FILES['files']['name'][$key]);
-			 	 	$data['Tfile']['name'] = $fre.$value;
-			 	 	$data['Tfile']['type'] = 1;
-					$data['Tfile']['tasks_id'] = $lastid;
-					$data['Tfile']['folder'] = date('m-Y');
-			 	 	$this->Task->Tfile->create();
-			 	 	$this->Task->Tfile->save($data);
-			 	 	$data = array();
-			 	 	if($files['error'][$key] !=0 || $files['error'][$key] !='0') $err ++;
-			 	}
+		 		if(!empty($_FILES['files']['name'])){
+				 	foreach ($_FILES['files']['name'] as $key => $value) {
+				 		$data = array();
+				 	 	move_uploaded_file( $_FILES["files"]["tmp_name"][$key],$dir.'/'.$fre.$_FILES['files']['name'][$key]);
+				 	 	$data['Tfile']['name'] = $fre.$value;
+				 	 	$data['Tfile']['type'] = 1;
+						$data['Tfile']['tasks_id'] = $lastid;
+						$data['Tfile']['folder'] = date('m-Y');
+				 	 	$this->Task->Tfile->create();
+				 	 	$this->Task->Tfile->save($data);
+				 	 	$data = array();
+				 	 	if($files['error'][$key] !=0 || $files['error'][$key] !='0') $err ++;
+				 	}
+				 }
 			 	$this->redirect(array('action' => 'index'));
 				$this->Session->setFlash(__('The task has been saved', true),'default',array('class'=>'success'));
 
@@ -109,14 +111,23 @@ class TasksController extends AppController {
 	}
 
 	function edit($id = null) {
+		$check = $this->Task->find('first',array('conditions'=>array('Task.id'=>$id),'recursive'=>-1));
 		if (!$id && empty($this->data)) {
 			$this->Session->setFlash(__('Invalid task', true),'default',array('class'=>'notice'));
 			$this->redirect(array('action' => 'index'));
 		}
 		if (!empty($this->data)) {
-			//debug($this->data);
-			$this->data['Task']['start'] = date('Y-m-d h:i:s',strtotime($this->data['Task']['start'])) ;
-			$this->data['Task']['end'] = date('Y-m-d h:i:s',strtotime($this->data['Task']['end'])) ;
+			$this->Task->id = $id;
+			if(!empty($this->data['Task']['start'])){
+				$dstart = explode('/',$this->data['Task']['start']);
+				$ds = $dstart[1].'/'.$dstart[0].'/'.$dstart[2];
+				$this->data['Task']['start'] = date('Y-m-d h:i:s',strtotime($ds));
+			}
+			if(!empty($this->data['Task']['end'])){
+				$dend = explode('/',$this->data['Task']['end']);
+				$de = $dend[1].'/'.$dend[0].'/'.$dend[2];
+				$this->data['Task']['end'] = date('Y-m-d h:i:s',strtotime($de));
+			}
 			//$this->data['Task']['status']  = 1;
 			//$uid = $this->Auth->user();
 			//$this->data['Task']['users_id'] = $uid['User']['id'];
