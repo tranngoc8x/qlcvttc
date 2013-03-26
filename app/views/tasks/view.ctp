@@ -80,7 +80,13 @@
 		<td class='tDtite'><span class=" ">Trạng thái :</span></td>
 		<td><?php echo stt(base64_encode($task['Task']['status']),$task['Task']['done']); ?></td>
 		<td class='tDtite'><span class="">Yêu cầu cần làm</span></td>
-		<td width><font color="red"><?php echo $task['Usertask'][count($task['Usertask'])-1]['noidung'];?></font></td>
+		<td width><font color="red">
+			<?php
+			if(!empty($task['Usertask']))
+				{echo $task['Usertask'][count($task['Usertask'])-1]['noidung'];}
+			?>
+
+		</font></td>
 	</tr>
 	<tr class='tbody'>
 		<td class='tDtite' colspan=4><span class=" ">Nội dung công việc</span></td>

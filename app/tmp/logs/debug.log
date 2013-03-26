@@ -903,3 +903,8 @@
 2013-03-25 08:29:40 Debug: Notice (8): Undefined index: birth in [F:\xampp\htdocs\QLCV_TTC\app\views\users\view.ctp, line 8]
 2013-03-25 08:35:23 Debug: Notice (8): Undefined index: birth in [F:\xampp\htdocs\QLCV_TTC\app\views\users\view.ctp, line 8]
 2013-03-25 08:35:27 Debug: Notice (8): Undefined index: birth in [F:\xampp\htdocs\QLCV_TTC\app\views\users\view.ctp, line 8]
+2013-03-26 08:48:24 Debug: Notice (8): Undefined variable: files in [F:\xampp\htdocs\QLCV_TTC\app\controllers\tasks_controller.php, line 97]
+2013-03-26 08:53:38 Debug: Notice (8): Undefined offset: -1 in [F:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 83]
+2013-03-26 09:20:05 Debug: Notice (8): Undefined offset: -1 in [F:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 86]
+2013-03-26 09:20:19 Debug: Notice (8): Undefined offset: -1 in [F:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 86]
+2013-03-26 09:20:32 Debug: Notice (8): Undefined offset: -1 in [F:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 87]
