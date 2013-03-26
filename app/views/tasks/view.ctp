@@ -463,7 +463,7 @@
 				click: function() {
 					var $rthis = $(this);
 					var $obj = $('.child input[type=checkbox]');
-					var $ndvn = $("$noidungcv").value;
+					var $ndvn = $("#noidungcv").val();
 					if($obj.filter(':checked').length <=0) return alert("Bạn chưa chọn nhân viên");
 					if(confirm("Bạn có chắc muốn giao việc cho nhân viên vừa chọn ?")){
 					 	var str = "";
@@ -502,6 +502,7 @@
 				click: function() {
 					var $rthis = $(this);
 					var $obj = $('.child input[type=checkbox]');
+					var $ndvn = $("#noidungcv").val();
 					if($obj.filter(':checked').length <=0) return alert("Bạn chưa chọn nhân viên");
 					if(confirm("Bạn có chắc muốn thông báo cho ban quản lý công việc này ?")){
 					 	var str = "";
@@ -539,6 +540,7 @@
 				click: function() {
 					var $rthis = $(this);
 					var $obj = $('.child input[type=checkbox]');
+					var $ndvn = $("#noidungcv").val();
 					if($obj.filter(':checked').length <=0) return alert("Bạn chưa chọn nhân viên");
 					if(confirm("Bạn có chắc muốn trình báo cho cấp trên công việc này ?")){
 					 	var str = "";
@@ -576,6 +578,7 @@
 				click: function() {
 					var $rthis = $(this);
 					var $obj = $('.child input[type=checkbox]');
+					var $ndvn = $("#noidungcv").val();
 					if($obj.filter(':checked').length <=0) return alert("Bạn chưa chọn nhân viên");
 					if(confirm("Bạn có chắc muốn thông báo công việc này ?")){
 					 	var str = "";
@@ -652,6 +655,7 @@
 				click: function() {
 					var $rthis = $(this);
 					var $obj = $('.child input[type=checkbox]');
+					var $ndvn = $("#noidungcv").val();
 					if($obj.filter(':checked').length <=0) return alert("Bạn chưa chọn nhân sự");
 					if(confirm("Bạn có chắc muốn thông báo công việc này ?")){
 					 	var str = "";
@@ -689,6 +693,7 @@
 				click: function() {
 					var $rthis = $(this);
 					var $obj = $('.child input[type=checkbox]');
+					var $ndvn = $("#noidungcv").val();
 					if($obj.filter(':checked').length <=0) return alert("Bạn chưa chọn nhân sự");
 					if(confirm("Bạn có chắc muốn thông báo công việc này ?")){
 					 	var str = "";
@@ -726,6 +731,7 @@
 				click: function() {
 					var $rthis = $(this);
 					var $obj = $('.child input[type=checkbox]');
+					var $ndvn = $("#noidungcv").val();
 					if($obj.filter(':checked').length <=0) return alert("Bạn chưa chọn nhân sự");
 					if(confirm("Bạn có chắc muốn thông báo công việc này ?")){
 					 	var str = "";
@@ -763,6 +769,7 @@
 				click: function() {
 					var $rthis = $(this);
 					var $obj = $('.child input[type=checkbox]');
+					var $ndvn = $("#noidungcv").val();
 					if($obj.filter(':checked').length <=0) return alert("Bạn chưa chọn nhân sự");
 					if(confirm("Bạn có chắc muốn thông báo công việc này ?")){
 					 	var str = "";
