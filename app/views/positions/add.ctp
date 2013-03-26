@@ -4,7 +4,8 @@
 		//echo $this->Form->input('groups_id',array('label'=>"Chọn phòng ban"));
 		echo $this->Form->input('order',array('label'=>"Thứ tự"));
 		echo $this->Form->label("Chọn phòng ban");
-		echo "</br>";		
+		echo "</br>";	
+		
 		echo $this->Form->input('groups_id',array(
 			'type'=>'select',
 			'multiple'=>'checkbox',
