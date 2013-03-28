@@ -5,17 +5,18 @@ class PositionsController extends AppController {
 	//var $use = array('PositionsGroup','Group');
 	
 	function index() {
-		//$this->Position->recursive = 0;
+		//$this->Position->recursive = 1;
 		$this->set('pos', $this->paginate());
 		//debug($this->paginate());
 	}
 
 	function view($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid position', true));
+			$this->Session->setFlash(__('Không có chức vụ này', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->set('position', $this->Position->read(null, $id));
+		//debug($this->Position->read(null, $id));
 	}
 
 	function add() {
@@ -46,16 +47,17 @@ class PositionsController extends AppController {
 	}
 
 	function edit($id = null) {
+		$this->loadModel('PositionsGroup');
 		$pos_group=$this->PositionsGroup->find('all',array('conditions'=>array('positions_id'=>$id)));
 		
 	    /*
 		$this->Group->unbindModel(
 			array('hasMany'=>array('User'),'hasAndBelongsToMany'=>array('Position'))
 		);*/
-		
+		$this->loadModel('Group');
 		$groups = $this->Group->find('list');
 		$this->set(compact('groups','pos_group'));	
-		//debug($pos_group);
+		debug($pos_group);
 		//debug($groups);
 		if (!$id && empty($this->data)) {
 			$this->Session->setFlash(__('Không có chức vụ này', true));
