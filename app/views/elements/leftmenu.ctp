@@ -33,6 +33,12 @@
 		<li>
 		<?php echo $this->Html->link(__('Công việc đã hoàn thành', true), array('plugin'=>false,'controller'=>'tasks','action' => 'finish')); ?>
 		</li>
+		<li>
+		<?php echo $this->Html->link(__('Loại công việc', true), array('plugin'=>false,'controller'=>'types','action' => 'index')); ?>
+		</li>
+		<li>
+		<?php echo $this->Html->link(__('Lĩnh vực', true), array('plugin'=>false,'controller'=>'linhvucs','action' => 'index')); ?>
+		</li>
 	</ul>
 </div>
 <div id="nhansu">
