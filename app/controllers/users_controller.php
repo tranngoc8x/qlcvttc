@@ -2,27 +2,7 @@
 class UsersController extends AppController {
 
 	var $name = 'Users';
-	function login(){
-		if($this->Auth->user()){
-			$this->redirect(array('controller' => 'tasks', 'action' => 'index' ));
-		}
-		Configure::write('debug',0);
-		$this->layout = 'login';
-		if($this->data){
-            $this->autoRender = false;
-            if($this->Auth->login($this->Auth->user())){
-                if($this->Auth->user()){
-                    $this->User->query("Update logs set ipadr='".$_SERVER['REMOTE_ADDR']."',time='".date('Y-m-d h:i:s')."' where id='".$this->Auth->user('id')."'");
-                }
-                echo  "{success: true}";
-            }else{
-                echo "{ success: false, errors: { reason: 'Đăng nhập không thành công. Xin vui lòng thử lại.' }}";
-            }
-        }
-	}
-
-	function logout(){$this->redirect($this->Auth->logout());}
-
+	
 	function index() {
 		$this->User->recursive = 0;
 		$this->set('users', $this->paginate());
@@ -59,6 +39,10 @@ class UsersController extends AppController {
 			$this->redirect(array('action' => 'index'));
 		}
 		if (!empty($this->data)) {
+			if($this->data['User']['nghiviec'] == 0){
+				 $this->data['User']['dateend'] = null;
+			}
+			//debug($this->data);
 			if ($this->User->save($this->data)) {
 				$this->Session->setFlash(__('The user has been saved', true));
 				$this->redirect(array('action' => 'index'));
@@ -104,4 +88,25 @@ class UsersController extends AppController {
 			}
         }
     }
+    function login(){
+		if($this->Auth->user()){
+			$this->redirect(array('controller' => 'tasks', 'action' => 'index' ));
+		}
+		Configure::write('debug',0);
+		$this->layout = 'login';
+		if($this->data){
+            $this->autoRender = false;
+            if($this->Auth->login($this->Auth->user())){
+                if($this->Auth->user()){
+                    $this->User->query("Update logs set ipadr='".$_SERVER['REMOTE_ADDR']."',time='".date('Y-m-d h:i:s')."' where id='".$this->Auth->user('id')."'");
+                }
+                echo  "{success: true}";
+            }else{
+                echo "{ success: false, errors: { reason: 'Đăng nhập không thành công. Xin vui lòng thử lại.' }}";
+            }
+        }
+	}
+
+	function logout(){$this->redirect($this->Auth->logout());}
+
 }

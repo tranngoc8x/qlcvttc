@@ -166,7 +166,7 @@ class TasksController extends AppController {
 		$this->User->recursive = 0;
 		$listussers = $this->User->find('all',array(
 				'fields'=>array('User.id','User.name','Position.name'),
-				'conditions'=>array('User.groups_id'=>$id)
+				'conditions'=>array('User.groups_id'=>$id,'User.nghiviec'=>0)
 			));
 		if (!empty($this->params['requested'])) {
 		      return $listussers;
