@@ -40,7 +40,7 @@ Configure :: write('acl.aro.user.primary_key', '');
 /*
  * The name of the database field that can be used to display the role name
  */
-Configure :: write('acl.aro.role.display_field', 'name');
+Configure :: write('acl.aro.role.display_field', 'fullname');
 
 /*
  * You can add here role id(s) that are always allowed to access the ACL plugin (by bypassing the ACL check)

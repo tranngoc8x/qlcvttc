@@ -908,3 +908,7 @@
 2013-03-26 09:20:05 Debug: Notice (8): Undefined offset: -1 in [F:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 86]
 2013-03-26 09:20:19 Debug: Notice (8): Undefined offset: -1 in [F:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 86]
 2013-03-26 09:20:32 Debug: Notice (8): Undefined offset: -1 in [F:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 87]
+2013-03-27 03:57:26 Debug: Notice (8): Undefined variable: files in [F:\xampp\htdocs\QLCV_TTC\app\controllers\tasks_controller.php, line 98]
+2013-03-27 04:02:42 Debug: Notice (8): Undefined variable: nd in [F:\xampp\htdocs\QLCV_TTC\app\controllers\tasks_controller.php, line 251]
+2013-03-28 02:27:45 Debug: Notice (8): Undefined variable: ssid in [F:\xampp\htdocs\QLCV_TTC\app\views\layouts\default.ctp, line 148]
+2013-03-28 05:16:50 Debug: Notice (8): Undefined variable: ssid in [F:\xampp\htdocs\QLCV_TTC\app\views\layouts\default.ctp, line 148]
