@@ -17,13 +17,13 @@
  
 		<td class="center"><input type="checkbox" value="<?php echo h($pos['Position']['id']); ?>" name="checkid" class="checkbox"/></td>
 		<td><?php echo $pos['Position']['name']; ?>&nbsp;</td>
-		<td><?php echo $pos['Group']['name']; ?>&nbsp;</td>		
+		<td><?php foreach($pos['Group'] as $g) echo $g['name'] ."&nbsp ";?>	</td>
 		<td><?php echo $pos['Position']['note']; ?>&nbsp;</td>		
 		<td>
 				<?php echo $this->Html->link($this->Html->image("admin/view-item.png", array("alt" => "Xem","title"=>"Xem bản ghi")), array('action' => 'view', $pos['Position']['id']),array('escape'=>false)); ?>
 				<?php echo $this->Html->link($this->Html->image("admin/edit-item.png", array("alt" => "Sửa","title"=>"Sửa bản ghi")), array('action' => 'edit', $pos['Position']['id']),array('escape'=>false)); ?>
 				<?php echo $this->Html->Link($this->Html->image("admin/delete-item.png", array("alt" => "Xóa","title"=>"Xóa bản ghi")), array('action' => 'delete', $pos['Position']['id']), array('escape'=>false), __('Bạn có chắc muốn xóa mục này',$pos['Position']['id'])); ?>
-				</td>
+		</td>
 	</tr>
 <?php endforeach; ?>
 
