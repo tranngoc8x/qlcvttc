@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 25, 2013 at 09:45 AM
+-- Generation Time: Mar 29, 2013 at 09:58 AM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -23,6 +23,18 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `acls`
+--
+
+DROP TABLE IF EXISTS `acls`;
+CREATE TABLE IF NOT EXISTS `acls` (
+  `id` int(11) NOT NULL,
+  `name` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `acos`
 --
 
@@ -36,70 +48,99 @@ CREATE TABLE IF NOT EXISTS `acos` (
   `lft` int(10) DEFAULT NULL,
   `rght` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=58 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=251 ;
 
 --
 -- Dumping data for table `acos`
 --
 
 INSERT INTO `acos` (`id`, `parent_id`, `model`, `foreign_key`, `alias`, `lft`, `rght`) VALUES
-(1, NULL, NULL, NULL, 'controllers', 1, 114),
-(2, 1, NULL, NULL, 'Groups', 2, 13),
-(3, 2, NULL, NULL, 'index', 3, 4),
-(4, 2, NULL, NULL, 'view', 5, 6),
-(5, 2, NULL, NULL, 'add', 7, 8),
-(6, 2, NULL, NULL, 'edit', 9, 10),
-(7, 2, NULL, NULL, 'delete', 11, 12),
-(8, 1, NULL, NULL, 'Positions', 14, 27),
-(9, 8, NULL, NULL, 'index', 15, 16),
-(10, 8, NULL, NULL, 'view', 17, 18),
-(11, 8, NULL, NULL, 'add', 19, 20),
-(12, 8, NULL, NULL, 'edit', 21, 22),
-(13, 8, NULL, NULL, 'delete', 23, 24),
-(14, 8, NULL, NULL, 'mutildelete', 25, 26),
-(15, 1, NULL, NULL, 'Tasks', 28, 53),
-(16, 15, NULL, NULL, 'index', 29, 30),
-(17, 15, NULL, NULL, 'view', 31, 32),
-(18, 15, NULL, NULL, 'add', 33, 34),
-(19, 15, NULL, NULL, 'edit', 35, 36),
-(20, 15, NULL, NULL, 'delete', 37, 38),
-(21, 15, NULL, NULL, 'listns', 39, 40),
-(22, 15, NULL, NULL, 'listPB', 41, 42),
-(23, 15, NULL, NULL, 'listPBgv', 43, 44),
-(24, 15, NULL, NULL, 'change', 45, 46),
-(25, 15, NULL, NULL, 'getNV', 47, 48),
-(26, 15, NULL, NULL, 'download', 49, 50),
-(27, 15, NULL, NULL, 'addfile', 51, 52),
-(28, 1, NULL, NULL, 'Users', 54, 67),
-(29, 28, NULL, NULL, 'login', 55, 56),
-(30, 28, NULL, NULL, 'index', 57, 58),
-(31, 28, NULL, NULL, 'view', 59, 60),
-(32, 28, NULL, NULL, 'add', 61, 62),
-(33, 28, NULL, NULL, 'edit', 63, 64),
-(34, 28, NULL, NULL, 'changepassword', 65, 66),
-(35, 1, NULL, NULL, 'Acl', 68, 113),
-(36, 35, NULL, NULL, 'Acos', 69, 76),
-(37, 36, NULL, NULL, 'index', 70, 71),
-(38, 36, NULL, NULL, 'empty_acos', 72, 73),
-(39, 36, NULL, NULL, 'build_acl', 74, 75),
-(40, 35, NULL, NULL, 'Aros', 77, 112),
-(41, 40, NULL, NULL, 'index', 78, 79),
-(42, 40, NULL, NULL, 'check', 80, 81),
-(43, 40, NULL, NULL, 'users', 82, 83),
-(44, 40, NULL, NULL, 'update_user_role', 84, 85),
-(45, 40, NULL, NULL, 'ajax_role_permissions', 86, 87),
-(46, 40, NULL, NULL, 'role_permissions', 88, 89),
-(47, 40, NULL, NULL, 'user_permissions', 90, 91),
-(48, 40, NULL, NULL, 'empty_permissions', 92, 93),
-(49, 40, NULL, NULL, 'clear_user_specific_permissions', 94, 95),
-(50, 40, NULL, NULL, 'grant_all_controllers', 96, 97),
-(51, 40, NULL, NULL, 'deny_all_controllers', 98, 99),
-(52, 40, NULL, NULL, 'get_role_controller_permission', 100, 101),
-(53, 40, NULL, NULL, 'grant_role_permission', 102, 103),
-(54, 40, NULL, NULL, 'deny_role_permission', 104, 105),
-(55, 40, NULL, NULL, 'get_user_controller_permission', 106, 107),
-(56, 40, NULL, NULL, 'grant_user_permission', 108, 109),
-(57, 40, NULL, NULL, 'deny_user_permission', 110, 111);
+(165, NULL, NULL, NULL, 'controllers', 1, 172),
+(166, 165, NULL, NULL, 'Groups', 2, 13),
+(167, 166, NULL, NULL, 'index', 3, 4),
+(168, 166, NULL, NULL, 'view', 5, 6),
+(169, 166, NULL, NULL, 'add', 7, 8),
+(170, 166, NULL, NULL, 'edit', 9, 10),
+(171, 166, NULL, NULL, 'delete', 11, 12),
+(172, 165, NULL, NULL, 'Linhvucs', 14, 25),
+(173, 172, NULL, NULL, 'index', 15, 16),
+(174, 172, NULL, NULL, 'view', 17, 18),
+(175, 172, NULL, NULL, 'add', 19, 20),
+(176, 172, NULL, NULL, 'edit', 21, 22),
+(177, 172, NULL, NULL, 'delete', 23, 24),
+(178, 165, NULL, NULL, 'Members', 26, 41),
+(179, 178, NULL, NULL, 'index', 27, 28),
+(180, 178, NULL, NULL, 'view', 29, 30),
+(181, 178, NULL, NULL, 'add', 31, 32),
+(182, 178, NULL, NULL, 'edit', 33, 34),
+(183, 178, NULL, NULL, 'changepassword', 35, 36),
+(184, 178, NULL, NULL, 'login', 37, 38),
+(185, 178, NULL, NULL, 'logout', 39, 40),
+(186, 165, NULL, NULL, 'Positions', 42, 55),
+(187, 186, NULL, NULL, 'index', 43, 44),
+(188, 186, NULL, NULL, 'view', 45, 46),
+(189, 186, NULL, NULL, 'add', 47, 48),
+(190, 186, NULL, NULL, 'edit', 49, 50),
+(191, 186, NULL, NULL, 'delete', 51, 52),
+(192, 186, NULL, NULL, 'mutildelete', 53, 54),
+(193, 165, NULL, NULL, 'Tasks', 56, 97),
+(194, 193, NULL, NULL, 'index', 57, 58),
+(195, 193, NULL, NULL, 'doing', 59, 60),
+(196, 193, NULL, NULL, 'done', 61, 62),
+(197, 193, NULL, NULL, 'finish', 63, 64),
+(198, 193, NULL, NULL, 'fail', 65, 66),
+(199, 193, NULL, NULL, 'view', 67, 68),
+(200, 193, NULL, NULL, 'add', 69, 70),
+(201, 193, NULL, NULL, 'edit', 71, 72),
+(202, 193, NULL, NULL, 'delete', 73, 74),
+(203, 193, NULL, NULL, 'listns', 75, 76),
+(204, 193, NULL, NULL, 'listPB', 77, 78),
+(205, 193, NULL, NULL, 'listPBgv', 79, 80),
+(206, 193, NULL, NULL, 'fntask', 81, 82),
+(207, 193, NULL, NULL, 'getfnNV', 83, 84),
+(208, 193, NULL, NULL, 'change', 85, 86),
+(209, 193, NULL, NULL, 'failtask', 87, 88),
+(210, 193, NULL, NULL, 'getNV', 89, 90),
+(211, 193, NULL, NULL, 'getNVFail', 91, 92),
+(212, 193, NULL, NULL, 'download', 93, 94),
+(213, 193, NULL, NULL, 'addfile', 95, 96),
+(214, 165, NULL, NULL, 'Types', 98, 109),
+(215, 214, NULL, NULL, 'index', 99, 100),
+(216, 214, NULL, NULL, 'view', 101, 102),
+(217, 214, NULL, NULL, 'add', 103, 104),
+(218, 214, NULL, NULL, 'edit', 105, 106),
+(219, 214, NULL, NULL, 'delete', 107, 108),
+(220, 165, NULL, NULL, 'Users', 110, 125),
+(221, 220, NULL, NULL, 'index', 111, 112),
+(222, 220, NULL, NULL, 'view', 113, 114),
+(223, 220, NULL, NULL, 'add', 115, 116),
+(224, 220, NULL, NULL, 'edit', 117, 118),
+(225, 220, NULL, NULL, 'changepassword', 119, 120),
+(226, 220, NULL, NULL, 'login', 121, 122),
+(227, 220, NULL, NULL, 'logout', 123, 124),
+(228, 165, NULL, NULL, 'Acl', 126, 171),
+(229, 228, NULL, NULL, 'Acos', 127, 134),
+(230, 229, NULL, NULL, 'index', 128, 129),
+(231, 229, NULL, NULL, 'empty_acos', 130, 131),
+(232, 229, NULL, NULL, 'build_acl', 132, 133),
+(233, 228, NULL, NULL, 'Aros', 135, 170),
+(234, 233, NULL, NULL, 'index', 136, 137),
+(235, 233, NULL, NULL, 'check', 138, 139),
+(236, 233, NULL, NULL, 'users', 140, 141),
+(237, 233, NULL, NULL, 'update_user_role', 142, 143),
+(238, 233, NULL, NULL, 'ajax_role_permissions', 144, 145),
+(239, 233, NULL, NULL, 'role_permissions', 146, 147),
+(240, 233, NULL, NULL, 'user_permissions', 148, 149),
+(241, 233, NULL, NULL, 'empty_permissions', 150, 151),
+(242, 233, NULL, NULL, 'clear_user_specific_permissions', 152, 153),
+(243, 233, NULL, NULL, 'grant_all_controllers', 154, 155),
+(244, 233, NULL, NULL, 'deny_all_controllers', 156, 157),
+(245, 233, NULL, NULL, 'get_role_controller_permission', 158, 159),
+(246, 233, NULL, NULL, 'grant_role_permission', 160, 161),
+(247, 233, NULL, NULL, 'deny_role_permission', 162, 163),
+(248, 233, NULL, NULL, 'get_user_controller_permission', 164, 165),
+(249, 233, NULL, NULL, 'grant_user_permission', 166, 167),
+(250, 233, NULL, NULL, 'deny_user_permission', 168, 169);
 
 -- --------------------------------------------------------
 
@@ -117,7 +158,7 @@ CREATE TABLE IF NOT EXISTS `aros` (
   `lft` int(10) DEFAULT NULL,
   `rght` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `aros`
@@ -127,16 +168,15 @@ INSERT INTO `aros` (`id`, `parent_id`, `model`, `foreign_key`, `alias`, `lft`, `
 (1, NULL, 'Group', 4, 'Ban quáº£n lÃ½', 1, 4),
 (2, NULL, 'Group', 1, 'GiÃ¡m Ä‘á»‘c', 5, 8),
 (3, NULL, 'Group', 6, 'Káº¿ toÃ¡n', 9, 12),
-(4, NULL, 'Group', 2, 'PhÃ²ng káº¿ hoáº¡ch', 13, 18),
-(5, NULL, 'Group', 5, 'PhÃ²ng nhÃ¢n sá»±', 19, 22),
-(6, NULL, 'Group', 3, 'PhÃ²ng tÃ i chÃ­nh', 23, 26),
+(4, NULL, 'Group', 2, 'PhÃ²ng káº¿ hoáº¡ch', 13, 16),
+(5, NULL, 'Group', 5, 'PhÃ²ng nhÃ¢n sá»±', 17, 20),
+(6, NULL, 'Group', 3, 'PhÃ²ng tÃ i chÃ­nh', 21, 24),
 (7, 2, 'User', 1, 'admin', 6, 7),
 (8, 3, 'User', 11, 'ketoan', 10, 11),
-(9, 5, 'User', 4, 'nsu1', 20, 21),
-(10, 6, 'User', 3, 'nttrang', 24, 25),
-(11, 1, 'User', 9, 'qly1', 2, 3),
-(12, 4, 'User', 10, 'thangtn', 14, 15),
-(13, 4, 'User', 2, 'tranngoc8x', 16, 17);
+(9, 5, 'User', 4, 'nsu1', 18, 19),
+(10, 4, 'User', 2, 'pgdkh', 14, 15),
+(11, 6, 'User', 3, 'phdtc', 22, 23),
+(12, 1, 'User', 9, 'qly1', 2, 3);
 
 -- --------------------------------------------------------
 
@@ -228,8 +268,8 @@ CREATE TABLE IF NOT EXISTS `linhvucs` (
 --
 
 INSERT INTO `linhvucs` (`id`, `name`, `note`) VALUES
-(1, '234', '234'),
-(2, '4325676543', '34567543');
+(1, 'DV VS', 'DV VS'),
+(2, 'DV Bao Ve', 'DV Bao Ve');
 
 -- --------------------------------------------------------
 
@@ -251,9 +291,9 @@ CREATE TABLE IF NOT EXISTS `logs` (
 --
 
 INSERT INTO `logs` (`id`, `users_id`, `ipadr`, `time`) VALUES
-(1, 1, '::1', '2013-03-20 04:23:40'),
-(3, 8, '::1', '2013-03-14 10:40:55'),
-(4, 9, '::1', '2013-03-21 10:13:45'),
+(1, 1, '::1', '2013-03-29 09:26:16'),
+(3, 8, '::1', '2013-03-27 04:10:51'),
+(4, 9, '::1', '2013-03-27 03:58:41'),
 (5, 10, '::1', '2013-03-08 04:46:30'),
 (6, 11, '::1', '2013-03-13 05:15:47'),
 (7, 12, '::1', '2013-03-13 05:15:55');
@@ -261,17 +301,38 @@ INSERT INTO `logs` (`id`, `users_id`, `ipadr`, `time`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `offices`
+-- Table structure for table `members`
 --
 
-DROP TABLE IF EXISTS `offices`;
-CREATE TABLE IF NOT EXISTS `offices` (
+DROP TABLE IF EXISTS `members`;
+CREATE TABLE IF NOT EXISTS `members` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
-  `note` mediumtext,
-  `order` int(2) DEFAULT NULL,
+  `name` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `username` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `positions_id` int(11) NOT NULL,
+  `groups_id` int(11) NOT NULL,
+  `gioitinh` tinyint(4) NOT NULL,
+  `datestart` date NOT NULL,
+  `dateend` date NOT NULL,
+  `birth` date NOT NULL,
+  `address` mediumtext NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `nghiviec` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+
+--
+-- Dumping data for table `members`
+--
+
+INSERT INTO `members` (`id`, `name`, `username`, `password`, `positions_id`, `groups_id`, `gioitinh`, `datestart`, `dateend`, `birth`, `address`, `email`, `nghiviec`) VALUES
+(1, 'GiÃ¡m Ä‘á»‘c', 'admin', '6bf41c4a3399425edd18693b8b33f16bcce2f0fc', 1, 1, 0, '1998-01-01', '0000-00-00', '1970-05-10', 'Cáº§u Giáº¥y,HÃ  Ná»™i', 'giamdoc@mail.com', 0),
+(2, 'PGD Káº¿ Hoáº¡ch', 'pgdkh', '6bf41c4a3399425edd18693b8b33f16bcce2f0fc', 2, 2, 0, '2013-01-01', '2033-01-01', '0000-00-00', '', '', 0),
+(3, 'PGD TÃ i ChÃ­nh', 'phdtc', '6bf41c4a3399425edd18693b8b33f16bcce2f0fc', 3, 3, 0, '2033-01-01', '2033-01-01', '0000-00-00', '', '', 0),
+(4, 'NhÃ¢n sá»± 1', 'nsu1', '6bf41c4a3399425edd18693b8b33f16bcce2f0fc', 5, 5, 0, '0000-00-00', '0000-00-00', '0000-00-00', '', '', 0),
+(9, 'Quáº£n lÃ½', 'qly1', '6bf41c4a3399425edd18693b8b33f16bcce2f0fc', 4, 4, 0, '0000-00-00', '0000-00-00', '0000-00-00', '', '', 0),
+(11, 'Káº¿ toÃ¡n', 'ketoan', '6bf41c4a3399425edd18693b8b33f16bcce2f0fc', 5, 6, 0, '0000-00-00', '0000-00-00', '0000-00-00', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -334,7 +395,7 @@ CREATE TABLE IF NOT EXISTS `tasks` (
   `linhvucs_id` int(11) NOT NULL,
   `done` int(2) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `tasks`
@@ -343,7 +404,9 @@ CREATE TABLE IF NOT EXISTS `tasks` (
 INSERT INTO `tasks` (`id`, `name`, `content`, `start`, `end`, `users_id`, `status`, `taskid`, `types_id`, `linhvucs_id`, `done`) VALUES
 (1, 'BÃ¡o cÃ¡o tuáº§n', 'BÃ¡o cÃ¡o tuáº§n', '2013-07-03 12:00:00', '2013-08-03 12:00:00', 9, 11, 'QLCV/TTC-1', 1, 1, 2),
 (2, 'BÃ¡o cÃ¡o Ä‘áº§u nÄƒm', 'BÃ¡o cÃ¡o cÃ´ng viá»‡c nÄƒm trÆ°á»›c vÃ  triá»ƒn khai káº¿ hoáº¡c nÄƒm má»›i', '2013-03-08 12:00:00', '2013-03-08 12:00:00', 9, 5, 'QLCV/TTC-2', 2, 2, 1),
-(3, 'BÃ¡o cÃ¡o Ä‘áº§u nÄƒm', 'BÃ¡o cÃ¡o cÃ´ng viá»‡c nÄƒm trÆ°á»›c vÃ  triá»ƒn khai káº¿ hoáº¡c nÄƒm má»›i', '2013-03-08 12:00:00', '2013-03-11 12:00:00', 9, 3, 'QLCV-TTC-3', 2, 2, 1);
+(3, 'BÃ¡o cÃ¡o Ä‘áº§u nÄƒm', 'BÃ¡o cÃ¡o cÃ´ng viá»‡c nÄƒm trÆ°á»›c vÃ  triá»ƒn khai káº¿ hoáº¡c nÄƒm má»›i', '2013-03-08 12:00:00', '2013-03-11 12:00:00', 9, 3, 'QLCV-TTC-3', 2, 2, 1),
+(4, 'BÃ¡o cÃ¡o Ä‘áº§u nÄƒm', 'BÃ¡o cÃ¡o Ä‘áº§u nÄƒm', '2013-03-26 12:00:00', '0000-00-00 00:00:00', 9, 2, 'QLCV/TTC-4', 1, 1, 1),
+(5, 'BÃ¡o cÃ¡o thÃ¡ng 3', 'BÃ¡o cÃ¡o thÃ¡ng 3', '1970-01-01 01:00:00', '1970-01-01 01:00:00', 9, 7, 'QLCV/TTC-5', 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -359,7 +422,7 @@ CREATE TABLE IF NOT EXISTS `tfiles` (
   `tasks_id` int(11) NOT NULL,
   `folder` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=74 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=77 ;
 
 --
 -- Dumping data for table `tfiles`
@@ -373,7 +436,10 @@ INSERT INTO `tfiles` (`id`, `name`, `type`, `tasks_id`, `folder`) VALUES
 (67, '120313094703_important16.png', 3, 2, '03-2013'),
 (71, '150313110904_IMG_20130311_115815.jpg', 1, 24, '03-2013'),
 (72, '150313110904_IMG_20130311_115822.jpg', 1, 24, '03-2013'),
-(73, '150313110904_IMG_20130311_115824.jpg', 1, 24, '03-2013');
+(73, '150313110904_IMG_20130311_115824.jpg', 1, 24, '03-2013'),
+(74, '260313084824_Hopdong_web.doc', 1, 4, '03-2013'),
+(75, '270313035726_Northwind_A4_size_for_Print.png', 1, 5, '03-2013'),
+(76, '270313035956_Northwind_A4_size_for_Print.png', 2, 5, '03-2013');
 
 -- --------------------------------------------------------
 
@@ -394,8 +460,8 @@ CREATE TABLE IF NOT EXISTS `types` (
 --
 
 INSERT INTO `types` (`id`, `name`, `note`) VALUES
-(1, '789789', '78978'),
-(2, '456765', '567876');
+(1, 'Thong bao', 'Thong bao'),
+(2, 'Cong van', 'Cong van');
 
 -- --------------------------------------------------------
 
@@ -411,11 +477,13 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(255) CHARACTER SET utf8 NOT NULL,
   `positions_id` int(11) NOT NULL,
   `groups_id` int(11) NOT NULL,
-  `quequan` mediumtext NOT NULL,
   `gioitinh` tinyint(4) NOT NULL,
   `datestart` date NOT NULL,
   `dateend` date NOT NULL,
   `birth` date NOT NULL,
+  `address` mediumtext NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `nghiviec` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
@@ -423,14 +491,13 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `username`, `password`, `positions_id`, `groups_id`, `quequan`, `gioitinh`, `datestart`, `dateend`, `birth`) VALUES
-(1, 'Tran Ngoc', 'admin', '6bf41c4a3399425edd18693b8b33f16bcce2f0fc', 1, 1, '0', 0, '0000-00-00', '0000-00-00', '0000-00-00'),
-(2, 'Ngá»c Tháº¯ng', 'tranngoc8x', '6bf41c4a3399425edd18693b8b33f16bcce2f0fc', 2, 2, 'Ninh bÃ¬nh', 0, '2013-01-01', '2033-01-01', '0000-00-00'),
-(3, 'Thu Trang', 'nttrang', '6bf41c4a3399425edd18693b8b33f16bcce2f0fc', 3, 3, '0', 0, '0000-00-00', '0000-00-00', '0000-00-00'),
-(4, 'NhÃ¢n sá»± 1', 'nsu1', '6bf41c4a3399425edd18693b8b33f16bcce2f0fc', 5, 5, '0', 0, '0000-00-00', '0000-00-00', '0000-00-00'),
-(9, 'Quáº£n lÃ½', 'qly1', '6bf41c4a3399425edd18693b8b33f16bcce2f0fc', 4, 4, '0', 0, '0000-00-00', '0000-00-00', '0000-00-00'),
-(10, 'Tháº¯ng Tráº§n', 'thangtn', '6bf41c4a3399425edd18693b8b33f16bcce2f0fc', 2, 2, 'Ninh bÃ¬nh', 0, '2033-01-01', '2033-01-01', '0000-00-00'),
-(11, 'Káº¿ toÃ¡n', 'ketoan', '6bf41c4a3399425edd18693b8b33f16bcce2f0fc', 5, 6, '0', 0, '0000-00-00', '0000-00-00', '0000-00-00');
+INSERT INTO `users` (`id`, `name`, `username`, `password`, `positions_id`, `groups_id`, `gioitinh`, `datestart`, `dateend`, `birth`, `address`, `email`, `nghiviec`) VALUES
+(1, 'GiÃ¡m Ä‘á»‘c', 'admin', '6bf41c4a3399425edd18693b8b33f16bcce2f0fc', 1, 1, 0, '1998-01-01', '0000-00-00', '1970-05-10', 'Cáº§u Giáº¥y,HÃ  Ná»™i', 'giamdoc@mail.com', 0),
+(2, 'PGD Káº¿ Hoáº¡ch', 'pgdkh', '6bf41c4a3399425edd18693b8b33f16bcce2f0fc', 2, 2, 0, '2013-01-01', '2033-01-01', '0000-00-00', '', '', 0),
+(3, 'PGD TÃ i ChÃ­nh', 'phdtc', '6bf41c4a3399425edd18693b8b33f16bcce2f0fc', 3, 3, 0, '2033-01-01', '2033-01-01', '0000-00-00', '', '', 0),
+(4, 'NhÃ¢n sá»± 1', 'nsu1', '6bf41c4a3399425edd18693b8b33f16bcce2f0fc', 5, 5, 0, '0000-00-00', '0000-00-00', '0000-00-00', '', '', 0),
+(9, 'Quáº£n lÃ½', 'qly1', '6bf41c4a3399425edd18693b8b33f16bcce2f0fc', 4, 4, 0, '0000-00-00', '0000-00-00', '0000-00-00', '', '', 0),
+(11, 'Káº¿ toÃ¡n', 'ketoan', '6bf41c4a3399425edd18693b8b33f16bcce2f0fc', 5, 6, 0, '0000-00-00', '0000-00-00', '0000-00-00', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -445,33 +512,41 @@ CREATE TABLE IF NOT EXISTS `usertasks` (
   `tasks_id` int(11) NOT NULL,
   `status` int(2) NOT NULL,
   `done` int(2) NOT NULL DEFAULT '1',
-  `wrong` int(2) NOT NULL,
+  `ngay` datetime NOT NULL,
   `users_chuyen` int(11) NOT NULL,
   `noidung` mediumtext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=58 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=66 ;
 
 --
 -- Dumping data for table `usertasks`
 --
 
-INSERT INTO `usertasks` (`id`, `users_id`, `tasks_id`, `status`, `done`, `wrong`, `users_chuyen`, `noidung`) VALUES
-(33, 4, 1, 2, 2, 0, 9, ''),
-(35, 9, 1, 3, 2, 0, 4, ''),
-(36, 2, 1, 4, 2, 0, 9, ''),
-(37, 3, 1, 5, 2, 0, 2, ''),
-(38, 11, 1, 6, 2, 0, 3, ''),
-(39, 1, 1, 7, 2, 0, 11, ''),
-(40, 11, 1, 8, 2, 0, 1, ''),
-(41, 9, 1, 9, 2, 0, 11, ''),
-(43, 4, 1, 10, 2, 0, 9, ''),
-(49, 9, 1, 11, 2, 0, 4, ''),
-(50, 4, 2, 2, 2, 0, 9, ''),
-(51, 9, 2, 3, 2, 0, 4, 'Lam dung yeu cau'),
-(52, 4, 3, 2, 2, 0, 9, ''),
-(53, 9, 3, 3, 0, 0, 4, ''),
-(56, 4, 3, 0, 1, 0, 9, ''),
-(57, 9, 3, 3, 1, 0, 4, '');
+INSERT INTO `usertasks` (`id`, `users_id`, `tasks_id`, `status`, `done`, `ngay`, `users_chuyen`, `noidung`) VALUES
+(33, 4, 1, 2, 2, '0000-00-00 00:00:00', 9, ''),
+(35, 9, 1, 3, 2, '0000-00-00 00:00:00', 4, ''),
+(36, 2, 1, 4, 2, '0000-00-00 00:00:00', 9, ''),
+(37, 3, 1, 5, 2, '0000-00-00 00:00:00', 2, ''),
+(38, 11, 1, 6, 2, '0000-00-00 00:00:00', 3, ''),
+(39, 1, 1, 7, 2, '0000-00-00 00:00:00', 11, ''),
+(40, 11, 1, 8, 2, '0000-00-00 00:00:00', 1, ''),
+(41, 9, 1, 9, 2, '0000-00-00 00:00:00', 11, ''),
+(43, 4, 1, 10, 2, '0000-00-00 00:00:00', 9, ''),
+(49, 9, 1, 11, 2, '0000-00-00 00:00:00', 4, ''),
+(50, 4, 2, 2, 2, '0000-00-00 00:00:00', 9, ''),
+(51, 9, 2, 3, 2, '0000-00-00 00:00:00', 4, 'Lam dung yeu cau'),
+(52, 4, 3, 2, 2, '0000-00-00 00:00:00', 9, ''),
+(53, 9, 3, 3, 0, '0000-00-00 00:00:00', 4, ''),
+(56, 4, 3, 0, 1, '0000-00-00 00:00:00', 9, ''),
+(57, 9, 3, 3, 1, '0000-00-00 00:00:00', 4, ''),
+(58, 4, 4, 2, 1, '0000-00-00 00:00:00', 9, 'chuyeenr'),
+(59, 4, 5, 2, 2, '0000-00-00 00:00:00', 9, 'Ná»™i dung chuyá»ƒn nhÃ¢n sá»±'),
+(60, 9, 5, 3, 2, '0000-00-00 00:00:00', 4, 'c1'),
+(61, 2, 5, 4, 2, '0000-00-00 00:00:00', 9, 'ccc'),
+(62, 3, 5, 4, 2, '0000-00-00 00:00:00', 9, 'ccc'),
+(63, 3, 5, 5, 1, '0000-00-00 00:00:00', 2, '12'),
+(64, 11, 5, 6, 2, '0000-00-00 00:00:00', 3, 'xxx'),
+(65, 1, 5, 7, 1, '0000-00-00 00:00:00', 11, 'dsfc');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
