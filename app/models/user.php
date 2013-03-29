@@ -2,7 +2,7 @@
 class User extends AppModel {
 	var $name = 'User';
 	var $displayField = 'name';
-	var $actsAs = array("Acl"=>array('type'=>'requester'));
+	var $actsAs = array('Acl' => array('type' => 'requester'));
 	var $validate = array(
 		'name' => array(
 			'notempty' => array(
@@ -58,7 +58,7 @@ class User extends AppModel {
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
 	var $belongsTo = array(
-		
+
 		'Group' => array(
 			'className' => 'Group',
 			'foreignKey' => 'groups_id',
@@ -104,17 +104,18 @@ class User extends AppModel {
 	);
 
 	function parentNode() {
-		if (!$this->id && empty($this->data)) {
-			return null;
-		}
-		$data = $this->data;
-		if (empty($this->data)) {
-			$data = $this->read();
-		}
-		if (!$data['User']['groups_id']) {
-			return null;
-		} else {
-			return array('Group' => array('id' => $data['User']['groups_id']));
-		}
+	    if (!$this->id && empty($this->data)) {
+	        return null;
+	    }
+	    if (isset($this->data['User']['groups_id'])) {
+	    	$groupId = $this->data['User']['groups_id'];
+	    } else {
+	        $groupId = $this->field('groups_id');
+	    }
+	    if (!$groupId) {
+	    return null;
+	    } else {
+	        return array('Group' => array('id' => $groupId));
+	    }
 	}
 }

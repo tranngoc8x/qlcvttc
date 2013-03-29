@@ -2,6 +2,7 @@
 class Group extends AppModel {
 	var $name = 'Group';
 	var $displayField = 'name';
+	var $actsAs = array('Acl' => array('type' => 'requester'));
 	var $validate = array(
 		'name' => array(
 			'notempty' => array(
@@ -28,8 +29,8 @@ class Group extends AppModel {
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
-		)	
-		
+		)
+
 	);
 	var $hasAndBelongsToMany = array(
 		'Position'=>array(
@@ -42,9 +43,9 @@ class Group extends AppModel {
 			'order' => ''
 		)
 	);
-		
+
 
 	function parentNode() {
-		return null;
+	    return null;
 	}
 }

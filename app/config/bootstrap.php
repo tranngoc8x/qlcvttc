@@ -16,7 +16,7 @@ Configure :: write('acl.aro.role.model', 'Group');
  *
  * (can be left empty if your primary key's name follows CakePHP conventions)('id')
  */
-Configure :: write('acl.aro.role.primary_key', '');
+Configure :: write('acl.aro.role.primary_key', 'id');
 
 /*
  * The foreign key's name for the roles
@@ -35,7 +35,7 @@ Configure :: write('acl.aro.user.model', 'User');
  *
  * (can be left empty if your primary key's name follows CakePHP conventions)('id')
  */
-Configure :: write('acl.aro.user.primary_key', '');
+Configure :: write('acl.aro.user.primary_key', 'id');
 
 /*
  * The name of the database field that can be used to display the role name
@@ -58,7 +58,7 @@ Configure :: write('acl.role.access_plugin_user_ids', array(1));
  * The users table field used as username in the views
  * It may be a table field or a SQL expression such as "CONCAT(User.lastname, ' ', User.firstname)" for MySQL or "User.lastname||' '||User.firstname" for PostgreSQL
  */
-Configure :: write('acl.user.display_name', "User.username");
+Configure :: write('acl.user.display_name', "User.name");
 
 /*
  * Indicates whether the presence of the Acl behavior in the user and role models must be verified when the ACL plugin is accessed

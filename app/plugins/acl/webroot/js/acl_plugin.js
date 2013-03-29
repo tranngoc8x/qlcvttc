@@ -8,19 +8,19 @@ function init_register_user_controller_toggle_right(app_root_url, user_id, plugi
 	var url = app_root_url + "acl/aros/get_user_controller_permission/" + user_id + "/plugin:" + plugin + "/controller:" + controller;
 
 	$.ajax({	url: url,
-				dataType: "html", 
+				dataType: "html",
 				cache: false,
-				success: function (data, textStatus) 
+				success: function (data, textStatus)
 				{
 					//alert(data);
 					permissions = jQuery.parseJSON(data);
 					//alert(permissions);
-					
+
 					for(var action in permissions)
 					{
 						var start_granted = false;
-						var span_id       = "right_" + plugin + "_" + user_id + "_" + controller + "_" + action; 
-						
+						var span_id       = "right_" + plugin + "_" + user_id + "_" + controller + "_" + action;
+
 						if(permissions[action] == true || permissions[action] == false)
 						{
 							if(permissions[action] == true)
@@ -33,15 +33,15 @@ function init_register_user_controller_toggle_right(app_root_url, user_id, plugi
 								icon_html = "<img src=\"" + app_root_url + "/acl/img/design/cross.png"  + "\" class=\"pointer\" alt=\"denied\" />";
 								start_granted = false;
 							}
-							
+
 							$("#" + span_id).html(icon_html);
-							
+
 							register_user_toggle_right(start_granted, app_root_url, span_id, user_id, plugin, controller, action);
 						}
 						else
 						{
 							icon_html = "<img src=\"" + app_root_url + "/acl/img/design/important16.png"  + "\" alt=\"" + missing_aco_text + "\" title=\"" + missing_aco_text + "\" />";
-							
+
 							$("#" + span_id).html(icon_html);
 						}
 					}
@@ -60,15 +60,15 @@ function register_user_toggle_right(start_granted, app_root_url, span_id, user_i
 		var url1 = app_root_url + "acl/aros/grant_user_permission/" + user_id + "/plugin:" + plugin + "/controller:" + controller + "/action:" + action;
 		var url2 = app_root_url + "acl/aros/deny_user_permission/" + user_id + "/plugin:" + plugin + "/controller:" + controller + "/action:" + action;
 	}
-	
+
 	$("#" + span_id).toggle(function()
                     		{
 								$("#right_" + plugin + "_" + user_id + "_" + controller + "_" + action + "_spinner").show();
-								
+
 								$.ajax({	url: url1,
-											dataType: "html", 
+											dataType: "html",
 											cache: false,
-    										success: function (data, textStatus) 
+    										success: function (data, textStatus)
     										{
     											$("#right_" + plugin + "_" + user_id + "_" + controller + "_" + action).html(data);
     										},
@@ -77,15 +77,15 @@ function register_user_toggle_right(start_granted, app_root_url, span_id, user_i
         										$("#right_" + plugin + "_" + user_id + "_" + controller + "_" + action + "_spinner").hide();
         									}
 										});
-                    		}, 
+                    		},
                     		function()
                     		{
                     			$("#right_" + plugin + "_" + user_id + "_" + controller + "_" + action + "_spinner").show();
-                    			
+
                     			$.ajax({	url: url2,
-        									dataType: "html", 
+        									dataType: "html",
         									cache: false,
-        									success: function (data, textStatus) 
+        									success: function (data, textStatus)
         									{
         										$("#right_" + plugin + "_" + user_id + "_" + controller + "_" + action).html(data);
         									},
@@ -94,7 +94,7 @@ function register_user_toggle_right(start_granted, app_root_url, span_id, user_i
         										$("#right_" + plugin + "_" + user_id + "_" + controller + "_" + action + "_spinner").hide();
         									}
 								});
-                    		}); 
+                    		});
 }
 
 
@@ -103,19 +103,19 @@ function init_register_role_controller_toggle_right(app_root_url, role_id, plugi
 	var url = app_root_url + "acl/aros/get_role_controller_permission/" + role_id + "/plugin:" + plugin + "/controller:" + controller;
 
 	$.ajax({	url: url,
-				dataType: "html", 
+				dataType: "html",
 				cache: false,
-				success: function (data, textStatus) 
+				success: function (data, textStatus)
 				{
 					//alert(data);
 					permissions = jQuery.parseJSON(data);
-					//alert(permissions);
-					
+					//alert(permissions.action[0]);
+
 					for(var action in permissions)
 					{
 						var start_granted = false;
-						var span_id       = "right_" + plugin + "_" + role_id + "_" + controller + "_" + action; 
-						
+						var span_id       = "right_" + plugin + "_" + role_id + "_" + controller + "_" + action;
+
 						if(permissions[action] == true || permissions[action] == false)
 						{
 							if(permissions[action] == true)
@@ -128,15 +128,15 @@ function init_register_role_controller_toggle_right(app_root_url, role_id, plugi
 								icon_html = "<img src=\"" + app_root_url + "/acl/img/design/cross.png"  + "\" class=\"pointer\" alt=\"denied\" />";
 								start_granted = false;
 							}
-							
+
 							$("#" + span_id).html(icon_html);
-							
+
 							register_role_toggle_right(start_granted, app_root_url, span_id, role_id, plugin, controller, action);
 						}
 						else
 						{
 							icon_html = "<img src=\"" + app_root_url + "/acl/img/design/important16.png"  + "\" alt=\"" + missing_aco_text + "\" title=\"" + missing_aco_text + "\" />";
-							
+
 							$("#" + span_id).html(icon_html);
 						}
 					}
@@ -156,15 +156,15 @@ function register_role_toggle_right(start_granted, app_root_url, span_id, role_i
 		var url1 = app_root_url + "acl/aros/grant_role_permission/" + role_id + "/plugin:" + plugin + "/controller:" + controller + "/action:" + action;
 		var url2 = app_root_url + "acl/aros/deny_role_permission/" + role_id + "/plugin:" + plugin + "/controller:" + controller + "/action:" + action;
 	}
-	
+
 	$("#" + span_id).toggle(function()
                     		{
 								$("#right_" + plugin + "_" + role_id + "_" + controller + "_" + action + "_spinner").show();
-								
+
 								$.ajax({	url: url1,
-											dataType: "html", 
+											dataType: "html",
 											cache: false,
-    										success: function (data, textStatus) 
+    										success: function (data, textStatus)
     										{
     											$("#right_" + plugin + "_" + role_id + "_" + controller + "_" + action).html(data);
     										},
@@ -173,15 +173,15 @@ function register_role_toggle_right(start_granted, app_root_url, span_id, role_i
         										$("#right_" + plugin + "_" + role_id + "_" + controller + "_" + action + "_spinner").hide();
         									}
 										});
-                    		}, 
+                    		},
                     		function()
                     		{
                     			$("#right_" + plugin + "_" + role_id + "_" + controller + "_" + action + "_spinner").show();
-                    			
+
                     			$.ajax({	url: url2,
-        									dataType: "html", 
+        									dataType: "html",
         									cache: false,
-        									success: function (data, textStatus) 
+        									success: function (data, textStatus)
         									{
         										$("#right_" + plugin + "_" + role_id + "_" + controller + "_" + action).html(data);
         									},
@@ -190,5 +190,5 @@ function register_role_toggle_right(start_granted, app_root_url, span_id, role_i
         										$("#right_" + plugin + "_" + role_id + "_" + controller + "_" + action + "_spinner").hide();
         									}
 								});
-                    		}); 
+                    		});
 }
