@@ -23,7 +23,7 @@ Configure :: write('acl.aro.role.primary_key', '');
  *
  * (can be left empty if your foreign key's name follows CakePHP conventions)(e.g. 'role_id')
  */
-Configure :: write('acl.aro.role.foreign_key', '');
+Configure :: write('acl.aro.role.foreign_key', 'groups_id');
 
 /*
  * The model name used for the user (typically 'User')
@@ -40,13 +40,13 @@ Configure :: write('acl.aro.user.primary_key', '');
 /*
  * The name of the database field that can be used to display the role name
  */
-Configure :: write('acl.aro.role.display_field', 'fullname');
+Configure :: write('acl.aro.role.display_field', 'name');
 
 /*
  * You can add here role id(s) that are always allowed to access the ACL plugin (by bypassing the ACL check)
  * (This may prevent a user from being rejected from the ACL plugin after a ACL permission update)
  */
-Configure :: write('acl.role.access_plugin_role_ids', array());
+Configure :: write('acl.role.access_plugin_role_ids', array(1));
 
 /*
  * You can add here users id(s) that are always allowed to access the ACL plugin (by bypassing the ACL check)

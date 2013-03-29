@@ -9,12 +9,12 @@ class AcosController extends AclAppController {
 
 	var $name = 'Acos';
 	//var $components = array('Acl', 'Acl.AclManager');
-	 
+
 	function index()
 	{
-	    
+
 	}
-	
+
 	function empty_acos($run = null)
 	{
 	    if(isset($run))
@@ -27,7 +27,7 @@ class AcosController extends AclAppController {
     	    {
     	        $this->Session->setFlash(__d('acl', 'The ACO table could not be cleared', true), 'flash_error', null, 'plugin_acl');
     	    }
-    	    
+
     	    $this->set('run', true);
 	    }
 	    else
@@ -35,13 +35,13 @@ class AcosController extends AclAppController {
 	        $this->set('run', false);
 	    }
 	}
-	
+
 	function build_acl($run = null)
 	{
 	    if(isset($run))
 	    {
     		$logs = $this->AclManager->create_acos();
-    		
+
     		$this->set('logs', $logs);
     		$this->set('run', true);
 	    }
@@ -51,6 +51,6 @@ class AcosController extends AclAppController {
 	    }
 	}
 
-	
+
 }
 ?>

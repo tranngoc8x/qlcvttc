@@ -42,7 +42,7 @@ echo $this->element('design/footer');
 ?>
 
 <script>
-   var title = 'Danh sách';
+   var title = 'Danh sach';
 	function submitform(){
 		document.fview.submit();
 	}

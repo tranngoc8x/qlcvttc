@@ -145,8 +145,8 @@
 				
 	
 				<div id="userinfor">
-						&nbsp;Xin chào , <?php //echo $this->Html->link($ssid['User']['name'],array('controller'=>'users','action'=>'edit'),array('class'=>'link_title','escape'=>FALSE,'title'=>"Thông tin tài khoản"));?>
-						&nbsp;&nbsp;<?php //echo $this->Html->link(__("Thoát",true)."&nbsp;&nbsp;".$this->Html->image('admin/logout.png'),array('controller'=>'users','action'=>'logout'),array('escape'=>FALSE,'class'=>'link_title_red','title'=>"Thoát"));?>
+						&nbsp;Xin chào , <?php echo $this->Html->link($ssid['User']['name'],array('plugin'=>false,'controller'=>'users','action'=>'edit'),array('class'=>'link_title','escape'=>FALSE,'title'=>"Thông tin tài khoản"));?>
+						&nbsp;&nbsp;<?php echo $this->Html->link(__("Thoát",true)."&nbsp;&nbsp;".$this->Html->image('admin/logout.png'),array('plugin'=>false,'controller'=>'users','action'=>'logout'),array('escape'=>FALSE,'class'=>'link_title_red','title'=>"Thoát"));?>
 				</div>
 				<p>HỆ THỐNG QUẢN LÝ CÔNG VIỆC TTC TOWER</p>
 				<?php echo $this->Html->image('admin/logo.png');?>
