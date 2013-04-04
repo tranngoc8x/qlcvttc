@@ -63,3 +63,29 @@ function work($id=null,$d=null){
         case 11: echo "Kết thúc công việc"; break;
     }
 }
+function word($id = null,$g = null){
+    switch ($id) {
+        case 1:
+            $s = 'Giao việc';
+            break;
+        case 2:
+            $s = 'Trả lại';
+            break;
+        case 3:
+            $s = 'Hoàn thành công việc';
+            break;
+        case 4:
+            $s = 'Chuyển cấp trên';
+            break;
+        case 5:
+            $s = 'Chuyển phòng tài chính';
+            break;
+        case 6:
+            $s = 'Chuyển kế toán';
+            break;
+        default:
+            $s = "Chuyển công việc";
+            break;
+    }
+    return $s;
+}

@@ -360,6 +360,7 @@ form input.datepicker{
 	color: #1d5987;
 	text-decoration: none;
 }
+a.btnlink{margin: .4em 1em;display: inline-block; padding: .5em 1em;}
 .tDtite {width: 150px !important; font-size: 12px;font-weight: bold;}
 .title{font-size: 14px;font-weight: normal;font-family: arial;text-align: center;}
 .chitietcv{border: 1px solid #ace;}
