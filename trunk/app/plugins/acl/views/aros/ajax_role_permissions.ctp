@@ -95,6 +95,7 @@ foreach($roles as $role)
 		    	foreach($roles as $role)
 		    	{
 		    	    echo '<td>';
+                    //debug($ctrl_info);
 		    	    echo '<span id="right__' . $role[$role_model_name][$role_pk_name] . '_' . $controller_name . '_' . $ctrl_info['name'] . '">';
 
 		    	   /*
@@ -102,10 +103,12 @@ foreach($roles as $role)
     		    	*/
     		        echo $this->Html->image('/acl/img/ajax/waiting16.gif', array('title' => __d('acl', 'loading', true)));
 
+                    //debug($controller_name . '_' . $role[$role_model_name][$role_pk_name]);
+                    //debug($js_init_done);
     		        if(!in_array($controller_name . '_' . $role[$role_model_name][$role_pk_name], $js_init_done))
     		        {
     		        	$js_init_done[] = $controller_name . '_' . $role[$role_model_name][$role_pk_name];
-    		        	$this->Js->buffer('init_register_role_controller_toggle_right("' . $this->Html->url('/', true) . '", "' . $role[$role_model_name][$role_pk_name] . '", "", "' . $controller_name . '", "' . __d('acl', 'The ACO node is probably missing. Please try to rebuild the ACOs first1.', true) . '");');
+    		        	$this->Js->buffer('init_register_role_controller_toggle_right("' . $this->Html->url('/', true) . '", "' . $role[$role_model_name][$role_pk_name] . '", "", "' . $controller_name . '", "' . __d('acl', 'The ACO node is probably missing. Please try to rebuild the ACOs first.', true) . '");');
     		        }
 
 		    		echo '</span>';
@@ -124,8 +127,10 @@ foreach($roles as $role)
 		}
 	}
 	?>
+
 	<?php
-	if(isset($actions['plugin']) && is_array($actions['plugin']))
+    //debug($js_init_done);
+	/*if(isset($actions['plugin']) && is_array($actions['plugin']))
 	{
 	    foreach($actions['plugin'] as $plugin_name => $plugin_ctrler_infos)
     	{
@@ -162,10 +167,8 @@ foreach($roles as $role)
     		    	{
     		    	    echo '<td>';
     		    	    echo '<span id="right_' . $plugin_name . '_' . $role[$role_model_name][$role_pk_name] . '_' . $plugin_ctrler_name . '_' . $method['name'] . '">';
+                        //The right of the action for the role must still be loaded
 
-    		    	    /*
-    		    	    * The right of the action for the role must still be loaded
-    		    	    */
     		    	    echo $this->Html->image('/acl/img/ajax/waiting16.gif', array('title' => __d('acl', 'loading', true)));
 
 	    		    	if(!in_array($plugin_name . "_" . $plugin_ctrler_name . '_' . $role[$role_model_name][$role_pk_name], $js_init_done))
@@ -189,7 +192,7 @@ foreach($roles as $role)
     	        $i++;
     	    }
     	}
-	}
+	}*/
     ?>
 	</table>
 	<?php
