@@ -13,6 +13,9 @@
 		case "users":
 		case "groups":			$tab1 = 1; break;
 		case "tasks":			$tab3 = 1; break;
+		
+		case "elecs":
+		case "customers":		$tab2 = 1; break;
 		default: $tab3 = 1;break;
 	}
 ?>
@@ -67,11 +70,28 @@
 		</li>
 	</ul>
 </div>
+<div id="khach">
+	<ul class="menu_left">
+		<li>
+			<?php echo $this->Html->link(__('Danh sách khách hàng', true), array('plugin'=>false,'controller'=>'customers','action' => 'index')); ?>
+		</li>
+		<li>
+			<?php echo $this->Html->link(__('Thêm khách hàng', true), array('plugin'=>false,'controller'=>'customers','action' => 'add')); ?>
+		</li>
+		<li>
+			<?php echo $this->Html->link(__('Nhập thông tin dùng điện', true), array('plugin'=>false,'controller'=>'elecs','action' => 'add')); ?>
+		</li>
+		<li>
+			<?php echo $this->Html->link(__('Bảng thống kê dùng điện', true), array('plugin'=>false,'controller'=>'elecs','action' => 'index')); ?>
+		</li>
+	</ul>
+</div>
 
 <script language="javascript">
 Ext.onReady(function(){
 	addAccordion('Quản lý công việc', 'congviec', <?php echo $tab3?>)
 	addAccordion('Quản lý nhân sự', 'nhansu', <?php echo $tab1?>)
+	addAccordion('Quản lý khách hàng', 'khach', <?php echo $tab2?>)
 
 
 
