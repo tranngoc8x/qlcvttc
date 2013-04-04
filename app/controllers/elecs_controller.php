@@ -4,8 +4,16 @@ class ElecsController extends AppController {
 	var $name = 'Elecs';
 
 	function index() {
-		$this->Elec->recursive = 0;
-		$this->set('elecs', $this->paginate());
+		$this->Elec->recursive = -1;
+		$d = date('Y-m');
+		//$s = $this->Elec->query("SELECT * FROM elecs WHERE date LIKE '%$d%' ");
+		//echo "SELECT * FROM elecs WHERE date LIKE '%$d%' ";
+		$this->loadModel('Customer');
+		$cus = $this->Customer->find('all');
+		$s=$this->Elec->find("all",array('conditions'=>array('date LIKE'=>'%'.$d.'%')));
+		$this->set(compact('s','cus'));
+		//debug($cus);
+		
 	}
 
 	function view($id = null) {
@@ -32,27 +40,30 @@ class ElecsController extends AppController {
 			$data= array();
 			for($i=0;$i<count($customers);$i++){
 				$this->Elec->create();
-				$data['Elec']['customers_id']=$this->data['Elec']['customers_id'.$i];
-				$data['Elec']['elec']=$this->data['Elec']['elec'.$i];
-				$data['Elec']['date']=$this->data['Elec']['date']; 
-				if ($this->Elec->save($data)) {
-					$j++;
-					//$this->Session->setFlash(__('Đã lưu', true));
-				} else {
-					//$this->Session->setFlash(__('Chưa lưu được. Hãy thử lại!', true));
-				}	
-				//debug($data);
+				if(!empty($this->data['Elec']['elec'.$i])){
+					$data['Elec']['customers_id']=$this->data['Elec']['customers_id'.$i];
+					$data['Elec']['elec']=$this->data['Elec']['elec'.$i];
+					$data['Elec']['date']=$this->data['Elec']['date'];
+					$arr = $this->Elec->find('all', array('conditions'=>array('date'=>$this->data['Elec']['date'], 'customers_id'=>$data['Elec']['customers_id'])));
+					if(empty($arr)){
+						$this->Elec->save($data);
+						$j++;			
+						
+					}else{
+						$this->Elec->id = $arr[0]['Elec']['id'];
+						$this->Elec->saveField('elec',$data['Elec']['elec']);
+						}					
+				}
 			}			
 			if($j == count($customers)){
 				$this->Session->setFlash(__('Đã lưu', true));
 				} else if(($j<count($customers)) && ($j != 0)){
 					$a = count($customers)- $j;
-					$this->Session->setFlash(__('Còn '.$a.' công ty chưa lưu được', true));
-					//echo "Còn ".$a."công ty chưa lưu được";
+					$this->Session->setFlash(__('Đã thêm mới '.$j.' công ty. Và sửa '.$a.' công ty.' , true));					
 				}else 
-					$this->Session->setFlash(__('Chưa lưu được. Hãy thử lại' , true));
+					$this->Session->setFlash(__('Đã sửa' , true));
 			
-			//$this->redirect(array('action' => 'index'));
+			$this->redirect(array('action' => 'index'));
 		}
 		
 		

@@ -23,6 +23,7 @@ class PositionsController extends AppController {
 		$groups = $this->Position->Group->find('list');
 		$this->set(compact('groups'));	
 		$data = array();
+		//debug($this->data['Position']['groups_id']);
 		if (!empty($this->data)) {		
 			$this->Position->create();
 			if ($this->Position->save($this->data)) {
@@ -34,7 +35,7 @@ class PositionsController extends AppController {
 			}
 			
 			$arr = $this->data['Position']['groups_id'];
-			
+			//debug($arr);
 			for($i=0;$i<count($arr);$i++){
 				$this->Position->PositionsGroup->create();
 				$data['PositionsGroup']['groups_id'] = $arr[$i];
@@ -57,7 +58,7 @@ class PositionsController extends AppController {
 		$this->loadModel('Group');
 		$groups = $this->Group->find('list');
 		$this->set(compact('groups','pos_group'));	
-		debug($pos_group);
+		//debug($pos_group);
 		//debug($groups);
 		if (!$id && empty($this->data)) {
 			$this->Session->setFlash(__('Không có chức vụ này', true));
