@@ -61,31 +61,73 @@ class TasksController extends AppController {
 			$this->Session->setFlash(__('Invalid task', true));
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->set('task', $this->Task->read(null, $id));
+
 		$user = $this->viewVars['ssid'];
+		$usertask = $this->Task->Usertask->find('first',array('conditions'=>array('Usertask.tasks_id'=>$id,'Usertask.users_id'=>$user['User']['id']),'order'=>"Usertask.id DESC"));
+		if($usertask['Usertask']['datexem'] == "" || $usertask['Usertask']['datexem'] == "0000-00-00 00:00:00")
+		{
+			$this->Task->Usertask->id = $usertask['Usertask']['id'];
+			$this->Task->Usertask->saveField('datexem', date('Y-d-m H:i:s'));
+		}
+
+		$this->set('task', $this->Task->read(null, $id));
+
+
 		$this->loadModel('Group');
 		$this->Group->recursive = -1;
 		$grs = $this->Group->find('first',array('fields'=>array('magroup'),'conditions'=>array('Group.id'=>$user['User']['groups_id'])));
 		$gr= $grs['Group']['magroup'];
 		$this->set(compact('gr'));
 	}
-	function add() {
+	function add($idcvs = null) {
+		$ido = $idcvs;
+		//unbindModel('Usertask');
+		$this->Task->unBindModel(array('hasMany' => array('Usertask')));
+		$idcv = $this->data['Task']['idcv'];
+		if(!empty($idcv) && is_numeric($idcv)){$ido = $idcv;}
+		$oldt = $this->Task->find('first',array('fields'=>array('name','taskid'),'conditions'=>array('Task.id'=>$ido)));
+		//debug($oldt);
 		if (!empty($this->data)) {
+			if(!empty($idcv) && !empty($oldt)){
+				$this->data['Task']['parent'] = $oldt['Task']['id'];
+				$arrx = array();
+				$arrk = array();
+				foreach ($oldt['Tfile'] as $k =>$val) {
+					 array_push($arrx,$val['name']);
+				}
+				foreach ($this->data['fold'] as $val1) {
+						echo array_search($val1, $arrx);// index của mảng Tfile
+						$data['Tfile']['name'] = $val1;
+				 	 	$data['Tfile']['type'] = 1;
+						$data['Tfile']['tasks_id'] = $idcv;
+						$data['Tfile']['folder'] = date('m-Y');
+						$this->Task->Tfile->create();
+				 	 	$this->Task->Tfile->save($data);
+				}
+			}
 			$this->Task->create();
-			$this->data['Task']['start'] = date('Y-m-d h:i:s',strtotime($this->data['Task']['start'])) ;
-			$this->data['Task']['end'] = date('Y-m-d h:i:s',strtotime($this->data['Task']['end'])) ;
+			if(!empty($this->data['Task']['start'])){
+				$dstart = explode('/',$this->data['Task']['start']);
+				$ds = $dstart[1].'/'.$dstart[0].'/'.$dstart[2];
+				$this->data['Task']['start'] = date('Y-m-d h:i:s',strtotime($ds));
+			}
+			if(!empty($this->data['Task']['end'])){
+				$dend = explode('/',$this->data['Task']['end']);
+				$de = $dend[1].'/'.$dend[0].'/'.$dend[2];
+				$this->data['Task']['end'] = date('Y-m-d h:i:s',strtotime($de));
+			}
 			$this->data['Task']['status']  = 1;
-			$uid = $this->Auth->user();
-			$this->data['Task']['users_id'] = $uid['User']['id'];
-
+			$uid = $this->Auth->user('id');
+			$this->data['Task']['users_id'] = $uid;
 			if ($this->Task->save($this->data)) {
-				$lastid = $this->Task->getLastInsertId();
-				$dir = "files/documents/".date('m-Y');
-		 		if(!is_dir($dir)) mkdir($dir,0777);
-		 		$fre = date('dmyhis_');
-		 		$err=0;
+				$lastid = $this->Task->getLastInsertId();//lấy  id task để lưu file và người tạo công việc ở bảng tfile và usertask
+		 		//bắt đầu upload file
 		 		if(!empty($_FILES['files']['name'])){
-				 	foreach ($_FILES['files']['name'] as $key => $value) {
+		 			$dir = "files/documents/".date('m-Y');//khai báo thư mục lưu file
+			 		if(!is_dir($dir)) mkdir($dir,0777);//tạo thư mục nếu chưa có
+			 		$fre = date('dmyhis_');//frefix cho ten file
+			 		$err=0;
+				 	foreach ($_FILES['files']['name'] as $key => $value){
 				 		$data = array();
 				 	 	move_uploaded_file( $_FILES["files"]["tmp_name"][$key],$dir.'/'.$fre.$_FILES['files']['name'][$key]);
 				 	 	$data['Tfile']['name'] = $fre.$value;
@@ -95,19 +137,33 @@ class TasksController extends AppController {
 				 	 	$this->Task->Tfile->create();
 				 	 	$this->Task->Tfile->save($data);
 				 	 	$data = array();
-				 	 	if($files['error'][$key] !=0 || $files['error'][$key] !='0') $err ++;
+				 	 	if($_FILES['files']['error'][$key] !=0 || $_FILES['files']['error'][$key] !='0') $err ++;
 				 	}
-				 }
-			 	$this->redirect(array('action' => 'index'));
-				$this->Session->setFlash(__('The task has been saved', true),'default',array('class'=>'success'));
+				}//kết thúc upload file
 
+				//bắt đầu lưu dl vào bảng usertask
+				$usertasks['Usertask']['users_id'] = $uid;
+				$usertasks['Usertask']['users_chuyen'] = -1;
+				$usertasks['Usertask']['tasks_id'] = $lastid;
+				$usertasks['Usertask']['status'] = 1;
+				$usertasks['Usertask']['done'] = 0;
+				$usertasks['Usertask']['datexem'] = date('Y-d-m H:i:s');
+				$usertasks['Usertask']['noidung'] = "Khởi tạo công việc";
+
+				$this->Task->Usertask->create();
+				$this->Task->Usertask->save($usertasks);
+			 	//$this->redirect(array('action' => 'index'));
+				$this->Session->setFlash(__('The task has been saved', true),'default',array('class'=>'success'));
+				if(!empty($idcv) && is_numeric($idcv)){
+
+				}
 			} else {
 				$this->Session->setFlash(__('The task could not be saved. Please, try again.', true),'default',array('class'=>'error'));
 			}
 		}
 		$types = $this->Task->Type->find('list');
 		$linhvucs = $this->Task->Linhvuc->find('list');
-		$this->set(compact(array('types','linhvucs')));
+		$this->set(compact(array('types','linhvucs','ido','oldt')));
 	}
 
 	function edit($id = null) {
@@ -215,13 +271,23 @@ class TasksController extends AppController {
 		else{
 			$this->Task->id = $id;
 			$this->Task->saveField('done',2);
-			$ids = $this->Task->Usertask->find('first',array('conditions'=>array('Usertask.users_id'=>$u,'Usertask.tasks_id'=>$id,'Usertask.status '=>11)));
+			$this->Task->saveField('status',11);
+			$ids = $this->Task->Usertask->find('first',array('conditions'=>array('Usertask.users_id'=>$u,'Usertask.tasks_id'=>$id,'Usertask.status '=>array(3,11)),'order'=>'Usertask.id DESC'));
 			$this->Task->Usertask->id = $ids['Usertask']['id'];
 			$this->Task->Usertask->saveField('done',2);
+			$this->Task->Usertask->create();
+				$data['Usertask']['users_id'] = -2;
+				$data['Usertask']['tasks_id'] = $id;
+				$data['Usertask']['status'] = 11;
+				$data['Usertask']['users_chuyen'] = $user;
+				$data['Usertask']['done'] = 2;
+				$data['Usertask']['ngay'] = date('Y-m-d h:i:s');
+				$data['Usertask']['noidung'] = "Hoàn thành";
+			$this->Task->Usertask->save($data);
 		}
 	}
 	function getfnNV($id){
-		$ids = $this->Task->Usertask->find('first',array('conditions'=>array('Usertask.tasks_id'=>$id,'Usertask.status '=>11),'orer id'=>'desc'));
+		$ids = $this->Task->Usertask->find('first',array('conditions'=>array('Usertask.tasks_id'=>$id,'Usertask.status '=>array(11,3)),'orer id'=>'desc'));
 		if (!empty($this->params['requested'])) {
 		      return $ids;
 		}else {
@@ -249,14 +315,13 @@ class TasksController extends AppController {
 				$data['Usertask']['users_chuyen'] = $user['User']['id'];
 				$data['Usertask']['done'] = 1;
 				$data['Usertask']['noidung'] = $nd;
+				$data['Usertask']['ngay'] = date('Y-m-d h:i:s');
 				$this->Usertask->save($data);
 			endforeach;
-			//debug($data);
 
 			//cap nhat da lam xong
 			$user = $this->viewVars['ssid'];
-			$this->Usertask->recursive = -1;
-			$ids = $this->Usertask->find('first',array('conditions'=>array('Usertask.users_id'=>$user['User']['id'],'Usertask.tasks_id'=>$cv,'Usertask.status <>'=>0)));
+			$ids = $this->Usertask->find('first',array('conditions'=>array('Usertask.users_id'=>$user['User']['id'],'Usertask.tasks_id'=>$cv,'Usertask.status <>'=>0),'recursive'=>-1));
 			//debug($ids);
 			if(!empty($ids)){
 				$this->Usertask->id = $ids['Usertask']['id'];
@@ -290,6 +355,7 @@ class TasksController extends AppController {
 			$data['Usertask']['status'] = 0;//bij trar laij
 			$data['Usertask']['users_chuyen'] = $user['User']['id'];
 			$data['Usertask']['done'] = 1;
+			$data['Failtask']['noidung'] = $str;
 			$this->Usertask->save($data);
 			//cap nhat da lam xong
 			$this->Usertask->recursive = -1;
@@ -306,6 +372,8 @@ class TasksController extends AppController {
 	}
 	function getNV($id){
 		$this->autoRender = false;
+		if($id == -1) return "Start";
+		if($id == -2) return "Finish";
 		if(empty($id) || $id== null) return "Không rõ";
 		else{
 			$this->loadModel("User");
@@ -314,8 +382,9 @@ class TasksController extends AppController {
 										'fields'=>array('name'),
 										'conditions'=>array('User.id'=>$id)
 								));
-			if (!empty($this->params['requested'])) return $u;
-			else  $this->set(compact('u'));
+			$s = $u['User']['name'];
+			if (!empty($this->params['requested'])) return $s;
+			else  $this->set(compact('s'));
 		}
 	}
 	function getNVFail($task,$stt){

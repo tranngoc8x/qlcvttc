@@ -4,35 +4,44 @@
 	.block{padding: 5px 0 0;border-bottom: 1px dotted #ddd; }
 </style>
 <table class='tblcontent chitietcv' border=0 width=100% cellspacing=0 cellpadding=0>
-	<tr class=' '>
+	<tr class=''>
 		<td colspan=4>
 			<?php  $ws = $task['Task']['status'];?>
-			<?php //echo $gr;?>
-			<?php if($ws==1 && $gr == "BQL"){?>
-			<?=$this->Form->button("Giao việc",array('class'=>'btnlink','id'=>'dialog-link'));?>
-			<?php }elseif(($ws==2 || $ws==0) && $gr == "NS"){?>
-			<?=$this->Form->button("Trình ban quản lý",array('class'=>'btnlink','id'=>'dialog-link'));?>
-			<?php }elseif($ws==3 && $gr == "BQL"){?>
-			<?=$this->Form->button("Trình PGD điều hành",array('class'=>'btnlink','id'=>'dialog-link'));?>
-			<?=$this->Form->button("Không duyệt",array('class'=>'btnlink','id'=>'khongduyet'));?>
-			<?php }elseif($ws==4 && $gr == "PGD"){?>
-			<?=$this->Form->button("Chuyển PGD tài chính",array('class'=>'btnlink','id'=>'dialog-link'));?>
-			<?=$this->Form->button("Không duyệt",array('class'=>'btnlink','id'=>'khongduyet'));?>
-			<?php }elseif($ws==5 && $gr == "PGD"){?>
-			<?=$this->Form->button("Chuyển kế toán",array('class'=>'btnlink','id'=>'dialog-link'));?>
-			<?=$this->Form->button("Không duyệt",array('class'=>'btnlink','id'=>'khongduyet'));?>
-			<?php }elseif($ws==6 && $gr == "KT"){?>
-			<?=$this->Form->button("Trình giám đốc",array('class'=>'btnlink','id'=>'dialog-link'));?>
-			<?=$this->Form->button("Không duyệt",array('class'=>'btnlink','id'=>'khongduyet'));?>
-			<?php }elseif($ws==7 && $gr == "GD"){?>
-			<?=$this->Form->button("Gửi trả kế toán",array('class'=>'btnlink','id'=>'dialog-link'));?>
-			<?=$this->Form->button("Không duyệt",array('class'=>'btnlink','id'=>'khongduyet'));?>
-			<?php }elseif($ws==8 && $gr == "KT"){?>
-			<?=$this->Form->button("Gửi trả ban quản lý",array('class'=>'btnlink','id'=>'dialog-link'));?>
-			<?php }elseif($ws==9 && $gr == "BQL"){?>
-			<?=$this->Form->button("Gửi trả kết quả cho nhân sự",array('class'=>'btnlink','id'=>'dialog-link'));?>
-			<?php }elseif($ws==11 && $gr == "BQL" && $task['Task']['done']==1){?>
-			<?=$this->Form->button("Hoàn thành",array('class'=>'btnlink','id'=>'dialog-fn'));?>
+			<?php if($task['Task']['done'] !=2){?>
+
+				<?php if($ws==1 && ($gr == "BQL" || $gr = "PGD" || $gr = 'GD')){?>
+					<?=$this->Form->button("Giao việc",array('class'=>'btnlink','id'=>'dialog-link'));?>
+				<?php }elseif(($ws==2 || $ws==0) && $gr == "NS"){?>
+					<?=$this->Form->button("Trình ban quản lý",array('class'=>'btnlink','id'=>'dialog-link'));?>
+				<?php }elseif($ws==3 && $gr == "BQL"){?>
+					<?=$this->Form->button("Trình PGD điều hành",array('class'=>'btnlink','id'=>'dialog-link'));?>
+					<?=$this->Form->button("Không duyệt",array('class'=>'btnlink','id'=>'khongduyet'));?>
+					<?php if($ws ==3){?>
+					<?=$this->Form->button("Hoàn thành",array('class'=>'btnlink','id'=>'dialog-fn'));?>
+					<?php }?>
+				<?php }elseif($ws==4 && $gr == "PGD"){?>
+					<?=$this->Form->button("Chuyển PGD tài chính",array('class'=>'btnlink','id'=>'dialog-link'));?>
+					<?=$this->Form->button("Không duyệt",array('class'=>'btnlink','id'=>'khongduyet'));?>
+				<?php }elseif($ws==5 && $gr == "PGD"){?>
+					<?=$this->Form->button("Chuyển kế toán",array('class'=>'btnlink','id'=>'dialog-link'));?>
+					<?=$this->Form->button("Không duyệt",array('class'=>'btnlink','id'=>'khongduyet'));?>
+				<?php }elseif($ws==6 && $gr == "KT"){?>
+					<?=$this->Form->button("Trình giám đốc",array('class'=>'btnlink','id'=>'dialog-link'));?>
+					<?=$this->Form->button("Không duyệt",array('class'=>'btnlink','id'=>'khongduyet'));?>
+				<?php }elseif($ws==7 && $gr == "GD"){?>
+					<?=$this->Form->button("Gửi trả kế toán",array('class'=>'btnlink','id'=>'dialog-link'));?>
+					<?=$this->Form->button("Không duyệt",array('class'=>'btnlink','id'=>'khongduyet'));?>
+				<?php }elseif($ws==8 && $gr == "KT"){?>
+					<?=$this->Form->button("Gửi trả ban quản lý",array('class'=>'btnlink','id'=>'dialog-link'));?>
+				<?php }elseif($ws==9 && $gr == "BQL"){?>
+					<?=$this->Form->button("Hoàn thành",array('class'=>'btnlink','id'=>'dialog-fn'));?>
+				<?php }elseif($ws==11 && $gr == "BQL" && $task['Task']['done']==1){?>
+					<?=$this->Form->button("Hoàn thành",array('class'=>'btnlink','id'=>'dialog-fn'));?>
+				<?php }?>
+			<?php }?>
+			<?php if($task['Task']['done'] == 2){?>
+				<p><?=$this->Html->link("Khởi tạo công việc mới",array('action'=>'add',$task['Task']['id']),array('class'=>'btnlink','id'=>'dialog'));?>
+				</p>
 			<?php }?>
 		</td>
 	</tr>
@@ -41,7 +50,9 @@
 	</tr>
 	<tr class='tbody'>
 		<td class='tDtite'><span class='text_tite'>Tên công việc:</span></td>
-		<td colspan=3><?php echo $task['Task']['name']; ?></td>
+		<td><?php echo $task['Task']['name']; ?></td>
+		<td class='tDtite'><span class='text_tite'>Folder lưu trữ:</span></td>
+		<td><?php echo $task['Task']['folder']; ?></td>
 	</tr>
 	<tr class='tbody'>
 		<td class='tDtite'><span class="text_tite">Nội dung công việc: </span></td>
@@ -62,7 +73,7 @@
 
 				  if($v['status'] == 2){
 				  		$u = $this->requestAction('tasks/getNV/'.$v['users_id']);
-				  		echo $u['User']['name'];
+				  		echo $u;
 				  }
 			}
 			?>
@@ -146,27 +157,37 @@
 	<tr class='tbody'>
 		<td class=' ui-widget-header title' colspan=4>Nhân sự tham gia xử lý</td>
 	</tr>
- 	<tr class='tbody'>
-		<td><?php echo $task['User']['name'];?></td>
-		<td colspan=3>Nhân sự khởi tạo công việc</td>
+	<tr align=center style='border-bottom: 1px solid #ace;'>
+		<td class="tDtite" style='border-bottom: 1px solid #ace;'>Nhân sự</td>
+		<td class="tDtite" style='border-bottom: 1px solid #ace;'>Nội dung chuyển</td>
+		<td class="tDtite" style='border-bottom: 1px solid #ace;'>Ngày chuyển</td>
+		<td class="tDtite" style='border-bottom: 1px solid #ace;'>Ngày xem</td>
 	</tr>
 	<?php foreach ($task['Usertask'] as $v) {
-
-		if($v['status'] != 1 && $v['done'] != 1){
-	  		$u = $this->requestAction('tasks/getNV/'.$v['users_id']);?>
+	  		$ud = $this->requestAction('tasks/getNV/'.$v['users_id']);
+	  		$uc = $this->requestAction('tasks/getNV/'.$v['users_chuyen']);?>
 	  		<tr class='tbody'>
-				<td><?php echo $u['User']['name'];?></td>
-				<td colspan=3><?php echo work(base64_encode($v['status']));?></td>
+				<td><?php echo $uc.'   <font color=red>&minus;&minus;> </font>  '. $ud;?></td>
+				<td><?php echo $v['noidung'];?></td>
+				<td align=center><?php
+				if(!empty($v['ngay']) && $v['ngay'] !="0000-00-00 00:00:00")
+				 	echo date('h:i:s  d/m/Y',strtotime($v['ngay']));
+				else echo '--';
+				?></td>
+				<td align=center><?php
+					if(!empty($v['datexem']) && $v['datexem'] !="0000-00-00 00:00:00")
+				 		echo date('h:i:s  d/m/Y',strtotime($v['datexem']));
+					else echo '--';
+				?></td>
 			</tr>
 	<?php
-		}
 	}
 	?>
 </table>
 
 
 <!-- dialog -->
-<?php if($ws==1 && $gr == "BQL"){?>
+<?php if($ws==1 && ($gr == "BQL" || $gr = "PGD" || $gr = 'GD')){?>
 <div id="dialog" title="Giao việc cho nhân viên">
 	<?php $groups =  $this->requestAction("tasks/listPBgv/1");?>
 	<form method="post" action="dochange">
@@ -423,14 +444,13 @@
 </div>
 <?php }?>
 
-
+<?php if($ws<8){?>
 
 <div id="dialog_vbdt" title="Thêm văn bản dự thảo">
 <form method="post" name='fform' enctype="multipart/form-data">
 	<input type="file" name="fileid" id="fileid" multiple />
 </form>
 <div id='response' style='font-size: 12px;'></div>
-
 </div>
 <div id="dialog-vblq" title="Thêm văn bản liên quan">
  <form method="post" enctype="multipart/form-data">
@@ -438,6 +458,7 @@
 </form>
 <div id='response1' style='font-size: 12px;'></div>
 </div>
+<?php }?>
 <div id="dialog-fail" title="Yêu cầu làm lại công việc">
 	<?php $nsfail = $this->requestAction('tasks/getNVFail/'.$task['Task']['id'].'/'.$ws);?>
 	<form method='post' name='ffail'>
@@ -954,10 +975,10 @@
 </script>
 <?php $idlastu = $this->requestAction('tasks/getfnNV/'.$task["Task"]["id"]);?>
 <script>
-	$("#dialog-fn").click(function(){
-	$.get('<?php echo $this->webroot;?>tasks/fntask/<?php echo $task["Task"]["id"]."/".$idlastu["Usertask"]["users_id"];?>',function(data){
 
+	$("#dialog-fn").click(function(){
+		$.get('<?php echo $this->webroot;?>tasks/fntask/<?php echo $task["Task"]["id"]."/".$idlastu["Usertask"]["users_id"];?>',function(){
+				window.location.reload();
+		});
 	});
-	});
-	
 </script>

@@ -15,7 +15,7 @@
 	// Assign various config options as seen.
     var login = new Ext.FormPanel({
  		labelWidth:120,
-        url:'<?php echo $this->webroot;?>users/login',
+        url:'<?php echo $this->webroot;?>members/login',
         frame:true,
         title:'ĐĂNG NHẬP QUẢN TRỊ WEBSITE',
         defaultType:'textfield',
@@ -29,14 +29,14 @@
 			},
 		{
 			xtype: 'textfield',
-			id: 'data[User][username]',
+			id: 'data[Member][username]',
 			fieldLabel: 'Tên đăng nhập',
 			allowBlank: false,
 			width: 150
 		},
 		{
 			xtype: 'textfield',
-			id: 'data[User][password]',
+			id: 'data[Member][password]',
 			fieldLabel: 'Mật khẩu',
 			inputType: 'password',
 			allowBlank: false,
