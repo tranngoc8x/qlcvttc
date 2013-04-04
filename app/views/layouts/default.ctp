@@ -3,9 +3,9 @@
 <head>
 	<title>IFORCE ADMINISTRATOR V2</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<link rel="shortcut icon" href="<?=$this->webroot;?>img/admin/icon.jpg" type="image/x-icon" /> 
-	 
- 
+	<link rel="shortcut icon" href="<?=$this->webroot;?>img/admin/icon.jpg" type="image/x-icon" />
+
+
 	<?php
 			echo $this->Html->css(array('ext-all','admin','jquery-ui-1.10.1.custom'));
 			echo $this->Html->script(array('ext-base','ext-all','App','checkinput','ckeditor/ckeditor','jquery-1.9.1','jquery-ui-1.10.1.custom'));
@@ -13,7 +13,7 @@
 	<style>
 	body{
 		font-size: 100%;
-	 
+
 	}
 	.demoHeaders {
 		margin-top: 2em;
@@ -137,13 +137,12 @@
 				title:'Chọn ngày'
 			});
 		});
-	 
+
 
 </script>
 <body>
+	<div id="onloadding">Đang tiến hành upload file</div>
 		<div id="north" class="x-hide-display">
-				
-	
 				<div id="userinfor">
 						&nbsp;Xin chào , <?php echo $this->Html->link($ssid['User']['name'],array('plugin'=>false,'controller'=>'users','action'=>'edit'),array('class'=>'link_title','escape'=>FALSE,'title'=>"Thông tin tài khoản"));?>
 						&nbsp;&nbsp;<?php echo $this->Html->link(__("Thoát",true)."&nbsp;&nbsp;".$this->Html->image('admin/logout.png'),array('plugin'=>false,'controller'=>'users','action'=>'logout'),array('escape'=>FALSE,'class'=>'link_title_red','title'=>"Thoát"));?>
@@ -152,13 +151,13 @@
 				<?php echo $this->Html->image('admin/logo.png');?>
 	</div>
 	<div id="center" class="x-hide-display">
-			<?php echo $this->Session->flash();?> 
+			<?php echo $this->Session->flash();?>
 			<?php echo $content_for_layout;?>
 	</div>
 	<div id="west" class="x-hide-display">
 		<?php echo $this->element('leftmenu');?>
-	</div>     
-	<div id="south" class="x-hide-display"> 
+	</div>
+	<div id="south" class="x-hide-display">
 	</div>
 	<script>
 	 Ext.onReady(function(){

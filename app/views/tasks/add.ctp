@@ -45,4 +45,8 @@
 		var k = $(this).prop('alt');
 			$("#iputFile"+k).remove();
 	});
+	$('#TaskAddForm').submit(function() {
+		$('#onloadding').show();
+	});
+
 </script>

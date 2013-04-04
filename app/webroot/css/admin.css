@@ -9,14 +9,14 @@
         display: block;
 	color: #005FDB;
 	font:normal 16pt Arial;
-	font-family:  Helvetica, sans-serif; 
+	font-family:  Helvetica, sans-serif;
 	font-weight: bold;
         line-height: 50px;
         text-align: center;
         width: 60%;
         float:right;
         height: 50px;
-	/*text stroke*/ 
+	/*text stroke*/
 	-webkit-text-stroke: 2px rgba(255, 255, 255, .2);
 }
 #userinfor{
@@ -61,7 +61,7 @@
 	text-align: center;
 	background: #fff url('../img/admin/header-table.png') left top repeat;
 	border-right: 1px solid #C4FFD8;
-	 
+
 }
 .sort-table th,.sort-table th a{
 	text-decoration: none;
@@ -155,8 +155,8 @@
 .menu_left li{
 	display: block;
 	padding: 3px 0;
-	
-	
+
+
 }
 .menu_left li a{
 	padding-left: 18px;
@@ -370,20 +370,30 @@ a.btnlink{margin: .4em 1em;display: inline-block; padding: .5em 1em;}
 .chitietcv .tbody td{
 	border-bottom: 1px dotted #ccc;
 	border-right: 1px dotted #ccc;
-	}
-	.chitietcv .tbody td{
+}
+.chitietcv .tbody td{
 	border-top: 0;
 	border-left: 0;
-	}
-	.chitietcv .tbody td table{
+}
+.chitietcv .tbody td table{
 	border-top: 1px dotted #ccc;
 	border-left: 1px dotted #ccc;
-	}
-	.addvbdt{
-		list-style: none;
-		width: 16px;
-		display: inline-table;
-		float: right;
-		cursor: pointer;
-	}
-	fieldset{border:0;}
+}
+.addvbdt{
+	list-style: none;
+	width: 16px;
+	display: inline-table;
+	float: right;
+	cursor: pointer;
+}
+fieldset{border:0;}
+#onloadding{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: #ace;
+	display: none;
+	opacity: .9;
+}
