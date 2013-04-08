@@ -560,7 +560,8 @@ class ArosController extends AclAppController
 	        	$aco_path  = $plugin_name;
 		        $aco_path .= empty($aco_path) ? $controller_name : '/' . $controller_name;
 		        $aco_path .= '/' . $action_name;
-
+		        //echo $aco_path;
+		        //debug($aco_path);
 		        $aco_node = $this->Acl->Aco->node($aco_path);
         	    if(!empty($aco_node))
         	    {

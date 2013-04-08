@@ -19,8 +19,8 @@ class TasksController extends AppController {
 		$user = $this->viewVars['ssid'];
 		$this->Task->recursive = -1;
 		$this->Usertask->recursive = 1;
-		$cond = array('Task.done'=>1,'or'=>array(array('Usertask.done'=>1,'Usertask.users_id'=>$user['User']['id'],'Usertask.status <>'=>0),array('Task.users_id'=>$user['User']['id'],'Task.status '=>1)));
-		$this->paginate = array('fields'=>array('Task.*,Usertask.done'),'joins'=> array(array('table' => 'usertasks', 'alias' => 'Usertask',  'type' => 'Left', 'conditions' => array( 'Usertask.tasks_id = Task.id'))),'conditions'=>$cond,'group'=>array('Task.id'));
+		$cond = array('Task.done'=>1,'Usertask.done'=>1,'Usertask.users_id'=>$user['User']['id'],'Usertask.status <>'=>0);
+		$this->paginate = array('fields'=>array('Task.*,Usertask.done','Linhvuc.name'),'joins'=> array(array('table' => 'usertasks', 'alias' => 'Usertask',  'type' => 'Left', 'conditions' => array( 'Usertask.tasks_id = Task.id')),array('table' => 'linhvucs', 'alias' => 'Linhvuc',  'type' => 'Left', 'conditions' => array( 'Task.linhvucs_id = Linhvuc.id'))),'conditions'=>$cond,'group'=>array('Usertask.tasks_id'));
 		$this->set('tasks', $this->paginate());
 		$this->render('/tasks/index');
 	}
@@ -31,8 +31,8 @@ class TasksController extends AppController {
 		$this->Usertask->recursive = 1;
 		//$cond = array('Task.done'=>1,'Usertask.done'=>2,'or'=>array('Usertask.users_chuyen'=>$user['User']['id'],array('Task.status <>'=>1,'Task.users_id'=>$user['User']['id'])));
 		//$cond = array('Task.done'=>1,'or'=>array('Usertask.users_chuyen'=>$user['User']['id'],array('Usertask.done '=>2,'Usertask.users_id'=>$user['User']['id'])));
-		$cond = array('Task.done'=>1,'or'=>array(array('Task.users_id'=>$user['User']['id'],'Task.status >'=>1,'Usertask.users_id <>'=>$user['User']['id'],'Usertask.done'=>1,'Usertask.status >'=>0),array('Usertask.done '=>2,'Usertask.users_id'=>$user['User']['id'])));
-		$this->paginate = array('fields'=>array('Task.*,Usertask.done'),'joins'=> array(array('table' => 'usertasks', 'alias' => 'Usertask',  'type' => 'Left', 'conditions' => array( 'Usertask.tasks_id = Task.id'))),'conditions'=>$cond,'group'=>array('Task.id'));
+		$cond = array('Task.done'=>1,'or'=>array('Usertask.users_id'=>$user['User']['id'],'Usertask.users_chuyen'=>$user['User']['id']),'Usertask.done'=>2,'Usertask.status >'=>0);
+		$this->paginate = array('fields'=>array('Task.*,Usertask.done','Linhvuc.name'),'joins'=> array(array('table' => 'usertasks', 'alias' => 'Usertask',  'type' => 'Left', 'conditions' => array( 'Usertask.tasks_id = Task.id')),array('table' => 'linhvucs', 'alias' => 'Linhvuc',  'type' => 'Left', 'conditions' => array( 'Task.linhvucs_id = Linhvuc.id'))),'conditions'=>$cond,'group'=>array('Usertask.tasks_id'));
 		$this->set('tasks', $this->paginate());
 		$this->render('/tasks/index');
 	}
@@ -41,8 +41,8 @@ class TasksController extends AppController {
 		$user = $this->viewVars['ssid'];
 		$this->Task->recursive = -1;
 		$this->Usertask->recursive = 1;
-		$cond = array('Task.done'=>2 ,'or'=>array('Usertask.users_chuyen'=>$user['User']['id'],'Task.users_id'=>$user['User']['id'],'Usertask.users_id'=>$user['User']['id']));
-		$this->paginate = array('fields'=>array('Task.*,Usertask.done'),'joins'=> array(array('table' => 'usertasks', 'alias' => 'Usertask',  'type' => 'Left', 'conditions' => array( 'Usertask.tasks_id = Task.id'))),'conditions'=>$cond,'group'=>array('Task.id'));
+		$cond = array('Task.done'=>2 ,'or'=>array('Usertask.users_chuyen'=>$user['User']['id'],'Usertask.users_id'=>$user['User']['id']));
+		$this->paginate = array('fields'=>array('Task.*,Usertask.done','Linhvuc.name'),'joins'=> array(array('table' => 'usertasks', 'alias' => 'Usertask',  'type' => 'Left', 'conditions' => array( 'Usertask.tasks_id = Task.id')),array('table' => 'linhvucs', 'alias' => 'Linhvuc',  'type' => 'Left', 'conditions' => array( 'Task.linhvucs_id = Linhvuc.id'))),'conditions'=>$cond,'group'=>array('Task.id'));
 		$this->set('tasks', $this->paginate());
 		$this->render('/tasks/index');
 	}
@@ -51,8 +51,9 @@ class TasksController extends AppController {
 		$user = $this->viewVars['ssid'];
 		$this->Task->recursive = -1;
 		$this->Usertask->recursive = 1;
-		$cond = array('Usertask.done'=>0,'or'=>array(array('Usertask.users_chuyen'=>$user['User']['id']),array('Task.status <>'=>1,'Task.users_id'=>$user['User']['id'],'Task.done'=>1)));
-		$this->paginate = array('fields'=>array('Task.*,Usertask.done'),'joins'=> array(array('table' => 'usertasks', 'alias' => 'Usertask',  'type' => 'Left', 'conditions' => array( 'Usertask.tasks_id = Task.id'))),'conditions'=>$cond,'group'=>array('Task.id'));
+		//$cond = array('Usertask.done'=>0,'or'=>array('Usertask.users_chuyen'=>$user['User']['id'],array('Task.status <>'=>1,'Task.users_id'=>$user['User']['id'],'Task.done'=>1)));
+		$cond = array('Task.done'=>1 ,'or'=>array('Usertask.done'=>0,'Usertask.status'=>0),'Usertask.users_chuyen'=>$user['User']['id']);
+		$this->paginate = array('fields'=>array('Task.*,Usertask.done','Linhvuc.name'),'joins'=> array(array('table' => 'usertasks', 'alias' => 'Usertask',  'type' => 'Left', 'conditions' => array( 'Usertask.tasks_id = Task.id')),array('table' => 'linhvucs', 'alias' => 'Linhvuc',  'type' => 'Left', 'conditions' => array( 'Task.linhvucs_id = Linhvuc.id'))),'conditions'=>$cond,'group'=>array('Task.id'));
 		$this->set('tasks', $this->paginate());
 		$this->render('/tasks/index');
 	}
@@ -146,7 +147,7 @@ class TasksController extends AppController {
 				$usertasks['Usertask']['users_chuyen'] = -1;
 				$usertasks['Usertask']['tasks_id'] = $lastid;
 				$usertasks['Usertask']['status'] = 1;
-				$usertasks['Usertask']['done'] = 0;
+				$usertasks['Usertask']['done'] = 1;
 				$usertasks['Usertask']['datexem'] = date('Y-d-m H:i:s');
 				$usertasks['Usertask']['noidung'] = "Khởi tạo công việc";
 
