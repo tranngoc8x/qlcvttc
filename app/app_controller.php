@@ -1,6 +1,6 @@
 <?php
 class AppController extends Controller {
-	var $helpers = array('Html','Form','Javascript','Session','Time','Link');
+	var $helpers = array('Html','Form','Javascript','Session','Time','Link','Js','Ajax');
 	var $components = array('Session','Auth','Acl');
     function beforeFilter(){
 		parent::beforeFilter();
@@ -62,7 +62,7 @@ function work($id=null,$d=null){
         case 10: echo "Chuyển ban quản lý xác nhận hoàn thành công việc"; break;
         case 11: echo "Kết thúc công việc"; break;
     }
-<<<<<<< .mine
+
 }
 
 function nhuan($nam = null){
@@ -70,7 +70,7 @@ function nhuan($nam = null){
 	if((($nam%4==0)&& ($nam%100!=0))||($nam%400==0))
 	$a=array(0,31,29,31,30,31,30,31,31,30,31,30,31);
 	return $a;
-=======
+
 }
 function word($id = null,$g = null){
     switch ($id) {
@@ -97,5 +97,5 @@ function word($id = null,$g = null){
             break;
     }
     return $s;
->>>>>>> .r73
+ 
 }
