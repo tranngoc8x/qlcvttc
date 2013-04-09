@@ -1,12 +1,8 @@
 <?php
-echo $this->Html->script('/acl/js/jquery');
-echo $this->Html->script('/acl/js/acl_plugin');
-
-echo $this->element('design/header');
-?>
-
-<?php
-echo $this->element('aros/links');
+    echo $this->Html->script('/acl/js/jquery');
+    echo $this->Html->script('/acl/js/acl_plugin');
+    echo $this->element('design/header');
+    echo $this->element('aros/links');
 ?>
 
 <div class="separator"></div>

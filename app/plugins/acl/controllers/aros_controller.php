@@ -223,7 +223,7 @@ class ArosController extends AclAppController
 	    $roles = $this->{$role_model_name}->find('all', array('order' => $role_display_field, 'contain' => false, 'recursive' => -1));
 
 	    $actions = $this->AclReflector->get_all_actions();
-
+	    //debug($actions);
 	    $methods = array();
 		foreach($actions as $full_action)
     	{
