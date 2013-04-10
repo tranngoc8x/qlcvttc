@@ -8,7 +8,7 @@
 
 	<?php
 			echo $this->Html->css(array('ext-all','admin','jquery-ui-1.10.1.custom'));
-			echo $this->Html->script(array('ext-base','ext-all','App','checkinput','ckeditor/ckeditor','jquery-1.9.1','jquery-ui-1.10.1.custom'));
+			echo $this->Html->script(array('ext-base','ext-all','App','checkinput','jquery-1.9.1','jquery-ui-1.10.1.custom'));
 	?>
 	<style>
 	body{
