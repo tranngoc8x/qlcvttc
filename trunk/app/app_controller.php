@@ -66,12 +66,15 @@ function work($id=null,$d=null){
 }
 
 function nhuan($nam = null){
-	$a=array(0,31,28,31,30,31,30,31,31,30,31,30,31);
+	$mom=array(0,31,28,31,30,31,30,31,31,30,31,30,31);
 	if((($nam%4==0)&& ($nam%100!=0))||($nam%400==0))
-	$a=array(0,31,29,31,30,31,30,31,31,30,31,30,31);
-	return $a;
+ 
+	$mom=array(0,31,29,31,30,31,30,31,31,30,31,30,31);
+	return $mom;
 
+ 
 }
+
 function word($id = null,$g = null){
     switch ($id) {
         case 1:
