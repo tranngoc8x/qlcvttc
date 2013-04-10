@@ -8,11 +8,11 @@ echo $this->element('aros/links');
 
 <?php
 echo $this->Form->create('User', array('url' => '/' . $this->params['url']['url']));
-echo __d('acl', 'Tên', true);
+echo __d('acl', 'name', true);
 echo '<br/>';
 echo $this->Form->input($user_display_field, array('label' => false, 'div' => false));
 echo ' ';
-echo $this->Form->end(array('label' =>__d('acl', 'Tìm', true), 'div' => false));
+echo $this->Form->end(array('label' =>__d('acl', 'filter', true), 'div' => false));
 echo '<br/>';
 ?>
 <table border="0" cellpadding="5" cellspacing="2">
@@ -20,7 +20,7 @@ echo '<br/>';
 	<?php
 	$column_count = 1;
 	
-	$headers = array($paginator->sort(__d('acl', 'Tên', true), $user_display_field));
+	$headers = array($paginator->sort(__d('acl', 'name', true), $user_display_field));
 	
 	foreach($roles as $role)
 	{
@@ -50,7 +50,7 @@ foreach($users as $user)
 	   else
 	   {
 	   	   $title = __d('acl', 'Update the user role', true);
-	       echo '  <td>' . $this->Html->link($this->Html->image('/acl/img/design/tick_disabled.png'), '/acl/aros/update_user_role/user:' . $user[$user_model_name][$user_pk_name] . '/role:' . $role[$role_model_name][$role_pk_name], array('title' => $title, 'alt' => $title, 'escape' => false)) . '</td>';
+	       echo '  <td>' . $this->Html->link($this->Html->image('/acl/img/design/tick_disabled.png'), '/admin/acl/aros/update_user_role/user:' . $user[$user_model_name][$user_pk_name] . '/role:' . $role[$role_model_name][$role_pk_name], array('title' => $title, 'alt' => $title, 'escape' => false)) . '</td>';
 	   }
 	}
 	
@@ -83,9 +83,3 @@ if($missing_aro)
 <?php
 echo $this->element('design/footer');
 ?>
-<script>
-   var title = 'Phân quyền cho nhóm người dùng';
-	function submitform(){
-		document.fview.submit();
-	}
- </script>

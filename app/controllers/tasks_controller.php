@@ -2,6 +2,9 @@
 class TasksController extends AppController {
 
 	var $name = 'Tasks';
+	// function beforeFilter(){
+	// 	parent::beforeFilter();
+	// }
 	function index(){
 		$this->_pref();
 		$this->set('tasks', $this->paginate());
@@ -97,7 +100,7 @@ class TasksController extends AppController {
 					 array_push($arrx,$val['name']);
 				}
 				foreach ($this->data['fold'] as $val1) {
-						echo array_search($val1, $arrx);// index của mảng Tfile
+						//echo array_search($val1, $arrx);// index của mảng Tfile
 						$data['Tfile']['name'] = $val1;
 				 	 	$data['Tfile']['type'] = 1;
 						$data['Tfile']['tasks_id'] = $idcv;

@@ -16,17 +16,17 @@ if(isset($users))
 	<?php
 	echo '<p>&nbsp;</p>';
 	echo '<p>';
-	echo __d('acl', 'Trang này cho phép quản lý quyền của từng người dùng.', true);
+	echo __d('acl', 'This page allows to manage users specific rights', true);
 	echo '</p>';
 	echo '<p>&nbsp;</p>';
 	?>
 	<?php
     echo $this->Form->create('User', array('url' => '/' . $this->params['url']['url']));
-    echo __d('acl', 'Người dùng', true);
+    echo __d('acl', 'user', true);
     echo '<br/>';
     echo $this->Form->input($user_display_field, array('label' => false, 'div' => false));
     echo ' ';
-    echo $this->Form->end(array('label' =>__d('acl', 'Tìm', true), 'div' => false));
+    echo $this->Form->end(array('label' =>__d('acl', 'filter', true), 'div' => false));
     echo '<br/>';
     ?>
     <table border="0" cellpadding="5" cellspacing="2">
@@ -34,7 +34,7 @@ if(isset($users))
     	<?php
     	$column_count = 1;
     	
-    	$headers = array($paginator->sort(__d('acl', 'Người dùng', true), $user_display_field));
+    	$headers = array($paginator->sort(__d('acl', 'user', true), $user_display_field));
     	
     	echo $this->Html->tableHeaders($headers);
     	?>
@@ -44,7 +44,7 @@ if(isset($users))
     {
         echo '<tr>';
         echo '  <td>' . $user[$user_model_name][$user_display_field] . '</td>';
-        $title = __d('acl', 'Quản lý quyền của từng người dùng', true);
+        $title = __d('acl', 'Manage user specific rights', true);
 
         $link = '/admin/acl/aros/user_permissions/' . $user[$user_model_name][$user_pk_name];
         if(Configure :: read('acl.gui.users_permissions.ajax') === true)
@@ -70,7 +70,7 @@ else
 ?>
     <h1><?php echo  __d('acl', $user_model_name, true) . ' : ' . $user[$user_model_name][$user_display_field]; ?></h1>
     
-    <h2><?php echo __d('acl', 'Nhóm', true); ?></h2>
+    <h2><?php echo __d('acl', 'Role', true); ?></h2>
     
     <table border="0">
     <tr>
@@ -86,7 +86,7 @@ else
     	    }
     	    else
     	    {
-    	    	$title = __d('acl', 'Cập nhật quyền của người dùng', true);
+    	    	$title = __d('acl', 'Update the user role', true);
     	        echo $this->Html->link($this->Html->image('/acl/img/design/tick_disabled.png'), array('plugin' => 'acl', 'controller' => 'aros', 'action' => 'update_user_role', 'user' => $user[$user_model_name][$user_pk_name], 'role' => $role[$role_model_name][$role_pk_name]), array('title' => $title, 'alt' => $title, 'escape' => false));
     	    }
     	    
@@ -96,15 +96,15 @@ else
     </tr>
     </table>
     
-    <h2><?php echo __d('acl', 'Quyền', true); ?></h2>
+    <h2><?php echo __d('acl', 'Permissions', true); ?></h2>
     
     <?php
 	if($user_has_specific_permissions)
 	{
 	    echo '<div class="separator"></div>';
-    	echo $this->Html->image('/acl/img/design/bulb24.png') . __d('acl', 'Người dùng này có những quyền.', true);
+    	echo $this->Html->image('/acl/img/design/bulb24.png') . __d('acl', 'This user has specific permissions', true);
     	echo ' (';
-    	echo $this->Html->link($this->Html->image('/acl/img/design/cross2.png') . ' ' . __d('acl', 'Xóa bỏ', true), '/admin/acl/aros/clear_user_specific_permissions/' . $user[$user_model_name][$user_pk_name], array('confirm' => __d('acl', 'Bạn có chắc chắn muốn xóa quyền của người dùng này ?', true), 'escape' => false));
+    	echo $this->Html->link($this->Html->image('/acl/img/design/cross2.png') . ' ' . __d('acl', 'Clear', true), '/admin/acl/aros/clear_user_specific_permissions/' . $user[$user_model_name][$user_pk_name], array('confirm' => __d('acl', 'Are you sure you want to clear the permissions specific to this user ?', true), 'escape' => false));
     	echo ')';
     	echo '<div class="separator"></div>';
 	}
@@ -116,7 +116,7 @@ else
     	
     	$column_count = 1;
     	
-    	$headers = array(__d('acl', 'action', true), __d('acl', 'Quyền', true));
+    	$headers = array(__d('acl', 'action', true), __d('acl', 'authorization', true));
 
     	echo $this->Html->tableHeaders($headers);
     	?>
@@ -237,9 +237,9 @@ else
     	?>
 	</table>
     <?php
-    echo $this->Html->image('/acl/img/design/tick.png') . ' ' . __d('acl', 'Được phép', true);
+    echo $this->Html->image('/acl/img/design/tick.png') . ' ' . __d('acl', 'authorized', true);
     echo '&nbsp;&nbsp;&nbsp;';
-    echo $this->Html->image('/acl/img/design/cross.png') . ' ' . __d('acl', 'Bị khóa', true);
+    echo $this->Html->image('/acl/img/design/cross.png') . ' ' . __d('acl', 'blocked', true);
     ?>
 <?php
 }
@@ -247,9 +247,3 @@ else
 <?php
 echo $this->element('design/footer');
 ?>
-<script>
-   var title = 'Phân quyền chi tiết cho người dùng';
-	function submitform(){
-		document.fview.submit();
-	}
- </script>

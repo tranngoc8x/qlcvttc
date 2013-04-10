@@ -14,7 +14,7 @@ echo $this->element('aros/links');
 <div>
 	
 	<?php
-	echo $this->Html->link($this->Html->image('/acl/img/design/cross.png') . ' ' . __d('acl', 'Xóa bảng phân quyền', true), '/admin/acl/aros/empty_permissions', array('confirm' => __d('acl', 'Bạn có chắc chắn muốn xóa tất cả quyền người dùng và quyền nhóm ?', true), 'escape' => false));
+	echo $this->Html->link($this->Html->image('/acl/img/design/cross.png') . ' ' . __d('acl', 'Clear permissions table', true), '/admin/acl/aros/empty_permissions', array('confirm' => __d('acl', 'Are you sure you want to delete all roles and users permissions ?', true), 'escape' => false));
 	?>
 	
 	
@@ -26,15 +26,14 @@ echo $this->element('aros/links');
 
 <tr>
 	<th></th>
-	<th><?php echo __d('acl', 'Cho phép truy cập vào<em> tất cả các thao tác</em>', true); ?></th>
-	<th><?php echo __d('acl', 'Từ chối truy cập vào<em> tất cả các thao tác</em>', true); ?></th>
+	<th><?php echo __d('acl', 'grant access to <em>all actions</em>', true); ?></th>
+	<th><?php echo __d('acl', 'deny access to <em>all actions</em>', true); ?></th>
 </tr>
 
 <?php
 $i = 0;
 foreach($roles as $role)
 {
-//danh sách nhóm người dùng
     $color = ($i % 2 == 0) ? 'color1' : 'color2';
     echo '<tr class="' . $color . '">';
     echo '  <td>' . $role[$role_model_name][$role_display_field] . '</td>';
@@ -84,13 +83,13 @@ foreach($roles as $role)
 				
 				$color = ($i % 2 == 0) ? 'color1' : 'color2';
 			}
-			//debug($this);
+			
 			foreach($ctrl_infos as $ctrl_info)
 			{
 	    		echo '<tr class="' . $color . '">
 	    		';
 	    		
-	    		echo '<td>' . $controller_name . '->' . action($ctrl_info['name']) . '</td>';
+	    		echo '<td>' . $controller_name . '->' . $ctrl_info['name'] . '</td>';
 	    		
 		    	foreach($roles as $role)
 		    	{
@@ -204,9 +203,3 @@ foreach($roles as $role)
 <?php
 echo $this->element('design/footer');
 ?>
-<script>
-   var title = 'Phân quyền theo nhóm';
-	function submitform(){
-		document.fview.submit();
-	}
- </script>

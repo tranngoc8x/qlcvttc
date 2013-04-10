@@ -9,9 +9,9 @@ echo $this->element('design/header');
 echo $this->element('aros/links');
 ?>
 
-    <h1><?php echo  __d('acl', 'Người dùng', true) . ' : ' . $user[$user_model_name][$user_display_field]; ?></h1>
+    <h1><?php echo  __d('acl', 'User', true) . ' : ' . $user[$user_model_name][$user_display_field]; ?></h1>
 
-    <h2><?php echo __d('acl', 'Nhóm', true); ?></h2>
+    <h2><?php echo __d('acl', 'Role', true); ?></h2>
 
     <table border="0">
     <tr>
@@ -27,7 +27,7 @@ echo $this->element('aros/links');
     	    }
     	    else
     	    {
-    	    	$title = __d('acl', 'Cập nhật nhóm người dùng', true);
+    	    	$title = __d('acl', 'Update the user role', true);
     	        echo $this->Html->link($this->Html->image('/acl/img/design/tick_disabled.png'), array('plugin' => 'acl', 'controller' => 'aros', 'action' => 'update_user_role', 'user' => $user[$user_model_name][$user_pk_name], 'role' => $role[$role_model_name][$role_pk_name]), array('title' => $title, 'alt' => $title, 'escape' => false));
     	    }
 
@@ -37,15 +37,15 @@ echo $this->element('aros/links');
     </tr>
     </table>
 
-    <h2><?php echo __d('acl', 'Quyền', true); ?></h2>
+    <h2><?php echo __d('acl', 'Permissions', true); ?></h2>
 
 	<?php
 	if($user_has_specific_permissions)
 	{
 	    echo '<div class="separator"></div>';
-    	echo $this->Html->image('/acl/img/design/bulb24.png') . __d('acl', 'Những quyền của người dùng này', true);
+    	echo $this->Html->image('/acl/img/design/bulb24.png') . __d('acl', 'This user has specific permissions', true);
     	echo ' (';
-    	echo $this->Html->link($this->Html->image('/acl/img/design/cross2.png') . ' ' . __d('acl', 'Xóa bỏ', true), '/admin/acl/aros/clear_user_specific_permissions/' . $user[$user_model_name][$user_pk_name], array('confirm' => __d('acl', 'Bạn có chắc chắn muốn xóa quyền của người dùng này ?', true), 'escape' => false));
+    	echo $this->Html->link($this->Html->image('/acl/img/design/cross2.png') . ' ' . __d('acl', 'Clear', true), '/admin/acl/aros/clear_user_specific_permissions/' . $user[$user_model_name][$user_pk_name], array('confirm' => __d('acl', 'Are you sure you want to clear the permissions specific to this user ?', true), 'escape' => false));
     	echo ')';
     	echo '<div class="separator"></div>';
 	}
@@ -57,7 +57,7 @@ echo $this->element('aros/links');
 
     	$column_count = 1;
 
-    	$headers = array(__d('acl', 'Thao tác', true), __d('acl', 'Quyền', true));
+    	$headers = array(__d('acl', 'action', true), __d('acl', 'authorization', true));
 
     	echo $this->Html->tableHeaders($headers);
     	?>
@@ -158,16 +158,10 @@ echo $this->element('aros/links');
     	?>
 	</table>
     <?php
-    echo $this->Html->image('/acl/img/design/tick.png') . ' ' . __d('acl', 'Được phép', true);
+    echo $this->Html->image('/acl/img/design/tick.png') . ' ' . __d('acl', 'authorized', true);
     echo '&nbsp;&nbsp;&nbsp;';
-    echo $this->Html->image('/acl/img/design/cross.png') . ' ' . __d('acl', 'Bị khóa', true);
+    echo $this->Html->image('/acl/img/design/cross.png') . ' ' . __d('acl', 'blocked', true);
     ?>
 <?php
 echo $this->element('design/footer');
 ?>
-<script>
-   var title = 'Danh sách bài vi?t';
-	function submitform(){
-		document.fview.submit();
-	}
- </script>

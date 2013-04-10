@@ -3,7 +3,9 @@ class PositionsController extends AppController {
 
 	var $name = 'Positions';
 	//var $use = array('PositionsGroup','Group');
-	
+	// function beforeFilter(){
+	// 	parent::beforeFilter();
+	// }
 	function index() {
 		//$this->Position->recursive = 1;
 		$this->set('pos', $this->paginate());

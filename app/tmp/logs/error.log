@@ -6818,3 +6818,2183 @@ Aco: Users/logout in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\a
 2013-04-03 16:03:46 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Tfile.name' in 'field list'</span> in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\datasources\dbo_source.php, line 684]
 2013-04-03 16:09:31 Warning: Warning (2): array_pop() expects parameter 1 to be array, string given in [F:\xampp\htdocs\QLCV_TTC\app\controllers\tasks_controller.php, line 95]
 2013-04-03 16:09:53 Warning: Warning (2): array_push() expects parameter 1 to be array, integer given in [F:\xampp\htdocs\QLCV_TTC\app\controllers\tasks_controller.php, line 95]
+2013-04-09 10:54:11 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:12 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:12 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:12 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:12 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:12 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:12 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:12 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:12 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:12 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:12 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:13 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:13 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:13 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:13 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:13 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:13 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:13 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:13 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:13 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:13 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:13 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:13 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:14 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:14 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:14 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:14 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:14 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:14 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:14 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:14 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:14 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:14 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:14 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:14 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:14 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:14 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:14 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:15 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:15 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:15 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:15 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:15 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:15 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:15 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:15 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:15 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:15 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:58 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:58 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:58 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:58 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:58 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:58 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:58 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:58 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:58 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:58 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:58 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:58 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:58 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:59 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:59 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:59 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:59 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:59 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:59 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:59 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:59 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:59 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:59 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:59 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:59 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:59 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:59 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:54:59 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:55:00 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:55:00 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:55:00 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:55:00 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:55:00 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:55:00 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:55:00 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:55:00 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:55:00 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:55:00 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:55:00 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:55:00 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:55:00 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:55:00 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:55:01 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:55:01 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:55:01 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:55:01 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:55:01 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:55:02 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:19 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:19 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:19 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:19 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:20 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:20 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:20 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:20 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:20 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:20 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:20 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:20 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:20 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:20 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:20 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:20 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:20 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:20 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:20 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:21 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:21 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:21 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:21 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:21 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:21 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:21 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:21 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:21 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:21 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:21 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:21 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:21 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:21 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:21 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:22 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:22 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:22 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:22 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:22 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:22 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:22 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:22 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:22 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:22 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:22 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:22 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:22 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:36 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:36 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:36 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:36 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:36 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:36 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:36 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:36 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:37 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:37 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:37 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:37 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:37 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:37 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:37 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:37 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:37 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:37 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:37 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:37 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:37 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:38 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:38 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:38 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:38 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:38 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:38 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:38 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:38 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:38 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:38 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:38 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:38 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:38 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:38 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:39 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:39 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:39 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:39 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:39 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:39 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:39 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:39 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:40 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:40 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:40 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:40 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:56:40 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:37 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:37 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:37 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:37 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:37 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:37 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:37 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:37 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:37 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:38 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:38 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:38 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:38 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:38 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:38 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:38 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:38 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:38 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:38 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:38 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:38 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:38 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:38 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:39 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:39 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:39 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:39 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:39 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:39 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:39 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:39 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:39 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:39 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:39 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:39 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:39 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:39 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:39 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:40 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:40 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:40 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:40 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:40 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 1
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:40 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:40 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:40 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:40 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 10:57:41 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-09 11:36:21 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\positions\index.ctp, line 20]
+2013-04-09 11:36:29 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\positions\index.ctp, line 20]
+2013-04-09 14:30:18 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\positions\index.ctp, line 20]
+2013-04-09 14:31:21 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1052: Column 'name' in order clause is ambiguous</span> in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\datasources\dbo_source.php, line 684]
+2013-04-09 14:31:21 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\plugins\acl\views\aros\user_permissions.ctp, line 43]
+2013-04-09 14:31:36 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1052: Column 'name' in order clause is ambiguous</span> in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\datasources\dbo_source.php, line 684]
+2013-04-09 14:31:36 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\plugins\acl\views\aros\user_permissions.ctp, line 43]
+2013-04-09 14:53:41 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: User::
+Aco: Post in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-09 14:54:08 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: User::
+Aco: User in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-09 14:54:43 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: User::9
+Aco: User in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-09 14:55:08 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: User::9
+Aco: Task in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-09 14:55:46 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: User::1
+Aco: Task in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-09 15:02:27 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: User::1
+Aco: Task in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-09 15:05:41 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: User::1
+Aco: Task in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-09 15:05:51 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1</span> in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\datasources\dbo_source.php, line 684]
+2013-04-09 15:06:06 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1</span> in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\datasources\dbo_source.php, line 684]
+2013-04-09 15:06:26 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1</span> in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\datasources\dbo_source.php, line 684]
+2013-04-09 15:06:33 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: User::1
+Aco: Task in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-09 15:10:11 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: User::1
+Aco: Task in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-09 15:23:34 Warning: Warning (512): UsersController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 15:23:36 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 15:23:37 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 15:23:38 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 15:23:39 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 15:23:40 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 15:23:41 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 15:23:42 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 15:23:43 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 15:23:45 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 15:23:46 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 15:23:47 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 15:23:48 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 15:23:49 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 15:23:50 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 15:23:52 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 15:23:53 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 15:23:54 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 15:23:55 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 15:23:56 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 15:23:57 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:23:12 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:23:13 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:23:13 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:23:14 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:23:15 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:23:17 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:23:18 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:23:19 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:23:20 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:23:21 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:23:22 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:23:24 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:23:25 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:23:26 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:23:27 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:23:28 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:23:29 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:23:30 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:23:32 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:23:33 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:23:34 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:23:35 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:32:03 Warning: Warning (512): LinhvucsController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:32:04 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:32:05 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:32:06 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:32:07 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:32:08 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:32:10 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:32:11 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:32:12 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:32:13 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:32:15 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:32:16 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:32:17 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:32:18 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:32:19 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:32:20 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:32:22 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:32:23 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:32:24 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:32:25 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 16:32:26 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 20:42:35 Warning: Warning (2): session_destroy() [<a href='http://php.net/function.session-destroy'>function.session-destroy</a>]: Session object destruction failed in [F:\xampp\htdocs\QLCV_TTC\cake\libs\cake_session.php, line 458]
+2013-04-09 21:23:23 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:23:26 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:23:28 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:23:31 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:23:33 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:23:35 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:23:37 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:23:40 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:23:42 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:23:44 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:23:47 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:09 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:10 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:11 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:13 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:14 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:15 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:16 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:17 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:18 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:20 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:21 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:22 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:23 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:24 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:25 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:26 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:28 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:29 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:30 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:31 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:40 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:40 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:40 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:40 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:40 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:40 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:40 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:40 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:40 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:42 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:43 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:44 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:45 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:46 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:47 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:49 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:50 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:51 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:52 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:53 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:55 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:56 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:57 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:58 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:24:59 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:25:51 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:25:52 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:25:53 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:25:54 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:25:55 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:25:57 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:25:58 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:25:59 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:00 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:01 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:02 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:04 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:05 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:06 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:07 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:08 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:09 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:10 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:11 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:11 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:11 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:11 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:11 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:11 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:12 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:12 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:13 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:14 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:15 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:16 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:17 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:19 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:20 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:21 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:22 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:23 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:24 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:26 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:27 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:28 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:54 Warning: Warning (512): UsersController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:55 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:56 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:57 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:26:59 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:27:00 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:27:01 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:27:02 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:27:03 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:27:04 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:27:06 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:27:07 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:27:08 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:27:09 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:27:10 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:27:11 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:27:12 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:27:14 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:27:15 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:27:16 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:27:17 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:27:36 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:27:37 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:27:38 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-09 21:27:39 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:26:54 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:26:57 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:26:59 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:27:01 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:27:04 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:27:06 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:27:08 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:27:10 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:27:13 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:27:15 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:27:17 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:28:37 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:28:38 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:28:40 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:28:41 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:28:42 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:28:43 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:28:44 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:28:45 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:28:46 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:28:48 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:28:49 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:28:50 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:28:51 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:28:52 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:28:53 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:28:55 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:28:56 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:28:57 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:28:58 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:28:59 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:30:10 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:30:11 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:30:12 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:30:13 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:30:14 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:30:16 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:30:17 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:30:18 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:30:19 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:30:20 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:30:22 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:30:23 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:30:24 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:30:25 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:30:26 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:30:27 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:30:28 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:30:30 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:30:31 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:30:32 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:30:33 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:33:21 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:33:22 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:33:23 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:33:24 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:33:25 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:33:27 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:33:28 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:33:29 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:33:30 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:33:31 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:33:33 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:33:34 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:33:35 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:33:36 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:33:37 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:33:39 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:33:40 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:33:41 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:33:42 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:33:43 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:33:45 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:35:29 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:35:30 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:35:31 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:35:32 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:35:34 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:35:35 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:35:36 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:35:37 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:35:38 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:35:39 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:35:41 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:35:42 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:35:43 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:35:44 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:35:45 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:35:47 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:35:48 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:35:49 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:35:50 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:35:51 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:35:53 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:37:13 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:37:14 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:37:15 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:37:17 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:37:18 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:37:19 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:37:20 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:37:21 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:37:22 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:37:24 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:37:25 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:37:27 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:37:28 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:37:29 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:37:30 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:37:31 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:37:32 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:37:34 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:37:35 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:37:36 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:37:37 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:38:26 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:38:27 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:38:28 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:38:29 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:38:31 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:38:32 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:38:33 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:38:34 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:38:35 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:38:36 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:38:38 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:38:39 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:38:40 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:38:41 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:38:43 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:38:44 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:38:45 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:38:46 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:38:47 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:38:48 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:38:50 Warning: Warning (512): TasksController::isAuthorized() is not defined. in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 804]
+2013-04-10 08:50:45 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\positions\index.ctp, line 20]
+2013-04-10 08:51:11 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [model] => User
+    [foreign_key] => 9
+)
+
+Aco: Countries in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 08:53:16 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [model] => User
+    [foreign_key] => 9
+)
+
+Aco: Position in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 08:53:16 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [model] => Group
+    [foreign_key] => 4
+)
+
+Aco: Position in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 08:55:12 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [model] => User
+    [foreign_key] => 9
+)
+
+Aco: Position in [F:\xampp\htdocs\cakephp\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 08:55:12 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [model] => Group
+    [foreign_key] => 4
+)
+
+Aco: Position in [F:\xampp\htdocs\cakephp\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 08:55:24 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [model] => User
+    [foreign_key] => 9
+)
+
+Aco: Position in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 08:55:25 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [model] => Group
+    [foreign_key] => 4
+)
+
+Aco: Position in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 08:55:28 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [model] => User
+    [foreign_key] => 9
+)
+
+Aco: Position in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 08:55:28 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [model] => Group
+    [foreign_key] => 4
+)
+
+Aco: Position in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 08:55:32 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [model] => User
+    [foreign_key] => 9
+)
+
+Aco: Position in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 08:55:32 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [model] => Group
+    [foreign_key] => 4
+)
+
+Aco: Position in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 08:55:40 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [model] => User
+    [foreign_key] => 9
+)
+
+Aco: Position in [F:\xampp\htdocs\cakephp\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 08:55:40 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [model] => Group
+    [foreign_key] => 4
+)
+
+Aco: Position in [F:\xampp\htdocs\cakephp\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 08:55:47 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [model] => User
+    [foreign_key] => 9
+)
+
+Aco: Position in [F:\xampp\htdocs\cakephp\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 08:55:47 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [model] => Group
+    [foreign_key] => 4
+)
+
+Aco: Position in [F:\xampp\htdocs\cakephp\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 08:55:50 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [model] => User
+    [foreign_key] => 9
+)
+
+Aco: Position in [F:\xampp\htdocs\cakephp\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 08:55:50 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [model] => Group
+    [foreign_key] => 4
+)
+
+Aco: Position in [F:\xampp\htdocs\cakephp\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 08:55:54 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [model] => User
+    [foreign_key] => 9
+)
+
+Aco: Position in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 08:55:54 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [model] => Group
+    [foreign_key] => 4
+)
+
+Aco: Position in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 08:56:01 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [model] => User
+    [foreign_key] => 9
+)
+
+Aco: Position in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 08:56:01 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [model] => Group
+    [foreign_key] => 4
+)
+
+Aco: Position in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 08:57:57 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [model] => User
+    [foreign_key] => 9
+)
+
+Aco: Task in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 08:57:57 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [model] => Group
+    [foreign_key] => 4
+)
+
+Aco: Position in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 09:00:49 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: 9
+Aco: Task in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 09:00:49 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [model] => Group
+    [foreign_key] => 4
+)
+
+Aco: Position in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 09:01:40 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: 9
+Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 09:01:40 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [model] => Group
+    [foreign_key] => 4
+)
+
+Aco: Position in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 09:02:36 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: 9
+Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 09:02:36 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: 4
+Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 09:04:35 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: 9
+Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 09:04:35 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: 4
+Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 09:04:44 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: 9
+Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 09:04:44 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: 4
+Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 09:10:30 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: User
+Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 09:11:15 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: User
+Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 09:11:15 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Group
+Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 09:11:54 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Users
+Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 09:11:54 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Groups
+Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 09:12:14 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: 9
+Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 09:12:33 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Task
+Aco: 9 in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 09:12:40 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Task
+Aco: User in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 09:12:44 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Task
+Aco: Users in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 09:13:02 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: User
+Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 09:50:01 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: User
+Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 09:50:42 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: User
+Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 09:50:57 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: User
+Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 09:53:40 Warning: Warning (2): Missing argument 2 for AclComponent::check(), called in F:\xampp\htdocs\QLCV_TTC\app\controllers\users_controller.php on line 90 and defined in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 91]
+2013-04-10 09:56:06 Warning: Warning (2): Missing argument 2 for AclComponent::check(), called in F:\xampp\htdocs\QLCV_TTC\app\controllers\users_controller.php on line 90 and defined in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 91]
+2013-04-10 09:56:27 Warning: Warning (2): Missing argument 2 for AclComponent::check(), called in F:\xampp\htdocs\QLCV_TTC\app\controllers\users_controller.php on line 91 and defined in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 91]
+2013-04-10 10:11:29 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 9
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-10 10:11:29 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [model] => Group
+    [foreign_key] => 9
+)
+
+Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 10:11:45 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 9
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-10 10:11:45 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [model] => Group
+    [foreign_key] => 9
+)
+
+Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 10:14:23 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Group/qly1
+Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 10:14:29 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Group/qly1
+Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 10:14:35 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Groups/qly1
+Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 10:14:43 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: groups/qly1
+Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 10:14:55 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: groups/qly1
+Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 10:16:01 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: groups/qly1
+Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 10:16:01 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: groups/admin
+Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 10:16:31 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Giám Đốc/qly1
+Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 10:16:31 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Giám Đốc/admin
+Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 10:18:10 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: bql/qly1
+Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 10:18:10 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: administrator/admin
+Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 10:21:50 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: bql/qly1
+Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 10:21:50 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: administrator/admin
+Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 10:22:06 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: bql/qly1
+Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 10:22:06 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: admin
+Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 10:27:28 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-10 10:27:28 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [model] => Group
+    [foreign_key] => 4
+)
+
+Aco: Users in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-10 10:27:28 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at F:\xampp\htdocs\QLCV_TTC\cake\libs\debugger.php:686) in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 742]
+2013-04-10 10:31:04 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 2
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-10 10:31:04 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 3
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-10 10:31:05 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 4
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-10 10:31:06 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-10 10:31:07 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 6
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-10 10:31:07 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at F:\xampp\htdocs\QLCV_TTC\cake\libs\debugger.php:686) in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 742]
+2013-04-10 10:33:45 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1048: Column 'gioitinh' cannot be null</span> in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\datasources\dbo_source.php, line 684]

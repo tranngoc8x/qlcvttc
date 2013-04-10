@@ -2,7 +2,11 @@
 class UsersController extends AppController {
 
 	var $name = 'Users';
-
+	//var $components = array('Auth', 'Acl');
+	 function beforeFilter(){
+	   	parent::beforeFilter();
+	   	$this->Auth->allow('login','logout');
+	  }
 	function index() {
 		$this->User->recursive = 0;
 		$this->set('users', $this->paginate());
@@ -57,37 +61,7 @@ class UsersController extends AppController {
 		$positions  = $this->User->Position->find('list');
 		$this->set(compact('groups','positions'));
 	}
-	function changepassword(){
-		if (empty($this->data)) {
-        			$this->Session->setFlash(__('Không tìm thấy người dùng', true));
-        			$this->redirect(array('action' => 'index'));
-        	}
-        if(!empty($this->data)){
-           $oldpass = $this->data['User']['password'];
-           $newpass = $this->data['User']['newpassword'];
-           $confnewpass = $this->data['User']['confirmnewpassword'];
-           $UserInfo = $this->Auth->user();
-           $pas = $this->User->find('first',array('conditions'=>array('User.id'=>$UserInfo['User']['id'])));
-           if($this->Auth->password($oldpass)!=trim($pas['User']['password'])){
-			  $this->Session->setFlash(__('Mật khẩu cũ không đúng!', true));
-              //$this->redirect(array('action' => 'index'));
-           }
-		   else {
-				if($newpass!=$confnewpass){
-					$this->Session->setFlash(__('Mật khẩu mới và nhập lại mật khẩu mới không khớp. Hãy nhập lại!', true));
-					//$this->redirect(array('action' => 'index'));
-					}
 
-				else{
-					//$this->User->query("update users set password='".$this->Auth->password($newpass)."' where id='".$UserInfo['User']['id']."'");
-					$this->User->id = $this->viewVars['ssid']['User']['id'];
-					$this->User->saveField("password",$this->Auth->password($newpass));
-					$this->Session->setFlash(__('Mật khẩu được thay đổi', true));
-					$this->redirect(array('controller' => 'users','action' => 'index'));
-			   }
-			}
-        }
-    }
     function login(){
 		if($this->Auth->user()){
 			$this->redirect(array('controller' => 'tasks', 'action' => 'index' ));

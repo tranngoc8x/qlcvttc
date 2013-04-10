@@ -13,7 +13,7 @@
     </tr>
     <tr class='tbody'>
         <td><b>Quê quán</b></td>
-        <td> <?php echo $user[ 'User'][ 'quequan']; ?></td>
+        <td> <?php echo $user[ 'User'][ 'address']; ?></td>
     </tr>
     <tr class='tbody'>
         <td><b>Ngày vào làm</b></td>

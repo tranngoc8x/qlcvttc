@@ -17,16 +17,5 @@ class Position extends AppModel {
 	);
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
-	var $hasAndBelongsToMany = array(
-		'Group' => array(
-			'className' => 'Group',
-			'joinTable'=> 'positions_groups',
-			'foreignKey' => 'positions_id',
-			'associationForeignKey'  => 'groups_id',
-			//'unique' => true,
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		)
-	);
+ 
 }

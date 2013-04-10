@@ -230,9 +230,3 @@ foreach($roles as $role)
 <?php
 echo $this->element('design/footer');
 ?>
-<script>
-   var title = 'Danh sách bài vi?t';
-	function submitform(){
-		document.fview.submit();
-	}
- </script>

@@ -59,4 +59,15 @@ class GroupsController extends AppController {
 		$this->Session->setFlash(__('Group was not deleted', true));
 		$this->redirect(array('action' => 'index'));
 	}
+	function mdelete($str = null){
+        if($str){
+            $arrid=explode(',',$str);
+        }else{
+    		$this->Session->setFlash(__('Có lỗi xảy ra.Không thể xóa.', true));
+    		$this->redirect(array('action' => 'index'));
+        }
+         foreach($arrid as $item) $this->Group->delete($item);
+		$this->Session->setFlash(__('Xóa thành công.', true));
+		$this->redirect(array('action' => 'index'));
+    }
 }

@@ -2,7 +2,9 @@
 class ElecsController extends AppController {
 
 	var $name = 'Elecs';
-
+	// function beforeFilter(){
+	// 	parent::beforeFilter();
+	// }
 	function index() {
 		$this->Elec->recursive = -1;
 		$d = date('Y-m');
