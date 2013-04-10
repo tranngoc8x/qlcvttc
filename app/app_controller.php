@@ -4,12 +4,11 @@ class AppController extends Controller {
 	var $components = array('Acl', 'Auth', 'Session','RequestHandler');
     function beforeFilter(){
 		//parent::beforeFilter();
-        $this->Auth->loginRedirect = array('controller' => 'pages', 'action' => 'display');
-        $this->Auth->logoutRedirect = array('controller' => 'users', 'action' => 'logout');
-        $this->Auth->loginAction = array('controller' => 'users', 'action' => 'login');
-
         $this->Auth->authorize = 'actions';
         $this->Auth->actionPath = 'controllers/';
+        $this->Auth->loginRedirect = array('admin'=>false,'controller' => 'pages', 'action' => 'display');
+      //  $this->Auth->logoutRedirect = array('admin'=>false,'controller' => 'users', 'action' => 'logout');
+       // $this->Auth->loginAction = array('admin'=>false,'controller' => 'users', 'action' => 'login');
       // $this->Auth->deny('*');
         $this->Auth->allow('login','logout');
 		if($this->Auth->user())
