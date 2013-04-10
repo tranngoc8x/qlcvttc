@@ -41,7 +41,7 @@ $mom = nhuan($y);?>
 			</td>
 			<td align=center style="color:red;">	
 				<?php 
-				//$a = 0; 
+				
 				    $a = $this->requestAction('/elecs/getElec/'.date($y."-".$m."-".$d).'/'.$i["id"]);
 				 	$b = $this->requestAction('/elecs/getElec/'.date($y."-".$m."-".($d+1)).'/'.$i["id"]);
 					if ($b!=""&& $a!="")echo $b-$a; else echo '-';
