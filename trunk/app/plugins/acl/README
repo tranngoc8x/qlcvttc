@@ -20,6 +20,7 @@ Installation
 -------------
 
 - Download the plugin and put it in your 'app/plugins' or 'plugins' folder
+- Configure the 'admin' route (see http://book.cakephp.org/view/1565/Library-Classes)
 - Configure the plugin according to your web application:
 
 	Some settings have to be read by CakePHP when the plugin is accessed. They can be found
@@ -38,4 +39,4 @@ Installation
         or
         require_once(APP . DS . 'plugins' . DS . 'acl' . DS . 'config' . DS . 'bootstrap.php');
 
-- Access the ACL plugin by navigating to /acl
+- Access the ACL plugin by navigating to /admin/acl

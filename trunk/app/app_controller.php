@@ -1,16 +1,17 @@
 <?php
 class AppController extends Controller {
-	var $helpers = array('Html','Form','Javascript','Session','Time','Link','Js','Ajax');
-	var $components = array('Session','Auth','Acl');
+	var $helpers = array('Html', 'Form', 'Session','Javascript','Time','Link','Js','Ajax');
+	var $components = array('Acl', 'Auth', 'Session','RequestHandler');
     function beforeFilter(){
-		parent::beforeFilter();
-        $this->Auth->userModel = 'User';
-        $this->Auth->fields = array('username' => 'username', 'password' => 'password');
+		//parent::beforeFilter();
         $this->Auth->loginRedirect = array('controller' => 'pages', 'action' => 'display');
         $this->Auth->logoutRedirect = array('controller' => 'users', 'action' => 'logout');
-        $this->Auth->loginAction = array( 'controller' => 'users', 'action' => 'login');
-        $this->Auth->loginError = 'Thông tin đăng nhập không đúng';
-        $this->Auth->authError = 'Truy cập bị từ chối';
+        $this->Auth->loginAction = array('controller' => 'users', 'action' => 'login');
+
+        $this->Auth->authorize = 'actions';
+        $this->Auth->actionPath = 'controllers/';
+      // $this->Auth->deny('*');
+        $this->Auth->allow('login','logout');
 		if($this->Auth->user())
         {
             $idus = $this->Auth->user('id');
@@ -18,7 +19,6 @@ class AppController extends Controller {
             $los  = $this->User->query("SELECT * FROM logs where users_id = '{$idus}'");
             $ssid = $this->Auth->user();
         }
-        $this->Auth->allow('login');
 		$this->set(compact('los','ssid'));
 	}
 }
@@ -97,5 +97,5 @@ function word($id = null,$g = null){
             break;
     }
     return $s;
- 
+
 }

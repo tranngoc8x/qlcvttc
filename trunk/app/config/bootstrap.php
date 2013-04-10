@@ -58,7 +58,7 @@ Configure :: write('acl.role.access_plugin_user_ids', array(1));
  * The users table field used as username in the views
  * It may be a table field or a SQL expression such as "CONCAT(User.lastname, ' ', User.firstname)" for MySQL or "User.lastname||' '||User.firstname" for PostgreSQL
  */
-Configure :: write('acl.user.display_name', "User.name");
+Configure :: write('acl.user.display_name', "User.username");
 
 /*
  * Indicates whether the presence of the Acl behavior in the user and role models must be verified when the ACL plugin is accessed
@@ -79,5 +79,4 @@ Configure :: write('acl.gui.roles_permissions.ajax', true);
  * Indicates whether the users permissions page must load through Ajax
  */
 Configure :: write('acl.gui.users_permissions.ajax', true);
-putenv("TZ = Asia/Jakarta");
 ?>

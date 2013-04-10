@@ -8,20 +8,25 @@
 class AclController extends AclAppController {
 
 	var $name = 'Acl';
-	//var $uses = array('Configuration.Configuration');
-	//var $uses = null;
+	var $uses = null;
+	
 	function beforeFilter()
 	{
 	    parent :: beforeFilter();
-
+	    
 		$this->Auth->allow('*');
 	}
-
-
+	
+	
 	function index()
 	{
-	    $this->redirect('/acl/acos');
+	    $this->redirect('/admin/acl/aros');
 	}
-
+	
+	function admin_index()
+	{
+	    $this->redirect('/admin/acl/acos');
+	}
+	
 }
 ?>

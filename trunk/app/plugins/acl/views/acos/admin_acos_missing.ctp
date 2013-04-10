@@ -23,8 +23,6 @@ echo $this->element('design/header', array('no_acl_links' => true));
 	
 </div>
 
-
-
-<script>
-   var title = 'Danh sách';	
- </script>
+<?php
+echo $this->element('design/footer');
+?>

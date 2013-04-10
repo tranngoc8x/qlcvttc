@@ -1,1 +1,0 @@
-<?php Router::connect('/acl/', array('plugin'=>'acl','controller' => 'aros', 'action' =>'ajax_role_permissions'));?>

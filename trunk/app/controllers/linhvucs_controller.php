@@ -2,7 +2,9 @@
 class LinhvucsController extends AppController {
 
 	var $name = 'Linhvucs';
-
+	// function beforeFilter(){
+	// 	parent::beforeFilter();
+	// }
 	function index() {
 		$this->Linhvuc->recursive = 0;
 		$this->set('linhvucs', $this->paginate());

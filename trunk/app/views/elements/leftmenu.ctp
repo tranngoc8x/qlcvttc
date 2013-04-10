@@ -66,7 +66,7 @@
 			<?php echo $this->Html->link(__('Thêm mới nhân sự', true), array('plugin'=>false,'controller'=>'users','action' => 'add')); ?>
 		</li>
 		<li>
-			<?php echo $this->Html->link(__('Phân quyền người dùng', true), array('plugin'=>'acl','controller'=>'aros','action' => 'ajax_role_permissions')); ?>
+			<?php echo $this->Html->link(__('Phân quyền người dùng', true), array('plugin'=>'acl','admin'=>true,'controller'=>'aros','action' => 'ajax_role_permissions')); ?>
 		</li>
 	</ul>
 </div>

@@ -9,7 +9,7 @@ echo $this->element('aros/links');
 <?php
 if(count($missing_aros['roles']) > 0)
 {
-	echo '<h3>' . __d('acl', 'Nhóm không tương thích với Roles without corresponding Aro', true) . '</h3>';
+	echo '<h3>' . __d('acl', 'Roles without corresponding Aro', true) . '</h3>';
 	
 	$list = array();
 	foreach($missing_aros['roles'] as $missing_aro)
@@ -46,7 +46,7 @@ if(count($missing_aros['roles']) > 0 || count($missing_aros['users']) > 0)
 else
 {
 	echo '<p>';
-	echo __d('acl', 'Không có người dùng mới.', true);
+	echo __d('acl', 'There is no missing ARO.', true);
 	echo '</p>';
 }
 ?>
@@ -54,10 +54,3 @@ else
 <?php
 echo $this->element('design/footer');
 ?>
-
-<script>
-   var title = 'Cập nhật phân quyền người dùng';
-	function submitform(){
-		document.fview.submit();
-	}
- </script>

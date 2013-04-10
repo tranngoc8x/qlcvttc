@@ -2,7 +2,7 @@
 class Group extends AppModel {
 	var $name = 'Group';
 	var $displayField = 'name';
-	var $actsAs = array('Acl' => array('type' => 'requester'));
+	var $actsAs = array('Acl' =>  'requester') ;
 	var $validate = array(
 		'name' => array(
 			'notempty' => array(
@@ -32,19 +32,6 @@ class Group extends AppModel {
 		)
 
 	);
-	var $hasAndBelongsToMany = array(
-		'Position'=>array(
-			'className'=>'Position',
-			'joinTable'=> 'positions_groups',
-			'foreignKey' => 'groups_id',
-			'associationForeignKey'  => 'positions_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		)
-	);
-
-
 	function parentNode() {
 	    return null;
 	}

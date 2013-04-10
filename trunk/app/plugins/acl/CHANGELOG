@@ -56,7 +56,7 @@ Date: 2011-01-22
 
 - the aros/role_permissions action can now be loaded through Ajax to prevent a request timeout when there are too many permissions to check
 - new search filters on users roles page and users permissions page
-- updated the way new controller and/or actions detection is done to allow to see the warning even after a redirection from /acl
+- updated the way new controller and/or actions detection is done to allow to see the warning even after a redirection from /admin/acl
 - replaced $html and $form by $this->Html and $this->Form in views to respect CakePHP best practices
 
 Version: 1.0.3

@@ -2,7 +2,9 @@
 class TypesController extends AppController {
 
 	var $name = 'Types';
-
+	// function beforeFilter(){
+	// 	parent::beforeFilter();
+	// }
 	function index() {
 		$this->Type->recursive = 0;
 		$this->set('types', $this->paginate());

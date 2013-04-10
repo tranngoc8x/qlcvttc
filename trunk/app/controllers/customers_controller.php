@@ -2,7 +2,9 @@
 class CustomersController extends AppController {
 
 	var $name = 'Customers';
-
+	// function beforeFilter(){
+	// 	parent::beforeFilter();
+	// }
 	function index() {
 		$this->Customer->recursive = 0;
 		$this->set('customers', $this->paginate());
