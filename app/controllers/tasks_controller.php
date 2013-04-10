@@ -156,7 +156,7 @@ class TasksController extends AppController {
 
 				$this->Task->Usertask->create();
 				$this->Task->Usertask->save($usertasks);
-			 	//$this->redirect(array('action' => 'index'));
+			 	$this->redirect(array('action' => 'index'));
 				$this->Session->setFlash(__('The task has been saved', true),'default',array('class'=>'success'));
 				if(!empty($idcv) && is_numeric($idcv)){
 
