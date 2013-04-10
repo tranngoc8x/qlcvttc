@@ -6,15 +6,19 @@
 	<table class="sort-table" cellspacing="0" width="100%"> 
 		<thead> 
 		<tr>			
-			<th>Tên khách hàng</th>			
-			<th>Vị trí phòng</th>			
-			<th>Số điện</th>			
-		</tr>	
-		<?php foreach ($customers as $k=>$customer): ?>	 
+			<th>Khách hàng</th>			
+			<th>Phòng</th>			
+			<th>Chỉ số điện</th>			
+		</tr>
+		<?php $l = 0;?>
+		<?php foreach ($customers as $k=>$r): ?>	 
 		<tr class='tbody'>
-				<td><?php echo $customer['Customer']['name']; echo $this->Form->hidden('customers_id'.$k,array('value'=>$customer['Customer']['id'])) ;?>&nbsp;</td>
-				<td><?php echo $customer['Customer']['pos'];?>&nbsp;</td>
-				<td><?php echo $this->Form->input('elec'.$k,array('label'=>false,'placeholder'=>'Nhập vào số điện','style'=>'width:150px;')); ?>&nbsp;</td>				
+			<td rowspan="<?php echo count($r['Room']);?>"><?php echo $r['Customer']['name'];?></td>
+			<?php foreach($r['Room'] as $i){$l++;?>		
+			<td><?php echo $i['room']; echo $this->Form->hidden('rooms_id'.$l,array('value'=>$i['id']));?></td>		
+			<td><?php echo $this->Form->input('elec'.$l,array('label'=>false,'placeholder'=>'Nhập vào số điện','style'=>'width:150px;')); ?></td>
+			</tr><tr class='tbody'>
+		<?php }?>				
 		</tr>
 		<?php endforeach; ?>
 	</table>

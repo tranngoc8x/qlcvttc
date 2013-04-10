@@ -15,6 +15,7 @@
 		case "tasks":			$tab3 = 1; break;
 		
 		case "elecs":
+		case "rooms":
 		case "customers":		$tab2 = 1; break;
 		default: $tab3 = 1;break;
 	}
@@ -79,14 +80,17 @@
 			<?php echo $this->Html->link(__('Thêm khách hàng', true), array('plugin'=>false,'controller'=>'customers','action' => 'add')); ?>
 		</li>
 		<li>
-			<?php echo $this->Html->link(__('Nhập thông tin dùng điện', true), array('plugin'=>false,'controller'=>'elecs','action' => 'add')); ?>
+			<?php echo $this->Html->link(__('Danh sách các phòng', true), array('plugin'=>false,'controller'=>'rooms','action' => 'index')); ?>
 		</li>
 		<li>
-			<?php echo $this->Html->link(__('Bảng thống kê dùng điện', true), array('plugin'=>false,'controller'=>'elecs','action' => 'index')); ?>
+			<?php echo $this->Html->link(__('Nhập thông tin dùng điện', true), array('plugin'=>false,'controller'=>'elecs','action' => 'add')); ?>
+		</li>		
+		<li>
+			<?php echo $this->Html->link(__('Bảng thống kê dùng điện mỗi ngày', true), array('plugin'=>false,'controller'=>'elecs','action' => 'listview')); ?>
 		</li>
+				
 	</ul>
 </div>
-
 <script language="javascript">
 Ext.onReady(function(){
 	addAccordion('Quản lý công việc', 'congviec', <?php echo $tab3?>)
