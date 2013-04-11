@@ -1,6 +1,6 @@
 <?php
 class AppController extends Controller {
-	var $helpers = array('Html', 'Form', 'Session','Javascript','Time','Link','Js','Ajax');
+	var $helpers = array('Html', 'Form', 'Session','Javascript','Time','Link','Js','Ajax','Access');
 	var $components = array('Acl', 'Auth', 'Session','RequestHandler');
     function beforeFilter(){
 		//parent::beforeFilter();
@@ -20,6 +20,7 @@ class AppController extends Controller {
         }
 		$this->set(compact('los','ssid'));
 	}
+
 }
 function stt($id = null,$d=null){
     $stt = base64_decode($id);
@@ -67,11 +68,11 @@ function work($id=null,$d=null){
 function nhuan($nam = null){
 	$mom=array(0,31,28,31,30,31,30,31,31,30,31,30,31);
 	if((($nam%4==0)&& ($nam%100!=0))||($nam%400==0))
- 
+
 	$mom=array(0,31,29,31,30,31,30,31,31,30,31,30,31);
 	return $mom;
 
- 
+
 }
 
 function word($id = null,$g = null){
