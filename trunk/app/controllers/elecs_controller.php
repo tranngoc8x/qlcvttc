@@ -19,24 +19,19 @@ class ElecsController extends AppController {
 	
 	
 
-	function listview2() {
+	function listview() {
 		$this->Elec->recursive = -1;
-		//debug($this->data['Elec']['YM']);
-		$d = implode('-',$this->data['Elec']['YM']);			
-		//
-		$y = $this->data['Elec']['YM']['year'];
-		$m = $this->data['Elec']['YM']['month'];
+		if(isset($this->data['Elec']['YM'])){
+			$y = $this->data['Elec']['YM']['year'];
+			$m = $this->data['Elec']['YM']['month'];
+		}else {
+			$y = date('Y');
+			$m = date('m');
+		}		
 		$this->loadModel('Customer');
 		$cus = $this->Customer->find('all');		
 		$this->set(compact('y','cus','m'));
-	}
-	function listview(){
-		$this->Elec->recursive = -1;
-		$this->loadModel('Customer');
-		$cus = $this->Customer->find('all');		
-		$this->set(compact('cus'));
-	}
-	
+	}	
 
 	function add() {		
 		$this->loadModel("Customer");		
@@ -100,19 +95,24 @@ class ElecsController extends AppController {
 		}
 		$this->Session->setFlash(__('Elec was not deleted', true));
 		$this->redirect(array('action' => 'index'));
-	}
-	function getElec($d,$r){
-		$dz = date("Y-m-d",strtotime($d));
-		$enumbers = $this->Elec->find("first",array('fields'=>array('elec'),'conditions'=>array('rooms_id'=>$r,'date'=>$dz)));
-		$enumber = $enumbers['Elec']['elec'];
-		if (!empty($this->params['requested'])) {
-		      return $enumber;
-		}else {
-		  $this->set(compact('enumber'));
+	}	
+		function getJsElec($d,$r){
+		$this->autoRender = false;
+		$dy = date("Y-m-d",strtotime($d));
+		$dz = date("Y-m-d",strtotime($d.'+1 day'));
+		$enumbers0 = $this->Elec->find("first",array('fields'=>array('elec'),'conditions'=>array('rooms_id'=>$r,'date'=>$dy)));
+		$enumbers1 = $this->Elec->find("first",array('fields'=>array('elec'),'conditions'=>array('rooms_id'=>$r,'date'=>$dz)));
+		echo date('j',strtotime($dy));
+		echo "_";
+		echo $r;
+		echo "_";
+		echo $enumbers0['Elec']['elec'];
+		echo "_";
+		if($enumbers1['Elec']['elec']!="" && $enumbers0['Elec']['elec']!=""){
+			echo (int)$enumbers1['Elec']['elec'] - (int)$enumbers0['Elec']['elec'];
+		}else{
+			echo "-";
 		}
-		 
 	}
-	function tieuthu($e1,$e2){
-		
-	}
+	
 }
