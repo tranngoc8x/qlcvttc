@@ -1,9 +1,4 @@
-<?php if($this->Access->check($this->name, 'add')){?>
 <?php echo $this->element('chucnang');?>
-<?php }?>
-<?php if($this->Access->group($this->name)){?>
-<?php }?>
-
 <form name="frmList" method="post" action="#">
 	<table class="sort-table" cellspacing="0" width="100%">
 		<thead>

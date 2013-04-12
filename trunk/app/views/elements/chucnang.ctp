@@ -1,8 +1,9 @@
+<?php //if($this->Access->check($this->name,'add'))
+{ ?>
 
 <table align='right' width="" class="chucnang">
   <tbody>
     <tr>
-
       <td align="center" width=120>
 		<?php echo $this->Html->link($this->Html->image('admin/dels-item.png', array('alt' => 'Add')),'javascript: void(0);',array('escape' => false,'onclick'=>'return check();','class'=>'delitems'));?>
 		</td>
@@ -11,7 +12,7 @@
 			echo $this->Html->link(
 			$this->Html->image('admin/add-item.png', array('alt' => 'Add')),
 			array('action'=>'add'),array('escape' => false));
-			 	 
+
 		?>
 		</td>
 	</tr>
@@ -28,4 +29,5 @@
       </tr>
   </tbody>
   <tr><td colspan=2>&nbsp;</td></tr>
-</table>	
+</table>
+<?php }?>

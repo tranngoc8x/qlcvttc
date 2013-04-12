@@ -7,7 +7,7 @@ class PositionsController extends AppController {
 	// 	parent::beforeFilter();
 	// }
 	function index() {
-		//$this->Position->recursive = 1;
+		 $this->Position->recursive = 2;
 		$this->set('pos', $this->paginate());
 		//debug($this->paginate());
 	}
@@ -23,10 +23,10 @@ class PositionsController extends AppController {
 
 	function add() {
 		$groups = $this->Position->Group->find('list');
-		$this->set(compact('groups'));	
+		$this->set(compact('groups'));
 		$data = array();
 		//debug($this->data['Position']['groups_id']);
-		if (!empty($this->data)) {		
+		if (!empty($this->data)) {
 			$this->Position->create();
 			if ($this->Position->save($this->data)) {
 				$this->Session->setFlash(__('Đã thêm chức vụ!', true));
@@ -35,7 +35,7 @@ class PositionsController extends AppController {
 			} else {
 				$this->Session->setFlash(__('Chưa thêm được. Hãy thử lại.', true));
 			}
-			
+
 			$arr = $this->data['Position']['groups_id'];
 			//debug($arr);
 			for($i=0;$i<count($arr);$i++){
@@ -52,14 +52,14 @@ class PositionsController extends AppController {
 	function edit($id = null) {
 		$this->loadModel('PositionsGroup');
 		$pos_group=$this->PositionsGroup->find('all',array('conditions'=>array('positions_id'=>$id)));
-		
+
 	    /*
 		$this->Group->unbindModel(
 			array('hasMany'=>array('User'),'hasAndBelongsToMany'=>array('Position'))
 		);*/
 		$this->loadModel('Group');
 		$groups = $this->Group->find('list');
-		$this->set(compact('groups','pos_group'));	
+		$this->set(compact('groups','pos_group'));
 		//debug($pos_group);
 		//debug($groups);
 		if (!$id && empty($this->data)) {
@@ -71,20 +71,20 @@ class PositionsController extends AppController {
 			$this->Position->id=$id;
 			if ($this->Position->save($this->data)) {
 				$this->Session->setFlash(__('Đã sửa!', true));
-				
+
 			} else {
 				$this->Session->setFlash(__('Chưa sửa được. Hãy thử lại.', true));
-			}			
-			
+			}
+
 			$ar = array();
 			if(!empty($pos_group)){
-				foreach($pos_group as $k) $ar[] = $k['PositionsGroup']['id']; 
-				
+				foreach($pos_group as $k) $ar[] = $k['PositionsGroup']['id'];
+
 				foreach($ar as $item){
 					  $this->PositionsGroup->delete($item);
 				 }
-			}				 	
-			$arr = $this->data['Position']['groups_id'];			
+			}
+			$arr = $this->data['Position']['groups_id'];
 			for($i=0;$i<count($arr);$i++){
 				$this->Position->PositionsGroup->create();
 				$data['PositionsGroup']['groups_id'] = $arr[$i];
@@ -101,7 +101,7 @@ class PositionsController extends AppController {
 			$this->data = $this->Position->read(null, $id);
 		}
 		//debug($this->data);
-		
+
 	}
 
 	function delete($id = null) {
@@ -116,7 +116,7 @@ class PositionsController extends AppController {
 		$this->Session->setFlash(__('Chưa xóa được', true));
 		$this->redirect(array('action' => 'index'));
 	}
-	
+
 	function mutildelete($str = null){
 
         if($str){

@@ -27,12 +27,12 @@ class TasksController extends AppController {
 		$this->render('/tasks/index');
 	}
 	function done() {
-		$this->_pref(); 
+		$this->_pref();
 		$this->Task->recursive = -1;
 		$this->Usertask->recursive = -1;
 		//$cond = array('Task.done'=>1,'Usertask.done'=>2,'or'=>array('Usertask.users_chuyen'=>$user['User']['id'],array('Task.status <>'=>1,'Task.users_id'=>$user['User']['id'])));
 		//$cond = array('Task.done'=>1,'or'=>array('Usertask.users_chuyen'=>$user['User']['id'],array('Usertask.done '=>2,'Usertask.users_id'=>$user['User']['id'])));
-		$cond = array('Task.done'=>1,'or'=>array('Usertask.users_id'=>$this->Auth->user('id'),'Usertask.users_chuyen'=>$user['User']['id']),'Usertask.done'=>2,'Usertask.status >'=>0);
+		$cond = array('Task.done'=>1,'or'=>array('Usertask.users_id'=>$this->Auth->user('id'),'Usertask.users_chuyen'=>$this->Auth->user('id')),'Usertask.done'=>2,'Usertask.status >'=>0);
 		$this->paginate = array('fields'=>array('Task.*,Usertask.done','Linhvuc.name'),'joins'=> array(array('table' => 'usertasks', 'alias' => 'Usertask',  'type' => 'Left', 'conditions' => array( 'Usertask.tasks_id = Task.id')),array('table' => 'linhvucs', 'alias' => 'Linhvuc',  'type' => 'Left', 'conditions' => array( 'Task.linhvucs_id = Linhvuc.id'))),'conditions'=>$cond,'group'=>array('Usertask.tasks_id'));
 		$this->set('tasks', $this->paginate());
 		$this->render('/tasks/index');
@@ -41,7 +41,7 @@ class TasksController extends AppController {
 		$this->_pref();
 		$this->Task->recursive = -1;
 		$this->Usertask->recursive = -1;
-		$cond = array('Task.done'=>2 ,'or'=>array('Usertask.users_chuyen'=>$this->Session->read('Auth.User.id'),'Usertask.users_id'=>$user['User']['id']));
+		$cond = array('Task.done'=>2 ,'or'=>array('Usertask.users_chuyen'=>$this->Auth->user('id'),'Usertask.users_id'=>$this->Auth->user('id')));
 		$this->paginate = array('fields'=>array('Task.*,Usertask.done','Linhvuc.name'),'joins'=> array(array('table' => 'usertasks', 'alias' => 'Usertask',  'type' => 'Left', 'conditions' => array( 'Usertask.tasks_id = Task.id')),array('table' => 'linhvucs', 'alias' => 'Linhvuc',  'type' => 'Left', 'conditions' => array( 'Task.linhvucs_id = Linhvuc.id'))),'conditions'=>$cond,'group'=>array('Task.id'));
 		$this->set('tasks', $this->paginate());
 		$this->render('/tasks/index');

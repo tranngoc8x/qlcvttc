@@ -8998,3 +8998,9 @@ Aco: Users in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php,
 " in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
 2013-04-10 10:31:07 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at F:\xampp\htdocs\QLCV_TTC\cake\libs\debugger.php:686) in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 742]
 2013-04-10 10:33:45 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1048: Column 'gioitinh' cannot be null</span> in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\datasources\dbo_source.php, line 684]
+2013-04-11 11:40:12 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: User::3
+Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-11 11:40:41 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: User::3
+Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
