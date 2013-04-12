@@ -34,7 +34,7 @@ class AclManagerComponent
 	    }
 	    else
 	    {
-	        $this->Session->setFlash(sprintf(__d('acl', 'the %s directory is not writable', true), dirname($this->controllers_hash_file)), 'flash_error', null, 'plugin_acl');
+	        $this->Session->setFlash(sprintf(__d('acl', 'Thư mục %s không có quyền ghi', true), dirname($this->controllers_hash_file)), 'flash_error', null, 'plugin_acl');
 	        return false;
 	    }
 	}
@@ -261,7 +261,7 @@ class AclManagerComponent
 			$root              = $aco->save();
 			$root['Aco']['id'] = $aco->id;
 			
-			$log[] = __d('acl', 'Created Aco node for controllers', true);
+			$log[] = __d('acl', 'Thêm chức năng vào bảng phân quyền', true);
 		}
 		else
 		{

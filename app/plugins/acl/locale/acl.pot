@@ -1,14 +1,14 @@
 # LANGUAGE translation of CakePHP Application
-# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Copyright 2013
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2011-07-13 14:27+0200\n"
+"Project-Id-Version: PROJECT CAKEPHP1.3\n"
+"POT-Creation-Date: 2013-03 14:27+0200\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"Language-Team: ENNLISH+VIETNAM \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,39 +20,39 @@ msgstr ""
 
 #: controllers/acos_controller.php:24
 msgid "The ACO table has been cleared"
-msgstr ""
+msgstr "Bảng phân quyền chức năng đã được xóa"
 
 #: controllers/acos_controller.php:28
 msgid "The ACO table could not be cleared"
-msgstr ""
+msgstr "Bảng phân quyền chức năng chưa được xóa"
 
 #: controllers/aros_controller.php:203
 msgid "The user role has been updated"
-msgstr ""
+msgstr "Quyền truy cập của phòng ban đã được cập nhật"
 
 #: controllers/aros_controller.php:207
 msgid "The user role could not be updated"
-msgstr ""
+msgstr "Quyền truy cập của phòng ban chưa được cập nhật"
 
 #: controllers/aros_controller.php:384;479
 msgid "The user '%s' does not exist in the ARO table"
-msgstr ""
+msgstr "Người dùng '%s' không tồn tại trong bảng phân quyền"
 
 #: controllers/aros_controller.php:457
 msgid "The permissions have been cleared"
-msgstr ""
+msgstr "Quyền truy cập đã được xóa"
 
 #: controllers/aros_controller.php:461
 msgid "The permissions could not be cleared"
-msgstr ""
+msgstr "Quyền truy cập chưa được xóa"
 
 #: controllers/aros_controller.php:485
 msgid "The specific permissions have been cleared"
-msgstr ""
+msgstr "Quyền truy cập của người dùng đã được xóa"
 
 #: controllers/aros_controller.php:489
 msgid "The specific permissions could not be cleared"
-msgstr ""
+msgstr "Quyền truy cập của người dùng chưa được xóa"
 
 #: controllers/aros_controller.php:508;530
 msgid "The role '%s' does not exist in the ARO table"
@@ -60,11 +60,11 @@ msgstr ""
 
 #: controllers/components/acl_manager.php:37
 msgid "the %s directory is not writable"
-msgstr ""
+msgstr "Thư mục %s không có quyền ghi"
 
 #: controllers/components/acl_manager.php:264
 msgid "Created Aco node for controllers"
-msgstr ""
+msgstr "Đã tạo quyền truy cập cho các chức năng"
 
 #: controllers/components/acl_manager.php:300
 msgid "Created Aco node for %s plugin"
@@ -100,15 +100,15 @@ msgstr ""
 
 #: views/acos/admin_acos_missing.ctp:8
 msgid "Some controllers have been modified, resulting in actions that are not referenced as ACO in the database."
-msgstr ""
+msgstr "Một vài chức năng đã được thêm mới,dẫn đến việc các chức năng này chưa được cập nhật vào bảng phân quyền "
 
 #: views/acos/admin_acos_missing.ctp:15
 msgid "You can update the ACOs by clicking on the following link"
-msgstr ""
+msgstr "Bạn có thể cập nhật các chức năng vào bảng phân quyền bằng cách bấm vào link sau"
 
 #: views/acos/admin_acos_missing.ctp:16
 msgid "Build missing ACOs"
-msgstr ""
+msgstr "Thêm chức năng vào bảng phân quyền"
 
 #: views/acos/admin_acos_missing.ctp:20
 msgid "Please be aware that this message will appear only once. But you can always rebuild the ACOs by going to the ACO tab."
@@ -116,60 +116,60 @@ msgstr ""
 
 #: views/acos/admin_build_acl.ctp:15
 msgid "The following actions ACOs have been created"
-msgstr ""
+msgstr "Các chức năng sau đã được thêm"
 
 #: views/acos/admin_build_acl.ctp:22
 msgid "There was no new actions ACOs to create"
-msgstr ""
+msgstr "Không có chức năng mới nào chưa được thêm"
 
 #: views/acos/admin_build_acl.ctp:29
 msgid "This page allows you to build missing actions ACOs if any."
-msgstr ""
+msgstr "Trang này cho phép bạn thêm các chức năng vào bảng phân quyền"
 
 #: views/acos/admin_build_acl.ctp:33
 msgid "Clicking the link will not destroy existing actions ACOs."
-msgstr ""
+msgstr "Bấm vào link này sẽ không làm mất các chức năng đã có trong bảng phân quyền"
 
 #: views/acos/admin_build_acl.ctp:37
 #: views/aros/admin_check.ctp:43
 msgid "Build"
-msgstr ""
+msgstr "Thêm mới"
 
 #: views/acos/admin_empty_acos.ctp:12
 msgid "This page allows you to clear all actions ACOs."
-msgstr ""
+msgstr "Trang này cho phép xóa tất cả các chức năng của website đã có trong bảng phân quyền"
 
 #: views/acos/admin_empty_acos.ctp:16
 msgid "Clicking the link will destroy all existing actions ACOs and associated permissions."
-msgstr ""
+msgstr "Bấm vào link này sẽ xóa tất cả các chức năng có trong website và quyền truy cập vào chức năng đó"
 
 #: views/acos/admin_empty_acos.ctp:20
 msgid "Clear ACOs"
-msgstr ""
+msgstr "Xóa"
 
 #: views/acos/admin_empty_acos.ctp:20
 msgid "Are you sure you want to destroy all existing ACOs ?"
-msgstr ""
+msgstr "Bạn có chắc muốn thực hiện chức năng này"
 
 #: views/aros/admin_ajax_role_permissions.ctp:17
 #: views/aros/admin_role_permissions.ctp:17
 msgid "Clear permissions table"
-msgstr ""
+msgstr "Xóa bảng phân quyền"
 
 #: views/aros/admin_ajax_role_permissions.ctp:17
 #: views/aros/admin_role_permissions.ctp:17
 msgid "Are you sure you want to delete all roles and users permissions ?"
-msgstr ""
+msgstr "Bạn có chắc muốn xóa tất cả phòng ban và người dùng ra khỏi bảng phân quyèn"
 
 #: views/aros/admin_ajax_role_permissions.ctp:29
 #: views/aros/admin_role_permissions.ctp:29
 msgid "grant access to <em>all actions</em>"
-msgstr ""
+msgstr "cấp quyền truy cập tới tất cả các chức năng"
 
 #: views/aros/admin_ajax_role_permissions.ctp:30
 #: views/aros/admin_role_permissions.ctp:30
 msgid "deny access to <em>all actions</em>"
-msgstr ""
+msgstr "Chặn quyền truy cập tới tất cả các chức năng"
 
 #: views/aros/admin_ajax_role_permissions.ctp:40
 #: views/aros/admin_role_permissions.ctp:40

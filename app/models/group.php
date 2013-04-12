@@ -29,9 +29,26 @@ class Group extends AppModel {
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
-		)
+		) 
 
 	);
+	var $hasAndBelongsToMany = array(
+			'Position' => array(
+				'className' => 'Position',
+				'joinTable' => 'positions_groups',
+				'foreignKey' => 'groups_id',
+				'associationForeignKey' => 'positions_id',
+				'unique' => true,
+				'conditions' => '',
+				'fields' => '',
+				'order' => '',
+				'limit' => '',
+				'offset' => '',
+				'finderQuery' => '',
+				'deleteQuery' => '',
+				'insertQuery' => ''
+			)
+		);
 	function parentNode() {
 	    return null;
 	}

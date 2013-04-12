@@ -14,7 +14,7 @@ class ArosController extends AclAppController
 	var $helpers    = array('Js' => array('Jquery'));
 	
 	var $paginate = array(
-        'limit' => 5,
+        'limit' => 50,
         //'order' => array('display_name' => 'asc')
 		);
 	

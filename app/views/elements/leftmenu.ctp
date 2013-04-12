@@ -25,46 +25,46 @@
 <div id="congviec">
  	<ul class="menu_left">
 		<li>
-			<?php echo $this->Html->link(__('Công việc cần xử lý', true), array('plugin'=>false,'controller'=>'tasks','action' => 'doing')); ?>
+			<?php echo $this->Html->link(__('Công việc cần xử lý', true), array('plugin'=>false,'admin'=>false,'controller'=>'tasks','action' => 'doing')); ?>
 		</li>
 		<li>
-		<?php echo $this->Html->link(__('Công việc đã chuyển', true), array('plugin'=>false,'controller'=>'tasks','action' => 'done')); ?>
+		<?php echo $this->Html->link(__('Công việc đã chuyển', true), array('plugin'=>false,'admin'=>false,'controller'=>'tasks','action' => 'done')); ?>
 		</li>
 		<li>
-		<?php echo $this->Html->link(__('Công việc bị trả lại', true), array('plugin'=>false,'controller'=>'tasks','action' => 'fail')); ?>
+		<?php echo $this->Html->link(__('Công việc bị trả lại', true), array('plugin'=>false,'admin'=>false,'controller'=>'tasks','action' => 'fail')); ?>
 		</li>
 
 		<li>
-		<?php echo $this->Html->link(__('Công việc đã hoàn thành', true), array('plugin'=>false,'controller'=>'tasks','action' => 'finish')); ?>
+		<?php echo $this->Html->link(__('Công việc đã hoàn thành', true), array('plugin'=>false,'admin'=>false,'admin'=>false,'controller'=>'tasks','action' => 'finish')); ?>
 		</li>
 		<li>
-		<?php echo $this->Html->link(__('Loại công việc', true), array('plugin'=>false,'controller'=>'types','action' => 'index')); ?>
+		<?php echo $this->Html->link(__('Loại công việc', true), array('plugin'=>false,'admin'=>false,'controller'=>'types','action' => 'index')); ?>
 		</li>
 		<li>
-		<?php echo $this->Html->link(__('Lĩnh vực', true), array('plugin'=>false,'controller'=>'linhvucs','action' => 'index')); ?>
+		<?php echo $this->Html->link(__('Lĩnh vực', true), array('plugin'=>false,'admin'=>false,'controller'=>'linhvucs','action' => 'index')); ?>
 		</li>
 	</ul>
 </div>
 <div id="nhansu">
 	<ul class="menu_left">
 		<li>
-			<?php echo $this->Html->link(__('Danh sách phòng ban', true), array('plugin'=>false,'controller'=>'groups','action' => 'index')); ?>
+			<?php echo $this->Html->link(__('Danh sách phòng ban', true), array('plugin'=>false,'admin'=>false,'controller'=>'groups','action' => 'index')); ?>
 		</li>
 		<li>
-			<?php echo $this->Html->link(__('Thêm mới phòng ban', true), array('plugin'=>false,'controller'=>'groups','action' => 'add')); ?>
+			<?php echo $this->Html->link(__('Thêm mới phòng ban', true), array('plugin'=>false,'admin'=>false,'controller'=>'groups','action' => 'add')); ?>
 		</li>
 
 		<li>
-		<?php echo $this->Html->link(__('Quản lý chức vụ', true), array('plugin'=>false,'controller'=>'positions','action' => 'index')); ?>
+		<?php echo $this->Html->link(__('Quản lý chức vụ', true), array('plugin'=>false,'admin'=>false,'controller'=>'positions','action' => 'index')); ?>
 		</li>
 		<li>
-		<?php echo $this->Html->link(__('Thêm mới chức vụ', true), array('plugin'=>false,'controller'=>'positions','action' => 'add')); ?>
+		<?php echo $this->Html->link(__('Thêm mới chức vụ', true), array('plugin'=>false,'admin'=>false,'controller'=>'positions','action' => 'add')); ?>
 		</li>
 		<li>
-			<?php echo $this->Html->link(__('Danh sách nhân sự', true), array('plugin'=>false,'controller'=>'users','action' => 'index')); ?>
+			<?php echo $this->Html->link(__('Danh sách nhân sự', true), array('plugin'=>false,'admin'=>false,'controller'=>'users','action' => 'index')); ?>
 		</li>
 		<li>
-			<?php echo $this->Html->link(__('Thêm mới nhân sự', true), array('plugin'=>false,'controller'=>'users','action' => 'add')); ?>
+			<?php echo $this->Html->link(__('Thêm mới nhân sự', true), array('plugin'=>false,'admin'=>false,'controller'=>'users','action' => 'add')); ?>
 		</li>
 		<li>
 			<?php echo $this->Html->link(__('Phân quyền người dùng', true), array('plugin'=>'acl','admin'=>true,'controller'=>'aros','action' => 'ajax_role_permissions')); ?>
@@ -74,19 +74,19 @@
 <div id="khach">
 	<ul class="menu_left">
 		<li>
-			<?php echo $this->Html->link(__('Danh sách khách hàng', true), array('plugin'=>false,'controller'=>'customers','action' => 'index')); ?>
+			<?php echo $this->Html->link(__('Danh sách khách hàng', true), array('plugin'=>false,'admin'=>false,'controller'=>'customers','action' => 'index')); ?>
 		</li>
 		<li>
-			<?php echo $this->Html->link(__('Thêm khách hàng', true), array('plugin'=>false,'controller'=>'customers','action' => 'add')); ?>
+			<?php echo $this->Html->link(__('Thêm khách hàng', true), array('plugin'=>false,'admin'=>false,'controller'=>'customers','action' => 'add')); ?>
 		</li>
 		<li>
-			<?php echo $this->Html->link(__('Danh sách các phòng', true), array('plugin'=>false,'controller'=>'rooms','action' => 'index')); ?>
+			<?php echo $this->Html->link(__('Danh sách các phòng', true), array('plugin'=>false,'admin'=>false,'controller'=>'rooms','action' => 'index')); ?>
 		</li>
 		<li>
-			<?php echo $this->Html->link(__('Nhập thông tin dùng điện', true), array('plugin'=>false,'controller'=>'elecs','action' => 'add')); ?>
+			<?php echo $this->Html->link(__('Nhập thông tin dùng điện', true), array('plugin'=>false,'admin'=>false,'controller'=>'elecs','action' => 'add')); ?>
 		</li>		
 		<li>
-			<?php echo $this->Html->link(__('Bảng thống kê dùng điện mỗi ngày', true), array('plugin'=>false,'controller'=>'elecs','action' => 'listview')); ?>
+			<?php echo $this->Html->link(__('Bảng thống kê dùng điện mỗi ngày', true), array('plugin'=>false,'admin'=>false,'controller'=>'elecs','action' => 'listview')); ?>
 		</li>
 				
 	</ul>

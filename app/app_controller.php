@@ -3,13 +3,14 @@ class AppController extends Controller {
 	var $helpers = array('Html', 'Form', 'Session','Javascript','Time','Link','Js','Ajax','Access');
 	var $components = array('Acl', 'Auth', 'Session','RequestHandler');
     function beforeFilter(){
-		//parent::beforeFilter();
+		parent::beforeFilter();
         $this->Auth->authorize = 'actions';
         $this->Auth->actionPath = 'controllers/';
-        $this->Auth->loginRedirect = array('admin'=>false,'controller' => 'pages', 'action' => 'display');
-      //  $this->Auth->logoutRedirect = array('admin'=>false,'controller' => 'users', 'action' => 'logout');
-       // $this->Auth->loginAction = array('admin'=>false,'controller' => 'users', 'action' => 'login');
-      // $this->Auth->deny('*');
+        //$this->Auth->autoRedirect = false;
+        $this->Auth->loginRedirect = array('admin'=>false,'controller' => 'tasks', 'action' => 'doing');
+        $this->Auth->logoutRedirect = array('admin'=>false,'controller' => 'users', 'action' => 'logout');
+        // $this->Auth->loginAction = array('admin'=>false,'controller' => 'users', 'action' => 'login');
+        // $this->Auth->deny('*');
         $this->Auth->allow('login','logout');
 		if($this->Auth->user())
         {
@@ -18,9 +19,11 @@ class AppController extends Controller {
             $los  = $this->User->query("SELECT * FROM logs where users_id = '{$idus}'");
             $ssid = $this->Auth->user();
         }
+        if(isset($this->params['requested'])) {
+            $this->Auth->allow($this->action);
+        }
 		$this->set(compact('los','ssid'));
 	}
-
 }
 function stt($id = null,$d=null){
     $stt = base64_decode($id);

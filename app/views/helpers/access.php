@@ -1,23 +1,40 @@
 <?php
-class AccessHelper extends AppHelper {
-    var $components = array('Acl', 'Auth');
+class AccessHelper extends Helper{
+    var $helpers = array("Session");
+    var $Access;
+    var $Auth;
     var $user;
-    function startup(){
-        $this->user = $this->Auth->user();
+
+    function beforeRender(){
+        App::import('Component', 'Access');
+        $this->Access = new AccessComponent();
+
+        App::import('Component', 'Auth');
+        $this->Auth = new AuthComponent();
+        $this->Auth->Session = $this->Session;
     }
+
     function check($aco, $action='*'){
-	    if(!empty($this->user) && $this->Acl->check('User::'.$this->user['User']['id'], $aco, $action)){
-	        return true;
-	    } else {
-	        return false;
-	    }
-	}
-	function group($aco, $action='*'){
-	    if(!empty($this->user) && $this->Acl->check('Group::'.$this->user['User']['groups_id'], $aco)){
-	        return true;
-	    } else {
-	        return false;
-	    }
-	}
+        if(empty($this->user)) return false;
+        return $this->Access->check('User::'.$this->Auth->user("id"), $aco, $action);
+    }
 }
 ?>
+<?php
+// class AccessHelper extends AppHelper {
+
+//     var $helpers = array('Session');
+
+//     function check($path){
+//         // assuming that allow('controllers') grands access to all actions
+//         if($this->Session->check('Permissions.controllers')
+//         && $this->Session->read('Permissions.controllers') === true){
+//             return true;
+//         }
+//         if($this->Session->check('Permissions'.$path)
+//         && $this->Session->read('Permissions'.$path) === true){
+//             return true;
+//         }
+//         return false;
+//     }
+// }

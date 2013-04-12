@@ -152,6 +152,7 @@
 	</div>
 	<div id="center" class="x-hide-display">
 			<?php echo $this->Session->flash();?>
+			<?php echo $this->Session->flash('auth');?>
 			<?php echo $content_for_layout;?>
 	</div>
 	<div id="west" class="x-hide-display">

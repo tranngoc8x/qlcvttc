@@ -4,8 +4,11 @@ class UsersController extends AppController {
 	var $name = 'Users';
 	//var $components = array('Auth', 'Acl');
 	 function beforeFilter(){
-	   	parent::beforeFilter();
-	   	$this->Auth->allow('login','logout');
+	   //	parent::beforeFilter();
+	   	$this->Auth->allow('login','logout','children');
+	   	if(isset($this->params['requested'])) {
+			$this->Auth->allow($this->action);
+		}
 	  }
 	function index() {
 		$this->User->recursive = 0;
@@ -66,14 +69,57 @@ class UsersController extends AppController {
 		if($this->Auth->user()){
 			$this->redirect(array('controller' => 'tasks', 'action' => 'index' ));
 		}
+
 		Configure::write('debug',0);
 		$this->layout = 'login';
+		// /$this->Auth->allow("*");
 		if($this->data){
             $this->autoRender = false;
             if($this->Auth->login($this->Auth->user())){
                 if($this->Auth->user()){
                     $this->User->query("Update logs set ipadr='".$_SERVER['REMOTE_ADDR']."',time='".date('Y-m-d h:i:s')."' where id='".$this->Auth->user('id')."'");
                 }
+			    // $aro = $this->Acl->Aro->find('first', array(
+			    //     'conditions' => array(
+			    //         'Aro.model' => 'Group',
+			    //         'Aro.foreign_key' =>$this->Auth->user('groups_id'),
+			    //     ),
+			    // ));
+			    // $acos = $this->Acl->Aco->children();
+			    // foreach($acos as $aco){
+			    // $permission = $this->Acl->Aro->Permission->find('first', array(
+			    //     'conditions' => array(
+			    //         'Permission.aro_id' => $aro['Aro']['id'],
+			    //         'Permission.aco_id' => $aco['Aco']['id'],
+			    //     ),
+			    // ));
+
+			    // if(isset($permission['Permission']['id'])){
+			    //     if ($permission['Permission']['_create'] == 1 ||
+			    //         $permission['Permission']['_read'] == 1 ||
+			    //         $permission['Permission']['_update'] == 1 ||
+			    //         $permission['Permission']['_delete'] == 1) {
+			    //         	$this->Session->write(
+			    //                 'Permissions.'.$permission['Aco']['alias'],
+			    //                  true
+			    //             );
+
+			    //         	if(!empty($permission['Aco']['parent_id'])){
+			    //         		$parentAco = $this->Acl->Aco->find('first', array(
+			    //                     'conditions' => array(
+			    //                         'id' => $permission['Aco']['parent_id']
+			    //                     )
+			    //                 ));
+			    //         		$this->Session->write(
+			    //                     'Permissions.'.$permission['Aco']['alias']
+			    //                     .'.'.$parentAco['Aco']['alias'],
+			    //                     true
+			    //                 );
+			    //             }
+			    //         }
+			    //     }
+			    // }
+
                 echo  "{success: true}";
             }else{
                 echo "{ success: false, errors: { reason: 'Đăng nhập không thành công. Xin vui lòng thử lại.' }}";
@@ -81,6 +127,6 @@ class UsersController extends AppController {
         }
 	}
 
-	function logout(){$this->redirect($this->Auth->logout());}
+	function logout(){$this->Session->delete('Auth.Permissions');$this->redirect($this->Auth->logout());}
 
 }
