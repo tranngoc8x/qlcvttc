@@ -7,6 +7,7 @@
 	echo $this->Form->end(__('Xem', true));
 ?>	
 <?php 
+echo $this->Html->link("xuất ra file excel", array('controller'=>'elecs','action'=>'file_export'));
 $mom = nhuan($y);?>
 <table class="sort-table" cellspacing="0" > 
 		<thead> 
@@ -42,19 +43,9 @@ $mom = nhuan($y);?>
 				
 				</div>
 			</td>
-			<td align=center style="color:red;">	
-				<?php 
-				/*
-				    $a = $this->requestAction('/elecs/getElec/'.date($y."-".$m."-".$d).'/'.$i["id"]);
-				 	$b = $this->requestAction('/elecs/getElec/'.date($y."-".$m."-".($d+1)).'/'.$i["id"]);
-					if ($b!=""&& $a!="")echo $b-$a; else echo '-';
-				*/
-				?>
-				 <?php //echo $this->requestAction('/elecs/getElec/'.date($y."-".$m."-".$d).'/'.$i["id"]);?>
+			<td align=center style="color:red;">					
 				 <!--  số tiêu thụ -->
-				<div id="cso_<?php echo $d;?>_<?php echo $i["id"];?>">
-				
-				 
+				<div id="cso_<?php echo $d;?>_<?php echo $i["id"];?>"> 
 				 
 				</div>
 				 
@@ -66,5 +57,9 @@ $mom = nhuan($y);?>
 		<?php }?>
 		
 </table>
+<? 
+
+//echo pack("ssssss", 0x809, 0x8, 0x0, 0x10, 0x0, 0x0); 
+?>
 
 <script>var title = 'Bảng thống kê số điện hàng tháng';</script>

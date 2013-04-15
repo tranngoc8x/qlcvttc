@@ -1,19 +1,12 @@
-<?php echo $this->element('chucnang');?>
-
-<?php
-	echo $this->Form->create('Elec',array('action'=>'listview2'));
-	echo $this->Form->input('YM',array('label'=>'Chọn tháng- năm','type'=>'date','dateFormat'=>'YM',
-												'minYear' => date('Y') - 15, 'maxYear' => date('Y') + 5));
-	echo $this->Form->end(__('Xem', true));
-?>	
 <?php 
+$this->layout = false;
 $mom = nhuan($y);?>
 <table class="sort-table" cellspacing="0" > 
 		<thead> 
 		<tr>			
-			<th rowspan="3" style="width:70px;">Tên khách hàng</th>			
-			<th rowspan="3">Phòng</th>
-			<th colspan="<?php echo $mom[(int)$m]*2;?>">Tháng <?php echo $m;?></th>
+			<th rowspan="3" style="width:70px;">T�n kh�ch h�ng</th>			
+			<th rowspan="3">Ph�ng</th>
+			<th colspan="<?php echo $mom[(int)$m]*2;?>">Th�ng <?php echo $m;?></th>
 		</tr>				
 		<tr>
 			<?php for($i=1;$i<=$mom[(int)$m];$i++){?>
@@ -37,15 +30,26 @@ $mom = nhuan($y);?>
 			for($d=1;$d<=$mom[$dom];$d++){			
 			?>
 			<td align=center>
-				<?php echo $this->requestAction('/elecs/getElec/'.date($y."-".$m."-".$d).'/'.$i["id"]);?>
+				<script>$(document).ready(function(){getElecs("<?php echo $y."-".$m."-".$d;?>","<?php echo $i["id"]?>");});</script>
+				<div id="item_<?php echo $d;?>_<?php echo $i["id"];?>">
+				
+				</div>
 			</td>
 			<td align=center style="color:red;">	
 				<?php 
-				
+				/*
 				    $a = $this->requestAction('/elecs/getElec/'.date($y."-".$m."-".$d).'/'.$i["id"]);
 				 	$b = $this->requestAction('/elecs/getElec/'.date($y."-".$m."-".($d+1)).'/'.$i["id"]);
 					if ($b!=""&& $a!="")echo $b-$a; else echo '-';
+				*/
 				?>
+				 <?php //echo $this->requestAction('/elecs/getElec/'.date($y."-".$m."-".$d).'/'.$i["id"]);?>
+				 <!--  s? ti�u th? -->
+				<div id="cso_<?php echo $d;?>_<?php echo $i["id"];?>">
+				
+				 
+				 
+				</div>
 				 
 			</td>
 			<?php }?>
@@ -55,5 +59,3 @@ $mom = nhuan($y);?>
 		<?php }?>
 		
 </table>
-
-<script>var title = 'Bảng thống kê số điện hàng tháng';</script>
