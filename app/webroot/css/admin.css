@@ -398,9 +398,18 @@ fieldset{border:0;}
 	height: 100%;
 	top: 0;
 	left: 0;
-	background: #ace;
+	background: #fff;
 	display: none;
+	text-align: center;
+	line-height: 50%;
 	opacity: .9;
+}
+
+#onloadding img{
+	position: fixed;
+	top: 49%;
+	left: 49%;
+	opacity: 1;
 }
 
 .cake-sql-log *{

@@ -141,7 +141,10 @@
 
 </script>
 <body>
-	<div id="onloadding">Đang tiến hành upload file</div>
+	<div id="onloadding"><?php
+	echo $this->Html->image('ajax-loader.gif',array('alt'=>'Đang xử lý','title'=>'Đang xử lý'));
+?>
+	</div>
 		<div id="north" class="x-hide-display">
 				<div id="userinfor">
 						&nbsp;Xin chào , <?php echo $this->Html->link($ssid['User']['name'],array('plugin'=>false,'controller'=>'users','action'=>'edit'),array('class'=>'link_title','escape'=>FALSE,'title'=>"Thông tin tài khoản"));?>
