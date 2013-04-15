@@ -9004,3 +9004,105 @@ Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php,
 2013-04-11 11:40:41 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
 Aro: User::3
 Aco: Tasks in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-15 08:47:05 Warning: Warning (2): filesize() [<a href='http://php.net/function.filesize'>function.filesize</a>]: stat failed for files/documents/04-2013/150413084454_ in [F:\xampp\htdocs\QLCV_TTC\app\controllers\tasks_controller.php, line 414]
+2013-04-15 08:47:05 Warning: Warning (2): readfile(files/documents/04-2013/150413084454_) [<a href='http://php.net/function.readfile'>function.readfile</a>]: failed to open stream: No such file or directory in [F:\xampp\htdocs\QLCV_TTC\app\controllers\tasks_controller.php, line 417]
+2013-04-15 08:56:04 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => User
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-15 08:56:04 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 5
+            [name] => nsu1
+            [username] => nsu1
+            [positions_id] => 5
+            [groups_id] => 4
+            [gioitinh] => 0
+            [datestart] => 2013-04-10
+            [dateend] => 0000-00-00
+            [birth] => 1998-04-10
+            [address] => 
+            [email] => nsu1@mail.com
+            [nghiviec] => 0
+        )
+
+)
+
+Aco: controllers/Tasks/doing in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-15 08:56:04 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at F:\xampp\htdocs\QLCV_TTC\cake\libs\debugger.php:686) in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 742]
+2013-04-15 08:56:21 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => User
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-15 08:56:21 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 5
+            [name] => nsu1
+            [username] => nsu1
+            [positions_id] => 5
+            [groups_id] => 4
+            [gioitinh] => 0
+            [datestart] => 2013-04-10
+            [dateend] => 0000-00-00
+            [birth] => 1998-04-10
+            [address] => 
+            [email] => nsu1@mail.com
+            [nghiviec] => 0
+        )
+
+)
+
+Aco: controllers/Tasks/index in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-15 08:56:21 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at F:\xampp\htdocs\QLCV_TTC\cake\libs\debugger.php:686) in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 742]
+2013-04-15 08:56:38 Warning: Warning (512): AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => User
+    [Aro0.foreign_key] => 5
+)
+" in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\db_acl.php, line 191]
+2013-04-15 08:56:39 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 5
+            [name] => nsu1
+            [username] => nsu1
+            [positions_id] => 5
+            [groups_id] => 4
+            [gioitinh] => 0
+            [datestart] => 2013-04-10
+            [dateend] => 0000-00-00
+            [birth] => 1998-04-10
+            [address] => 
+            [email] => nsu1@mail.com
+            [nghiviec] => 0
+        )
+
+)
+
+Aco: controllers/Tasks/index in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-15 08:56:39 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at F:\xampp\htdocs\QLCV_TTC\cake\libs\debugger.php:686) in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\controller.php, line 742]
+2013-04-15 10:11:45 Warning: Warning (2): Missing argument 2 for TasksController::fntask() in [F:\xampp\htdocs\QLCV_TTC\app\controllers\tasks_controller.php, line 264]
+2013-04-15 10:11:56 Warning: Warning (2): Missing argument 2 for TasksController::fntask() in [F:\xampp\htdocs\QLCV_TTC\app\controllers\tasks_controller.php, line 264]
+2013-04-15 10:13:21 Warning: Warning (2): Missing argument 2 for TasksController::fntask() in [F:\xampp\htdocs\QLCV_TTC\app\controllers\tasks_controller.php, line 264]
+2013-04-15 10:23:05 Warning: Warning (2): Missing argument 2 for TasksController::fntask() in [F:\xampp\htdocs\QLCV_TTC\app\controllers\tasks_controller.php, line 264]
+2013-04-15 10:23:38 Warning: Warning (2): Missing argument 2 for TasksController::fntask() in [F:\xampp\htdocs\QLCV_TTC\app\controllers\tasks_controller.php, line 264]
+2013-04-15 10:23:44 Warning: Warning (2): Missing argument 2 for TasksController::fntask() in [F:\xampp\htdocs\QLCV_TTC\app\controllers\tasks_controller.php, line 264]
+2013-04-15 11:13:59 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order = ('Task.id DESC')  GROUP BY `Usertask`.`tasks_id`' at line 1</span> in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\datasources\dbo_source.php, line 684]
+2013-04-15 11:13:59 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order = ('Task.id DESC')  GROUP BY `Usertask`.`tasks_id`   LIMIT 20' at line 1</span> in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\datasources\dbo_source.php, line 684]
+2013-04-15 11:13:59 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\tasks\index.ctp, line 16]
+2013-04-15 11:15:18 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order = ('Task.id DESC')' at line 1</span> in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\datasources\dbo_source.php, line 684]
+2013-04-15 11:15:18 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order = ('Task.id DESC')    LIMIT 20' at line 1</span> in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\datasources\dbo_source.php, line 684]
+2013-04-15 11:15:18 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\tasks\index.ctp, line 16]
+2013-04-15 11:19:17 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Tfile.taskid' in 'field list'</span> in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\datasources\dbo_source.php, line 684]
