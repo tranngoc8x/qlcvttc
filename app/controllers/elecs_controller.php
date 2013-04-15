@@ -2,22 +2,14 @@
 class ElecsController extends AppController {
 
 	var $name = 'Elecs';
-
+	
 	function index() {
 		//debug($this->data);
-		$this->Elec->recursive = -1;
-		//$d = date('Y-m');	
-		//$s = $this->Elec->query("SELECT * FROM elecs WHERE date LIKE '%$d%' ");
-		//echo "SELECT * FROM elecs WHERE date LIKE '%$d%' ";
+		$this->Elec->recursive = -1;		
 		$this->loadModel('Customer');
-		$cus = $this->Customer->find('all');
-		//$s=$this->Elec->find("all",array('conditions'=>array('date LIKE'=>'%'.$d.'%')));
+		$cus = $this->Customer->find('all');		
 		$this->set(compact('cus'));
-		//debug($s);
 		}
-		
-	
-	
 
 	function listview() {
 		$this->Elec->recursive = -1;
@@ -31,6 +23,7 @@ class ElecsController extends AppController {
 		$this->loadModel('Customer');
 		$cus = $this->Customer->find('all');		
 		$this->set(compact('y','cus','m'));
+		//debug($cus);
 	}	
 
 	function add() {		
@@ -39,9 +32,7 @@ class ElecsController extends AppController {
 		$this->set(compact('customers'));
 		$this->loadModel("Room");
 		$room = $this->Room->find('count');
-		//debug($room);
-		//debug($this->data);
-		
+			
 		if (!empty($this->data)) {
 		//debug($this->data['Elec']['date']);
 			if(!empty($this->data['Elec']['date'])){
@@ -114,5 +105,65 @@ class ElecsController extends AppController {
 			echo "-";
 		}
 	}
+	
+	
+	function xuatra(){
+		$this->Elec->recursive = -1;
+		if(isset($this->data['Elec']['YM'])){
+			$y = $this->data['Elec']['YM']['year'];
+			$m = $this->data['Elec']['YM']['month'];
+		}else {
+			$y = date('Y');
+			$m = date('m');
+		}		
+		$this->loadModel('Customer');
+		$cus = $this->Customer->find('all');		
+		$this->set(compact('y','cus','m'));
+		
+		header("Pragma: public");
+		header("Expires: 0");
+		header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
+		header("Content-Type: application/force-download");
+		header("Content-Type: application/octet-stream");
+		header("Content-Type: application/download");;
+		header("Content-Disposition: attachment;filename=php2xls.xls "); // à¹à¸¥à¹‰à¸§à¸™à¸µà¹ˆà¸à¹‡à¸Šà¸·à¹ˆà¸­à¹„à¸Ÿà¸¥à¹Œ
+		header("Content-Transfer-Encoding: binary ");	
+	}
+	function getElec($d,$r){
+		$dz = date("Y-m-d",strtotime($d));
+		$enumbers = $this->Elec->find("first",array('fields'=>array('elec'),'conditions'=>array('rooms_id'=>$r,'date'=>$dz)));
+		$enumber = $enumbers['Elec']['elec'];
+		if (!empty($this->params['requested'])) {
+		      return $enumber;
+		}else {
+		  $this->set(compact('enumber'));
+		}
+		 
+	}
+	
+	function file_export()
+		 {
+		 $this->layout = false;
+	
+		 // $this->autoRender=false;
+		  ini_set('max_execution_time', 1600); //increase max_execution_time to 10 min if data set is very large
+		  //$results = $this->Customer->find('all', array());// set the query function
+		  $this->Elec->recursive = -1;
+			if(isset($this->data['Elec']['YM'])){
+				$y = $this->data['Elec']['YM']['year'];
+				$m = $this->data['Elec']['YM']['month'];
+			}else {
+				$y = date('Y');
+				$m = date('m');
+			}		
+			$this->loadModel('Customer');
+			$cus = $this->Customer->find('all');		
+			$this->set(compact('y','cus','m'));
+			header('Content-type: application/ms-excel;charset=utf-8');
+			$filename = "export_".$m."_".$y.".xls";
+			header('Content-Disposition: attachment; filename="'.$filename.'"');
+		 }
+
+	
 	
 }
