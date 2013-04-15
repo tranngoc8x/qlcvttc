@@ -82,26 +82,9 @@ class TasksController extends AppController {
 		$this->Task->unBindModel(array('hasMany' => array('Usertask')));
 		$idcv = $this->data['Task']['idcv'];
 		if(!empty($idcv) && is_numeric($idcv)){$ido = $idcv;}
-		$oldt = $this->Task->Tfile->find('all',array('fields'=>array('name','taskid'),'conditions'=>array('Tfile.tasks_id'=>$ido)));
-		debug($oldt);
+		$oldt = $this->Task->find('first',array('fields'=>array('name','taskid'),'conditions'=>array('Task.id'=>$ido)));
+		//debug($oldt);
 		if (!empty($this->data)) {
-			if(!empty($idcv) && !empty($oldt)){
-				$this->data['Task']['parent'] = $oldt['Task']['id'];
-				$arrx = array();
-				$arrk = array();
-				foreach ($oldt['Tfile'] as $k =>$val) {
-					 array_push($arrx,$val['name']);
-				}
-				foreach ($this->data['fold'] as $val1) {
-						//echo array_search($val1, $arrx);// index của mảng Tfile
-						$data['Tfile']['name'] = $val1;
-				 	 	$data['Tfile']['type'] = 1;
-						$data['Tfile']['tasks_id'] = $idcv;
-						$data['Tfile']['folder'] = date('m-Y');
-						$this->Task->Tfile->create();
-				 	 	$this->Task->Tfile->save($data);
-				}
-			}
 			$this->Task->create();
 			if(!empty($this->data['Task']['start'])){
 				$dstart = explode('/',$this->data['Task']['start']);
@@ -112,6 +95,9 @@ class TasksController extends AppController {
 				$dend = explode('/',$this->data['Task']['end']);
 				$de = $dend[1].'/'.$dend[0].'/'.$dend[2];
 				$this->data['Task']['end'] = date('Y-m-d h:i:s',strtotime($de));
+			}
+			if(!empty($idcv) && !empty($oldt)){
+				$this->data['Task']['parent'] = $oldt['Task']['id'];
 			}
 			$this->data['Task']['status']  = 1;
 			$uid = $this->Auth->user('id');
@@ -144,18 +130,26 @@ class TasksController extends AppController {
 				$usertasks['Usertask']['tasks_id'] = $lastid;
 				$usertasks['Usertask']['status'] = 1;
 				$usertasks['Usertask']['done'] = 1;
-				//$usertasks['Usertask']['datexem'] = date('Y-m-d H:i:s');
 				$usertasks['Usertask']['noidung'] = "Khởi tạo công việc";
-
 				$this->Task->Usertask->create();
 				$this->Task->Usertask->save($usertasks);
-			 	$this->redirect(array('action' => 'index'));
-				$this->Session->setFlash(__('The task has been saved', true),'default',array('class'=>'success'));
-				if(!empty($idcv) && is_numeric($idcv)){
-
+				if(!empty($idcv) && !empty($oldt)){
+					$idparent = $this->Task->getLastInsertId();
+					foreach ($this->data['fold'] as $val1) {
+						$data = array();
+						$data['Tfile']['name'] = $val1;
+				 	 	$data['Tfile']['type'] = 1;
+						$data['Tfile']['tasks_id'] = $idparent;
+						$data['Tfile']['folder'] = date('m-Y');
+						$this->Task->Tfile->create();
+				 	 	$this->Task->Tfile->save($data);
+				 	 	$data = array();
+					}
 				}
+				$this->redirect(array('action' => 'index'));
+				$this->Session->setFlash(__('Khởi tạo công việc thành công.', true),'default',array('class'=>'success'));
 			} else {
-				$this->Session->setFlash(__('The task could not be saved. Please, try again.', true),'default',array('class'=>'error'));
+				$this->Session->setFlash(__('Có lỗi xảy ra. hãy thử lại !.', true),'default',array('class'=>'error'));
 			}
 		}
 		$types = $this->Task->Type->find('list');
@@ -185,10 +179,10 @@ class TasksController extends AppController {
 			//$uid = $this->Auth->user();
 			//$this->data['Task']['users_id'] = $uid['User']['id'];
 			 if ($this->Task->save($this->data)) {
-			 	$this->Session->setFlash(__('The task has been saved', true),'default',array('class'=>'success'));
+			 	$this->Session->setFlash(__('Đã cập nhật', true),'default',array('class'=>'success'));
 			 	$this->redirect(array('action' => 'index'));
 			 } else {
-			 	$this->Session->setFlash(__('The task could not be saved. Please, try again.', true),'default',array('class'=>'error'));
+			 	$this->Session->setFlash(__('Không lưu được. Hãy thử lại .', true),'default',array('class'=>'error'));
 			 }
 		}
 		if (empty($this->data)) {
@@ -200,15 +194,34 @@ class TasksController extends AppController {
 	}
 
 	function delete($id = null) {
+		$this->autoRender = false;
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid id for task', true));
+			$this->Session->setFlash(__('Không tồn tại công việc này.', true),'default',array('class'=>'error'));
 			$this->redirect(array('action'=>'index'));
+		}
+		$task = $this->Task->find('first',array('conditions'=>array('Task.id'=>$id),'recursive'=>1));
+		if($task['Task']['status'] != 1){
+			$this->Session->setFlash(__('Công việc này không thể xóa do đã được chuyển giao tới các nhân sự', true));
+			$this->redirect(array('action' => 'index'));
+		}
+		foreach ($task['Usertask'] as $key => $value) {
+			$this->Task->Usertask->delete($value['id']);
+		}
+		foreach ($task['Tfile'] as $key => $value) {
+			$count = $this->Task->Tfile->find('count',array('conditions'=>array('Tfile.name'=>$value['name'])));
+			if($count > 1){
+				$filename = 'files/documents/'.$value['folder'].'/'.$value['name'];
+				if(is_file($filename)){
+					unlink($filename);
+				}
+			}
+			$this->Task->Tfile->delete($value['id']);
 		}
 		if ($this->Task->delete($id)) {
-			$this->Session->setFlash(__('Task deleted', true));
-			$this->redirect(array('action'=>'index'));
+		 	$this->Session->setFlash(__('Công việc đã được xóa', true),'default',array('class'=>'success'));
+		 	$this->redirect(array('action'=>'index'));
 		}
-		$this->Session->setFlash(__('Task was not deleted', true));
+		$this->Session->setFlash(__('Có lỗi xảy ra, không thể xóa công việc này được.', true),'default',array('class'=>'error'));
 		$this->redirect(array('action' => 'index'));
 	}
 
@@ -269,7 +282,7 @@ class TasksController extends AppController {
 			$this->Task->id = $id;
 			$this->Task->saveField('done',2);
 			$this->Task->saveField('status',11);
-			$ids = $this->Task->Usertask->find('first',array('conditions'=>array('Usertask.users_id'=>$u,'Usertask.tasks_id'=>$id,'Usertask.status '=>array(3,11)),'order'=>'Usertask.id DESC'));
+			$ids = $this->Task->Usertask->find('first',array('conditions'=>array('Usertask.users_id'=>$u,'Usertask.tasks_id'=>$id),'order'=>'Usertask.id DESC'));
 			$this->Task->Usertask->id = $ids['Usertask']['id'];
 			$this->Task->Usertask->saveField('done',2);
 			$this->Task->Usertask->create();

@@ -10,17 +10,22 @@
 	<tr class=''>
 		<td colspan=4>
 			<?php  $ws = $task['Task']['status'];?>
+
+
 			<?php if($task['Task']['done'] !=2){?>
-				<?=$this->Form->button("Chuyển việc",array('class'=>'btnlink','id'=>'dialog-link'));?>
-				<?php if($ws!=1 && $task['Task']['done']==1 && $gr != "NS"){?>
-					<?=$this->Form->button("Không duyệt",array('class'=>'btnlink','id'=>'khongduyet'));?>
-					<?=$this->Form->button("Hoàn thành",array('class'=>'btnlink','id'=>'dialog-fn'));?>
+				<?php if($idlastu['Usertask']['users_id'] == $ssid['User']['id']){?>
+					<?=$this->Form->button("Chuyển việc",array('class'=>'btnlink','id'=>'dialog-link'));?>
+					<?php if($ws!=1 && $task['Task']['done']==1 && $gr != "NS"){?>
+						<?=$this->Form->button("Không duyệt",array('class'=>'btnlink','id'=>'khongduyet'));?>
+						<?=$this->Form->button("Hoàn thành",array('class'=>'btnlink','id'=>'dialog-fn'));?>
+					<?php }?>
 				<?php }?>
 			<?php }?>
-			<?php if($task['Task']['done'] == 2){?>
-				<p><?=$this->Html->link("Khởi tạo công việc mới",array('action'=>'add',$task['Task']['id']),array('class'=>'btnlink','id'=>'dialog'));?>
-				</p>
-			<?php }?>
+				<?php if($task['Task']['done'] == 2){?>
+					<p><?=$this->Html->link("Khởi tạo công việc mới",array('action'=>'add',$task['Task']['id']),array('class'=>'btnlink','id'=>'dialog'));?>
+					</p>
+				<?php }?>
+
 		</td>
 	</tr>
 	<tr class='tbody'>
@@ -213,6 +218,7 @@
 <div id='response1' style='font-size: 12px;'></div>
 </div>
 <?php }?>
+<?php if($idlastu['Usertask']['users_id'] == $ssid['User']['id']){?>
 <div id="dialog-fail" title="Yêu cầu làm lại công việc">
 	<?php $nsfail = $this->requestAction('tasks/getNVFail/'.$task['Task']['id'].'/'.$ws);?>
 	<form method='post' name='ffail'>
@@ -221,6 +227,7 @@
 	</form>
 
 </div>
+<?php  }?>
 <script type="text/javascript">
 	var title = "Quản lý công việc";
 	<?php if($task['Task']['done'] !=2){?>
