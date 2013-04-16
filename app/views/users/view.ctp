@@ -31,6 +31,9 @@
     <tr class='tbody'>
         <td><b>Chức vụ</b></td>
         <td> <?php echo $user[ 'Position'][ 'name']; ?></td>
+    </tr><tr class='tbody'>
+        <td><b>Mô tả công việc</b></td>
+        <td> <?php echo $user[ 'User'][ 'desc']; ?></td>
     </tr>
 </table>
 <script>
