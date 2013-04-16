@@ -130,7 +130,7 @@ class TasksController extends AppController {
 				$usertasks['Usertask']['tasks_id'] = $lastid;
 				$usertasks['Usertask']['status'] = 1;
 				$usertasks['Usertask']['done'] = 1;
-				$usertasks['Usertask']['noidung'] = "Khởi tạo công việc";
+				$usertasks['Usertask']['noidung'] =$this->data['Task']['desc'];
 				$this->Task->Usertask->create();
 				$this->Task->Usertask->save($usertasks);
 				if(!empty($idcv) && !empty($oldt)){
@@ -297,7 +297,7 @@ class TasksController extends AppController {
 		}
 	}
 	function getfnNV($id){
-		$ids = $this->Task->Usertask->find('first',array('conditions'=>array('Usertask.tasks_id'=>$id),"LIMIT"=>1,'order' => array('Usertask.id DESC')));
+		$ids = $this->Task->Usertask->find('first',array('conditions'=>array('Usertask.tasks_id'=>$id),'order' => array('Usertask.id DESC')));
 		if (!empty($this->params['requested'])) {
 		      return $ids;
 		}else {
@@ -318,6 +318,7 @@ class TasksController extends AppController {
 			$this->Task->saveField('status',$s);
 			foreach($ar as $r):
 				if(!is_numeric($r)) return 1;
+				$this->_sendmail($r);
 				$this->Usertask->create();
 				$data['Usertask']['users_id'] = $r;
 				$data['Usertask']['tasks_id'] = $cv;
@@ -340,6 +341,22 @@ class TasksController extends AppController {
 			return 2;
 		}
 	}
+	function _sendmail($id) {
+		$this->loadModel("User");
+	    $User = $this->User->read(null,$id);
+	    $this->Email->to = $User['User']['email'];
+	    $this->Email->bcc = $this->Auth->user('email');
+	    $this->Email->subject = '[TTC] Công việc mới';
+	    $this->Email->replyTo = $this->Auth->user('email');
+	    $this->Email->from = 'QLCV TTCTOWER';
+	    $this->Email->template = 'email'; // note no '.ctp'
+	    //Send as 'html', 'text' or 'both' (default is 'text')
+	    $this->Email->sendAs = 'both'; // because we like to send pretty mail
+	    //Set view variables as normal
+	    $this->set('User', $User);
+	    //Do not pass any args to send()
+	    $this->Email->send("Bạn có công việc cần xem");
+	 }
 	function failtask($idu,$cvs,$stt,$str){
 		$this->autoRender = false;
 		if(empty($cvs) or empty($stt) or empty($idu)) return 1;
@@ -382,8 +399,8 @@ class TasksController extends AppController {
 	}
 	function getNV($id){
 		$this->autoRender = false;
-		if($id == -1) return "Start";
-		if($id == -2) return "Finish";
+		if($id == -1) return "Khởi tạo";
+		if($id == -2) return "Hoàn thành";
 		if(empty($id) || $id== null) return "Không rõ";
 		else{
 			$this->loadModel("User");

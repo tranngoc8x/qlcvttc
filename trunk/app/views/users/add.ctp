@@ -11,6 +11,7 @@
 		echo $this->Form->input('datestart',array('label'=>'Ngày vào làm','separator'=>'','dateFormat'=>'DMY','minYear'=>1970,'maxYear'=>date('Y')));
 		echo $this->Form->input('groups_id',array('label'=>'Phòng ban'));
 		echo $this->Form->input('positions_id',array('label'=>'Chức vụ'));
+		echo $this->Form->input('desc',array('label'=>'Mô tả công việc'));
 		echo $this->Form->end('Lưu lại');
 	?>
 	<script type="text/javascript">var title = "Thêm mới nhân sự";</script>

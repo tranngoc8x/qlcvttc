@@ -24,6 +24,9 @@
 
 <div id="congviec">
  	<ul class="menu_left">
+ 		<li>
+			<?php echo $this->Html->link(__('Thêm mới công việc', true), array('plugin'=>false,'admin'=>false,'controller'=>'tasks','action' => 'add')); ?>
+		</li>
 		<li>
 			<?php echo $this->Html->link(__('Công việc cần xử lý', true), array('plugin'=>false,'admin'=>false,'controller'=>'tasks','action' => 'doing')); ?>
 		</li>
@@ -36,6 +39,9 @@
 
 		<li>
 		<?php echo $this->Html->link(__('Công việc đã hoàn thành', true), array('plugin'=>false,'admin'=>false,'admin'=>false,'controller'=>'tasks','action' => 'finish')); ?>
+		</li>
+		<li>
+		<?php echo $this->Html->link(__('Tất cả công việc', true), array('plugin'=>false,'admin'=>false,'admin'=>false,'controller'=>'tasks','action' => 'index')); ?>
 		</li>
 		<li>
 		<?php echo $this->Html->link(__('Loại công việc', true), array('plugin'=>false,'admin'=>false,'controller'=>'types','action' => 'index')); ?>

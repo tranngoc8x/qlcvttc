@@ -1,22 +1,15 @@
 <div class="rooms form">
 <?php echo $this->Form->create('Room');?>
 	<fieldset>
-		<legend><?php __('Edit Room'); ?></legend>
+
 	<?php
-		echo $this->Form->input('id');
-		echo $this->Form->input('customers_id');
-		echo $this->Form->input('room');
+		echo $this->Form->input('room',array('label'=>'Phòng'));
+		echo $this->Form->input('customers_id',array('label'=>'Khách hàng'));
+		echo $this->Form->input('macto',array('label'=>'Mã số công tơ'));
+		echo $this->Form->input('first',array('label'=>'Chỉ số ban đầu'));
+		echo $this->Form->input('ghichu',array('label'=>'Ghi chú'));
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Submit', true));?>
+<?php echo $this->Form->end(__('Lưu', true));?>
 </div>
-<div class="actions">
-	<h3><?php __('Actions'); ?></h3>
-	<ul>
-
-		<li><?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $this->Form->value('Room.id')), null, sprintf(__('Are you sure you want to delete # %s?', true), $this->Form->value('Room.id'))); ?></li>
-		<li><?php echo $this->Html->link(__('List Rooms', true), array('action' => 'index'));?></li>
-		<li><?php echo $this->Html->link(__('List Customers', true), array('controller' => 'customers', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Customers', true), array('controller' => 'customers', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
+<script> var title = "Cập nhật thông tin phòng";</script>

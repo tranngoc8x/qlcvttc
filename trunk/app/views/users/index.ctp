@@ -1,4 +1,4 @@
-<?php echo $this->element('chucnang');?>
+<?php echo $this->element('chucnang');?><?php //debug($this);?>
 <form name="frmList" method="post" action="#">
 	<table class="sort-table" cellspacing="0" width="100%">
 		<thead>
@@ -20,7 +20,7 @@
 				<?php echo $this->Html->link($this->Html->image("admin/view-item.png", array("alt" => "Xem","title"=>"Xem bản ghi")), array('action' => 'view', $user['User']['id']),array('escape'=>false)); ?>
 				<?php echo $this->Html->link($this->Html->image("admin/edit-item.png", array("alt" => "Sửa","title"=>"Sửa bản ghi")), array('action' => 'edit', $user['User']['id']),array('escape'=>false)); ?>
 				<?php
-                        if ($ssid['User']['id']==$user['User']['id'])
+                        if ($this->Session->read('Auth.User.id')==$user['User']['id'])
 							{
  						?>
                          <?php echo $this->Html->link(__('Đổi mật khẩu', true), array('action' => 'changepassword')); }?>

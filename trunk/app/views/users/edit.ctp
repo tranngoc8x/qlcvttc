@@ -26,6 +26,7 @@
 		<?php
 		echo $this->Form->input('groups_id',array('label'=>'Phòng ban','div'=>false));
 		echo $this->Form->input('positions_id',array('label'=>'Chức vụ','div'=>false));
+		echo $this->Form->input('desc',array('label'=>'Mô tả công việc'));
 		echo $this->Form->end('Lưu lại');
 	?>
 	<script type="text/javascript">var title = "Cập nhật thông tin nhân sự";</script>

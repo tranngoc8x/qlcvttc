@@ -8,12 +8,12 @@
 <?php //lấy người dùng  ?>
 <table class='tblcontent chitietcv' border=0 width=100% cellspacing=0 cellpadding=0>
 	<tr class=''>
-		<td colspan=4>
+		<td colspan=2>
 			<?php  $ws = $task['Task']['status'];?>
 
 
 			<?php if($task['Task']['done'] !=2){?>
-				<?php if($idlastu['Usertask']['users_id'] == $ssid['User']['id']){?>
+				<?php if($idlastu['Usertask']['users_id'] == $this->Session->read('Auth.User.id')){?>
 					<?=$this->Form->button("Chuyển việc",array('class'=>'btnlink','id'=>'dialog-link'));?>
 					<?php if($ws!=1 && $task['Task']['done']==1 && $gr != "NS"){?>
 						<?=$this->Form->button("Không duyệt",array('class'=>'btnlink','id'=>'khongduyet'));?>
@@ -25,6 +25,10 @@
 					<p><?=$this->Html->link("Khởi tạo công việc mới",array('action'=>'add',$task['Task']['id']),array('class'=>'btnlink','id'=>'dialog'));?>
 					</p>
 				<?php }?>
+		</td>
+		<td colspan=2>
+			Công việc liên quan
+				
 
 		</td>
 	</tr>
@@ -71,7 +75,10 @@
 	<tr class='tbody'>
 
 		<td class='tDtite'><span class=" ">Trạng thái :</span></td>
-		<td><?php echo stt(base64_encode($task['Task']['status']),$task['Task']['done']); ?></td>
+		<td><?php if($task["Task"]["status"] ==1){echo "Khởi tạo";}else{?>
+				<?php echo $this->requestAction('tasks/getNV/'.$idlastu["Usertask"]["users_id"]);?>
+				<?php if($task["Task"]["done"] ==1){ echo "đang xử lý";}?>
+			<?php }?></td>
 		<td class='tDtite'><span class="">Yêu cầu cần làm</span></td>
 		<td width><font color="red">
 			<?php
@@ -108,7 +115,7 @@
 				</tr>
 				<tr class='tbody'>
 					<td class="tDtite">Văn bản dự thảo
-						<?php if($idlastu['Usertask']['users_id'] == $ssid['User']['id'] && $ws ==1){?>
+						<?php if($idlastu['Usertask']['users_id'] == $this->Session->read('Auth.User.id') && $ws ==1){?>
 						<li class="ui-state-default ui-corner-all addvbdt" id="vbdt" title=".ui-icon-circle-plus"><span class="ui-icon ui-icon-circle-plus"></span></li>
 						<?php  }?>
 					</td>
@@ -124,7 +131,7 @@
 				</tr>
 				<tr class='tbody'>
 					<td class="tDtite">Văn bản liên quan
-						<?php if($idlastu['Usertask']['users_id'] == $ssid['User']['id'] && $ws ==1){?>
+						<?php if($idlastu['Usertask']['users_id'] == $this->Session->read('Auth.User.id') && $ws ==1){?>
 						<li class="ui-state-default ui-corner-all addvbdt" id='vblq' title=".ui-icon-circle-plus"><span class="ui-icon ui-icon-circle-plus"></span></li>
 						<?php }?>
 					</td>
@@ -203,7 +210,7 @@
 </div>
 <?php  }?>
 
-<?php if($idlastu['Usertask']['users_id'] == $ssid['User']['id'] && $ws ==1){?>
+<?php if($idlastu['Usertask']['users_id'] == $this->Session->read('Auth.User.id') && $ws ==1){?>
 
 <div id="dialog_vbdt" title="Thêm văn bản dự thảo">
 <form method="post" name='fform' enctype="multipart/form-data">
@@ -218,7 +225,7 @@
 <div id='response1' style='font-size: 12px;'></div>
 </div>
 <?php }?>
-<?php if($idlastu['Usertask']['users_id'] == $ssid['User']['id']){?>
+<?php if($idlastu['Usertask']['users_id'] == $this->Session->read('Auth.User.id')){?>
 <div id="dialog-fail" title="Yêu cầu làm lại công việc">
 	<?php $nsfail = $this->requestAction('tasks/getNVFail/'.$task['Task']['id'].'/'.$ws);?>
 	<form method='post' name='ffail'>
@@ -296,7 +303,7 @@
 			}
 	});
 </script>
-<?php if($idlastu['Usertask']['users_id'] == $ssid['User']['id'] && $ws ==1){?>
+<?php if($idlastu['Usertask']['users_id'] == $this->Session->read('Auth.User.id') && $ws ==1){?>
 <script>
 //văn bản dự thảo
 	$( "#vbdt" ).click(function( event ) {
