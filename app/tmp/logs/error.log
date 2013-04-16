@@ -9106,3 +9106,61 @@ Aco: controllers/Tasks/index in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\c
 2013-04-15 11:15:18 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order = ('Task.id DESC')    LIMIT 20' at line 1</span> in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\datasources\dbo_source.php, line 684]
 2013-04-15 11:15:18 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\tasks\index.ctp, line 16]
 2013-04-15 11:19:17 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1054: Unknown column 'Tfile.taskid' in 'field list'</span> in [F:\xampp\htdocs\QLCV_TTC\cake\libs\model\datasources\dbo_source.php, line 684]
+2013-04-15 14:32:43 Warning: Warning (2): Missing argument 2 for TasksController::getNVFail() in [F:\xampp\htdocs\QLCV_TTC\app\controllers\tasks_controller.php, line 384]
+2013-04-15 15:30:46 Warning: Warning (2): filesize() [<a href='http://php.net/function.filesize'>function.filesize</a>]: stat failed for files/documents/04-2013/150413022952_ĐỀ TÀI LẦN 1.xls in [F:\xampp\htdocs\QLCV_TTC\app\controllers\tasks_controller.php, line 426]
+2013-04-15 15:30:46 Warning: Warning (2): readfile(files/documents/04-2013/150413022952_ĐỀ TÀI LẦN 1.xls) [<a href='http://php.net/function.readfile'>function.readfile</a>]: failed to open stream: No such file or directory in [F:\xampp\htdocs\QLCV_TTC\app\controllers\tasks_controller.php, line 429]
+2013-04-16 14:31:40 Warning: Warning (2): fopen(F:\xampp\htdocs\QLCV_TTC\app\tmp\cache\models\cake_model_default_acos) [<a href='http://php.net/function.fopen'>function.fopen</a>]: failed to open stream: No such file or directory in [F:\xampp\htdocs\QLCV_TTC\cake\libs\file.php, line 152]
+2013-04-16 15:43:27 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Elecs/export in [F:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-04-16 15:45:27 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\helpers\excel.php, line 36]
+2013-04-16 15:45:27 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\helpers\excel.php, line 53]
+2013-04-16 15:47:18 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\helpers\excel.php, line 36]
+2013-04-16 15:47:18 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\helpers\excel.php, line 53]
+2013-04-16 15:53:39 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\helpers\excel.php, line 36]
+2013-04-16 15:53:39 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\helpers\excel.php, line 53]
+2013-04-16 15:53:44 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\helpers\excel.php, line 36]
+2013-04-16 15:53:44 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\helpers\excel.php, line 53]
+2013-04-16 15:53:56 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\helpers\excel.php, line 36]
+2013-04-16 15:53:56 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\helpers\excel.php, line 53]
+2013-04-16 15:54:34 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\helpers\excel.php, line 36]
+2013-04-16 15:54:34 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\helpers\excel.php, line 53]
+2013-04-16 15:55:44 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\helpers\excel.php, line 36]
+2013-04-16 15:55:44 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\helpers\excel.php, line 53]
+2013-04-16 15:58:15 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\helpers\excel.php, line 36]
+2013-04-16 15:58:15 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\helpers\excel.php, line 53]
+2013-04-16 16:01:09 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\helpers\excel.php, line 36]
+2013-04-16 16:01:10 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\helpers\excel.php, line 53]
+2013-04-16 16:01:51 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\helpers\excel.php, line 36]
+2013-04-16 16:01:51 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\helpers\excel.php, line 53]
+2013-04-16 16:03:47 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\helpers\excel.php, line 36]
+2013-04-16 16:03:47 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\helpers\excel.php, line 55]
+2013-04-16 16:04:21 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\helpers\excel.php, line 36]
+2013-04-16 16:04:22 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\helpers\excel.php, line 55]
+2013-04-16 16:09:38 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\helpers\excel.php, line 36]
+2013-04-16 16:09:38 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\helpers\excel.php, line 53]
+2013-04-16 16:10:32 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\helpers\excel.php, line 36]
+2013-04-16 16:10:32 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\helpers\excel.php, line 55]
+2013-04-16 16:11:14 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\helpers\excel.php, line 55]
+2013-04-16 16:13:53 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\helpers\excel.php, line 55]
+2013-04-16 16:15:30 Warning: Warning (2): Invalid argument supplied for foreach() in [F:\xampp\htdocs\QLCV_TTC\app\views\helpers\excel.php, line 55]
