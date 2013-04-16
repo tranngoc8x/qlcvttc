@@ -57,8 +57,9 @@
 }
 .sort-table th{
 	font-weight: bold;
-	height: 45px;
-	text-align: center;
+	height: 40px;
+	text-align: left;
+	padding-left: 3px;
 	background: #fff url('../img/admin/header-table.png') left top repeat;
 	border-right: 1px solid #C4FFD8;
 
@@ -66,12 +67,12 @@
 .sort-table td{
 	border-right: 1px solid #C4FFD8;
 	border-bottom: 1px solid #C4FFD8;
-	height: 45px;
+	height: 40px;
 }
 .sort-table th,.sort-table th a{
 	text-decoration: none;
 	color: #3399FF;
-	font-size: 13px;
+	font-size: 12px;
 	text-transform: uppercase;
 	font-family: Arial,Verdana,Sans-Serif;
 
