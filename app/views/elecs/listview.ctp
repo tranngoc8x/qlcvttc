@@ -15,6 +15,7 @@ $mom = nhuan($y);?>
 			<th rowspan="3"><span  style="width:140px; display: block">Tên khách hàng</span></th>
 			<th rowspan="3"><span  style="width:70px; display: block">Phòng</span></th>
 			<th rowspan="3"><span  style="width:90px; display: block">Mã công tơ</span></th>
+
 			<th colspan="<?php echo $mom[(int)$m]*2;?>">Tháng <?php echo $m;?></th>
 		</tr>
 		<tr>
@@ -33,7 +34,7 @@ $mom = nhuan($y);?>
 			<td rowspan="<?php echo count($c['Room']);?>"><?php  echo $c['Customer']['name'];?></td>
 			<?php foreach($c['Room'] as $i){ ?>
 			<td><?php  echo $i['room'];?></td>
-			<td><?php  echo $i['macto'];?></td>
+			<td><?php // echo $i['macto'];?></td>
 			<?php
 
 			$dom = (int)$m;
@@ -58,4 +59,10 @@ $mom = nhuan($y);?>
 		<?php }?>
 
 </table>
+
+
+
+
+
+
 <script>var title = 'Bảng thống kê số điện hàng tháng';</script>
