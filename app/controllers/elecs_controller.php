@@ -10,8 +10,8 @@ class ElecsController extends AppController {
 	    function export() {
 	        $this->layout = 'ajax';
 	        $this->loadModel('Customer');
-	        $this->set('event', $this->Customer->find('first',array('conditions'=>array('id'=>7),'recursive'=>-1)));
-
+			$cus = $this->Customer->find('all');
+			$this->set(compact('cus'));
 	    }
 
 
@@ -150,29 +150,6 @@ class ElecsController extends AppController {
 		}
 
 	}
-
-	function file_export()
-		 {
-		 $this->layout = false;
-
-		 // $this->autoRender=false;
-		  ini_set('max_execution_time', 1600); //increase max_execution_time to 10 min if data set is very large
-		  //$results = $this->Customer->find('all', array());// set the query function
-		  $this->Elec->recursive = -1;
-			if(isset($this->data['Elec']['YM'])){
-				$y = $this->data['Elec']['YM']['year'];
-				$m = $this->data['Elec']['YM']['month'];
-			}else {
-				$y = date('Y');
-				$m = date('m');
-			}
-			$this->loadModel('Customer');
-			$cus = $this->Customer->find('all');
-			$this->set(compact('y','cus','m'));
-			header('Content-type: application/vnd.ms-excel;charset=utf-8');
-			$filename = "ThongKe_".$m."_".$y.".xls";
-			header('Content-Disposition: attachment; filename="'.$filename.'"');
-		 }
 
 
 
