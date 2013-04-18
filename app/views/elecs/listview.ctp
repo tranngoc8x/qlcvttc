@@ -7,7 +7,7 @@
 	echo $this->Form->end(__('Xem', true));
 ?>
 <?php
-echo $this->Html->link("xuất ra file excel", array('controller'=>'elecs','action'=>'export'));
+echo $this->Html->link("xuất ra file excel", array('controller'=>'elecs','action'=>'export',$m,$y));
 $mom = nhuan($y);?>
 <table class="sort-table" cellspacing="0" >
 		<thead>

@@ -47,9 +47,13 @@ class ExcelHelper extends AppHelper
         return PHPExcel_Cell::stringFromColumnIndex($colNumber);
     }
 
-     function getCell($col,$row)
+    function getCell($col,$row)
     {
         return $col.$row;
+    }
+    function getCellvalue($cell)
+    {
+        return  $this->sheet->getCell('$cell')->getValue();
     }
     function cellBorder($start = null,$end = null,$colorborder = '000000'){
 
@@ -86,7 +90,7 @@ class ExcelHelper extends AppHelper
         $this->sheet->getStyle($start.':'.$end)->applyFromArray($styleArray);
     }
     function cellValign(){
-        $this->sheet->getStyle('A2:CC100')->getAlignment()->applyFromArray( array( 'vertical' => PHPExcel_Style_Alignment::VERTICAL_CENTER, 'rotation' => 0, 'wrap' => true ) );
+        $this->sheet->getStyle('A2:BR140')->getAlignment()->applyFromArray( array( 'vertical' => PHPExcel_Style_Alignment::VERTICAL_CENTER, 'rotation' => 0, 'wrap' => true ) );
     }
     function cellAlign($start = null,$end = null,$alignment = 'left')
     {
