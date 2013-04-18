@@ -8,9 +8,8 @@ class RoomsController extends AppController {
 		$this->set('rooms', $this->paginate());
 		$this->loadModel('Customer');
 		$cus = $this->Customer->find('all');
-		//debug($cus);
 		$this->set(compact('cus'));
-		//debug($this->paginate());
+	 
 	}
 
 	function view($id = null) {

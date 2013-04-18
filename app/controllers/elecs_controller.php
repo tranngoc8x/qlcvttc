@@ -26,6 +26,7 @@ class ElecsController extends AppController {
 		}
 
 	function listview() {
+		//App::import('Libs', 'libchart/classes/libchart.php');
 		$this->Elec->recursive = -1;
 		if(isset($this->data['Elec']['YM'])){
 			$y = $this->data['Elec']['YM']['year'];
@@ -101,7 +102,7 @@ class ElecsController extends AppController {
 		$this->Session->setFlash(__('Elec was not deleted', true));
 		$this->redirect(array('action' => 'index'));
 	}
-		function getJsElec($d,$r){
+	function getJsElec($d,$r){
 		$this->autoRender = false;
 		$dy = date("Y-m-d",strtotime($d));
 		$dz = date("Y-m-d",strtotime($d.'+1 day'));
@@ -121,8 +122,7 @@ class ElecsController extends AppController {
 	}
 
 
-	function xuatra(){
-		$this->Elec->recursive = -1;
+	function chart(){	
 		if(isset($this->data['Elec']['YM'])){
 			$y = $this->data['Elec']['YM']['year'];
 			$m = $this->data['Elec']['YM']['month'];
@@ -131,17 +131,13 @@ class ElecsController extends AppController {
 			$m = date('m');
 		}
 		$this->loadModel('Customer');
-		$cus = $this->Customer->find('all');
-		$this->set(compact('y','cus','m'));
 
-		header("Pragma: public");
-		header("Expires: 0");
-		header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
-		header("Content-Type: application/force-download");
-		header("Content-Type: application/octet-stream");
-		header("Content-Type: application/download");;
-		header("Content-Disposition: attachment;filename=php2xls.xls "); // à¹à¸¥à¹‰à¸§à¸™à¸µà¹ˆà¸à¹‡à¸Šà¸·à¹ˆà¸­à¹„à¸Ÿà¸¥à¹Œ
-		header("Content-Transfer-Encoding: binary ");
+		$cus = $this->Customer->find('all');
+		$this->loadModel('Room');
+		$this->Room->unbindModel(array('hasMany' => array('Elec'),'belongsTo'=> array('Customer')));
+		$rooms = $this->Room->find('all');
+		$this->set(compact('y','cus','m','rooms'));
+
 	}
 	function getElec($d,$r){
 		$dz = date("Y-m-d",strtotime($d));
@@ -173,8 +169,8 @@ class ElecsController extends AppController {
 			$this->loadModel('Customer');
 			$cus = $this->Customer->find('all');
 			$this->set(compact('y','cus','m'));
-			header('Content-type: application/ms-excel;charset=utf-8');
-			$filename = "export_".$m."_".$y.".xls";
+			header('Content-type: application/vnd.ms-excel;charset=utf-8');
+			$filename = "ThongKe_".$m."_".$y.".xls";
 			header('Content-Disposition: attachment; filename="'.$filename.'"');
 		 }
 
