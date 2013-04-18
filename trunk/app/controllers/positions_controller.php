@@ -10,6 +10,7 @@ class PositionsController extends AppController {
 		 $this->Position->recursive = 2;
 		$this->set('pos', $this->paginate());
 		//debug($this->paginate());
+		
 	}
 
 	function view($id = null) {
@@ -18,7 +19,7 @@ class PositionsController extends AppController {
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->set('position', $this->Position->read(null, $id));
-		//debug($this->Position->read(null, $id));
+		
 	}
 
 	function add() {
