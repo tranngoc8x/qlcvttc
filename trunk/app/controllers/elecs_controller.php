@@ -7,11 +7,16 @@ class ElecsController extends AppController {
 
 	var $helpers = array('Excel');
 
-	    function export() {
+	    function export($m = null,$y=null) {
 	        $this->layout = 'ajax';
-	        $this->loadModel('Customer');
+	       	$this->Elec->recursive = -1;
+			if(empty($m) || empty($y)){
+				$y = date('Y');
+				$m = date('n');
+			}
+			$this->loadModel('Customer');
 			$cus = $this->Customer->find('all');
-			$this->set(compact('cus'));
+			$this->set(compact('y','cus','m'));
 	    }
 
 
@@ -29,11 +34,11 @@ class ElecsController extends AppController {
 		//App::import('Libs', 'libchart/classes/libchart.php');
 		$this->Elec->recursive = -1;
 		if(isset($this->data['Elec']['YM'])){
-			$y = $this->data['Elec']['YM']['year'];
-			$m = $this->data['Elec']['YM']['month'];
+			$y = (int)$this->data['Elec']['YM']['year'];
+			$m = (int)$this->data['Elec']['YM']['month'];
 		}else {
 			$y = date('Y');
-			$m = date('m');
+			$m = date('n');
 		}
 		$this->loadModel('Customer');
 		$cus = $this->Customer->find('all');
@@ -122,7 +127,7 @@ class ElecsController extends AppController {
 	}
 
 
-	function chart(){	
+	function chart(){
 		if(isset($this->data['Elec']['YM'])){
 			$y = $this->data['Elec']['YM']['year'];
 			$m = $this->data['Elec']['YM']['month'];
