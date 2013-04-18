@@ -4,9 +4,10 @@
        exit('Please create Report_Elecs_Month.xls first');
     }
     $excel->loadFile('files/excel/Report_Elecs_Month.xls');
-    $day = date('t');
+    $mom = nhuan($y);
+    $day = $mom[$m];
     $excel->cellValign();
-    $excel->changeCell("MỨC TIÊU ĐIỆN HÀNG NGÀY CỦA KHÁCH THUÊ (THÁNG ".date('m/Y').")",'A1');
+    $excel->changeCell("MỨC TIÊU ĐIỆN HÀNG NGÀY CỦA KHÁCH THUÊ (THÁNG (".$m.'/'.$y.")",'A1');
     $excel->mergeCell('E3',$excel->getColumn(($day*2)+3).'3');
     $excel->changeCell("NGÀY",'E3');
     $excel->cellFont('E3','E3',null,true,'FFFFFF',20);
@@ -56,14 +57,33 @@
 				$excel->changeCell($room['room'],'B'.($row+$kr));
 				$excel->changeCell($room['macto'],'D'.($row+$kr));
 				$excel->cellBorder('B'.$row,'B'.($row+$kr),'000000');
+				$excel->cellBorder('C'.$row,'C'.($row+$kr),'000000');
 				$excel->cellBorder('D'.$row,'D'.($row+$kr),'000000');
 				for($i=1;$i<=$day;$i++){
+					$a = $this->requestAction('/elecs/getElec/'.date($y."-".$m."-".$i).'/'.$room["id"]);
+					//$b = $this->requestAction('/elecs/getElec/'.date($y."-".$m."-".($i+1)).'/'.$room["id"]);
+					if(empty($a)){
+						$excel->changeCell($a,$excel->getColumn(($i*2)+2).($row+$kr));
+						$excel->cellBorder($excel->getColumn(($i*2)+2).($row+$kr),$excel->getColumn(($i*2)+2).($row+$kr),'000000');
+						$excel->cellBorder($excel->getColumn(($i*2)+3).($row+$kr),$excel->getColumn(($i*2)+3).($row+$kr),'000000');
+					}
+				}
+				$arrtieuthu= "=";
+				for($i=1;$i<=$day;$i++){
+					//=$excel->getColumn(($i*2)+4).($row+$kr) - $excel->getColumn(($i*2)+4).($row+$kr)
+					$excel->changeCell('='.$excel->getColumn(($i*2)+4).($row+$kr).'-'.$excel->getColumn(($i*2)+2).($row+$kr),$excel->getColumn(($i*2)+3).($row+$kr));
+					$excel->cellAlign($excel->getColumn(($i*2)+3).($row+$kr),$excel->getColumn(($i*2)+3).($row+$kr),'center');
+					$excel->cellFont($excel->getColumn(($i*2)+3).($row+$kr),$excel->getColumn(($i*2)+3).($row+$kr),null,false,'FF8000');
+
+						$arrtieuthu = $arrtieuthu.$excel->getColumn(($i*2)+3).($row+$kr).'+';
 
 				}
+				$arrtieuthu =$arrtieuthu."0";
+				$excel->changeCell($arrtieuthu,'C'.($row+$kr));
 			endforeach;
 			$row=$row+$megre;
 		endforeach;
-		//debug($cus);
+		//debug($arrtieuthu);
 
 	//output file name
     $excel->_output('Report_Elecs_Month');
