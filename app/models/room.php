@@ -35,4 +35,13 @@ class Room extends AppModel {
 			'order' => ''
 		)
 	);
+	var $hasMany = array(
+		'Elec' => array(
+			'className' => 'Elec',
+			'foreignKey' => 'rooms_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		)
+	);
 }
