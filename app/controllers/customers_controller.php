@@ -19,6 +19,7 @@ class CustomersController extends AppController {
 	}
 
 	function add() {
+		//debug($this->data);
 		if (!empty($this->data)) {
 			$this->Customer->create();
 			if ($this->Customer->save($this->data)) {
