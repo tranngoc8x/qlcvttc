@@ -76,6 +76,14 @@ class TasksController extends AppController {
 		$gr= $grs['Group']['magroup'];
 		$this->set(compact('gr'));
 	}
+	function kqtask($id = null,$str = null){
+			$this->autoRender = false;
+			$this->Task->Usertask->id = $id;
+
+			if($this->Task->Usertask->saveField("ketqua",$str)){
+				echo 1;
+			}else echo 0;
+	}
 	function add($idcvs = null) {
 		$ido = $idcvs;
 		//unbindModel('Usertask');
@@ -105,7 +113,8 @@ class TasksController extends AppController {
 			if ($this->Task->save($this->data)) {
 				$lastid = $this->Task->getLastInsertId();//lấy  id task để lưu file và người tạo công việc ở bảng tfile và usertask
 		 		//bắt đầu upload file
-		 		if(!empty($_FILES['files']['name'])){
+		 		//debug($_FILES['files']);
+		 		if(isset($_FILES['files']['name'][0]) && !empty($_FILES['files']['name'][0])){
 		 			$dir = "files/documents/".date('m-Y');//khai báo thư mục lưu file
 			 		if(!is_dir($dir)) mkdir($dir,0777);//tạo thư mục nếu chưa có
 			 		$fre = date('dmyhis_');//frefix cho ten file
@@ -119,18 +128,23 @@ class TasksController extends AppController {
 						$data['Tfile']['folder'] = date('m-Y');
 				 	 	$this->Task->Tfile->create();
 				 	 	$this->Task->Tfile->save($data);
+				 	 	
 				 	 	$data = array();
 				 	 	if($_FILES['files']['error'][$key] !=0 || $_FILES['files']['error'][$key] !='0') $err ++;
 				 	}
 				}//kết thúc upload file
-
+				//echo 11111111111111111111111111111111111111111;
 				//bắt đầu lưu dl vào bảng usertask
 				$usertasks['Usertask']['users_id'] = $uid;
 				$usertasks['Usertask']['users_chuyen'] = -1;
 				$usertasks['Usertask']['tasks_id'] = $lastid;
 				$usertasks['Usertask']['status'] = 1;
 				$usertasks['Usertask']['done'] = 1;
-				$usertasks['Usertask']['noidung'] =$this->data['Task']['desc'];
+				if(isset($this->data['Task']['desc']) && empty($this->data['Task']['desc'])){
+					$usertasks['Usertask']['noidung'] =$this->data['Task']['desc'];
+				}else{
+					$usertasks['Usertask']['noidung'] = "Khởi tạo";
+				}
 				$this->Task->Usertask->create();
 				$this->Task->Usertask->save($usertasks);
 				if(!empty($idcv) && !empty($oldt)){
@@ -146,8 +160,9 @@ class TasksController extends AppController {
 				 	 	$data = array();
 					}
 				}
-				$this->redirect(array('action' => 'index'));
+				
 				$this->Session->setFlash(__('Khởi tạo công việc thành công.', true),'default',array('class'=>'success'));
+				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('Có lỗi xảy ra. hãy thử lại !.', true),'default',array('class'=>'error'));
 			}
@@ -397,7 +412,7 @@ class TasksController extends AppController {
 			return 2;
 		}
 	}
-	function getNV($id){
+	function getNV($id = null){
 		$this->autoRender = false;
 		if($id == -1) return "Khởi tạo";
 		if($id == -2) return "Hoàn thành";

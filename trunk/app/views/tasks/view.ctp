@@ -10,8 +10,6 @@
 	<tr class=''>
 		<td colspan=2>
 			<?php  $ws = $task['Task']['status'];?>
-
-
 			<?php if($task['Task']['done'] !=2){?>
 				<?php if($idlastu['Usertask']['users_id'] == $this->Session->read('Auth.User.id')){?>
 					<?=$this->Form->button("Chuyển việc",array('class'=>'btnlink','id'=>'dialog-link'));?>
@@ -26,36 +24,41 @@
 					</p>
 				<?php }?>
 		</td>
-		<td colspan=2>
+		<td colspan=3>
 			Công việc liên quan
 				
 
 		</td>
 	</tr>
 	<tr class='tbody'>
-		<td class=' ui-widget-header title' colspan=4>Chi tiết công việc</td>
+		<td class=' ui-widget-header title' colspan=5>Chi tiết công việc</td>
 	</tr>
 	<tr class='tbody'>
-		<td class='tDtite'><span class='text_tite'>Tên công việc:</span></td>
-		<td><?php echo $task['Task']['name']; ?></td>
+		<td class='tDtite'><span class='text_tite'>Mã công việc:</span></td>
+		<td><?php echo $task['Task']['taskid']; ?></td>
 		<td class='tDtite'><span class='text_tite'>Folder lưu trữ:</span></td>
-		<td><?php echo $task['Task']['folder']; ?></td>
+		<td colspan=2><?php echo $task['Task']['folder']; ?></td>
 	</tr>
 	<tr class='tbody'>
-		<td class='tDtite'><span class="text_tite">Nội dung công việc: </span></td>
-		<td colspan=3><?php echo $task['Task']['name']; ?></td>
+		<td class='tDtite'><span class="text_tite">Tên công việc: </span></td>
+		<td colspan><?php echo $task['Task']['name']; ?></td>
+		<td class='tDtite'><span class="text_tite">Trạng thái: </span></td>
+		<td colspan=2><?php if($task["Task"]["status"] ==1){echo "Khởi tạo";}else{?>
+				<?php echo $this->requestAction('tasks/getNV/'.$idlastu["Usertask"]["users_id"]);?>
+				<?php if($task["Task"]["done"] ==1){ echo "đang xử lý";}?>
+			<?php }?></td>
 	</tr>
 	<tr class='tbody'>
 		<td class='tDtite'><span class=" ">Ngày bắt đầu :</span></td>
 		<td width=150><?php echo date('d/m/Y',strtotime($task['Task']['start'])); ?></td>
 		<td class='tDtite'><span class=" ">Ngày kết thúc :</span></td>
-		<td><?php echo date('d/m/Y',strtotime($task['Task']['end'])); ?></td>
+		<td  colspan=2><?php echo date('d/m/Y',strtotime($task['Task']['end'])); ?></td>
 	</tr>
 	<tr class='tbody'>
 		<td class='tDtite'><span class=" ">Người giao việc :</span></td>
 		<td width=150><?php echo  $task['User']['name']; ?></td>
 		<td class='tDtite'><span class=" ">Nhân viên được giao :</span></td>
-		<td>
+		<td colspan=2>
 			<?php foreach ($task['Usertask'] as $v) {
 
 				  if($v['status'] == 2){
@@ -70,15 +73,9 @@
 		<td class='tDtite'><span class=" ">Loại công việc :</span></td>
 		<td><?php echo $task['Type']['name']; ?></td>
 		<td class='tDtite'><span class=" ">Lĩnh vực :</span></td>
-		<td><?php echo $task['Linhvuc']['name']; ?></td>
+		<td colspan=2><?php echo $task['Linhvuc']['name']; ?></td>
 	</tr>
 	<tr class='tbody'>
-
-		<td class='tDtite'><span class=" ">Trạng thái :</span></td>
-		<td><?php if($task["Task"]["status"] ==1){echo "Khởi tạo";}else{?>
-				<?php echo $this->requestAction('tasks/getNV/'.$idlastu["Usertask"]["users_id"]);?>
-				<?php if($task["Task"]["done"] ==1){ echo "đang xử lý";}?>
-			<?php }?></td>
 		<td class='tDtite'><span class="">Yêu cầu cần làm</span></td>
 		<td width><font color="red">
 			<?php
@@ -87,18 +84,27 @@
 			?>
 
 		</font></td>
+
+		<td class='tDtite'><span class=" ">Kết quả thực hiện :</span></td>
+		<td  colspan=2>
+				<textarea name="txtkqua" id="idkqua"  style='display: inline;float:left; height: 60px;box-shadow:0 0 0;'><?php
+			if(!empty($task['Usertask']))
+				{echo $task['Usertask'][count($task['Usertask'])-1]['ketqua'];}
+			?></textarea>
+				<a href="#" id='idsubmit'>Lưu lại</a>
+		</td>
 	</tr>
 	<tr class='tbody'>
-		<td class='tDtite' colspan=4><span class=" ">Nội dung công việc</span></td>
+		<td class='tDtite' colspan=5><span class=" ">Nội dung công việc</span></td>
 	</tr>
 	<tr class='tbody'>
-		<td colspan=4><span class=" "><?php echo $task['Task']['content'];?></span></td>
+		<td colspan=5><span class=" "><?php echo $task['Task']['content'];?></span></td>
 	</tr>
 	<tr class='tbody'>
-		<td class=' ui-widget-header title' colspan=4>Văn bản</td>
+		<td class=' ui-widget-header title' colspan=5>Văn bản</td>
 	</tr>
 	<tr class='tbody'>
-		<td colspan=4>
+		<td colspan=5>
 			<table width=100% cellspacing=0 cellpadding=0>
 				<tr class='tbody'>
 					<td class="tDtite">Văn bản gốc</td>
@@ -106,11 +112,34 @@
 						<?php if(isset($task['Tfile']) && count($task['Tfile'])>0){
 							foreach($task['Tfile'] as $fis):
 								if($fis['type']==1){
+									$arrfilename = explode('.',$fis['name']);
+									$icon = $arrfilename[count($arrfilename)-1];
+									if(is_file("img/".$icon.".png")){
+									?>
+									    <img src="<?php echo $this->webroot.'img/'.$icon ?>.png" width="16" border="0" align="absmiddle" />
+									<?php 
+									}
+									    if($icon=='doc'||$icon == 'docx'||$icon == 'pdf'||$icon == 'xls'||$icon == 'xlsx'){
+									    $document_view =$this->webroot."pdfreader/view.php?doc=".$fis['name'];
+									    }
+									    if($icon=='png' || $icon == 'jpg' || $icon == 'gif' || $icon == 'bmp' || $icon=='jpeg'||$icon == 'tif'){
+									     $document_view =$this->webroot."pdfreader/viewimg.php?file=".$fis['name'];
+									    }
+									?>
+									 <a href="#" class="Link_Text_12_black" onclick="document_view()"><?php echo $fis['name']; ?></a>&nbsp;&nbsp;      
+         
+									<?php
 									echo '- '.$this->Html->link($fis['name'],array('controller'=>'tasks','action'=>'download',base64_encode($fis['id']))).'<br>';
 								}
 							endforeach;
 						}?>
-
+						 <script>
+				         function document_view(){
+				            var  screen_w = screen.width;
+				            var left = (screen_w-600)/2;
+				            var arg= "'ViewIMG',width=600, height=600,resizable=no,scrollbars=yes,status=0,top= 50,left ="+left;			
+				            window.open ("<?php echo $document_view; ?>", "_blank", arg);}
+				         </script>
 					</td>
 				</tr>
 				<tr class='tbody'>
@@ -149,11 +178,12 @@
 		</td>
 	</tr>
 	<tr class='tbody'>
-		<td class=' ui-widget-header title' colspan=4>Nhân sự tham gia xử lý</td>
+		<td class=' ui-widget-header title' colspan=5>Nhân sự tham gia xử lý</td>
 	</tr>
 	<tr align=center style='border-bottom: 1px solid #ace;'>
 		<td class="tDtite" style='border-bottom: 1px solid #ace;'>Nhân sự</td>
 		<td class="tDtite" style='border-bottom: 1px solid #ace;'>Nội dung chuyển</td>
+		<td class="tDtite" style='border-bottom: 1px solid #ace;'>Kết quả tiến hành</td>
 		<td class="tDtite" style='border-bottom: 1px solid #ace;'>Ngày chuyển</td>
 		<td class="tDtite" style='border-bottom: 1px solid #ace;'>Ngày xem</td>
 	</tr>
@@ -163,6 +193,7 @@
 	  		<tr class='tbody'>
 				<td><?php echo $uc.'   <font color=red>&minus;&minus;> </font>  '. $ud;?></td>
 				<td><?php echo $v['noidung'];?></td>
+				<td><?php echo $v['ketqua'];?></td>
 				<td align=center><?php
 				if(!empty($v['ngay']) && $v['ngay'] !="0000-00-00 00:00:00")
 				 	echo date('h:i:s  d/m/Y',strtotime($v['ngay']));
@@ -441,6 +472,14 @@
 	$("#dialog-fn").click(function(){
 		$.get('<?php echo $this->webroot;?>tasks/fntask/<?php echo $task["Task"]["id"]."/".$idlastu["Usertask"]["users_id"];?>',function(){
 				window.location.reload();
+		});
+	});
+	$("#idsubmit").click(function(){
+		
+		var strkq = $("#idkqua").val();
+		$.get('<?php echo $this->webroot;?>tasks/kqtask/<?php echo $task["Usertask"][count($task["Usertask"])-1]["id"];?>/'+strkq,function(data){
+				if(data==1){alert('Cập nhật thành công');}else alert("Có lỗi xảy ra. Thử lại !");
+				//window.location.reload();
 		});
 	});
 </script>
