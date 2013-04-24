@@ -90,7 +90,7 @@ class NuocsController extends AppController {
 		$this->Session->setFlash(__('Chưa xóa được', true));
 		$this->redirect(array('action' => 'index'));
 	}	
-		function getJsNuoc($d,$r){
+	function getJsNuoc($d,$r){
 		$this->autoRender = false;
 		$dy = date("Y-m-d",strtotime($d));
 		$dz = date("Y-m-d",strtotime($d.'+1 day'));
@@ -108,5 +108,52 @@ class NuocsController extends AppController {
 			echo "-";
 		}
 	}
+	
+	function getNuoc($d,$r){
+		$dz = date("Y-m-d",strtotime($d));
+		$enumbers = $this->Nuoc->find("first",array('fields'=>array('nuoc'),'conditions'=>array('rooms_id'=>$r,'date'=>$dz)));
+		$enumber = $enumbers['Nuoc']['nuoc'];
+		if (!empty($this->params['requested'])) {
+		      return $enumber;
+		}else {
+		  $this->set(compact('enumber'));
+		}
+
+	}
+	
+	function chart(){	
+		if(isset($this->data['Nuoc']['YM'])){
+			$y = $this->data['Nuoc']['YM']['year'];
+			$m = $this->data['Nuoc']['YM']['month'];
+		}else {
+			$y = date('Y');
+			$m = date('m');
+		}
+		$this->loadModel('Customer');
+		$cus = $this->Customer->find('all');
+		$this->loadModel('Room');
+		$this->Room->unbindModel(array('hasMany' => array('Nuoc'),'belongsTo'=> array('Customer')));
+		$rooms = $this->Room->find('all');
+		$this->set(compact('y','cus','m','rooms'));
+
+	}
+	
+	function chart_detail(){		
+		$this->loadModel('Customer');
+		$customers = $this->Customer->find('list');		
+		$cus_first = $this->Customer->find('first',array('fields'=>array('id','name')));
+		if(isset($this->data['Nuoc']['YM'])){
+			$y = $this->data['Nuoc']['YM']['year'];
+			$m = $this->data['Nuoc']['YM']['month'];
+			$c = $this->data['Nuoc']['customers_id'];
+		}else {
+			$y = date('Y');
+			$m = date('m');
+			$c = $cus_first['Customer']['id'];
+		}		
+		$r = $this->Customer->Room->find('all', array('conditions'=>array('customers_id'=>$c)));		
+		$this->set(compact('customers','y','m','r','cus_first'));		
+	}
+	
 	
 }
