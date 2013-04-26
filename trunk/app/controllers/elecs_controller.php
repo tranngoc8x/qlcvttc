@@ -50,7 +50,7 @@ class ElecsController extends AppController {
 			$diff = strtotime($date2)-strtotime($date1);
 			if($diff > 0){
 				$d = $diff/(60*60*24);
-				if($d<=31){
+				if($d<=32){
 					$a = explode('/',$this->data['Elec']['date1']);
 					$y1 = $a[2];
 					$m1 = $a[1];
@@ -60,18 +60,42 @@ class ElecsController extends AppController {
 					$m2 = $b[1];
 					$d2 = $b[0];					
 				}else{
+					$y2 = date('Y');
+					$m2 = date('n');
+					$d2 = date('d');
+					$predate = strtotime('-1 month', strtotime(date('Y-n-d')));
+					$predate = date('Y-n-d',$predate);			
+					$pre = explode('-',$predate);
+					$y1 = $pre[0];
+					$m1 = $pre[1]; 
+					$d1 = $pre[2];
+					$d = (strtotime(date('Y-n-d')) - strtotime($predate))/(60*60*24);
 					$this->Session->setFlash(__('Hãy chọn lại khoảng thời gian. Hệ thống không hiển thị dữ liệu quá 1 tháng ', true));
 				}					
 			}else{
+				$y2 = date('Y');
+				$m2 = date('n');
+				$d2 = date('d');
+				$predate = strtotime('-1 month', strtotime(date('Y-n-d')));
+				$predate = date('Y-n-d',$predate);			
+				$pre = explode('-',$predate);
+				$y1 = $pre[0];
+				$m1 = $pre[1]; 
+				$d1 = $pre[2];
+				$d = (strtotime(date('Y-n-d')) - strtotime($predate))/(60*60*24);
 				$this->Session->setFlash(__('Hãy chọn lại khoảng thời gian. Ngày bắt đầu không thể nhỏ hơn ngày kết thúc ', true));
 			}
 		}else {
 			$y2 = date('Y');
 			$m2 = date('n');
 			$d2 = date('d');
-			//$y1 = ;
-			//$m1 = ; 
-			//$d1 = ;
+			$predate = strtotime('-1 month', strtotime(date('Y-n-d')));
+			$predate = date('Y-n-d',$predate);			
+			$pre = explode('-',$predate);
+			$y1 = $pre[0];
+			$m1 = $pre[1]; 
+			$d1 = $pre[2];
+			$d = (strtotime(date('Y-n-d')) - strtotime($predate))/(60*60*24);
 		}
 		$this->set(compact('y1','m1','d1','y2','m2','d2','d'));
 	}
