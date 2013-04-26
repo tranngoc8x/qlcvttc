@@ -9,6 +9,7 @@
 			echo $this->Html->css(array('ext-all','admin','jquery-ui-1.10.1.custom','queryLoader'));
 			echo $this->Html->script(array('ext-base','ext-all','App','checkinput','jquery-1.9.1','jquery-ui-1.10.1.custom'));
 	?>
+
 	<style>
 	body{
 		font-size: 100%;
@@ -191,11 +192,11 @@
 </script>
 
 </body>
-</html><script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js'></script>
+</html>
 	<?php
-		echo $this->Html->script(array('queryLoader'));
+		//echo $this->Html->script(array('queryLoader'));
 	?>
 	<script type='text/javascript'>
 	//QueryLoader.selectorPreload = "#idOfTheElement";
-	QueryLoader.init();
+	//QueryLoader.init();
 	</script>
