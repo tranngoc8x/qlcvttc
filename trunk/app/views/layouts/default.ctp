@@ -184,7 +184,18 @@
 		$("#flashMessage").append("<a href='#' id='closediv'><img src='<?php echo $this->webroot;?>img/admin/cross_grey_small.png' /></a>");
 		$("#closediv").click(function(){
 				$("#flashMessage").slideUp('slow');
-		})
+		});
+		$("body").on({
+			alert(1);
+    // When ajaxStart is fired, add 'loading' to body class
+    ajaxStart: function() { 
+        $(this).addClass("loading"); 
+    },
+    // When ajaxStop is fired, rmeove 'loading' from body class
+    ajaxStop: function() { 
+        $(this).removeClass("loading"); 
+    }    
+});
 </script>
 
 </body>
