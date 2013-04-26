@@ -15,8 +15,7 @@ $mom = nhuan($y);?>
 			<th rowspan="3"><span  style="width:140px; display: block">Tên khách hàng</span></th>
 			<th rowspan="3"><span  style="width:70px; display: block">Phòng</span></th>
 			<th rowspan="3"><span  style="width:90px; display: block">Mã công tơ</span></th>
-
-			<th colspan="<?php echo $mom[(int)$m]*2;?>">Tháng <?php echo $m;?></th>
+			<th colspan="<?php echo $mom[(int)$m]*2;?>">Tháng <?php echo $m;?> năm <?php echo $y;?></th>
 		</tr>
 		<tr>
 			<?php for($i=1;$i<=$mom[(int)$m];$i++){?>
@@ -32,9 +31,9 @@ $mom = nhuan($y);?>
 		<?php foreach($cus as $c){?>
 		<tr>
 			<td rowspan="<?php echo count($c['Room']);?>"><?php  echo $c['Customer']['name'];?></td>
-			<?php foreach($c['Room'] as $i){ ?>
-			<td><?php  echo $i['room'];?></td>
-			<td><?php // echo $i['macto'];?></td>
+			<?php if($c['Room']!= NULL){ foreach($c['Room'] as $i){ ?>
+			<td align=center ><?php  echo $i['room'];?></td>
+			<td align=center ><?php // echo $i['macto'];?></td>
 			<?php
 
 			$dom = (int)$m;
@@ -54,7 +53,14 @@ $mom = nhuan($y);?>
 			</td>
 			<?php }?>
 			</tr><tr>
-			<?php }?>
+			<?php 
+			}}else{?>
+			<td align=center style="color:red;"></td>
+			<td align=center style="color:red;"></td>
+			<?php for($d=1;$d<=$mom[(int)$m];$d++){?>
+			<td align=center style="color:red;"></td>
+			<td align=center style="color:red;"></td>
+			<?php }}?>
 		</tr>
 		<?php }?>
 

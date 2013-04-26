@@ -11,3 +11,4 @@
 	Router::connect('/cong-viec-hoan-hoan-thanh', array('controller' => 'tasks', 'action' => 'finish'));
 	Router::connect('/acl', array('admin'=>true,'plugin' => 'acl', 'controller' => 'acl', 'action' => 'index'));
 	Router::connect('/tai-ve/*', array('controller' => 'tasks', 'action' => 'download'));
+	Router::connect('/fusion_charts', array('admin'=>true,'plugin' => 'FusionCharts', 'controller' => 'SingleSeriesDemo', 'action' => 'pie2d'));

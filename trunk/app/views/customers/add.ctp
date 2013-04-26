@@ -23,9 +23,9 @@
 		echo $this->Form->input('ngaythue',array('label'=>'Ngày thuê','class'=>'datepicker'));
 		echo $this->Form->input('ngaychamdut',array('label'=>'Ngày chấm dứt','class'=>'datepicker'));
 		echo $this->Form->input('thoihanhd',array('label'=>'Thời hạn hợp đồng','placeholder'=>"  tháng"));
-
+		echo $this->Form->end(__('Lưu', true));
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Lưu', true));?>
+<?php ?>
 </div>
 <script> var title='Thêm khách hàng';</script>

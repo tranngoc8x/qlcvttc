@@ -30,6 +30,7 @@
 	</tr>
 <?php endforeach; ?>
 </table>
+<?php echo $this->element("padding");?>
 </form>
  <script type="text/javascript">
 	var title= "Quản lý nhân sự";

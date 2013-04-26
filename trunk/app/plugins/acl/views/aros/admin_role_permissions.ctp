@@ -100,7 +100,6 @@ foreach($roles as $role)
     		    		if($ctrl_info['permissions'][$role[$role_model_name][$role_pk_name]] == 1)
     		    		{
     		    			$this->Js->buffer('register_role_toggle_right(true, "' . $this->Html->url('/') . '", "right__' . $role[$role_model_name][$role_pk_name] . '_' . $controller_name . '_' . $ctrl_info['name'] . '", "' . $role[$role_model_name][$role_pk_name] . '", "", "' . $controller_name . '", "' . $ctrl_info['name'] . '")');
-        		    
     		    			echo $this->Html->image('/acl/img/design/tick.png', array('class' => 'pointer'));
     		    		}
     		    		else
