@@ -32,7 +32,8 @@
 	//debug($elec_r);
 	ksort($nuoc_r);		
 	if($total==0)$total = 1;
-	include_once('/../libs/libchart/classes/libchart.php'); 
+	//include_once('/../libs/libchart/classes/libchart.php'); 
+	App::import('Lib','libchart/classes/libchart');
 	$w1 = count($nuoc)*100;
     $chart = new VerticalBarChart($w1, 700);
     $dataSet = new XYDataSet();

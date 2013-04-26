@@ -32,8 +32,8 @@
 	//debug($elec_r);
 	ksort($elec_r);
 	if($total==0)$total = 1;
-	include_once('/../libs/libchart/classes/libchart.php');
-	$w1 = count($elec)*100;
+	App::import('Lib','libchart/classes/libchart');
+	$w1 = count($elec)*70;
     $chart = new VerticalBarChart($w1, 700);
     $dataSet = new XYDataSet();
 	for($i=0;$i<count($cus);$i++){
@@ -41,7 +41,7 @@
 		$dataSet->addPoint(new Point($cus[$i]['Customer']['name'], $pt."%"));
 		$chart->setDataSet($dataSet);
 	}
-    $chart->setTitle("BIEU DO DIEN THONG KE THEO CONG TY ".$m."_".$y);
+    $chart->setTitle("BIỂU ĐỒ ĐIỆN THỐNG KÊ THEO CÔNG TY ".$m."_".$y);
 	$chart->render("images/dien.png");
 
 	$w2 = count($elec_r)*70;	
@@ -53,7 +53,7 @@
 		$dataSet2->addPoint(new Point($rooms[$j]['Room']['room'], $pr."%"));
 		$chart2->setDataSet($dataSet2);
 	}
-	$chart2->setTitle("BIEU DO DIEN THONG KE THEO PHONG ".$m."_".$y);
+	$chart2->setTitle("BIỂU ĐỒ ĐIỆN THỐNG KÊ THEO PHÒNG ".$m."_".$y);
 	$chart2->render("images/dien_phong.png");
 ?>
 <img src="<?php echo $this->webroot;?>/images/dien.png">
