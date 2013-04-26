@@ -4,10 +4,9 @@
 	<title>IFORCE ADMINISTRATOR V2</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link rel="shortcut icon" href="<?=$this->webroot;?>img/admin/icon.jpg" type="image/x-icon" />
-
-
+	
 	<?php
-			echo $this->Html->css(array('ext-all','admin','jquery-ui-1.10.1.custom'));
+			echo $this->Html->css(array('ext-all','admin','jquery-ui-1.10.1.custom','queryLoader'));
 			echo $this->Html->script(array('ext-base','ext-all','App','checkinput','jquery-1.9.1','jquery-ui-1.10.1.custom'));
 	?>
 	<style>
@@ -51,6 +50,7 @@
 	}
 	</style>
 </head>
+
 <script type="text/javascript">
 
 		Ext.onReady(function(){
@@ -181,22 +181,21 @@
 				}
 			}
 	}
-		$("#flashMessage").append("<a href='#' id='closediv'><img src='<?php echo $this->webroot;?>img/admin/cross_grey_small.png' /></a>");
-		$("#closediv").click(function(){
-				$("#flashMessage").slideUp('slow');
-		});
-		$("body").on({
-			alert(1);
-    // When ajaxStart is fired, add 'loading' to body class
-    ajaxStart: function() { 
-        $(this).addClass("loading"); 
-    },
-    // When ajaxStop is fired, rmeove 'loading' from body class
-    ajaxStop: function() { 
-        $(this).removeClass("loading"); 
-    }    
-});
+
+	$("#flashMessage").append("<a href='#' id='closediv'><img src='<?php echo $this->webroot;?>img/admin/cross_grey_small.png' /></a>");
+
+	$("#closediv").click(function(){
+			$("#flashMessage").slideUp('slow');
+	});
+
 </script>
 
 </body>
-</html>
+</html><script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js'></script>
+	<?php
+		echo $this->Html->script(array('queryLoader'));
+	?>
+	<script type='text/javascript'>
+	//QueryLoader.selectorPreload = "#idOfTheElement";
+	QueryLoader.init();
+	</script>
