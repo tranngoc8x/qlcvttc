@@ -7,7 +7,8 @@
 	echo $this->Form->end(__('Xem', true));
 ?>
 <?php
-echo $this->Html->link("xuất ra file excel", array('controller'=>'elecs','action'=>'export',$m,$y));
+echo $this->Html->link("Xuất ra file excel", array('controller'=>'elecs','action'=>'export',$m,$y));
+echo $this->Html->link("Xem theo khoảng thời gian", array('controller'=>'elecs','action'=>'listviewsdate'));
 $mom = nhuan($y);?>
 <table class="sort-table" cellspacing="0" >
 		<thead>
@@ -31,7 +32,8 @@ $mom = nhuan($y);?>
 		<?php foreach($cus as $c){?>
 		<tr>
 			<td rowspan="<?php echo count($c['Room']);?>"><?php  echo $c['Customer']['name'];?></td>
-			<?php if($c['Room']!= NULL){ foreach($c['Room'] as $i){ ?>
+			<?php if($c['Room']!= NULL){
+			foreach($c['Room'] as $i){ ?>
 			<td align=center ><?php  echo $i['room'];?></td>
 			<td align=center ><?php // echo $i['macto'];?></td>
 			<?php
