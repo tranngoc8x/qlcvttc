@@ -26,18 +26,21 @@ $configManager = new Config();
 			    $doc = $_GET["doc"];
 			else
 			    die("File error!");
+			if(isset($_GET["url"]))
+			    $url = $_GET["url"];
+			else
+			    $url = "";
 			
-		echo 	$pdfFilePath = $configManager->getConfig('path.pdf');
+			$pdfFilePath = $configManager->getConfig('path.pdf');
 			$swfFilePath = $configManager->getConfig('path.swf');
-			
 		?> 
 		<p id="viewerPlaceHolder" style="width:100%;height:100%;display:block">Document loading..</p>
 	        <?php if(is_dir($pdfFilePath) && is_dir($swfFilePath) ){ ?>
 		        <script type="text/javascript"> 
 		        	var doc = '<?php print $doc; ?>';
-		
+					var urlx='<?php print $url; ?>';
 			        $.ajax({
-					  url: 'services/numpages.php?doc=' + doc,
+					  url: 'services/numpages.php?url='+urlx+'&doc=' + doc,
 					  success: viewDocument,
 					  error: function(){
 					  		$("#viewerPlaceHolder").html('Error loading document');
@@ -51,8 +54,8 @@ $configManager = new Config();
 						}
 						
 						var numPages 			= retval;
-						var swfFileUrl 			= '{services/view.php?doc='+doc+'&page=[*,0],'+numPages+'}';
-		        		var searchServiceUrl	= escape('services/containstext.php?doc='+doc+'&page=[page]&searchterm=[searchterm]');
+						var swfFileUrl 			= '{services/view.php?url='+url+'&doc=' + doc+'&page=[*,0],'+numPages+'}';
+		        		var searchServiceUrl	= escape('services/containstext.php?url='+url+'&doc=' + doc+'&page=[page]&searchterm=[searchterm]');
 		        	
 						var fp = new FlexPaperViewer(	
 								 'FlexPaperViewer',
