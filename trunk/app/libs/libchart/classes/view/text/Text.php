@@ -37,8 +37,8 @@
             $baseDir = dirname(__FILE__) . "/../../../";
         
             // Free low-res fonts based on Bitstream Vera <http://dejavu.sourceforge.net/wiki/>
-            $this->fontCondensed = $baseDir . "fonts/DejaVuSansCondensed.ttf";
-            $this->fontCondensedBold = $baseDir . "fonts/DejaVuSansCondensed-Bold.ttf";
+            $this->fontCondensed = $baseDir . "fonts/tahoma.ttf";
+            $this->fontCondensedBold = $baseDir . "fonts/tahomabd.ttf";
         }
 
         /**
