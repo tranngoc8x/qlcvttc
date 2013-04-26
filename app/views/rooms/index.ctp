@@ -18,7 +18,7 @@
 			<td rowspan=<?php echo count($c['Room']); ?>><?php echo $c['Customer']['name'];?></td>
 			<td rowspan=<?php echo count($c['Room']); ?>><?php echo $c['Customer']['agent'];?></td>
 			<td rowspan=<?php echo count($c['Room']); ?>><?php echo $c['Customer']['phone'];?></td>
-			<?php foreach($c['Room'] as $r){?>
+			<?php if($c['Room']!=NULL){foreach($c['Room'] as $r){?>
 			<td class="center"><input type="checkbox" value="<?php $r['id']?>" name="checkid" class="checkbox"/></td>
 			<td><?php echo $r['room'];?></td>
 			<td><?php echo $r['macto'];?></td>
@@ -31,9 +31,17 @@
 				<?php echo $this->Html->Link($this->Html->image("admin/delete-item.png", array("alt" => "Xóa","title"=>"Xóa bản ghi")), array('action' => 'delete', $r['id']), array('escape'=>false), __('Bạn có chắc muốn xóa mục này',$r['id'])); ?>
 			</td>
 			</tr><tr class='tbody'>
+			<?php }}else{?>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
 			<?php }?>
 		</tr>
 		<?php }?>
 	</table>
+<?php echo $this->element("padding");?>
 </form>
 <script> var title= "Danh sách phòng";</script>

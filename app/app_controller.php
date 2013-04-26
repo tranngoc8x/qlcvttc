@@ -1,7 +1,8 @@
 <?php
 class AppController extends Controller {
+
 	var $helpers = array('Html', 'Form', 'Session','Javascript','Time','Link','Js','Ajax');
-	var $components = array('Acl', 'Auth', 'Session','RequestHandler','Email');
+	var $components = array('Acl', 'Auth', 'Session','RequestHandler');
     function beforeFilter(){
 		parent::beforeFilter();
         $this->Auth->authorize = 'actions';

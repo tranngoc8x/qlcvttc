@@ -35,5 +35,6 @@
 <?php endforeach; ?>
 
 </table>
+<?php echo $this->element("padding");?>
 </form>
 <script> var title= "Quản lý danh sách khách hàng";</script>

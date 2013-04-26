@@ -2,9 +2,6 @@
 class ElecsController extends AppController {
 
 	var $name = 'Elecs';
-
-
-
 	var $helpers = array('Excel');
 
 	    function export($m = null,$y=null) {
@@ -16,12 +13,10 @@ class ElecsController extends AppController {
 			}
 			$this->loadModel('Customer');
 			$cus = $this->Customer->find('all');
+			//$cus = $this->Customer->find('all',array('conditions'=>array('id'=>1000)));
 			$this->set(compact('y','cus','m'));
+			//debug($cus);
 	    }
-
-
-
-
 	function index() {
 		//debug($this->data);
 		$this->Elec->recursive = -1;
@@ -31,7 +26,6 @@ class ElecsController extends AppController {
 		}
 
 	function listview() {
-		//App::import('Libs', 'libchart/classes/libchart.php');
 		$this->Elec->recursive = -1;
 		if(isset($this->data['Elec']['YM'])){
 			$y = (int)$this->data['Elec']['YM']['year'];
@@ -44,6 +38,42 @@ class ElecsController extends AppController {
 		$cus = $this->Customer->find('all');
 		$this->set(compact('y','cus','m'));
 		//debug($cus);
+	}
+	function listviewsdate(){
+		$this->Elec->recursive = -1;
+		$this->loadModel('Customer');
+		$cus = $this->Customer->find('all');
+		$this->set(compact('cus'));
+		if(isset($this->data)){			
+			$date1 = implode('-',array_reverse(explode('/',$this->data['Elec']['date1'])));
+			$date2 = implode('-',array_reverse(explode('/',$this->data['Elec']['date2'])));			
+			$diff = strtotime($date2)-strtotime($date1);
+			if($diff > 0){
+				$d = $diff/(60*60*24);
+				if($d<=31){
+					$a = explode('/',$this->data['Elec']['date1']);
+					$y1 = $a[2];
+					$m1 = $a[1];
+					$d1 = $a[0];
+					$b = explode('/',$this->data['Elec']['date2']);
+					$y2 = $b[2];
+					$m2 = $b[1];
+					$d2 = $b[0];					
+				}else{
+					$this->Session->setFlash(__('Hãy chọn lại khoảng thời gian. Hệ thống không hiển thị dữ liệu quá 1 tháng ', true));
+				}					
+			}else{
+				$this->Session->setFlash(__('Hãy chọn lại khoảng thời gian. Ngày bắt đầu không thể nhỏ hơn ngày kết thúc ', true));
+			}
+		}else {
+			$y2 = date('Y');
+			$m2 = date('n');
+			$d2 = date('d');
+			//$y1 = ;
+			//$m1 = ; 
+			//$d1 = ;
+		}
+		$this->set(compact('y1','m1','d1','y2','m2','d2','d'));
 	}
 
 	function add() {
@@ -136,7 +166,6 @@ class ElecsController extends AppController {
 			$m = date('m');
 		}
 		$this->loadModel('Customer');
-
 		$cus = $this->Customer->find('all');
 		$this->loadModel('Room');
 		$this->Room->unbindModel(array('hasMany' => array('Elec'),'belongsTo'=> array('Customer')));
@@ -154,6 +183,26 @@ class ElecsController extends AppController {
 		  $this->set(compact('enumber'));
 		}
 
+	}
+	
+	function chart_detail(){
+		//debug($this->data);
+		$this->loadModel('Customer');
+		$customers = $this->Customer->find('list');
+		//$this->Customer->unbindModel(array('hasMany' => array('Room')));
+		$cus_first = $this->Customer->find('first',array('fields'=>array('id','name')));
+		if(isset($this->data['Elec']['YM'])){
+			$y = $this->data['Elec']['YM']['year'];
+			$m = $this->data['Elec']['YM']['month'];
+			$c = $this->data['Elec']['customers_id'];
+		}else {
+			$y = date('Y');
+			$m = date('m');
+			$c = $cus_first['Customer']['id'];
+		}			
+		$r = $this->Customer->Room->find('all', array('conditions'=>array('customers_id'=>$c)));
+		
+		$this->set(compact('customers','y','m','r','cus_first'));		
 	}
 
 

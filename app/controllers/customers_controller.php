@@ -6,7 +6,7 @@ class CustomersController extends AppController {
 	function index() {
 		$this->Customer->recursive = 0;
 		//$cus = $this->Customer->find('all');
-		//debug($cus);
+		//debug($cus);		
 		$this->set('customers', $this->paginate());
 	}
 

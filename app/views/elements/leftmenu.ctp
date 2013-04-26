@@ -92,7 +92,16 @@
 			<?php echo $this->Html->link(__('Nhập thông tin dùng điện', true), array('plugin'=>false,'admin'=>false,'controller'=>'elecs','action' => 'add')); ?>
 		</li>		
 		<li>
-			<?php echo $this->Html->link(__('Bảng thống kê dùng điện mỗi ngày', true), array('plugin'=>false,'admin'=>false,'controller'=>'elecs','action' => 'listview')); ?>
+			<?php echo $this->Html->link(__('Bảng thống kê lượng điện tiêu thụ hàng tháng', true), array('plugin'=>false,'admin'=>false,'controller'=>'elecs','action' => 'listview')); ?>
+		</li>
+		<li>
+			<?php echo $this->Html->link(__('Biểu đồ thống kê lượng điện tiêu thụ hàng tháng', true), array('plugin'=>false,'admin'=>false,'controller'=>'elecs','action' => 'chart')); ?>
+		</li>
+		<li>
+			<?php echo $this->Html->link(__('Bảng thống kê lượng nước tiêu thụ hàng tháng', true), array('plugin'=>false,'admin'=>false,'controller'=>'nuocs','action' => 'listview')); ?>
+		</li>
+		<li>
+			<?php echo $this->Html->link(__('Biểu đồ thống kê lượng nước tiêu thụ hàng tháng', true), array('plugin'=>false,'admin'=>false,'controller'=>'nuocs','action' => 'chart')); ?>
 		</li>
 				
 	</ul>
