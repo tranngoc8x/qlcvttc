@@ -27,9 +27,10 @@ require_once("../lib/pdf2swf_php5.php");
 
 $configManager = new Config();
 $doc=$_GET["doc"];
+$url=$_GET["url"];
 $page = "1";
 $swfFilePath = $configManager->getConfig('path.swf') . $doc  . $page. ".swf";
-$pdfFilePath = $configManager->getConfig('path.pdf') . $doc;
+$pdfFilePath = $configManager->getConfig('path.pdf') .$url.'/'. $doc;
 $output = "";
 
 if(glob($configManager->getConfig('path.swf') . $doc . "*")!=false)
@@ -39,12 +40,12 @@ else
 
 if($pagecount == 0 && validPdfParams($pdfFilePath,$doc,$page)){
 	$pdfconv=new pdf2swf();
-	$output=$pdfconv->convert($doc,$page);
-	
+	$output=$pdfconv->convert($doc,$page,$url);
+	//$tnt = 1;
 	if(rtrim($output) === "[Converted]")
 		$pagecount = count(glob($configManager->getConfig('path.swf') . $doc . "*"));
 }else{
-	$output = "Incorrect document file specified, file may not exist or insufficient permissions to read file";
+	$output = " Incorrect document file specified, file may not exist or insufficient permissions to read file";
 }
 
 if($pagecount!=0)

@@ -42,10 +42,10 @@ class pdf2swf
 	/**
 	* Method:convert
 	*/
-	public function convert($doc,$page)
+	public function convert($doc,$page,$url)
 	{
 		$output=array();
-		$pdfFilePath = $this->configManager->getConfig('path.pdf') . $doc;
+		$pdfFilePath = $this->configManager->getConfig('path.pdf') .$url.'/'. $doc;
 		$swfFilePath = $this->configManager->getConfig('path.swf') . $doc  . $page. ".swf";
 		
 		// traversal and file name check

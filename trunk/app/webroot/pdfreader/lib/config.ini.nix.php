@@ -1,4 +1,4 @@
-<?php exit; ?> DO NOT REMOVE THIS LINE
+; <?php exit; ?> DO NOT REMOVE THIS LINE
 [general]
  path.pdf = '/var/www/flexpaper/php/pdf/'
  path.swf = '/var/www/flexpaper/php/docs/'

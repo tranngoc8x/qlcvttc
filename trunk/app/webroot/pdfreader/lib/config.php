@@ -9,8 +9,8 @@ class Config{
 		}else{
 			//$this->config = parse_ini_file('config.ini.nix.php');
 
-		 $this->config['path.pdf'] = '/var/disk/HSCV/document/';
-		 $this->config['path.swf'] = '/var/disk/HSCV/pdfreader/swf/';
+		 $this->config['path.pdf'] = '/var/www/sites/iforceweb/iforce.com.vn/subdomains/www/html/projects/QLCV_TTC/app/webroot/files/documents/';
+		 $this->config['path.swf'] = '/var/www/sites/iforceweb/iforce.com.vn/subdomains/www/html/projects/QLCV_TTC/app/webroot/pdfreader/swf/';
 		 $this->config['cmd.conversion.singledoc']  = '/usr/local/bin/pdf2swf {path.pdf}{pdffile} -o {path.swf}{pdffile}.swf -f -T 9 -t -s storeallcharacters';
 		 $this->config['cmd.conversion.splitpages'] = '/usr/local/bin/pdf2swf {path.pdf}{pdffile} -o {path.swf}{pdffile}%.swf -f -T 9 -t -s storeallcharacters';
 		 $this->config['cmd.searching.extracttext'] = '/usr/local/bin/swfstrings {path.swf}{swffile}';
@@ -43,4 +43,3 @@ class Config{
       $this->config = $config;
     }
 }
-?>

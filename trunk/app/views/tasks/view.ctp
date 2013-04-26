@@ -120,10 +120,10 @@
 									<?php 
 									}
 									    if($icon=='doc'||$icon == 'docx'||$icon == 'pdf'||$icon == 'xls'||$icon == 'xlsx'){
-									    $document_view =$this->webroot."pdfreader/view.php?doc=".$fis['name'];
+									    $document_view =$this->webroot."pdfreader/view.php?url=".$fis['folder'].'&doc='.$fis['name'];
 									    }
 									    if($icon=='png' || $icon == 'jpg' || $icon == 'gif' || $icon == 'bmp' || $icon=='jpeg'||$icon == 'tif'){
-									     $document_view =$this->webroot."pdfreader/viewimg.php?file=".$fis['name'];
+									     $document_view =$this->webroot."pdfreader/viewimg.php?url=".$fis['folder'].'&file='.$fis['name'];
 									    }
 									?>
 									 <a href="#" class="Link_Text_12_black" onclick="document_view()"><?php echo $fis['name']; ?></a>&nbsp;&nbsp;      
