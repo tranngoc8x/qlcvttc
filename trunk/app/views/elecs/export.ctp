@@ -47,7 +47,8 @@
 		foreach($cus as $c):
 
 			//custommer name
-			$megre = count($c['Room']);
+			$megre1 = count($c['Room']);
+			$megre = $megre1>0?$megre1:1;
 			$excel->mergeCell('A'.$row,'A'.($row+$megre-1));
 			$excel->changeCell($c['Customer']['name'],'A'.$row);
 			$excel->cellBorder('A'.$row,'A'.($row+$megre-1),'000000');
