@@ -14,11 +14,15 @@
 			<th>Chỉ số điện</th>
 		</tr>
 		<?php $l = 0;?>
-		<?php foreach ($customers as $k=>$r): ?>
+		<?php foreach ($customers as $k=>$r){		
+		?>
 		<tr class='tbody'>
 			<td rowspan="<?php echo count($r['Room']);?>"><?php echo $r['Customer']['name'];?></td>
-			<?php foreach($r['Room'] as $i){$l++;
-			//debug($i);
+			<?php 
+			if($r['Room']!= NULL){
+			foreach($r['Room'] as $i){
+			$l++;
+			
 			?>
 			<td><?php echo $i['room']; echo $this->Form->hidden('rooms_id'.$l,array('value'=>$i['id']));?></td>
 			<td><?php echo $i['macto']?></td>
@@ -26,9 +30,17 @@
 			<td><?php echo $i['ghichu']?></td>
 			<td><?php echo $this->Form->input('elec'.$l,array('label'=>false,'placeholder'=>'Nhập vào số điện','style'=>'width:150px;')); ?></td>
 			</tr><tr class='tbody'>
+			
+			
+		<?php }}else{?>
+			<td>Chưa xếp phòng</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
 		<?php }?>
 		</tr>
-		<?php endforeach; ?>
+		<?php } ?>
 	</table>
 <?php echo $this->Form->end(__('Lưu', true));?>
 </div>
