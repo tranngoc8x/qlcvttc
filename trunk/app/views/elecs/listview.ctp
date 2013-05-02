@@ -7,7 +7,7 @@
 	echo $this->Form->end(__('Xem', true));
 ?>
 <?php
-echo $this->Html->link("Xuất ra file excel", array('controller'=>'elecs','action'=>'export',$m,$y));
+echo $this->Html->link("Xuất ra file excel", array('controller'=>'elecs','action'=>'export',$m,$y))."<br/>";
 echo $this->Html->link("Xem theo khoảng thời gian", array('controller'=>'elecs','action'=>'listviewsdate'));
 $mom = nhuan($y);?>
 <table class="sort-table" cellspacing="0" >
@@ -43,15 +43,10 @@ $mom = nhuan($y);?>
 			?>
 			<td align=center>
 				<script>$(document).ready(function(){getElecs("<?php echo $y."-".$m."-".$d;?>","<?php echo $i["id"]?>");});</script>
-				<div id="item_<?php echo $d;?>_<?php echo $i["id"];?>">
-
-				</div>
+				<div id="item_<?php echo $d;?>_<?php echo $i["id"];?>"></div>
 			</td>
 			<td align=center style="color:red;">
-				<div id="cso_<?php echo $d;?>_<?php echo $i["id"];?>">
-
-				</div>
-
+				<div id="cso_<?php echo $d;?>_<?php echo $i["id"];?>"></div>
 			</td>
 			<?php }?>
 			</tr><tr>
