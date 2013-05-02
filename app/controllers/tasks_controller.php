@@ -9,6 +9,17 @@ class TasksController extends AppController {
 		$this->_pref();
 		$this->set('tasks', $this->paginate());
 	}
+	function othertask($id = null){
+		if(!empty($id)){
+			$this->Task->recursive = -1;
+			$others = $this->Task->find('all',array('conditions'=>array('or'=>array('parent'=>$id,'id'=>$id))));
+			if (!empty($this->params['requested'])) {
+		      return $others;
+			}else {
+			  $this->set(compact('others'));
+			}
+		}
+	}
 	function _pref(){
 		$user = $this->viewVars['ssid'];
 		$this->loadModel('Group');
