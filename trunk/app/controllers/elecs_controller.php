@@ -1,3 +1,4 @@
+
 <?php
 class ElecsController extends AppController {
 
@@ -218,6 +219,24 @@ class ElecsController extends AppController {
 		*/
 
 	}
+	function getElecchart($datestart,$dateend,$r){
+	  	$dzs = date("Y-m-d",strtotime($datestart));
+	 	$dze = date("Y-m-d",strtotime($dateend.'+2 day'));
+
+		$enumbers = $this->Elec->find("list",array('fields'=>array('elec'),'conditions'=>array('rooms_id'=>$r,'date BETWEEN ? AND ?'=>array($dzs,$dze)),'recursive'=>-1));
+		
+		//$log = $this->Elec->getDataSource()->getLog(true, false);
+		$enumbers = (array_values($enumbers));
+		if(count($enumbers) >1){
+			$enumber = $enumbers[count($enumbers) -1] - $enumbers[0];
+		}else{$enumber =0;}
+		if (!empty($this->params['requested'])) {
+		      return $enumber;
+		}else {
+		  $this->set(compact('enumber'));
+		}
+
+	}
 	
 	function chart_detail(){
 		//debug($this->data);
@@ -242,3 +261,4 @@ class ElecsController extends AppController {
 
 
 }
+ 
