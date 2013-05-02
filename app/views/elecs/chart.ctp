@@ -16,12 +16,15 @@
 				$r = $j['id'];
 				$i = 0;
 				for($d=1;$d<=$mom[(int)$m];$d++){
-				$a = $this->requestAction('/elecs/getElec/'.date($y."-".$m."-".$d).'/'.$j["id"]);
+				$c = $this->requestAction('/elecs/getElec/'.date($y."-".$m."-".$d).'/'.$j["id"]);
+				$i =$i+ $c;
+				/*
 				$b = $this->requestAction('/elecs/getElec/'.date($y."-".$m."-".($d+1)).'/'.$j["id"]);
 				if ($b!=""&& $a!="") {
 					$c = $b-$a;
 					$i =$i+ $c;
 				}
+				*/
 			}
 			$e = $e +$i;
 			$elec_r[$r] = $i;
