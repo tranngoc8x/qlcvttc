@@ -198,7 +198,16 @@ class ElecsController extends AppController {
 
 	}
 	function getElec($d,$r){
+		$dy = date("Y-m-d",strtotime($d));
+		$dz = date("Y-m-d",strtotime($d.'+1 day'));
+		$enumbers0 = $this->Elec->find("first",array('fields'=>array('elec'),'conditions'=>array('rooms_id'=>$r,'date'=>$dy)));
+		$enumbers1 = $this->Elec->find("first",array('fields'=>array('elec'),'conditions'=>array('rooms_id'=>$r,'date'=>$dz)));
+		if($enumbers1['Elec']['elec']!="" && $enumbers0['Elec']['elec']!=""){
+			return (int)$enumbers1['Elec']['elec'] - (int)$enumbers0['Elec']['elec'];
+		}else return 0;
+		/*	
 		$dz = date("Y-m-d",strtotime($d));
+		
 		$enumbers = $this->Elec->find("first",array('fields'=>array('elec'),'conditions'=>array('rooms_id'=>$r,'date'=>$dz)));
 		$enumber = $enumbers['Elec']['elec'];
 		if (!empty($this->params['requested'])) {
@@ -206,6 +215,7 @@ class ElecsController extends AppController {
 		}else {
 		  $this->set(compact('enumber'));
 		}
+		*/
 
 	}
 	
