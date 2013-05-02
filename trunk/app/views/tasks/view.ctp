@@ -24,9 +24,16 @@
 					</p>
 				<?php }?>
 		</td>
-		<td colspan=3>
-			Công việc liên quan
-				
+		<td><span style='font-size: 14px; font-weight: bold;'>Công việc liên quan</span></td>
+		<td colspan=2>
+			
+				<?php $others = $this->requestAction('tasks/othertask/'.$task['Task']['id']);
+				foreach ($others as $value) {
+					echo $this->Html->link($value['Task']['name'],array('controller'=>'tasks','action'=>'view',$value['Task']['id']));
+					echo "<br>";
+				}
+
+				?>
 
 		</td>
 	</tr>
@@ -63,7 +70,7 @@
 
 				  if($v['status'] == 2){
 				  		$u = $this->requestAction('tasks/getNV/'.$v['users_id']);
-				  		echo $u;
+				  		echo $u.', ';
 				  }
 			}
 			?>
@@ -126,7 +133,7 @@
 									     $document_view =$this->webroot."pdfreader/viewimg.php?url=".$fis['folder'].'&file='.$fis['name'];
 									    }
 									?>
-									 <a href="#" class="Link_Text_12_black" onclick="document_view()"><?php echo $fis['name']; ?></a>&nbsp;&nbsp;      
+									 <a href="#" class="Link_Text_12_black" onclick="document_view()"><?php echo 'Xem';//$fis['name']; ?></a>&nbsp;&nbsp;      
          
 									<?php
 									echo '- '.$this->Html->link($fis['name'],array('controller'=>'tasks','action'=>'download',base64_encode($fis['id']))).'<br>';
@@ -137,7 +144,7 @@
 				         function document_view(){
 				            var  screen_w = screen.width;
 				            var left = (screen_w-600)/2;
-				            var arg= "'ViewIMG',width=600, height=600,resizable=no,scrollbars=yes,status=0,top= 50,left ="+left;			
+				            var arg= "'Xem văn bản',width=600, height=600,resizable=no,scrollbars=yes,status=0,top= 50,left ="+left;			
 				            window.open ("<?php echo $document_view; ?>", "_blank", arg);}
 				         </script>
 					</td>
