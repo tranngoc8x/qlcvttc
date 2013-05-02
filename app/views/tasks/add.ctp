@@ -50,4 +50,5 @@
 	$('#TaskAddForm').submit(function() {
 		$('#onloadding').show();
 	});
+
 </script>

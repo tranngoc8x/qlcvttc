@@ -1,38 +1,29 @@
 <?php
-	echo $this->Html->link('Biểu đồ chi tiết từng công ty', array('controller'=>'elecs', 'action'=>'chart_detail'));
 	echo $this->Form->create('Elec',array('action'=>'chart'));
-	echo $this->Form->input('YM',array('label'=>'Chọn tháng- năm','type'=>'date','dateFormat'=>'YM',
-												'minYear' => date('Y') - 15, 'maxYear' => date('Y') + 5));
-	echo $this->Form->end(__('Xem', true));
+	echo $this->Form->input('date1',array('label'=>'Từ ngày','type'=>'text','id'=>'date1','placeholder'=>'Bấm để chọn ngày','value'=>"",'readonly'=>1,'class'=>'input-short datepicker'));
+	echo $this->Form->input('date2',array('label'=>'Đến ngày','type'=>'text','onchange'=>'subdate()','id'=>'date2','placeholder'=>'Bấm để chọn ngày','value'=>"",'readonly'=>1,'class'=>'input-short datepicker'));
 	
-	$mom = nhuan($y);
+	echo $this->Form->end(__('Xem',true));
+
+
 	$elec = array();
 	$elec_r = array();
 	$total= 0;
+
+
 	foreach($cus as $c){
 		$k = $c['Customer']['id'];
 		$e = 0;
 			foreach($c['Room'] as $j){
 				$r = $j['id'];
-				$i = 0;
-				for($d=1;$d<=$mom[(int)$m];$d++){
-				$c = $this->requestAction('/elecs/getElec/'.date($y."-".$m."-".$d).'/'.$j["id"]);
-				$i =$i+ $c;
-				/*
-				$b = $this->requestAction('/elecs/getElec/'.date($y."-".$m."-".($d+1)).'/'.$j["id"]);
-				if ($b!=""&& $a!="") {
-					$c = $b-$a;
-					$i =$i+ $c;
-				}
-				*/
-			}
-			$e = $e +$i;
-			$elec_r[$r] = $i;
+				$c = $this->requestAction('/elecs/getElecchart/'.$datestart."/".$dateend.'/'.$j["id"]);
+				//$b = $this->requestAction('/elecs/getElec/'.date($y."-".$m."-".($d+1)).'/'.$j["id"]);
+				$e = $e +$c;
+				$elec_r[$r] = $c;
 			}
 		$elec[$k]=$e;
 		$total = $total + $e;
 	}
-	//debug($elec_r);
 	ksort($elec_r);
 	if($total==0)$total = 1;
 	App::import('Lib','libchart/classes/libchart');
@@ -44,7 +35,7 @@
 		$dataSet->addPoint(new Point($cus[$i]['Customer']['name'], $pt."%"));
 		$chart->setDataSet($dataSet);
 	}
-    $chart->setTitle("BIỂU ĐỒ ĐIỆN THỐNG KÊ THEO CÔNG TY ".$m."_".$y);
+    $chart->setTitle("BIỂU ĐỒ ĐIỆN THỐNG KÊ THEO CÔNG TY ".$d1.' - '.$d2);
 	$chart->render("images/dien.png");
 
 	$w2 = count($elec_r)*70;	
@@ -56,7 +47,7 @@
 		$dataSet2->addPoint(new Point($rooms[$j]['Room']['room'], $pr."%"));
 		$chart2->setDataSet($dataSet2);
 	}
-	$chart2->setTitle("BIỂU ĐỒ ĐIỆN THỐNG KÊ THEO PHÒNG ".$m."_".$y);
+	$chart2->setTitle("BIỂU ĐỒ ĐIỆN THỐNG KÊ THEO PHÒNG ".$d1.' - '.$d2);
 	$chart2->render("images/dien_phong.png");
 ?>
 <img src="<?php echo $this->webroot;?>/images/dien.png">
