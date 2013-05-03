@@ -135,9 +135,9 @@ class ElecsController extends AppController {
 			$datestart = $dstart[2].'-'.$dstart[1].'-'.$dstart[0] ;
 			$dend= explode('/',$this->data['Elec']['date2']);
 			$dateend = $dend[2].'-'.$dend[1].'-'.$dend[0] ;
-			 
+
 		}else {
-			
+
 			$datestart = date('Y-m-01');
 			$dateend = date('Y-m-'.date('t'));
 			$d1 = date('01/m/Y');
@@ -154,8 +154,8 @@ class ElecsController extends AppController {
 	}
 	function getElec($d,$r){
 		$dz = date("Y-m-d",strtotime($d));
-		$enumbers = $this->Elec->find("first",array('fields'=>array('elec'),'conditions'=>array('rooms_id'=>$r,'date'=>$dz)));
-		$enumber = $enumbers['Elec']['elec'];
+		$enumbers = $this->Elec->find("first",array('fields'=>array('elec'),'conditions'=>array('rooms_id'=>$r,'date'=>$dz),'recursive'=>-1));
+		$enumber = isset($enumbers['Elec']['elec'])?$enumbers['Elec']['elec']:"";
 		if (!empty($this->params['requested'])) {
 		      return $enumber;
 		}else {
@@ -168,7 +168,7 @@ class ElecsController extends AppController {
 	 	$dze = date("Y-m-d",strtotime($dateend.'+2 day'));
 
 		$enumbers = $this->Elec->find("list",array('fields'=>array('elec'),'conditions'=>array('rooms_id'=>$r,'date BETWEEN ? AND ?'=>array($dzs,$dze)),'recursive'=>-1));
-		
+
 		//$log = $this->Elec->getDataSource()->getLog(true, false);
 		$enumbers = (array_values($enumbers));
 		if(count($enumbers) >1){
