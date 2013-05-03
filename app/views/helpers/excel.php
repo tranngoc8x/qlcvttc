@@ -60,7 +60,7 @@ class ExcelHelper extends AppHelper
 
         $styleArray = array(
             'borders' => array(
-                 'outline' => array(
+                 'allborders' => array(
                         'style' => PHPExcel_Style_Border::BORDER_THIN,
                         'color' => array('rgb' => $colorborder),
                  ),

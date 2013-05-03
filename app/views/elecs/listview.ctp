@@ -66,9 +66,4 @@ $mom = nhuan($y);?>
 
 </table>
 
-
-
-
-
-
-<script>var title = 'Bảng thống kê số điện hàng tháng';</script>
+<script>var title = 'Bảng thống kê số điện';</script>
