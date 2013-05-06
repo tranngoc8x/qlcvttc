@@ -15,7 +15,6 @@
     $excel->cellAlign('E3','E3','center');
     //header
     for($i=1;$i<=$day;$i++){
-
     	//ngày tháng
     	$excel->mergeCell($excel->getColumn(($i*2)+2).'4',$excel->getColumn(($i*2)+3).'4');
 		$excel->changeCell($i,$excel->getColumn(($i*2)+2).'4');
@@ -32,11 +31,10 @@
 		$excel->cellWidth($excel->getColumn(($i*2)+3),10);//$excel->getColumn(($i*2)+3)
 		//$excel->cellBorder($excel->getColumn(($i*2)+3).'5',$excel->getColumn(($i*2)+3).'5','000000');
 		$excel->cellFont($excel->getColumn(($i*2)+3).'5',$excel->getColumn(($i*2)+3).'5',null,true,'FF8000');
-		//
 	}
 	//ngày 1 của tháng sau
 		$excel->mergeCell($excel->getColumn(($i*2)+2).'4',$excel->getColumn(($i*2)+3).'4');
-		$excel->changeCell(date("m/d",strtotime($y."-".$m."-".date('t',$m))),$excel->getColumn(($i*2)+2).'4');
+		$excel->changeCell(date("d/m",strtotime($y."-".$m."-".date('t',$m))),$excel->getColumn(($i*2)+2).'4');
 		//$excel->cellBorder($excel->getColumn(($i*2)+2).'4',$excel->getColumn(($i*2)+3).'4','000000');
 		$excel->cellFont($excel->getColumn(($i*2)+2).'4',$excel->getColumn(($i*2)+3).'4',null,true,'FFFFFF');
 		$excel->rowHeight('5',35);
@@ -55,9 +53,9 @@
 
 
 
-	$excel->cellAlign('E4',($excel->getColumn(($i*2)+2)).'5','center');
-	//end header
-	//thông tin chỉ số
+		$excel->cellAlign('E4',($excel->getColumn(($i*2)+2)).'5','center');
+		//end header
+		//thông tin chỉ số
 		$row=6;
 		//$startrow=6;
 		foreach($cus as $c):
@@ -101,13 +99,14 @@
 						$excel->changeCell($oldcel,$excel->getColumn(($i*2)+2).($row+$kr));
 					}
 				}
-				if(isset($keysearch) && !empty($keysearch)){
-						$excel->changeCell($arrkey[$keysearch],$excel->getColumn(($i*2)+2).($row+$kr));
-						$oldcel = $arrkey[$keysearch];
-					}else{
-						//$celladd =  $excel->getColumn(($i*2)).($row+$kr);
-						$excel->changeCell($oldcel,$excel->getColumn(($i*2)+2).($row+$kr));
-					}
+				//ngay 1 thang sau
+				$keysearch = array_search($y."-".$m0."-".$s,$arrkey);
+				if( isset($a[$y."-".$m0."-".$s]) && !empty($a[$y."-".$m0."-".$s])){
+						$excel->changeCell($a[$y."-".$m0."-".$s],$excel->getColumn(($i*2)+2).($row+$kr));
+						$oldcel = $a[$y."-".$m0."-".$s];
+				}else{
+					$excel->changeCell($oldcel,$excel->getColumn(($i*2)+2).($row+$kr));
+				}
 
 
 
