@@ -182,5 +182,20 @@ class ElecsController extends AppController {
 
 	}
 
+	function getElecEx($datestart,$dateend,$r){
+	  	$dzs = date("Y-m-d",strtotime($datestart));
+	 	$dze = date("Y-m-d",strtotime($dateend.'+2 day'));
+
+		$enumbers = $this->Elec->find("list",array('fields'=>array('date','elec'),'conditions'=>array('rooms_id'=>$r,'date BETWEEN ? AND ?'=>array($dzs,$dze)),'recursive'=>-1));
+
+		//$log = $this->Elec->getDataSource()->getLog(true, false);
+		//debug($log);
+		if (!empty($this->params['requested'])) {
+		      return $enumbers;
+		}else {
+		  $this->set(compact('enumbers'));
+		}
+
+	}
 
 }
