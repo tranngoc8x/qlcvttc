@@ -12,3 +12,6 @@
 	Router::connect('/acl', array('admin'=>true,'plugin' => 'acl', 'controller' => 'acl', 'action' => 'index'));
 	Router::connect('/tai-ve/*', array('controller' => 'tasks', 'action' => 'download'));
 	Router::connect('/fusion_charts', array('admin'=>true,'plugin' => 'FusionCharts', 'controller' => 'SingleSeriesDemo', 'action' => 'pie2d'));
+
+	Router::connect('/sworks', array('controller' => 'scores', 'action' => 'sworks'));
+	Router::connect('/smembers', array('controller' => 'scores', 'action' => 'smembers'));

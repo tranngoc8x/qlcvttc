@@ -25,8 +25,8 @@
 				<?php }?>
 		</td>
 		<td><span style='font-size: 14px; font-weight: bold;'>Công việc liên quan</span></td>
-		<td colspan=2>
-			
+		<td>
+
 				<?php $others = $this->requestAction('tasks/othertask/'.$task['Task']['id']);
 				foreach ($others as $value) {
 					echo $this->Html->link($value['Task']['name'],array('controller'=>'tasks','action'=>'view',$value['Task']['id']));
@@ -36,6 +36,7 @@
 				?>
 
 		</td>
+		<td><a id="danhgiakq" href=#>Đánh giá kết quả</a></td>
 	</tr>
 	<tr class='tbody'>
 		<td class=' ui-widget-header title' colspan=5>Chi tiết công việc</td>
@@ -124,7 +125,7 @@
 									if(is_file("img/".$icon.".png")){
 									?>
 									    <img src="<?php echo $this->webroot.'img/'.$icon ?>.png" width="16" border="0" align="absmiddle" />
-									<?php 
+									<?php
 									}
 									    if($icon=='doc'||$icon == 'docx'||$icon == 'pdf'||$icon == 'xls'||$icon == 'xlsx'){
 									    $document_view =$this->webroot."pdfreader/view.php?url=".$fis['folder'].'&doc='.$fis['name'];
@@ -133,8 +134,8 @@
 									     $document_view =$this->webroot."pdfreader/viewimg.php?url=".$fis['folder'].'&file='.$fis['name'];
 									    }
 									?>
-									 <a href="#" class="Link_Text_12_black" onclick="document_view()"><?php echo 'Xem';//$fis['name']; ?></a>&nbsp;&nbsp;      
-         
+									 <a href="#" class="Link_Text_12_black" onclick="document_view()"><?php echo 'Xem';//$fis['name']; ?></a>&nbsp;&nbsp;
+
 									<?php
 									echo '- '.$this->Html->link($fis['name'],array('controller'=>'tasks','action'=>'download',base64_encode($fis['id']))).'<br>';
 								}
@@ -144,7 +145,7 @@
 				         function document_view(){
 				            var  screen_w = screen.width;
 				            var left = (screen_w-600)/2;
-				            var arg= "'Xem văn bản',width=600, height=600,resizable=no,scrollbars=yes,status=0,top= 50,left ="+left;			
+				            var arg= "'Xem văn bản',width=600, height=600,resizable=no,scrollbars=yes,status=0,top= 50,left ="+left;
 				            window.open ("<?php echo $document_view; ?>", "_blank", arg);}
 				         </script>
 					</td>
@@ -249,20 +250,71 @@
 <?php  }?>
 
 <?php if($idlastu['Usertask']['users_id'] == $this->Session->read('Auth.User.id') && $ws ==1){?>
-
 <div id="dialog_vbdt" title="Thêm văn bản dự thảo">
-<form method="post" name='fform' enctype="multipart/form-data">
-	<input type="file" name="fileid" id="fileid" multiple />
-</form>
-<div id='response' style='font-size: 12px;'></div>
+	<form method="post" name='fform' enctype="multipart/form-data">
+		<input type="file" name="fileid" id="fileid" multiple />
+	</form>
+	<div id='response' style='font-size: 12px;'></div>
 </div>
+
+
 <div id="dialog-vblq" title="Thêm văn bản liên quan">
- <form method="post" enctype="multipart/form-data">
-	<input type="file" name="filek" id="filek" multiple />
-</form>
-<div id='response1' style='font-size: 12px;'></div>
+	<form method="post" enctype="multipart/form-data">
+		<input type="file" name="filek" id="filek" multiple />
+	</form>
+	<div id='response1' style='font-size: 12px;'></div>
 </div>
 <?php }?>
+
+<?php if($task['Task']['done']==2){?>
+<div id="dialog-kqcv" title="Đánh giá kết quả thực hiên công việc">
+	<?php echo $this->Form->create("Task",array('action'=>'diem'));?>
+<table width=100% class="text12_black table1" border=0 cellspacing=0 cellpadding=0>
+	<tr align=center>
+		<td>Nhân viên</td>
+		<!-- <td>Công việc</td> -->
+		<td>Độ khó</td>
+		<td>Mức độ hoàn thành</td>
+		<td>Điểm</td>
+		<!-- <td><?php echo $this->Form->submit("Lưu");?></td> -->
+	</tr>
+	<?php foreach ($task['Usertask'] as $k => $v) {
+			if($v['users_id']<=0) break;
+	  		$ud = $this->requestAction('tasks/getNV/'.$v['users_id']);?>
+	  		<tr class='tbody'>
+				<td><?php echo $ud;?>
+					<?php
+						echo $this->Form->hidden('users_id',array('value'=>$v['users_id']));
+						echo $this->Form->hidden('tasks_id',array('value'=>$task['Task']['id']));
+					?>
+				</td>
+				<!-- <td><?php echo $v['noidung'];?></td> -->
+				<td><?php echo $this->Form->input('level. ',array('label'=>false,'style'=>'width: 50px','class'=>'level','id'=>'level'.$k));?></td>
+				<td align=center><?php
+					echo $this->Form->input('percent. ',array('label'=>false,'style'=>'width: 50px','class'=>'percent','id'=>'percent'.$k));
+				?></td>
+				<td align=center><?php
+					echo $this->Form->input('score. ',array('label'=>false,'style'=>'width: 50px','class'=>'score','id'=>'score'.$k));
+				?></td>
+				<!-- <td><?php //echo $this->Html->link($this->Html->image('test-pass-icon.png'),array('controller'=>'tasks','action'=>'view',$task['Task']['id']),array('escape'=>false));
+					//echo $this->Html->image('test-pass-icon.png');
+				?>
+
+				</td> -->
+			</tr>
+	<?php
+	}
+	?>
+</table>
+<style>
+	#TaskDiemForm div.input{margin:0;}
+	#TaskDiemForm div.input input[type='text']{-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;}
+</style>
+<?php echo $this->Form->end();?>
+</div>
+<?php }?>
+
+
 <?php if($idlastu['Usertask']['users_id'] == $this->Session->read('Auth.User.id')){?>
 <div id="dialog-fail" title="Yêu cầu làm lại công việc">
 	<?php $nsfail = $this->requestAction('tasks/getNVFail/'.$task['Task']['id'].'/'.$ws);?>
@@ -319,7 +371,7 @@
 		]
 
 	});
-<?PHP }?>
+<?php }?>
 </script>
 
 <script type='text/javascript'>
@@ -438,7 +490,7 @@
 </script>
 <?php }?>
 
-
+<?php if($idlastu['Usertask']['users_id'] == $this->Session->read('Auth.User.id')){?>
 
 <script>
 //trả lại nhân viên làm sai
@@ -474,6 +526,8 @@
 		]
 	});
 </script>
+
+<?php }?>
 <script>
 
 	$("#dialog-fn").click(function(){
@@ -482,7 +536,7 @@
 		});
 	});
 	$("#idsubmit").click(function(){
-		
+
 		var strkq = $("#idkqua").val();
 		$.get('<?php echo $this->webroot;?>tasks/kqtask/<?php echo $task["Usertask"][count($task["Usertask"])-1]["id"];?>/'+strkq,function(data){
 				if(data==1){alert('Cập nhật thành công');}else alert("Có lỗi xảy ra. Thử lại !");
@@ -490,3 +544,53 @@
 		});
 	});
 </script>
+
+
+<?php if($task['Task']['done']==2){?>
+
+<script>
+//đánh giá kết quả
+	$( "#danhgiakq").click(function( event ) {
+			$( "#dialog-kqcv").dialog( "open" );
+			event.preventDefault();
+	});
+	$( "#dialog-kqcv").dialog({
+		autoOpen: false,
+		width: 600,
+		buttons: [
+			{
+				text: "Lưu lại",
+				click: function() {
+					var dataString = $("#TaskDiemForm").serialize();
+					//console.log(dataString);
+					//$('#TaskDiemForm').submit();
+					$.ajax({
+						type: "POST",
+						url: "../diem",
+						data: dataString,
+						success: function(even) {
+						if(even !=1) alert('Có lỗi xảy ra. Hãy thử lại!');
+						else alert("Lưu thành công.");
+						}
+					});
+
+					return false;
+				}
+			},
+			{
+				text: "Đóng lại",
+				click: function() {
+					$( this ).dialog( "close");
+				}
+			}
+		]
+	});
+</script>
+
+<script type="text/javascript">
+	//var item = $("#TaskDiemForm input[type=text].level").length;
+	//console.log(item);
+</script>
+
+<?php }?>
+
