@@ -139,7 +139,7 @@ class TasksController extends AppController {
 						$data['Tfile']['folder'] = date('m-Y');
 				 	 	$this->Task->Tfile->create();
 				 	 	$this->Task->Tfile->save($data);
-				 	 	
+
 				 	 	$data = array();
 				 	 	if($_FILES['files']['error'][$key] !=0 || $_FILES['files']['error'][$key] !='0') $err ++;
 				 	}
@@ -171,7 +171,7 @@ class TasksController extends AppController {
 				 	 	$data = array();
 					}
 				}
-				
+
 				$this->Session->setFlash(__('Khởi tạo công việc thành công.', true),'default',array('class'=>'success'));
 				$this->redirect(array('action' => 'index'));
 			} else {
@@ -500,5 +500,24 @@ class TasksController extends AppController {
 	 	}
 	 	if($err>0) return 1;
 	 	else return 2;
+	}
+	function diem(){
+		//$this->layout = 'ajax';
+		$this->autoRender = false;
+		$tong = count($this->data['level']);
+		$this->loadModel('Score');
+		//debug($this->data);
+		$data = array();
+		for($i=0;$i<$tong; $i++){
+			$data[$i]['users_id'] = $this->data['Task']['users_id'];
+			$data[$i]['tasks_id'] = $this->data['Task']['tasks_id'];
+			$data[$i]['level'] = $this->data['level'][$i];
+			$data[$i]['percent'] = $this->data['percent'][$i];
+			$data[$i]['score'] = $this->data['score'][$i];
+
+		}
+		//debug($data);
+		$this->Score->create();
+	 	if($this->Score->saveAll($data))echo 1;else echo 0;
 	}
 }
