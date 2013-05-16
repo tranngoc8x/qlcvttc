@@ -141,6 +141,7 @@
 								}
 							endforeach;
 						}?>
+						<?php if(isset($task['Tfile']) && count($task['Tfile'])>0){?>
 						 <script>
 				         function document_view(){
 				            var  screen_w = screen.width;
@@ -148,6 +149,7 @@
 				            var arg= "'Xem văn bản',width=600, height=600,resizable=no,scrollbars=yes,status=0,top= 50,left ="+left;
 				            window.open ("<?php echo $document_view; ?>", "_blank", arg);}
 				         </script>
+				         <?php }?>
 					</td>
 				</tr>
 				<tr class='tbody'>
@@ -281,10 +283,38 @@
 	<?php foreach ($task['Usertask'] as $k => $v) {
 			if($v['users_id']<=0) break;
 	  		$ud = $this->requestAction('tasks/getNV/'.$v['users_id']);?>
+	  		<?php $sc = $this->requestAction('tasks/getscore/'.$v['users_id'].'/'.$task['Task']['id']);?>
+	  		<?php  //echo $v['users_id'].'==='.$task['Task']['id'];?>
+	  		<?php if(!empty($sc)){?>
 	  		<tr class='tbody'>
 				<td><?php echo $ud;?>
 					<?php
-						echo $this->Form->hidden('users_id',array('value'=>$v['users_id']));
+						echo $this->Form->hidden('ido. ',array('value'=>$sc['Score']['id']));
+						echo $this->Form->hidden('users_ido. ',array('value'=>$v['users_id']));
+						echo $this->Form->hidden('tasks_ido',array('value'=>$task['Task']['id']));
+					?>
+				</td>
+				<!-- <td><?php echo $v['noidung'];?></td> -->
+				<td><?php echo $this->Form->input('levelo. ',array('label'=>false,'value'=>$sc['Score']['level'],'style'=>'width: 50px','class'=>'level','id'=>'level'.$k));?></td>
+				<td align=center><?php
+					echo $this->Form->input('percento. ',array('label'=>false,'value'=>$sc['Score']['percent'],'style'=>'width: 50px','class'=>'percent','id'=>'percent'.$k));
+				?></td>
+				<td align=center><?php
+					echo $this->Form->input('marko. ',array('label'=>false,'value'=>$sc['Score']['mark'],'style'=>'width: 50px','class'=>'score','id'=>'score'.$k));
+				?></td>
+				<!-- <td><?php //echo $this->Html->link($this->Html->image('test-pass-icon.png'),array('controller'=>'tasks','action'=>'view',$task['Task']['id']),array('escape'=>false));
+					//echo $this->Html->image('test-pass-icon.png');
+				?>
+
+				</td> -->
+			</tr>
+
+			<?php }else{?>
+
+				<tr class='tbody'>
+				<td><?php echo $ud;?>
+					<?php
+						echo $this->Form->hidden('users_id. ',array('value'=>$v['users_id']));
 						echo $this->Form->hidden('tasks_id',array('value'=>$task['Task']['id']));
 					?>
 				</td>
@@ -294,7 +324,7 @@
 					echo $this->Form->input('percent. ',array('label'=>false,'style'=>'width: 50px','class'=>'percent','id'=>'percent'.$k));
 				?></td>
 				<td align=center><?php
-					echo $this->Form->input('score. ',array('label'=>false,'style'=>'width: 50px','class'=>'score','id'=>'score'.$k));
+					echo $this->Form->input('mark. ',array('label'=>false,'style'=>'width: 50px','class'=>'score','id'=>'score'.$k));
 				?></td>
 				<!-- <td><?php //echo $this->Html->link($this->Html->image('test-pass-icon.png'),array('controller'=>'tasks','action'=>'view',$task['Task']['id']),array('escape'=>false));
 					//echo $this->Html->image('test-pass-icon.png');
@@ -302,6 +332,7 @@
 
 				</td> -->
 			</tr>
+			<?php }?>
 	<?php
 	}
 	?>
@@ -570,7 +601,7 @@
 						data: dataString,
 						success: function(even) {
 						if(even !=1) alert('Có lỗi xảy ra. Hãy thử lại!');
-						else alert("Lưu thành công.");
+						else {alert("Lưu thành công."); window.document.location.reload();}
 						}
 					});
 
