@@ -504,20 +504,50 @@ class TasksController extends AppController {
 	function diem(){
 		//$this->layout = 'ajax';
 		$this->autoRender = false;
-		$tong = count($this->data['level']);
 		$this->loadModel('Score');
 		//debug($this->data);
-		$data = array();
-		for($i=0;$i<$tong; $i++){
-			$data[$i]['users_id'] = $this->data['Task']['users_id'];
-			$data[$i]['tasks_id'] = $this->data['Task']['tasks_id'];
-			$data[$i]['level'] = $this->data['level'][$i];
-			$data[$i]['percent'] = $this->data['percent'][$i];
-			$data[$i]['score'] = $this->data['score'][$i];
-
+		$n = 0;
+		if(!empty($this->data['level'])){
+			$tong = count($this->data['level']);
+			$data = array();
+			for($i=0;$i<$tong; $i++){
+				$data[$i]['users_id'] = $this->data['Task']['users_id'][$i];
+				$data[$i]['tasks_id'] = $this->data['Task']['tasks_id'];
+				$data[$i]['level'] = $this->data['level'][$i];
+				$data[$i]['percent'] = $this->data['percent'][$i];
+				$data[$i]['mark'] = $this->data['mark'][$i];
+			}
+			//debug($data);
+			$this->Score->create();
+		 	if($this->Score->saveAll($data))$n=1;else $n=0;
+		 }
+		 if(!empty($this->data['levelo'])){
+			$tongo= count($this->data['levelo']);
+			if($tongo>0){
+				$datao = array();
+				for($i=0;$i<$tongo; $i++){
+					$datao[$i]['id'] = $this->data['ido'][$i];
+					$datao[$i]['users_id'] = $this->data['users_ido'][$i];
+					$datao[$i]['tasks_id'] = $this->data['Task']['tasks_ido'];
+					$datao[$i]['level'] = $this->data['levelo'][$i];
+					$datao[$i]['percent'] = $this->data['percento'][$i];
+					$datao[$i]['mark'] = $this->data['marko'][$i];
+				}
+				$this->Score->create();
+		 		if($this->Score->saveAll($datao))$n=1;else $n=0;
+			}
 		}
-		//debug($data);
-		$this->Score->create();
-	 	if($this->Score->saveAll($data))echo 1;else echo 0;
+		echo $n;
+
+	}
+	function getscore($id =null,$task=null){
+		if(empty($task) || empty($id)) return array();
+		$this->loadModel("Score");
+		$kq = $this->Score->find('first',array('conditions'=>array('tasks_id'=>$task,'users_id'=>$id),'recursive'=>-1));
+
+		//$log = $this->Score->getDataSource()->getLog(false, false);
+		//debug($log);
+		if (!empty($this->params['requested'])) return $kq;
+		else  $this->set(compact('kq'));
 	}
 }
