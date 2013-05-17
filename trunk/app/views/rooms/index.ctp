@@ -5,11 +5,12 @@
 		<tr>
 			<th><?php echo $this->Paginator->sort('Tên khách hàng','name'); ?></th>
 			<th><?php echo $this->Paginator->sort('Người đại diện','agent'); ?></th>
-			<th><?php echo $this->Paginator->sort('Số điện thoại','phone'); ?></th>
-			<th><input type="checkbox" name="checkall" value="" onClick="docheck(document.frmList.checkall.checked,0);" class="submit"/></th>
+			<th><?php echo $this->Paginator->sort('Số điện thoại','phone'); ?></th>			
 			<th col><?php echo $this->Paginator->sort('Phòng','room'); ?></th>
-			<th col><?php echo $this->Paginator->sort('Mã công tơ','macto'); ?></th>
-			<th col><?php echo $this->Paginator->sort('Chỉ số đầu','first'); ?></th>
+			<th col><?php echo $this->Paginator->sort('Mã công tơ điện','mactodien'); ?></th>
+			<th col><?php echo $this->Paginator->sort('Mã công tơ nước','mactonuoc'); ?></th>
+			<th col><?php echo $this->Paginator->sort('Chỉ số điện đầu','firstdien'); ?></th>
+			<th col><?php echo $this->Paginator->sort('Chỉ số nước đầu','firstnuoc'); ?></th>
 			<th col><?php echo $this->Paginator->sort('Ghi chú','ghichu'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 		</tr>
@@ -19,10 +20,11 @@
 			<td rowspan=<?php echo count($c['Room']); ?>><?php echo $c['Customer']['agent'];?></td>
 			<td rowspan=<?php echo count($c['Room']); ?>><?php echo $c['Customer']['phone'];?></td>
 			<?php if($c['Room']!=NULL){foreach($c['Room'] as $r){?>
-			<td class="center"><input type="checkbox" value="<?php $r['id']?>" name="checkid" class="checkbox"/></td>
 			<td><?php echo $r['room'];?></td>
-			<td><?php echo $r['macto'];?></td>
-			<td><?php echo $r['first'];?></td>
+			<td><?php echo $r['mactodien'];?></td>
+			<td><?php echo $r['mactonuoc'];?></td>
+			<td><?php echo $r['firstdien'];?></td>
+			<td><?php echo $r['firstnuoc'];?></td>
 			
 			<td><?php echo $r['ghichu'];?></td>
 			<td>
