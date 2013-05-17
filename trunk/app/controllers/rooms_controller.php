@@ -2,14 +2,15 @@
 class RoomsController extends AppController {
 
 	var $name = 'Rooms';
+	var $paginate = array(
+		'Customer'=> array('limit' => 10)
+	);
 
-	function index() {
-		$this->Room->recursive = 0;
-		$this->set('rooms', $this->paginate());
-		$this->loadModel('Customer');
-		$cus = $this->Customer->find('all');
+	function index() {		
+		$this->loadModel('Customer');		
+		$cus = $this->paginate('Customer');
 		$this->set(compact('cus'));
-	 
+		
 	}
 
 	function view($id = null) {
