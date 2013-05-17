@@ -15,10 +15,10 @@ class RoomsController extends AppController {
 
 	function view($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid room', true));
+			$this->Session->setFlash(__('Không tồn tại phòng này', true));
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->set('room', $this->Room->read(null, $id));
+		$this->set('room', $this->Room->read(null, $id));		
 	}
 
 	function add() {		

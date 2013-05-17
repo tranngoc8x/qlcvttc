@@ -119,41 +119,49 @@ class NuocsController extends AppController {
 		$this->set(compact('customers'));
 		$this->loadModel("Room");
 		$room = $this->Room->find('count');
-
+		$this->set(compact('room'));
+		//debug($room);
 		if (!empty($this->data)) {		
 			if(!empty($this->data['Nuoc']['date'])){
 				$dstart = explode('/',$this->data['Nuoc']['date']);
 				$ds = $dstart[2].'-'.$dstart[1].'-'.$dstart[0] ;
 				$this->data['Nuoc']['date'] = date('Y-m-d',strtotime($ds));
 				//$first = date('Y-m-d',strtotime($ds.'-1day'));
-			}			
-			$j=0;
-			$data= array();
-			$a = array();
-			for($i=1;$i<=$room;$i++){
-				$this->Nuoc->create();
-				if(!empty($this->data['Nuoc']['nuoc'.$i])){
-					
-					$data['Nuoc']['rooms_id']=$this->data['Nuoc']['rooms_id'.$i];
-					$data['Nuoc']['nuoc']=$this->data['Nuoc']['nuoc'.$i];
-					$data['Nuoc']['date']=$this->data['Nuoc']['date'];
-					//$elec_first = $this->Elec->find("first",array('fields'=>array('elec'),'conditions'=>array('rooms_id'=>$this->data['Elec']['rooms_id'.$i],'date'=>$first)));
-					// Kiem tra xem ngay do da nhap du lieu chua, neu nhap roi thi sua con chua thi them moi
-					//$data['Elec']['mtt'] = $this->data['Elec']['elec'.$i] - $elec_first;
-					$arr = $this->Nuoc->find('all', array('conditions'=>array('date'=>$this->data['Nuoc']['date'], 'rooms_id'=>$data['Nuoc']['rooms_id'])));
-					if(empty($arr)){
-						$this->Nuoc->save($data);
-						$j++;
+				
+				$j=0;
+				$data= array();
+				$a = array();
+				for($i=1;$i<=$room;$i++){
+					$this->Nuoc->create();
+					if(!empty($this->data['Nuoc']['nuoc'.$i])){
+						
+						$data['Nuoc']['rooms_id']=$this->data['Nuoc']['rooms_id'.$i];
+						$data['Nuoc']['nuoc']=$this->data['Nuoc']['nuoc'.$i];
+						$data['Nuoc']['date']=$this->data['Nuoc']['date'];
+						//$elec_first = $this->Elec->find("first",array('fields'=>array('elec'),'conditions'=>array('rooms_id'=>$this->data['Elec']['rooms_id'.$i],'date'=>$first)));
+						// Kiem tra xem ngay do da nhap du lieu chua, neu nhap roi thi sua con chua thi them moi
+						//$data['Elec']['mtt'] = $this->data['Elec']['elec'.$i] - $elec_first;
+						$arr = $this->Nuoc->find('all', array('conditions'=>array('date'=>$this->data['Nuoc']['date'], 'rooms_id'=>$data['Nuoc']['rooms_id'])));
+						if(empty($arr)){
+							$this->Nuoc->save($data);
+							$j++;
 
-					}else{
-						$this->Nuoc->id = $arr[0]['Nuoc']['id'];
-						$this->Nuoc->saveField('nuoc',$data['Nuoc']['nuoc']);
-						//$this->Elec->saveField('mtt',$data['Elec']['elec']);
-						}
-				}
-			}		
-			$this->Session->setFlash(__('Đã lưu', true));
-			$this->redirect(array('action' => 'listviewsdate'));
+						}else{
+							$this->Nuoc->id = $arr[0]['Nuoc']['id'];
+							$this->Nuoc->saveField('nuoc',$data['Nuoc']['nuoc']);
+							//$this->Elec->saveField('mtt',$data['Elec']['elec']);
+							}
+					}
+					//debug($data);
+				}		
+				$this->Session->setFlash(__('Đã lưu', true));
+				//debug($this->data);
+				
+				$this->redirect(array('action' => 'listviewsdate'));
+			}else {
+				$this->Session->setFlash(__('Phải chọn ngày nhập', true));
+			}			
+			
 		}
 	}
 

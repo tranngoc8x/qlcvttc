@@ -116,34 +116,36 @@ class ElecsController extends AppController {
 				$ds = $dstart[2].'-'.$dstart[1].'-'.$dstart[0] ;
 				$this->data['Elec']['date'] = date('Y-m-d',strtotime($ds));
 				//$first = date('Y-m-d',strtotime($ds.'-1day'));
-			}			
-			$j=0;
-			$data= array();
-			$a = array();
-			for($i=1;$i<=$room;$i++){
-				$this->Elec->create();
-				if(!empty($this->data['Elec']['elec'.$i])){
-					
-					$data['Elec']['rooms_id']=$this->data['Elec']['rooms_id'.$i];
-					$data['Elec']['elec']=$this->data['Elec']['elec'.$i];
-					$data['Elec']['date']=$this->data['Elec']['date'];
-					//$elec_first = $this->Elec->find("first",array('fields'=>array('elec'),'conditions'=>array('rooms_id'=>$this->data['Elec']['rooms_id'.$i],'date'=>$first)));
-					// Kiem tra xem ngay do da nhap du lieu chua, neu nhap roi thi sua con chua thi them moi
-					//$data['Elec']['mtt'] = $this->data['Elec']['elec'.$i] - $elec_first;
-					$arr = $this->Elec->find('all', array('conditions'=>array('date'=>$this->data['Elec']['date'], 'rooms_id'=>$data['Elec']['rooms_id'])));
-					if(empty($arr)){
-						$this->Elec->save($data);
-						$j++;
+				$j=0;
+				$data= array();
+				$a = array();
+				for($i=1;$i<=$room;$i++){
+					$this->Elec->create();
+					if(!empty($this->data['Elec']['elec'.$i])){
+						
+						$data['Elec']['rooms_id']=$this->data['Elec']['rooms_id'.$i];
+						$data['Elec']['elec']=$this->data['Elec']['elec'.$i];
+						$data['Elec']['date']=$this->data['Elec']['date'];
+						//$elec_first = $this->Elec->find("first",array('fields'=>array('elec'),'conditions'=>array('rooms_id'=>$this->data['Elec']['rooms_id'.$i],'date'=>$first)));
+						// Kiem tra xem ngay do da nhap du lieu chua, neu nhap roi thi sua con chua thi them moi
+						//$data['Elec']['mtt'] = $this->data['Elec']['elec'.$i] - $elec_first;
+						$arr = $this->Elec->find('all', array('conditions'=>array('date'=>$this->data['Elec']['date'], 'rooms_id'=>$data['Elec']['rooms_id'])));
+						if(empty($arr)){
+							$this->Elec->save($data);
+							$j++;
 
-					}else{
-						$this->Elec->id = $arr[0]['Elec']['id'];
-						$this->Elec->saveField('elec',$data['Elec']['elec']);
-						//$this->Elec->saveField('mtt',$data['Elec']['elec']);
-						}
-				}
-			}		
-			$this->Session->setFlash(__('Đã lưu', true));
-			$this->redirect(array('action' => 'listviewsdate'));
+						}else{
+							$this->Elec->id = $arr[0]['Elec']['id'];
+							$this->Elec->saveField('elec',$data['Elec']['elec']);
+							//$this->Elec->saveField('mtt',$data['Elec']['elec']);
+							}
+					}
+				}		
+				$this->Session->setFlash(__('Đã lưu', true));
+				$this->redirect(array('action' => 'listviewsdate'));
+			}else{
+				$this->Session->setFlash(__('Phải chọn ngày nhập', true));
+			}				
 		}
 	}
 

@@ -1,80 +1,21 @@
 <div class="groups view">
-<h2><?php  __('Group');?></h2>
-	<dl><?php $i = 0; $class = ' class="altrow"';?>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $group['Group']['id']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Name'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $group['Group']['name']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Created'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $group['Group']['created']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $group['Group']['modified']; ?>
-			&nbsp;
-		</dd>
-	</dl>
+<table class='tblcontent chitietcv' border=0 width=100% cellspacing=0 cellpadding=0>
+    <tr class='tbody'>
+        <td width="120"><b>Phòng ban</b></td>
+        <td> <?php echo $group['Group']['name']; ?></td>
+    </tr>
+	<tr class='tbody'>
+        <td width="120"><b>Ghi chú</b></td>
+        <td> <?php echo $group['Group']['note']; ?></td>
+    </tr>
+	<tr class='tbody'>
+        <td width="120"><b>Thứ tự</b></td>
+        <td> <?php echo $group['Group']['order']; ?></td>
+    </tr>
+	<tr class='tbody'>
+        <td width="120"><b>Viết tắt</b></td>
+        <td> <?php echo $group['Group']['magroup']; ?></td>
+    </tr>
+</table>
 </div>
-<div class="actions">
-	<h3><?php __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('Edit Group', true), array('action' => 'edit', $group['Group']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('Delete Group', true), array('action' => 'delete', $group['Group']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $group['Group']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Groups', true), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Group', true), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Users', true), array('controller' => 'users', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New User', true), array('controller' => 'users', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
-<div class="related">
-	<h3><?php __('Related Users');?></h3>
-	<?php if (!empty($group['User'])):?>
-	<table cellpadding = "0" cellspacing = "0">
-	<tr>
-		<th><?php __('Id'); ?></th>
-		<th><?php __('Name'); ?></th>
-		<th><?php __('Username'); ?></th>
-		<th><?php __('Password'); ?></th>
-		<th><?php __('Positions Id'); ?></th>
-		<th><?php __('Groups Id'); ?></th>
-		<th class="actions"><?php __('Actions');?></th>
-	</tr>
-	<?php
-		$i = 0;
-		foreach ($group['User'] as $user):
-			$class = null;
-			if ($i++ % 2 == 0) {
-				$class = ' class="altrow"';
-			}
-		?>
-		<tr<?php echo $class;?>>
-			<td><?php echo $user['id'];?></td>
-			<td><?php echo $user['name'];?></td>
-			<td><?php echo $user['username'];?></td>
-			<td><?php echo $user['password'];?></td>
-			<td><?php echo $user['positions_id'];?></td>
-			<td><?php echo $user['groups_id'];?></td>
-			<td class="actions">
-				<?php echo $this->Html->link(__('View', true), array('controller' => 'users', 'action' => 'view', $user['id'])); ?>
-				<?php echo $this->Html->link(__('Edit', true), array('controller' => 'users', 'action' => 'edit', $user['id'])); ?>
-				<?php echo $this->Html->link(__('Delete', true), array('controller' => 'users', 'action' => 'delete', $user['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $user['id'])); ?>
-			</td>
-		</tr>
-	<?php endforeach; ?>
-	</table>
-<?php endif; ?>
-
-	<div class="actions">
-		<ul>
-			<li><?php echo $this->Html->link(__('New User', true), array('controller' => 'users', 'action' => 'add'));?> </li>
-		</ul>
-	</div>
-</div>
+<script> var title='Chi tiết phòng ban';</script>

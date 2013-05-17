@@ -1,3 +1,9 @@
+<script>
+function valid(o,w){
+ o.value = o.value.replace(valid.r[w],''); 
+ } 
+ valid.r={ 'numbers':/[^\d]/g }
+</script>
 <div class="elecs form">
 <?php echo $this->Form->create('Elec');?>
 	<?php
@@ -25,10 +31,10 @@
 			
 			?>
 			<td><?php echo $i['room']; echo $this->Form->hidden('rooms_id'.$l,array('value'=>$i['id']));?></td>
-			<td><?php echo $i['macto']?></td>
-			<td><?php echo $i['first']?></td>
+			<td><?php echo $i['mactodien']?></td>
+			<td><?php echo $i['firstdien']?></td>
 			<td><?php echo $i['ghichu']?></td>
-			<td><?php echo $this->Form->input('elec'.$l,array('label'=>false,'placeholder'=>'Nhập vào số điện','style'=>'width:150px;')); ?></td>
+			<td><?php echo $this->Form->input('elec'.$l,array('label'=>false,'onkeyup'=>"valid(this,'numbers')",'onblur'=>"valid(this,'numbers')",'placeholder'=>'Nhập vào số điện','style'=>'width:150px;')); ?></td>
 			</tr><tr class='tbody'>
 			
 			
