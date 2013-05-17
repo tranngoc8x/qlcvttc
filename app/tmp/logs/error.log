@@ -9515,3 +9515,1088 @@ Aco: controllers/Tasks/kqtask in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\
 2013-04-24 04:28:28 Warning: Warning (2): Missing argument 1 for TasksController::getfnNV() in [E:\xampp\htdocs\QLCV_TTC\app\controllers\tasks_controller.php, line 314]
 2013-04-24 04:28:28 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 62]
 2013-04-24 04:28:28 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 191]
+2013-05-08 08:30:45 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/smembers in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:45 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:45 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:46 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:46 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:46 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:46 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:46 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:47 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:47 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:47 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:47 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:47 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:48 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:48 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:48 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:48 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:48 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:49 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:49 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:49 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:52 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:52 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:52 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:52 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:52 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:53 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:53 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:53 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:53 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:53 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:54 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:54 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:54 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:54 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:54 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:55 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:55 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:55 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:55 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:55 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:30:56 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:42:18 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 08:42:22 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Scores/sworks in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-08 10:12:04 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\scores\view.ctp, line 31]
+2013-05-08 10:17:39 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\scores\view.ctp, line 31]
+2013-05-08 10:17:48 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\scores\view.ctp, line 31]
+2013-05-08 10:24:21 Warning: Warning (2): Missing argument 1 for TasksController::getfnNV() in [E:\xampp\htdocs\QLCV_TTC\app\controllers\tasks_controller.php, line 325]
+2013-05-14 09:23:57 Warning: Warning (2): strlen() expects parameter 1 to be string, array given in [E:\xampp\htdocs\QLCV_TTC\cake\libs\view\helpers\javascript.php, line 325]
+2013-05-14 10:15:32 Warning: Warning (512): DbAcl::check() - Failed ARO/ACO node lookup in permissions check.  Node references:
+Aro: Array
+(
+    [User] => Array
+        (
+            [id] => 1
+            [name] => Giám đốc
+            [username] => admin
+            [positions_id] => 1
+            [groups_id] => 1
+            [gioitinh] => 0
+            [datestart] => 1993-03-15
+            [dateend] => 0000-00-00
+            [birth] => 1968-01-02
+            [address] => Cầu Giấy,Hà Nội
+            [email] => tuan.leanh@ttctower.com.vn
+            [nghiviec] => 0
+            [desc] => 
+        )
+
+)
+
+Aco: controllers/Tasks/diem in [E:\xampp\htdocs\QLCV_TTC\cake\libs\controller\components\acl.php, line 273]
+2013-05-14 10:40:53 Warning: Warning (2): Missing argument 1 for TasksController::getfnNV() in [E:\xampp\htdocs\QLCV_TTC\app\controllers\tasks_controller.php, line 325]
+2013-05-14 10:40:53 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 31]
+2013-05-14 10:40:53 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 70]
+2013-05-14 10:40:53 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 198]
+2013-05-14 10:41:43 Warning: Warning (2): Missing argument 1 for TasksController::getfnNV() in [E:\xampp\htdocs\QLCV_TTC\app\controllers\tasks_controller.php, line 325]
+2013-05-14 10:41:43 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 31]
+2013-05-14 10:41:43 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 70]
+2013-05-14 10:41:43 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 198]
+2013-05-14 10:42:34 Warning: Warning (2): Missing argument 1 for TasksController::getfnNV() in [E:\xampp\htdocs\QLCV_TTC\app\controllers\tasks_controller.php, line 325]
+2013-05-14 10:42:34 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 31]
+2013-05-14 10:42:34 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 70]
+2013-05-14 10:42:34 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 198]
+2013-05-14 10:43:29 Warning: Warning (2): Missing argument 1 for TasksController::getfnNV() in [E:\xampp\htdocs\QLCV_TTC\app\controllers\tasks_controller.php, line 325]
+2013-05-14 10:43:29 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 31]
+2013-05-14 10:43:29 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 70]
+2013-05-14 10:43:29 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 198]
+2013-05-14 10:44:55 Warning: Warning (2): Missing argument 1 for TasksController::getfnNV() in [E:\xampp\htdocs\QLCV_TTC\app\controllers\tasks_controller.php, line 325]
+2013-05-14 10:44:55 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 31]
+2013-05-14 10:44:55 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 70]
+2013-05-14 10:44:55 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 198]
+2013-05-14 10:45:11 Warning: Warning (2): Missing argument 1 for TasksController::getfnNV() in [E:\xampp\htdocs\QLCV_TTC\app\controllers\tasks_controller.php, line 325]
+2013-05-14 10:45:11 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 31]
+2013-05-14 10:45:11 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 70]
+2013-05-14 10:45:11 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 198]
+2013-05-14 10:45:50 Warning: Warning (2): Missing argument 1 for TasksController::getfnNV() in [E:\xampp\htdocs\QLCV_TTC\app\controllers\tasks_controller.php, line 325]
+2013-05-14 10:45:50 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 31]
+2013-05-14 10:45:50 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 70]
+2013-05-14 10:45:50 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 198]
+2013-05-14 10:46:53 Warning: Warning (2): Missing argument 1 for TasksController::getfnNV() in [E:\xampp\htdocs\QLCV_TTC\app\controllers\tasks_controller.php, line 325]
+2013-05-14 10:46:53 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 31]
+2013-05-14 10:46:53 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 70]
+2013-05-14 10:46:53 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 198]
+2013-05-14 10:47:59 Warning: Warning (2): Missing argument 1 for TasksController::getfnNV() in [E:\xampp\htdocs\QLCV_TTC\app\controllers\tasks_controller.php, line 325]
+2013-05-14 10:47:59 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 31]
+2013-05-14 10:47:59 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 70]
+2013-05-14 10:47:59 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 198]
+2013-05-14 10:48:20 Warning: Warning (2): Missing argument 1 for TasksController::getfnNV() in [E:\xampp\htdocs\QLCV_TTC\app\controllers\tasks_controller.php, line 325]
+2013-05-14 10:48:20 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 31]
+2013-05-14 10:48:20 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 70]
+2013-05-14 10:48:20 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 198]
+2013-05-14 10:48:39 Warning: Warning (2): Missing argument 1 for TasksController::getfnNV() in [E:\xampp\htdocs\QLCV_TTC\app\controllers\tasks_controller.php, line 325]
+2013-05-14 10:48:39 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 31]
+2013-05-14 10:48:39 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 70]
+2013-05-14 10:48:39 Warning: Warning (2): Invalid argument supplied for foreach() in [E:\xampp\htdocs\QLCV_TTC\app\views\tasks\view.ctp, line 198]
+2013-05-15 10:28:38 Warning: Warning (512): <span style="color:Red;text-align:left"><b>SQL Error:</b> 1062: Duplicate entry '0' for key 'PRIMARY'</span> in [E:\xampp\htdocs\QLCV_TTC\cake\libs\model\datasources\dbo_source.php, line 684]
