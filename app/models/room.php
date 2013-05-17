@@ -12,17 +12,66 @@ class Room extends AppModel {
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
-		),
-		'room' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => 'Phải nhập dữ liệu vào đây',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+		'room' => array(
+			'notempty' => array(
+				'rule' => array('notempty'),
+				'message' => 'Phải nhập dữ liệu vào đây',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'firstdien' => array(
+			'notempty' => array(
+				'rule' => array('notempty'),
+				'message' => 'Phải nhập dữ liệu vào đây',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'firstnuoc' => array(
+			'notempty' => array(
+				'rule' => array('notempty'),
+				'message' => 'Phải nhập dữ liệu vào đây',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'mactodien' => array(
+			'notempty' => array(
+				'rule' => array('notempty'),
+				'message' => 'Phải nhập dữ liệu vào đây',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'mactonuoc' => array(
+			'notempty' => array(
+				'rule' => array('notempty'),
+				'message' => 'Phải nhập dữ liệu vào đây',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		
 	);
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
