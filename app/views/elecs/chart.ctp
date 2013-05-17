@@ -1,23 +1,28 @@
+<script>
+function subdate(){
+	var myDate1 = Date.parseExact(document.getElementById('date1').value,"dd/MM/yyyy");	
+	var myDate2 = Date.parseExact(document.getElementById('date2').value,"dd/MM/yyyy");	
+	var days = 24*60*60*1000;	
+	if((myDate2-myDate1)<0){
+		alert("Không thể nhập ngày bắt đầu sau ngày kết thúc. Hãy nhập lại !");
+	}else {
+		if((myDate2-myDate1) >32*days) alert("Không thể xuất dữ liệu nhiều hơn 1 tháng. Hãy nhập lại !");}
+	}	
+</script>
 <?php
 	echo $this->Form->create('Elec',array('action'=>'chart'));
 	echo $this->Form->input('date1',array('label'=>'Từ ngày','type'=>'text','id'=>'date1','placeholder'=>'Bấm để chọn ngày','value'=>"",'readonly'=>1,'class'=>'input-short datepicker'));
-	echo $this->Form->input('date2',array('label'=>'Đến ngày','type'=>'text','onchange'=>'subdate()','id'=>'date2','placeholder'=>'Bấm để chọn ngày','value'=>"",'readonly'=>1,'class'=>'input-short datepicker'));
-	
+	echo $this->Form->input('date2',array('label'=>'Đến ngày','type'=>'text','onchange'=>'subdate()','id'=>'date2','placeholder'=>'Bấm để chọn ngày','value'=>"",'readonly'=>1,'class'=>'input-short datepicker'));	
 	echo $this->Form->end(__('Xem',true));
-
-
 	$elec = array();
 	$elec_r = array();
 	$total= 0;
-
-
 	foreach($cus as $c){
 		$k = $c['Customer']['id'];
 		$e = 0;
 			foreach($c['Room'] as $j){
 				$r = $j['id'];
-				$c = $this->requestAction('/elecs/getElecchart/'.$datestart."/".$dateend.'/'.$j["id"]);
-				//$b = $this->requestAction('/elecs/getElec/'.date($y."-".$m."-".($d+1)).'/'.$j["id"]);
+				$c = $this->requestAction('/elecs/getElecchart/'.$datestart."/".$dateend.'/'.$j["id"]);				
 				$e = $e +$c;
 				$elec_r[$r] = $c;
 			}
@@ -39,8 +44,7 @@
 	$chart->render("images/dien.png");
 
 	$w2 = count($elec_r)*70;	
-	$chart2 = new VerticalBarChart($w2, 700);
-
+	$chart2 = new VerticalBarChart($w2, 1000);
 	$dataSet2 = new XYDataSet();
 	for($j=0;$j<count($elec_r);$j++){
 		$pr = round(($elec_r[$rooms[$j]['Room']['id']]*100)/$total,2);
