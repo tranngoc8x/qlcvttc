@@ -1,3 +1,9 @@
+<script>
+function valid(o,w){
+ o.value = o.value.replace(valid.r[w],''); 
+ } 
+ valid.r={ 'numbers':/[^\d]/g }
+</script>
 <div class="nuocs form">
 <?php echo $this->Form->create('Nuoc');?>
 	<?php
@@ -11,7 +17,7 @@
 			<th>Mã số công tơ</th>
 			<th>Chỉ số ban đầu</th>
 			<th>Ghi chú</th>
-			<th>Chỉ số nước</th>
+			<th>Chỉ số điện</th>
 		</tr>
 		<?php $l = 0;?>
 		<?php foreach ($customers as $k=>$r){		
@@ -21,14 +27,17 @@
 			<?php 
 			if($r['Room']!= NULL){
 			foreach($r['Room'] as $i){
-			$l++;		
+			$l++;
+			
 			?>
 			<td><?php echo $i['room']; echo $this->Form->hidden('rooms_id'.$l,array('value'=>$i['id']));?></td>
-			<td><?php echo $i['macto']?></td>
-			<td><?php echo $i['first']?></td>
+			<td><?php echo $i['mactonuoc']?></td>
+			<td><?php echo $i['firstnuoc']?></td>
 			<td><?php echo $i['ghichu']?></td>
-			<td><?php echo $this->Form->input('nuoc'.$l,array('label'=>false,'placeholder'=>'Nhập vào số nước','style'=>'width:150px;')); ?></td>
-			</tr><tr class='tbody'>			
+			<td><?php echo $this->Form->input('nuoc'.$l,array('label'=>false,'onkeyup'=>"valid(this,'numbers')",'onblur'=>"valid(this,'numbers')",'placeholder'=>'Nhập vào số điện','style'=>'width:150px;')); ?></td>
+			</tr><tr class='tbody'>
+			
+			
 		<?php }}else{?>
 			<td>Chưa xếp phòng</td>
 			<td>-</td>

@@ -1,21 +1,29 @@
 <div class="rooms view">
-<h2><?php  __('Room');?></h2>
-	<dl><?php $i = 0; $class = ' class="altrow"';?>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $room['Room']['id']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Customers'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $this->Html->link($room['Customers']['name'], array('controller' => 'customers', 'action' => 'view', $room['Customers']['id'])); ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Room'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $room['Room']['room']; ?>
-			&nbsp;
-		</dd>
-	</dl>
+<table class='tblcontent chitietcv' border=0 width=100% cellspacing=0 cellpadding=0>
+    <tr class='tbody'>
+        <td width="120"><b>Phòng</b></td>
+        <td> <?php echo $room['Room']['room']; ?></td>
+    </tr>
+	<tr class='tbody'>
+        <td width="120"><b>Khách hàng</b></td>
+        <td> <?php echo $room['Customer']['name']; ?></td>
+    </tr>
+	<tr class='tbody'>
+        <td width="120"><b>Chỉ số điện đầu</b></td>
+        <td> <?php echo $room['Room']['firstdien']; ?></td>
+    </tr>
+	<tr class='tbody'>
+        <td width="120"><b>Chỉ số nước đầu</b></td>
+        <td> <?php echo $room['Room']['firstnuoc']; ?></td>
+    </tr>
+	<tr class='tbody'>
+        <td width="120"><b>Mã công tơ điện</b></td>
+        <td> <?php echo $room['Room']['mactodien']; ?></td>
+    </tr>
+	<tr class='tbody'>
+        <td width="120"><b>Mã công tơ nước</b></td>
+        <td> <?php echo $room['Room']['mactonuoc']; ?></td>
+    </tr>
+</table>
 </div>
-<script>var title="CHi tiết phòng";</script>
+<script>var title="Chi tiết phòng";</script>
