@@ -58,7 +58,9 @@ class ScoresController extends AppController {
 		$tasks = $this->Score->Task->find('list');
 		$this->set(compact('users', 'tasks'));
 	}
-
+	function suadiem($id=null){
+		debug($this->data);
+	}
 	function delete($id = null) {
 		if (!$id) {
 			$this->Session->setFlash(__('Invalid id for score', true));
