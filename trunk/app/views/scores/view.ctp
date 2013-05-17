@@ -47,6 +47,75 @@
 	<tr class='tbody'>
 		<td class=' ui-widget-header title' colspan=5>Kết quả làm việc của nhân viên</td>
 	</tr>
-
+	<tr class="tbody">
+		<td><b>Tên nhân viên</b></td>
+		<td><b>Độ khó công việc</b></td>
+		<td><b>Mức độ hoàn thành</b></td>
+		<td><b>Đánh giá</b></td>
+		<td><b>Thay đổi</b></td>
+	</tr>
+	<?php //debug($score['Score']);?>
+	<?php foreach ($score['Score'] as $key => $value):?>
+	<tr class="tbody" id="tr<?php echo $key;?>">
+		<td><?php echo $this->requestAction('tasks/getNV/'.$value['users_id']);?></td>
+		<td><?php echo $value['level'];?></td>
+		<td><?php echo $value['percent'];?></td>
+		<td><?php echo $value['mark'];?></td>
+		<td><a href="#" id="<?=$value['id']?>" class="suadiem">Sửa</a></td>
+	</tr>
+<?php endforeach;?>
 	</table>
+	<div id="dialog-sua" title="Đánh giá nhân viên">
+
+	</div>
 <script type="text/javascript">var title="Chi tiết ";</script>
+<table></table>
+
+<script>
+//văn bản lienquan
+	var thisid = "";
+	$(".suadiem").click(function( event ) {
+			$("#dialog-sua").dialog("open");
+			event.preventDefault();
+			thisid = this.id;
+			var returnhtml = "<?php echo $this->requestAction('scores/getscore/"+thisid+"');?>";
+			//console.log(returnhtml);
+			$("#dialog-sua").html(returnhtml);
+	});
+	$("#dialog-sua").dialog({
+		autoOpen: false,
+		width: 400,
+		buttons: [
+			{
+				text: "Lưu lại",
+				click: function() {
+					// var item = $('#tr'+thisid+" td");
+					// var formData = new FormData();
+    				//formData.append('data[Score][level]', item[1].outerText);
+					// formData.append('data[Score][percent]', item[2].outerText);
+					// formData.append('data[Score][mark]', item[3].outerText);
+					// formData.append('data[Score][id]', thisid);
+					//formData.append('data[Score][id]', item[0].firstElementChild.outerText);
+					//console.log(item[0].outerText);
+					//console.log(item[0].firstElementChild.outerText);
+					$.ajax({
+						url: "<?=$this->webroot;?>scores/suadiem",
+						type: "POST",
+						data: formData,
+						processData: false,
+						contentType: false,
+						success: function (res) {
+							console.log(res);
+						}
+					});
+				}
+			},
+			{
+				text: "Đóng lại",
+				click: function() {
+					$( this ).dialog( "close");
+				}
+			}
+		]
+	});
+</script>
