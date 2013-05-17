@@ -1,5 +1,4 @@
-<?php
-
+<?php	
 	if (!file_exists('files/excel/Report_Nuocs_Month.xls')) {
        exit('Phải tạo file Report_Nuocs_Month.xls trước');
     }
@@ -70,6 +69,11 @@
 			$excel->cellFont($excel->getColumn(($i*2)+3).'5',$excel->getColumn(($i*2)+3).'5',null,true,'FF8000');
 	}
 	//ngày 1 của tháng sau
+		
+
+
+
+
 
 		$excel->cellAlign('E4',($excel->getColumn(($i*2)+2)).'5','center');
 		//end header
@@ -88,7 +92,7 @@
 			//room of customer
 			foreach($c['Room'] as $kr => $room):
 				$excel->changeCell($room['room'],'B'.($row+$kr));
-				$excel->changeCell($room['macto'],'D'.($row+$kr));
+				$excel->changeCell($room['mactonuoc'],'D'.($row+$kr));
 				//$excel->cellBorder('B'.$row,'B'.($row+$kr),'000000');
 				//$excel->cellBorder('C'.$row,'C'.($row+$kr),'000000');
 				//$excel->cellBorder('D'.$row,'D'.($row+$kr),'000000');

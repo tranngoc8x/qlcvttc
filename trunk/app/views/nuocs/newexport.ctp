@@ -71,7 +71,7 @@
 			//room of customer
 			foreach($c['Room'] as $kr => $room):
 				$excel->changeCell($room['room'],'B'.($row+$kr));
-				$excel->changeCell($room['macto'],'D'.($row+$kr));
+				$excel->changeCell($room['mactonuoc'],'D'.($row+$kr));
 				$arrtieuthu= "=";
 				$a = $this->requestAction('/nuocs/getNuocEx/'.date("Y-m-d",strtotime($y1."-".$m1."-".$d1)).'/'.date($y2."-".$m2."-".($d2+0)).'/'.$room["id"]);
 				$arrkey = array_keys($a);
